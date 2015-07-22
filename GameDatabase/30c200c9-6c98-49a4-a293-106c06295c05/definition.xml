@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<game name="A Game of Thrones LCG - Second Edition"
+	  id="a12af4e8-be4b-4cda-a6b6-534f9717391f"
+	  octgnVersion="3.1.0.0"
+	  version="0.0.0.1"
+	  scriptVersion="3.1.0.1"
+	  markersize="16"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  tags="OCTGN aGoT LCG"
+	  description="When you play a Game of Thrones you win or you die.&#10;&#10;A deadly medieval fantasy living card game based on the world renown A Game of Thrones novels by George R.R. Martin.  Ideal for 1-on-1 play, or grab a group and play the melee variant."
+	  setsurl="http://tinyurl.com/op4me9g"
+	  gameurl="http://tinyurl.com/l53qvl7"
+	  authors="TassLehoff, Hedjman, Gualdo"
+	  iconurl="http://s29.postimg.org/qsmlsels5/Boite_de_base.png">
+
+	<scripts>
+		<script src="scripts/actions.py"/>
+	</scripts>
+
+	<proxygen definitionsrc="proxy/proxydef.xml">
+	</proxygen>	
+
+    <documents>
+		<document name="AGoT Faq"
+				  icon="Documents/blank.png"
+				  src="Documents/Faq.html"/>
+				  
+		<document name="Keyboard Shortcuts"
+				  icon="Documents/blank.png"
+				  src="Documents/Shortcuts.html"/>
+				  
+		<document name="ChangeLog"
+				  icon="Documents/blank.png"
+				  src="Documents/ChangeLog.html"/>
+	</documents>
+	
+	<gameModes>
+		<gameMode name="Joust - Advanced Play"
+				  shortDescription="Use this matchmaking to find Joust advanced players."
+				  image="cards/advanced.jpg"
+				  playerCount="2" />
+				  
+		<gameMode name="Joust - Casual Play"
+				  shortDescription="Use this matchmaking to find Joust casual and newer players."
+				  image="cards/casual.jpg"
+				  playerCount="2" />
+				  
+		<gameMode name="Melee"
+				  shortDescription="Use this matchmaking to find Melee players."
+				  image="cards/melee.jpg"
+				  playerCount="4" />
+	</gameModes>
+  
+	<card back="cards/back.png" front="cards/front.png" width="63" height="88">
+		<property name="Faction"		type="String"/>
+		<property name="Type"           type="String"/>
+		<property name="Traits"         type="String"/>
+		<property name="Text"           type="String"/>
+		<property name="Keywords"       type="String"/>
+		<property name="Unique"         type="String"/>
+		<property name="Loyal"			type="String"/>
+		<property name="Cost"           type="String"/>
+		<property name="Strength"       type="String"/>
+		<property name="Military"       type="String"/>
+		<property name="Intrigue"       type="String"/>
+		<property name="Power"          type="String"/>
+		<property name="GoldIncome"     type="String"/>
+		<property name="Influence"      type="String"/>
+		<property name="Initiative"     type="String"/>
+		<property name="Reserve"		type="String"/>
+		<property name="PlotGoldIncome" type="String"/>
+		<property name="PlotInitiative" type="String"/>
+		<property name="PlotClaim"      type="String"/>
+		<property name="Restricted"    	type="String"/>
+		<property name="CardNumber"   	type="String"/>
+		<property name="ErrataText"     type="String"/>
+		<property name="DeckLimit"		type="String"/>
+		<size name="HorizontalCards" width="88" height="63" back="cards/backH.png" front="cards/frontH.png" />
+	</card>
+
+	<table name="Table" visibility="undefined" ordered="False" width="960" height="540" background="background/background.jpg" backgroundStyle="uniformToFill" board="background/background.jpg">		
+		<groupactions menu="Announcements">
+			<groupaction menu="Announce: I'm Done."         shortcut="ALT+D"  execute="turnDone"/>
+			<groupaction menu="Respond: Unopposed"          shortcut="ALT+U"  execute="announceUO"/>
+			<groupaction menu="Respond: Opposed/Defend"     shortcut="ALT+O"  execute="announceOpp"/>
+			<groupaction menu="Declare: Military Challenge" shortcut="ALT+M"  execute="announceMil"/>
+			<groupaction menu="Declare: Intrigue Challenge" shortcut="ALT+I"  execute="announceInt"/>
+			<groupaction menu="Declare: Power Challenge"    shortcut="ALT+P"  execute="announcePow"/>
+			<groupaction menu="Announce: Action/Question"   shortcut="CTRL+Q" execute="holdOn"/>
+		</groupactions>		
+		<groupactions menu="[All Cards] Actions">
+			<groupaction menu="Stand All My Cards"                 shortcut="F5"     execute="restoreAll"/>
+			<groupaction menu="Clear All My Challenge Highlight"   shortcut="CTRL+C" execute="cancelAllHighlight"/>
+			<groupaction menu="Reset My Deck To Starting Position" shortcut="ALT+S"  execute="scoop"/>
+		</groupactions>				
+		<groupactions menu="Coin and Dice">
+			<groupaction menu="Flip a Coin"     shortcut="ALT+F" execute="flipCoin"/>
+			<groupaction menu="Roll a 6-sided"  shortcut="ALT+6" execute="sixSided"/>
+			<groupaction menu="Roll a 12-sided" shortcut="ALT+7" execute="twelveSided"/>
+			<groupaction menu="Roll a X-sided"  shortcut="ALT+8" execute="xSided"/>
+		</groupactions>		
+		<groupactions menu="Administration">		
+			<groupaction menu="Go-to: aGoT OCTGN googleDrive" shortcut="CTRL+G" execute="googleDriveWebsite"/>
+			<groupaction menu="Go-to: FFG's aGoT FAQ" execute="faqWebsite"/>
+		</groupactions>
+		<groupaction menu="Recalculate Power Totals" shortcut="CTRL+R" default="True" execute="recalcPower"/>
+					
+		<cardaction  menu="Kneel/Stand" shortcut="F9" default="True" execute="kneel"/>
+		<cardaction  menu="Flip Card" shortcut="F8" execute="flipcard"/>		
+		<cardactions menu="Challenge Highlight">
+			<cardaction menu="Military Highlight" shortcut="CTRL+M" execute="addMilitaryHighlight"/>
+			<cardaction menu="Intrigue Highlight" shortcut="CTRL+I" execute="addIntrigueHighlight"/>
+			<cardaction menu="Power Highlight"    shortcut="CTRL+P" execute="addPowerHighlight"/>
+			<cardaction menu="(Remove)"           shortcut="CTRL+N" execute="cancelHighlight"/>
+		</cardactions>		
+		<cardactions menu="Power Markers">
+			<cardaction menu="Add Power" shortcut="F1" execute="addPower"/>
+			<cardaction menu="Sub Power" shortcut="F2" execute="subPower"/>
+		</cardactions>		
+		<cardactions menu="Gold Markers">
+			<cardaction menu="Add Gold" shortcut="F3" execute="addGold"/>
+			<cardaction menu="Sub Gold" shortcut="F4" execute="subGold"/>
+		</cardactions>		
+		<cardactions menu="STR-Up Markers">
+			<cardaction menu="Add STR" shortcut="SHIFT+F1" execute="addSTR_Up"/>
+			<cardaction menu="Sub STR" shortcut="SHIFT+F2" execute="subSTR_Up"/>
+		</cardactions>		
+		<cardactions menu="Burn Markers">
+			<cardaction menu="Add Burn" shortcut="SHIFT+F3" execute="addBurn"/>
+			<cardaction menu="Sub Burn" shortcut="SHIFT+F4" execute="subBurn"/>
+		</cardactions>
+		<cardactions menu="Token Red Markers">
+			<cardaction menu="Add Token Red" shortcut="SHIFT+F3" execute="addTokenRed"/>
+			<cardaction menu="Sub Token Red" shortcut="SHIFT+F4" execute="subTokenRed"/>
+		</cardactions>
+		<cardactions menu="Token Blue Markers">
+			<cardaction menu="Add Token Blue" shortcut="SHIFT+F3" execute="addTokenBlue"/>
+			<cardaction menu="Sub Token Blue" shortcut="SHIFT+F4" execute="subTokenRed"/>
+		</cardactions>
+	</table>
+	
+	<player summary=" Power: {#Power} / Gold: {#Gold}">
+		<counter name="Power" icon="counters/power.png"/>
+		<counter name="Gold" icon="counters/gold.png"/>					
+		<hand name="Hand" visibility="me" ordered="False" width="63" height="88" icon="groups/hand.png">            
+			<groupaction menu="Random Discard" shortcut="F12" execute="randomDiscard"/>
+			<groupaction menu="Random Discard Many" execute="discardMany"/>
+			<groupaction menu="Take a Mulligan" shortcut="F6" execute="mulligan"/>
+		</hand>
+		<group name="Deck" visibility="none" width="63" height="88" icon="groups/faction.png">
+			<groupaction menu="Shuffle" shortcut="CTRL+S" execute="shuffle"/>
+			<groupaction menu="Draw" shortcut="CTRL+D" default="True" execute="draw"/>
+			<groupaction menu="Draw Many" shortcut="CTRL+SHIFT+D" execute="drawMany"/>
+			<groupaction menu="Discard Many From Top" execute="discardManyFromTop"/>
+		</group>
+		<group name="Plot Deck" visibility="none" width="88" height="88" icon="groups/plot.png">
+			<groupaction menu="Draw Random" execute="drawRandom"/>
+		</group>
+		<group name="Dead Pile" visibility="all" width="63" height="88" icon="groups/dead.png">      
+		</group>
+		<group name="Discard Pile" visibility="all" width="63" height="88" icon="groups/discard.png"> 
+			<groupaction menu="Reshuffle into Deck" execute="reshuffle"/>
+			<groupaction menu="Move One Random to Hand" execute="moveOneRandom"/>
+		</group>
+	</player>
+	
+	<deck>
+		<section name="Faction"		group="Hand"/>
+		<section name="Agenda"      group="Hand"/>
+		<section name="Characters"  group="Deck"/>
+		<section name="Locations"   group="Deck"/>
+		<section name="Events"      group="Deck"/>
+		<section name="Attachments" group="Deck"/>
+		<section name="Plots"       group="Plot Deck"/>
+		<section name="Titles"      group="Hand"/>
+	</deck>
+</game>
