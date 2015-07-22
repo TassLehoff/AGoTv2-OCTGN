@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<set name="00-Markers"
+	 id="d2e1abfc-fead-4067-a3b7-14973a19ca21" 
+	 gameId="30c200c9-6c98-49a4-a293-106c06295c05" 
+	 gameVersion="3.1.0" 
+	 version="3.1">
+	 
+	<markers>
+		<marker id="4e8046ba-759b-428c-917f-7e9268a5af90" name="gold"/>
+		<marker id="d115ea96-ed05-4bf7-ba22-a34c8675c676" name="power"/>
+		<marker id="7898d5a0-1d59-42b2-bbfb-5051cc420cd8" name="STR_Up"/>
+		<marker id="c272aa0c-f283-4ff5-b545-a5a3f150e6da" name="Burn"/>
+		<marker id="6238a357-41b7-4bca-b394-925fc1b2caf8" name="TokenRed"/>
+		<marker id="99452bc7-d95b-4c54-8577-41d98dd3e30b" name="TokenBlue"/>
+	</markers>
+</set>
