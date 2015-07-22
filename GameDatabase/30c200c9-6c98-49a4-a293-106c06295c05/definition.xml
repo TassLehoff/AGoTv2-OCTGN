@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<game name="A Game of Thrones LCG - Second Edition"
+<game name="A Game of Thrones: The Card Game Second Edition"
 	  id="30c200c9-6c98-49a4-a293-106c06295c05"
 	  octgnVersion="3.1.0.0"
 	  version="0.0.0.1"
@@ -8,7 +8,7 @@
 	  markersize="16"
 	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	  tags="OCTGN aGoT LCG"
-	  description="When you play a Game of Thrones you win or you die.&#10;&#10;A deadly medieval fantasy living card game based on the world renown A Game of Thrones novels by George R.R. Martin.  Ideal for 1-on-1 play, or grab a group and play the melee variant."
+	  description="A Game of Thrones: The Card Game Second Edition is the second edition of a beloved Living Card Game®, featuring cunning plots, iconic characters, and deadly encounters for two to six players. Set in the world of George R.R. Martin’s A Song of Ice and Fire, every game invites you to take command of iconic factions and battle for power. You must best your opponents to claim the Iron Throne, defeating them on the field of battle, outwitting them in the intrigues of court, or stealing their power in the political arena. Whether you play a two-player joust or a multiplayer melee, this LCG invites you to battle for control of Westeros"
 	  setsurl="http://tinyurl.com/op4me9g"
 	  gameurl="http://tinyurl.com/l53qvl7"
 	  authors="TassLehoff, Hedjman, Gualdo"
@@ -66,12 +66,11 @@
 		<property name="Intrigue"       type="String"/>
 		<property name="Power"          type="String"/>
 		<property name="GoldIncome"     type="String"/>
-		<property name="Influence"      type="String"/>
 		<property name="Initiative"     type="String"/>
-		<property name="Reserve"		type="String"/>
 		<property name="PlotGoldIncome" type="String"/>
 		<property name="PlotInitiative" type="String"/>
 		<property name="PlotClaim"      type="String"/>
+		<property name="PlotReserve"	type="String"/>
 		<property name="Restricted"    	type="String"/>
 		<property name="CardNumber"   	type="String"/>
 		<property name="ErrataText"     type="String"/>
