@@ -3,7 +3,7 @@
 <set name="01-Core Set"
 	 id="2d3261a2-372f-4527-b09c-ba82ba4db9c1"
 	 gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-	 gameVersion="0.0.0.1"
+	 gameVersion="3.1.0"
 	 version="3.1">
 
 	<cards>
