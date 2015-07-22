@@ -12,7 +12,6 @@ IntrigueColor = "#006b34" #A shade of green from the Intrigue Icon
 PowerColor = "#1a4d8f" #A shade of blue from the Power Icon
 GameURL = "http://tinyurl.com/op4me9g"
 FAQ_URL = "http://www.fantasyflightgames.com/ffg_content/agotlcg/support/FAQ-TR-updates/AGoT-FAQ.pdf"
-LeagueURL =
 
 
 #---------------------------------------------------------------------------
@@ -27,11 +26,6 @@ def faqWebsite(group, x = 0, y = 0):
 	mute()
 	
 	openUrl("{}".format(FAQ_URL))
-	
-def OCTGN_LeagueWebsite(group, x = 0, y = 0):
-	mute()
-	
-	openUrl("{}".format(LeagueURL))
 	
 def flipCoin(group, x = 0, y = 0):
 	mute()
