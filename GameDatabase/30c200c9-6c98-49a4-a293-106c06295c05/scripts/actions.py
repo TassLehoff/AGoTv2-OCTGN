@@ -1,10 +1,10 @@
 #---------------------------------------------------------------------------
 # Constants
 #---------------------------------------------------------------------------
-Gold = ("Gold", "01ecf94f-c408-4e43-8984-211fbdc25001") #The GUID from markers.o8g
-Power = ("Power", "01ecf94f-c408-4e43-8984-211fbdc25002") #The GUID from markers.o8g
-STR_Up = ("STR_Up", "01ecf94f-c408-4e43-8984-211fbdc25003") #The GUID from markers.o8g
-Burn = ("Burn", "01ecf94f-c408-4e43-8984-211fbdc25004") #The GUID from markers.o8g
+Gold = ("Gold", "4e8046ba-759b-428c-917f-7e9268a5af90") #The GUID from markers.o8g
+Power = ("Power", "d115ea96-ed05-4bf7-ba22-a34c8675c676") #The GUID from markers.o8g
+STR_Up = ("STR_Up", "7898d5a0-1d59-42b2-bbfb-5051cc420cd8") #The GUID from markers.o8g
+Burn = ("Burn", "c272aa0c-f283-4ff5-b545-a5a3f150e6da") #The GUID from markers.o8g
 TokenRed = ("TokenRed", "6238a357-41b7-4bca-b394-925fc1b2caf8") #The GUID from markers.o8g
 TokenBlue = ("TokenBlue", "99452bc7-d95b-4c54-8577-41d98dd3e30b") #The GUID from markers.o8g
 MilitaryColor = "#ae0603" #A shade of red from the Military Icon
