@@ -197,11 +197,11 @@ def addBurn(card, x = 0, y = 0):
 	mute()
 	card.markers[Burn] += 1
 
-def addTokenRed(card, x = 0, y = 0):
+def addRedToken(card, x = 0, y = 0):
 	mute()
 	card.markers[TokenRed] += 1
 	
-def addTokenBlue(card, x = 0, y = 0):
+def addBlueToken(card, x = 0, y = 0):
 	mute()
 	card.markers[TokenBlue] += 1
     
@@ -224,11 +224,11 @@ def subBurn(card, x = 0, y = 0):
     mute()
     card.markers[Burn] -= 1
 	
-def subTokenRed(card, x = 0, y = 0):
+def subRedToken(card, x = 0, y = 0):
     mute()
     card.markers[TokenRed] -= 1
 	
-def subTokenBlue(card, x = 0, y = 0):
+def subBlueToken(card, x = 0, y = 0):
     mute()
     card.markers[TokenBlue] -= 1
 	

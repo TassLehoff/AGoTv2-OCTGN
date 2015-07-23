@@ -334,7 +334,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_NeutralMultiHouse.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Stark. Lannister. Baratheon. Greyjoy. Targaryen. Martell."/>
+			<match name="Faction" value="Stark. Lannister. Baratheon. Greyjoy. Targaryen. Martell."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -434,7 +434,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_Barat.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Baratheon."/>
+			<match name="Faction" value="Baratheon."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -534,7 +534,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratGrey.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Baratheon. Greyjoy."/>
+			<match name="Faction" value="Baratheon. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -634,7 +634,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Baratheon. Lannister."/>
+			<match name="Faction" value="Baratheon. Lannister."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -734,7 +734,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Baratheon. Martell."/>
+			<match name="Faction" value="Baratheon. Martell."/>
 		</matches>
 
 		<overlayblocks>		
@@ -834,7 +834,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratStark.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Baratheon. Stark."/>
+			<match name="Faction" value="Baratheon. Stark."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -934,7 +934,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Baratheon. Targaryen."/>
+			<match name="Faction" value="Baratheon. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1034,7 +1034,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_Grey.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Greyjoy."/>
+			<match name="Faction" value="Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1132,7 +1132,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratGrey.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Greyjoy. Baratheon."/>
+			<match name="Faction" value="Greyjoy. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1232,7 +1232,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Greyjoy. Lannister."/>
+			<match name="Faction" value="Greyjoy. Lannister."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1332,7 +1332,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Greyjoy. Martell."/>
+			<match name="Faction" value="Greyjoy. Martell."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1432,7 +1432,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyStark.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Greyjoy. Stark."/>
+			<match name="Faction" value="Greyjoy. Stark."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1532,7 +1532,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Greyjoy. Targaryen."/>
+			<match name="Faction" value="Greyjoy. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1632,7 +1632,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_Lanni.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Lannister."/>
+			<match name="Faction" value="Lannister."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1730,7 +1730,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Lannister. Baratheon."/>
+			<match name="Faction" value="Lannister. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1830,7 +1830,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Lannister. Greyjoy."/>
+			<match name="Faction" value="Lannister. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -1930,7 +1930,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_LanniMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Lannister. Martell."/>
+			<match name="Faction" value="Lannister. Martell."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2030,7 +2030,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_LanniStark.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Lannister. Stark."/>
+			<match name="Faction" value="Lannister. Stark."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2130,7 +2130,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_LanniTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Lannister. Targaryen."/>
+			<match name="Faction" value="Lannister. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2230,7 +2230,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_Martell.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Martell."/>
+			<match name="Faction" value="Martell."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2328,7 +2328,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Martell. Baratheon."/>
+			<match name="Faction" value="Martell. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2428,7 +2428,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Martell. Greyjoy."/>
+			<match name="Faction" value="Martell. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2528,7 +2528,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_LanniMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Martell. Lannister."/>
+			<match name="Faction" value="Martell. Lannister."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2628,7 +2628,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_StarkMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Martell. Stark."/>
+			<match name="Faction" value="Martell. Stark."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2728,7 +2728,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_TargMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Martell. Targaryen."/>
+			<match name="Faction" value="Martell. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2828,7 +2828,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_Neutral.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Neutral."/>
+			<match name="Faction" value="Neutral."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -2926,7 +2926,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_Stark.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Stark."/>
+			<match name="Faction" value="Stark."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3024,7 +3024,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratStark.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Stark. Baratheon."/>
+			<match name="Faction" value="Stark. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3124,7 +3124,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyStark.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Stark. Greyjoy."/>
+			<match name="Faction" value="Stark. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3224,7 +3224,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_LanniStark.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Stark. Lannister."/>
+			<match name="Faction" value="Stark. Lannister."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3324,7 +3324,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_StarkMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Stark. Martell."/>
+			<match name="Faction" value="Stark. Martell."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3424,7 +3424,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_StarkTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Stark. Targaryen."/>
+			<match name="Faction" value="Stark. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3524,7 +3524,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_Targ.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Targaryen."/>
+			<match name="Faction" value="Targaryen."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3622,7 +3622,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_BaratTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Targaryen. Baratheon."/>
+			<match name="Faction" value="Targaryen. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3722,7 +3722,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_GreyTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Targaryen. Greyjoy."/>
+			<match name="Faction" value="Targaryen. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3822,7 +3822,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_LanniTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Targaryen. Lannister."/>
+			<match name="Faction" value="Targaryen. Lannister."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -3922,7 +3922,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_TargMart.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Targaryen. Martell."/>
+			<match name="Faction" value="Targaryen. Martell."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -4022,7 +4022,7 @@
 	<template src="proxy/proxyImages/Attachments/attach_StarkTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
-			<match name="House" value="Targaryen. Stark."/>
+			<match name="Faction" value="Targaryen. Stark."/>
 		</matches>
 		
 		<overlayblocks>		
@@ -4285,7 +4285,7 @@
 	<template src="proxy/proxyImages/Locations/loc_NeutralMultiHouse.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Stark. Lannister. Baratheon. Greyjoy. Targaryen. Martell."/>
+			<match name="Faction" value="Stark. Lannister. Baratheon. Greyjoy. Targaryen. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -4382,7 +4382,7 @@
 	<template src="proxy/proxyImages/Locations/loc_Barat.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Baratheon."/>
+			<match name="Faction" value="Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -4479,7 +4479,7 @@
 	<template src="proxy/proxyImages/Locations/loc_BaratGrey.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Baratheon. Greyjoy."/>
+			<match name="Faction" value="Baratheon. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -4576,7 +4576,7 @@
 	<template src="proxy/proxyImages/Locations/loc_Grey.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Greyjoy."/>
+			<match name="Faction" value="Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -4673,7 +4673,7 @@
 	<template src="proxy/proxyImages/Locations/loc_BaratGrey.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Greyjoy. Baratheon."/>
+			<match name="Faction" value="Greyjoy. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -4770,7 +4770,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Greyjoy. Lannister."/>
+			<match name="Faction" value="Greyjoy. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -4867,7 +4867,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Greyjoy. Martell."/>
+			<match name="Faction" value="Greyjoy. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -4964,7 +4964,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyStark.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Greyjoy. Stark."/>
+			<match name="Faction" value="Greyjoy. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5061,7 +5061,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Greyjoy. Targaryen."/>
+			<match name="Faction" value="Greyjoy. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5158,7 +5158,7 @@
 	<template src="proxy/proxyImages/Locations/loc_Lanni.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Lannister."/>
+			<match name="Faction" value="Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5255,7 +5255,7 @@
 	<template src="proxy/proxyImages/Locations/loc_BaratLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Lannister. Baratheon."/>
+			<match name="Faction" value="Lannister. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5352,7 +5352,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Lannister. Greyjoy."/>
+			<match name="Faction" value="Lannister. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5449,7 +5449,7 @@
 	<template src="proxy/proxyImages/Locations/loc_LanniMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Lannister. Martell."/>
+			<match name="Faction" value="Lannister. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5546,7 +5546,7 @@
 	<template src="proxy/proxyImages/Locations/loc_LanniStark.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Lannister. Stark."/>
+			<match name="Faction" value="Lannister. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5643,7 +5643,7 @@
 	<template src="proxy/proxyImages/Locations/loc_LanniTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Lannister. Targaryen."/>
+			<match name="Faction" value="Lannister. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5740,7 +5740,7 @@
 	<template src="proxy/proxyImages/Locations/loc_Martell.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Martell."/>
+			<match name="Faction" value="Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5837,7 +5837,7 @@
 	<template src="proxy/proxyImages/Locations/loc_BaratMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Martell. Baratheon."/>
+			<match name="Faction" value="Martell. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -5934,7 +5934,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Martell. Greyjoy."/>
+			<match name="Faction" value="Martell. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6031,7 +6031,7 @@
 	<template src="proxy/proxyImages/Locations/loc_LanniMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Martell. Lannister."/>
+			<match name="Faction" value="Martell. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6128,7 +6128,7 @@
 	<template src="proxy/proxyImages/Locations/loc_StarkMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Martell. Stark."/>
+			<match name="Faction" value="Martell. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6225,7 +6225,7 @@
 	<template src="proxy/proxyImages/Locations/loc_TargMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Martell. Targaryen."/>
+			<match name="Faction" value="Martell. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6322,7 +6322,7 @@
 	<template src="proxy/proxyImages/Locations/loc_Neutral.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Neutral."/>
+			<match name="Faction" value="Neutral."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6419,7 +6419,7 @@
 	<template src="proxy/proxyImages/Locations/loc_Stark.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Stark."/>
+			<match name="Faction" value="Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6516,7 +6516,7 @@
 	<template src="proxy/proxyImages/Locations/loc_BaratStark.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Stark. Baratheon"/>
+			<match name="Faction" value="Stark. Baratheon"/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6613,7 +6613,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyStark.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Stark. Greyjoy."/>
+			<match name="Faction" value="Stark. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6710,7 +6710,7 @@
 	<template src="proxy/proxyImages/Locations/loc_LanniStark.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Stark. Lannister."/>
+			<match name="Faction" value="Stark. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6807,7 +6807,7 @@
 	<template src="proxy/proxyImages/Locations/loc_StarkMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Stark. Martell."/>
+			<match name="Faction" value="Stark. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -6904,7 +6904,7 @@
 	<template src="proxy/proxyImages/Locations/loc_StarkTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Stark. Targaryen."/>
+			<match name="Faction" value="Stark. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7001,7 +7001,7 @@
 	<template src="proxy/proxyImages/Locations/loc_Targ.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Targaryen."/>
+			<match name="Faction" value="Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7098,7 +7098,7 @@
 	<template src="proxy/proxyImages/Locations/loc_BaratTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Targaryen. Baratheon."/>
+			<match name="Faction" value="Targaryen. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7195,7 +7195,7 @@
 	<template src="proxy/proxyImages/Locations/loc_GreyTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Targaryen. Greyjoy."/>
+			<match name="Faction" value="Targaryen. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7292,7 +7292,7 @@
 	<template src="proxy/proxyImages/Locations/loc_LanniTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Targaryen. Lannister."/>
+			<match name="Faction" value="Targaryen. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7389,7 +7389,7 @@
 	<template src="proxy/proxyImages/Locations/loc_TargMart.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Targaryen. Martell."/>
+			<match name="Faction" value="Targaryen. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7486,7 +7486,7 @@
 	<template src="proxy/proxyImages/Locations/loc_StarkTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
-			<match name="House" value="Targaryen. Stark."/>
+			<match name="Faction" value="Targaryen. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7584,7 +7584,7 @@
 	<template src="proxy/proxyImages/Characters/char_NeutralMultiHouse.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Stark. Lannister. Baratheon. Greyjoy. Targaryen. Martell."/>
+			<match name="Faction" value="Stark. Lannister. Baratheon. Greyjoy. Targaryen. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7738,7 +7738,7 @@
 	<template src="proxy/proxyImages/Characters/char_Barat.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Baratheon."/>
+			<match name="Faction" value="Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -7892,7 +7892,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratGrey.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Baratheon. Greyjoy."/>
+			<match name="Faction" value="Baratheon. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -8046,7 +8046,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Baratheon. Lannister."/>
+			<match name="Faction" value="Baratheon. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -8200,7 +8200,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Baratheon. Martell."/>
+			<match name="Faction" value="Baratheon. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -8354,7 +8354,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratStark.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Baratheon. Stark."/>
+			<match name="Faction" value="Baratheon. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -8508,7 +8508,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Baratheon. Targaryen."/>
+			<match name="Faction" value="Baratheon. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -8662,7 +8662,7 @@
 	<template src="proxy/proxyImages/Characters/char_Grey.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Greyjoy."/>
+			<match name="Faction" value="Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -8816,7 +8816,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratGrey.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Greyjoy. Baratheon."/>
+			<match name="Faction" value="Greyjoy. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -8970,7 +8970,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Greyjoy. Lannister."/>
+			<match name="Faction" value="Greyjoy. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -9124,7 +9124,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Greyjoy. Martell."/>
+			<match name="Faction" value="Greyjoy. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -9278,7 +9278,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyStark.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Greyjoy. Stark."/>
+			<match name="Faction" value="Greyjoy. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -9432,7 +9432,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Greyjoy. Targaryen."/>
+			<match name="Faction" value="Greyjoy. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -9586,7 +9586,7 @@
 	<template src="proxy/proxyImages/Characters/char_Lanni.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Lannister."/>
+			<match name="Faction" value="Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -9740,7 +9740,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Lannister. Baratheon."/>
+			<match name="Faction" value="Lannister. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -9894,7 +9894,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyLanni.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Lannister. Greyjoy."/>
+			<match name="Faction" value="Lannister. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -10048,7 +10048,7 @@
 	<template src="proxy/proxyImages/Characters/char_LanniMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Lannister. Martell."/>
+			<match name="Faction" value="Lannister. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -10202,7 +10202,7 @@
 	<template src="proxy/proxyImages/Characters/char_LanniStark.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Lannister. Stark."/>
+			<match name="Faction" value="Lannister. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -10356,7 +10356,7 @@
 	<template src="proxy/proxyImages/Characters/char_LanniTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Lannister. Targaryen."/>
+			<match name="Faction" value="Lannister. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -10510,7 +10510,7 @@
 	<template src="proxy/proxyImages/Characters/char_Martell.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Martell."/>
+			<match name="Faction" value="Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -10664,7 +10664,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Martell. Baratheon."/>
+			<match name="Faction" value="Martell. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -10818,7 +10818,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Martell. Greyjoy."/>
+			<match name="Faction" value="Martell. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -10972,7 +10972,7 @@
 	<template src="proxy/proxyImages/Characters/char_LanniMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Martell. Lannister."/>
+			<match name="Faction" value="Martell. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -11126,7 +11126,7 @@
 	<template src="proxy/proxyImages/Characters/char_StarkMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Martell. Stark."/>
+			<match name="Faction" value="Martell. Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -11280,7 +11280,7 @@
 	<template src="proxy/proxyImages/Characters/char_TargMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Martell. Targaryen."/>
+			<match name="Faction" value="Martell. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -11434,7 +11434,7 @@
 	<template src="proxy/proxyImages/Characters/char_Neutral.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Neutral."/>
+			<match name="Faction" value="Neutral."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -11588,7 +11588,7 @@
 	<template src="proxy/proxyImages/Characters/char_Stark.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Stark."/>
+			<match name="Faction" value="Stark."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -11742,7 +11742,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratStark.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Stark. Baratheon."/>
+			<match name="Faction" value="Stark. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -11896,7 +11896,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyStark.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Stark. Greyjoy."/>
+			<match name="Faction" value="Stark. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -12050,7 +12050,7 @@
 	<template src="proxy/proxyImages/Characters/char_LanniStark.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Stark. Lannister."/>
+			<match name="Faction" value="Stark. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -12204,7 +12204,7 @@
 	<template src="proxy/proxyImages/Characters/char_StarkMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Stark. Martell."/>
+			<match name="Faction" value="Stark. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -12358,7 +12358,7 @@
 	<template src="proxy/proxyImages/Characters/char_StarkTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Stark. Targaryen."/>
+			<match name="Faction" value="Stark. Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -12512,7 +12512,7 @@
 	<template src="proxy/proxyImages/Characters/char_Targ.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Targaryen."/>
+			<match name="Faction" value="Targaryen."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -12666,7 +12666,7 @@
 	<template src="proxy/proxyImages/Characters/char_BaratTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Targaryen. Baratheon."/>
+			<match name="Faction" value="Targaryen. Baratheon."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -12820,7 +12820,7 @@
 	<template src="proxy/proxyImages/Characters/char_GreyTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Targaryen. Greyjoy."/>
+			<match name="Faction" value="Targaryen. Greyjoy."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -12974,7 +12974,7 @@
 	<template src="proxy/proxyImages/Characters/char_LanniTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Targaryen. Lannister."/>
+			<match name="Faction" value="Targaryen. Lannister."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -13128,7 +13128,7 @@
 	<template src="proxy/proxyImages/Characters/char_TargMart.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Targaryen. Martell."/>
+			<match name="Faction" value="Targaryen. Martell."/>
 		</matches>
 		
 		<overlayblocks>			
@@ -13282,7 +13282,7 @@
 	<template src="proxy/proxyImages/Characters/char_StarkTarg.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
-			<match name="House" value="Targaryen. Stark."/>
+			<match name="Faction" value="Targaryen. Stark."/>
 		</matches>
 		
 		<overlayblocks>			

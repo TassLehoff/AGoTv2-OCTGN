@@ -130,12 +130,12 @@
 			<cardaction menu="Sub Burn" shortcut="SHIFT+F4" execute="subBurn"/>
 		</cardactions>
 		<cardactions menu="Token Red Markers">
-			<cardaction menu="Add Token Red" shortcut="SHIFT+F3" execute="addTokenRed"/>
-			<cardaction menu="Sub Token Red" shortcut="SHIFT+F4" execute="subTokenRed"/>
+			<cardaction menu="Add Token Red" shortcut="SHIFT+F5" execute="addRedToken"/>
+			<cardaction menu="Sub Token Red" shortcut="SHIFT+F6" execute="subRedToken"/>
 		</cardactions>
 		<cardactions menu="Token Blue Markers">
-			<cardaction menu="Add Token Blue" shortcut="SHIFT+F3" execute="addTokenBlue"/>
-			<cardaction menu="Sub Token Blue" shortcut="SHIFT+F4" execute="subTokenRed"/>
+			<cardaction menu="Add Token Blue" shortcut="SHIFT+F7" execute="addBlueToken"/>
+			<cardaction menu="Sub Token Blue" shortcut="SHIFT+F8" execute="subBlueToken"/>
 		</cardactions>
 	</table>
 	
