@@ -366,7 +366,7 @@
 			<property name="Unique"         value="Yes"/>
 			<property name="Loyal"          value="No"/>
 			<property name="Cost"           value="2"/>
-			<property name="PlotReserve"    value="1"/>
+			<property name="Reserve"		value="1"/>
 			<property name="CardNumber"     value="38"/>
 		</card>
 		<card id="90452d99-6a6f-4d0d-b3a1-bb92e7110d1d" name="The Kingsroad">
@@ -408,15 +408,6 @@
 			<property name="Loyal"          value="No"/>
 			<property name="CardNumber"     value="43"/>
 		</card>
-		<card id="c5d78fb6-ff52-4012-ac95-547ed9feec0f" name="The Hand's Judgment">
-			<property name="Faction"        value="Neutral."/>
-			<property name="Type"           value="Event"/>
-			<property name="Text"           value="Interrupt: When the effects of an opponent's event would initiate, cancel those effects. X is that event's printed cost."/>
-			<property name="Unique"         value="No"/>
-			<property name="Loyal"          value="No"/>
-			<property name="Cost"           value="X"/>
-			<property name="CardNumber"     value="44"/>
-		</card>
 		<card id="b29c7bb5-7b84-4e94-a30b-8332fad51c2a" name="Tears of Lys">
 			<property name="Faction"        value="Neutral."/>
 			<property name="Type"           value="Event"/>
@@ -424,6 +415,15 @@
 			<property name="Unique"         value="No"/>
 			<property name="Loyal"          value="No"/>
 			<property name="Cost"           value="1"/>
+			<property name="CardNumber"     value="44"/>
+		</card>
+		<card id="c5d78fb6-ff52-4012-ac95-547ed9feec0f" name="The Hand's Judgment">
+			<property name="Faction"        value="Neutral."/>
+			<property name="Type"           value="Event"/>
+			<property name="Text"           value="Interrupt: When the effects of an opponent's event would initiate, cancel those effects. X is that event's printed cost."/>
+			<property name="Unique"         value="No"/>
+			<property name="Loyal"          value="No"/>
+			<property name="Cost"           value="X"/>
 			<property name="CardNumber"     value="45"/>
 		</card>
 		<card id="0c97b091-96c0-46df-8442-e904025304fb" name="Maester Cressen">
@@ -1217,7 +1217,7 @@
 			<property name="Military"       value="No"/>
 			<property name="Intrigue"       value="Yes"/>
 			<property name="Power"          value="No"/>
-			<property name="PlotReserve"    value="1"/>
+			<property name="Reserve"		value="1"/>
 			<property name="CardNumber"     value="127"/>
 		</card>
 		<card id="e65c6d16-075b-4634-a490-a200bb75e3be" name="Ser Waymar Royce">

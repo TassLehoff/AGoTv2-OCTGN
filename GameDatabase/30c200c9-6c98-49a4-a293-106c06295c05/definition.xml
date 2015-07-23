@@ -67,6 +67,7 @@
 		<property name="Power"          type="String"/>
 		<property name="GoldIncome"     type="String"/>
 		<property name="Initiative"     type="String"/>
+		<property name="Reserve"		type="String"/>
 		<property name="PlotGoldIncome" type="String"/>
 		<property name="PlotInitiative" type="String"/>
 		<property name="PlotClaim"      type="String"/>
