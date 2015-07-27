@@ -73,9 +73,10 @@
 		<property name="PlotClaim"      type="String"/>
 		<property name="PlotReserve"	type="String"/>
 		<property name="Restricted"    	type="String"/>
-		<property name="CardNumber"   	type="String"/>
 		<property name="ErrataText"     type="String"/>
 		<property name="DeckLimit"		type="String"/>
+		<property name="Illustrator"	type="String"/>
+		<property name="CardNumber"   	type="String"/>
 		<size name="HorizontalCards" width="88" height="63" back="cards/backH.png" front="cards/frontH.png" />
 	</card>
 
