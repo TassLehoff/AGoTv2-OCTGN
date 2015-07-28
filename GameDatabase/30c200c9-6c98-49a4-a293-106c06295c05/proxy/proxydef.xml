@@ -87,7 +87,7 @@
 
 		
 <!-- AGENDA CARD TEMPLATE -->
-	<template src="proxy/proxyImages/agendaBackground.png" default="False">
+	<template src="proxy/proxyImages/Agenda.png" default="False">
 		<matches>
 			<match name="Type" value="Agenda"/>
 		</matches>
@@ -107,7 +107,7 @@
 	</template>
 	
 <!-- PLOT CARD TEMPLATE -->
-	<template src="proxy/proxyImages/plotBackground.png" default="False">
+	<template src="proxy/proxyImages/Plot.png" default="False">
 		<matches>
 			<match name="Type" value="Plot"/>
 		</matches>
@@ -130,7 +130,7 @@
 	</template>
 	
 <!-- EVENT CARD TEMPLATE -->
-	<template src="proxy/proxyImages/eventBackground.png" default="False">
+	<template src="proxy/proxyImages/Event.png" default="False">
 		<matches>
 			<match name="Type" value="Event"/>
 		</matches>
@@ -154,7 +154,7 @@
 	</template>
 				
 <!-- LOCATION CARD TEMPLATE -->	
-	<template src="proxy/proxyImages/Locations/loc_NeutralMultiHouse.png" default="False">
+	<template src="proxy/proxyImages/Locations.png" default="False">
 		<matches>
 			<match name="Type" value="Location"/>
 		</matches>
@@ -177,7 +177,7 @@
 	</template>
 	
 <!-- CHARACTER CARD TEMPLATE -->
-	<template src="proxy/proxyImages/Characters/char_NeutralMultiHouse.png" default="False">
+	<template src="proxy/proxyImages/Characters.png" default="False">
 		<matches>
 			<match name="Type" value="Character"/>
 		</matches>
@@ -200,7 +200,7 @@
 	</template>	
 	
 <!-- ATTACHMENT CARD TEMPLATE -->
-	<template src="proxy/proxyImages/Attachments/attach_NeutralMultiHouse.png" default="False">
+	<template src="proxy/proxyImages/Attachments.png" default="False">
 		<matches>
 			<match name="Type" value="Attachment"/>
 		</matches>
@@ -221,29 +221,6 @@
 			</link>
 		</textblocks>
 	</template>
-	
-<!-- HELP CARD TEMPLATE -->
-	<template src="proxy/proxyImages/agendaBackground.png" default="False">
-		<matches>
-			<match name="Type" value="Help"/>
-		</matches>
-		
-		<overlayblocks>
-			<link block="dummyOverlay"/>
-		</overlayblocks>
-		
-		<textblocks>
-			<link block="helpName">
-				<property name="Name"/>
-			</link>
-			<link block="helpCardTraits">
-				<property name="Traits"/>
-			</link>
-			<link block="helpCardText">
-				<property name="Text"/>
-			</link>
-		</textblocks>
-	</template>	
 	
 <!-- UNKNOWN CARD TEMPLATE -->
 	<template src="proxy/proxyImages/unknownCard.png" default="True">
