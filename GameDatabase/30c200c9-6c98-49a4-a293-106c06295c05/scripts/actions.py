@@ -119,7 +119,7 @@ def scoop(group, x = 0, y = 0):
 	if not confirm("Scoop your side of the table?"): return
 	
 	for c in me.hand: 
-		if not c.Type == "House Card" and not c.Type == "Agenda":
+		if not c.Type == "Faction" and not c.Type == "Agenda":
 			c.moveTo(me.Deck)			
 	for c in me.piles['Discard Pile']: c.moveTo(me.Deck)
 	for c in me.piles['Dead Pile']: c.moveTo(me.Deck)
@@ -128,7 +128,7 @@ def scoop(group, x = 0, y = 0):
         	if card.owner == me)
 
 	for card in myCards:
-		if card.Type == "Faction Card": 
+		if card.Type == "Faction": 
 			card.moveTo(me.hand)
 		elif card.Type == "Agenda":
 			card.moveTo(me.hand)
