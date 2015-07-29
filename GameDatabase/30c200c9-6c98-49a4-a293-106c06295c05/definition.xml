@@ -139,6 +139,7 @@
 			<cardaction menu="Add Token Blue" shortcut="SHIFT+F7" execute="addBlueToken"/>
 			<cardaction menu="Sub Token Blue" shortcut="SHIFT+F8" execute="subBlueToken"/>
 		</cardactions>
+		<cardaction  menu="Count Income" execute="countincome"/>
 	</table>
 	
 	<player summary=" Power: {#Power} / Gold: {#Gold}">
@@ -164,6 +165,7 @@
 			<groupaction menu="Reshuffle into Deck" execute="reshuffle"/>
 			<groupaction menu="Move One Random to Hand" execute="moveOneRandom"/>
 		</group>
+		<cardaction menu="Pay Gold to Marshal/Play/Ambush" execute="play" default="True"/>
 	</player>
 	
 	<deck>
