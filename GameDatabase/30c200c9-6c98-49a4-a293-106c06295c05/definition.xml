@@ -45,14 +45,9 @@
 				  shortDescription="Use this matchmaking to find Joust casual and newer players."
 				  image="cards/casual.jpg"
 				  playerCount="2" />
-				  
-		<gameMode name="Melee"
-				  shortDescription="Use this matchmaking to find Melee players."
-				  image="cards/melee.jpg"
-				  playerCount="4" />
 	</gameModes>
   
-	<card back="cards/back.png" front="cards/front.png" width="63" height="88">
+	<card back="cards/back.png" front="cards/front.png" width="63" height="88" cornerRadius="2">
 		<property name="Faction"		type="String"/>
 		<property name="Type"           type="String"/>
 		<property name="Traits"         type="String"/>
@@ -77,7 +72,7 @@
 		<property name="DeckLimit"		type="String"/>
 		<property name="Illustrator"	type="String"/>
 		<property name="CardNumber"   	type="String"/>
-		<size name="HorizontalCards" width="88" height="63" back="cards/backH.png" front="cards/frontH.png" />
+		<size name="HorizontalCards" width="88" height="63" backWidth="88" backHeight="63" back="cards/backH.png" front="cards/frontH.png" cornerRadius="2"/> 
 	</card>
 
 	<table name="Table" visibility="undefined" ordered="False" width="960" height="540" background="background/background.jpg" backgroundStyle="uniformToFill" board="background/background.jpg">		
@@ -155,7 +150,7 @@
 			<groupaction menu="Draw Many" shortcut="CTRL+SHIFT+D" execute="drawMany"/>
 			<groupaction menu="Discard Many From Top" execute="discardManyFromTop"/>
 		</group>
-		<group name="Plot Deck" visibility="none" width="88" height="88" icon="groups/plot.png">
+		<group name="Plot Deck" visibility="none" width="88" height="63" icon="groups/plot.png">
 			<groupaction menu="Draw Random" execute="drawRandom"/>
 		</group>
 		<group name="Dead Pile" visibility="all" width="63" height="88" icon="groups/dead.png">      
