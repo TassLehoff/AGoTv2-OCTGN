@@ -93,7 +93,7 @@
 			<groupaction menu="Go-to: FFG's aGoT FAQ"                                                   execute="faqWebsite"/>
 		</groupactions>
 		<groupaction     menu="Recalculate Power Totals"           shortcut="CTRL+R" default="True"     execute="recalcPower"/>
-					
+		<groupaction menu="Game setup" shortcut="" default="True" execute="setup"/>			
 		<cardaction      menu="Kneel/Stand"                        shortcut="F9"     default="True"     execute="kneel"/>
 		<cardaction      menu="Flip Card"                          shortcut="F8"                        execute="flipcard"/>		
 		<cardactions     menu="Challenge Highlight">
