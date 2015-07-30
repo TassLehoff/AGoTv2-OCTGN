@@ -145,7 +145,7 @@ def scoop(group, x = 0, y = 0):
 
 def setup(group, x = 0, y = 0):
 	mute()
-	if not confirm("Besure to setup."): return
+	if not confirm("Are you sure to setup ?"): return
 	var = me.getGlobalVariable("setupOk")
 	if var == "1":
 		notify("You already did your Setup")
