@@ -7,11 +7,11 @@
 	  scriptVersion="3.1.0.1"
 	  markersize="16"
 	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	  tags="OCTGN aGoT LCG"
+	  tags="OCTGN aGoT LCG Game of Thrones"
 	  description="A Game of Thrones: The Card Game Second Edition is the second edition of a beloved Living Card Game®, featuring cunning plots, iconic characters, and deadly encounters for two to six players. Set in the world of George R.R. Martin’s A Song of Ice and Fire, every game invites you to take command of iconic factions and battle for power. You must best your opponents to claim the Iron Throne, defeating them on the field of battle, outwitting them in the intrigues of court, or stealing their power in the political arena. Whether you play a two-player joust or a multiplayer melee, this LCG invites you to battle for control of Westeros."
-	  setsurl="http://tinyurl.com/op4me9g"
+	  setsurl="http://tinyurl.com/p93kpb4"
 	  gameurl="http://tinyurl.com/phqwgjq"
-	  authors="TassLehoff, Hedjman, Gualdo, Snowfrost"
+	  authors="TassLehoff, Snowfrost, Khudzlin, Hedjman, Gualdo"
 	  iconurl="http://s29.postimg.org/qsmlsels5/Boite_de_base.png">
 
 	<scripts>
@@ -41,11 +41,9 @@
   
 	<card back="cards/back.png" front="cards/front.png" width="63" height="88" cornerRadius="2">
 		<property name="Faction"		type="String"/>
-		<property name="Cname"          type="String"/>
 		<property name="Type"           type="String"/>
 		<property name="Traits"         type="String"/>
 		<property name="Text"           type="String"/>
-		<property name="CText"          type="String"/>
 		<property name="Keywords"       type="String"/>
 		<property name="Unique"         type="String"/>
 		<property name="Loyal"			type="String"/>
