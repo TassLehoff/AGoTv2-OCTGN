@@ -182,6 +182,7 @@ def addGold(card, x = 0, y = 0):
 	mute()
 	notify("{} adds a Gold to {}.".format(me, card))
 	card.markers[Gold] += 1
+	me.counters['Gold'].value += 1
     
 def addPower(card, x = 0, y = 0):
     mute()
@@ -209,6 +210,7 @@ def subGold(card, x = 0, y = 0):
     mute()
     notify("{} subtracts a Gold to {}.".format(me, card))
     card.markers[Gold] -= 1
+    me.counters['Gold'].value -= 1
     
 def subPower(card, x = 0, y = 0):
     mute()
@@ -251,6 +253,19 @@ def cancelHighlight (card, x = 0, y = 0):
 	mute()
 	card.highlight = None
 	card.target(False)
+
+def countincome(card, x=0, y=0):
+	mute()
+	if not confirm("Is this your revealing plot?"): return
+	if card.Type == "Plot" and card.controller == me:
+		for incomecard in table:
+			if incomecard.goldincome and incomecard.controller == me:
+				me.counters['Gold'].value += int(incomecard.goldincome)
+		me.counters['Gold'].value += int(card.plotgoldincome)
+		card.markers[Gold] += me.counters['Gold'].value
+		notify("{} counts income {} gold.".format(me,me.counters['Gold'].value))
+	else:
+		return
 
 #---------------------------
 #movement actions
@@ -301,6 +316,28 @@ def mulligan(group):
 	for card in me.deck.top(draw):
 		card.moveTo(me.hand)
 	notify("{} mulligans and draws {} new cards.".format(me, draw))
+
+def play(card, x=0, y=0):
+	mute()
+	if card.cost == "" : 
+		whisper("You can't play this card")
+		return
+	if card.Cost == "X": cost=askInteger("How much do you want to pay to play {} ? ".format(card.name),0)
+	else : cost=int(card.Cost)
+	reduc=askInteger("Reduce Cost by ?",0)
+	if reduc == None or cost == None: return
+	if reduc>cost: reduc=cost
+	cost-=reduc
+	if me.counters['Gold'].value < cost :
+		whisper("You don't have enough Gold to pay for {}.".format(card.name))
+		return		
+	if me.hasInvertedTable(): card.moveToTable(0,-288)
+	else : 	card.moveToTable(0,160)
+	notify("{} plays {} for {} Gold (Cost reduced by {}).".format(me,card,cost,reduc))
+	me.counters['Gold'].value -= cost
+	for incomecard in table:
+		if incomecard.controller == me and incomecard.markers[Gold] > 0:
+			incomecard.markers[Gold] -= cost
 
 #------------------------------------------------------------------------------
 # Pile Actions
