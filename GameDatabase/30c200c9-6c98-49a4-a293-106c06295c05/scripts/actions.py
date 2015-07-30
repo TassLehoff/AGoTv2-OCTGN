@@ -118,6 +118,10 @@ def scoop(group, x = 0, y = 0):
 	
 	if not confirm("Scoop your side of the table?"): return
 	
+	var = me.getGlobalVariable("setupOk")
+	var="0"
+	me.setGlobalVariable("setupOk", var)
+	
 	for c in me.hand: 
 		if not c.Type == "Faction" and not c.Type == "Agenda":
 			c.moveTo(me.Deck)			
@@ -136,8 +140,38 @@ def scoop(group, x = 0, y = 0):
 			card.moveTo(me.piles['Plot Deck'])
 		else: 
 			card.moveTo(me.Deck)
-	
+
 	notify("{} scoops their side of the table.".format(me))
+
+def setup(group, x = 0, y = 0):
+	mute()
+	if not confirm("Besure to setup."): return
+	var = me.getGlobalVariable("setupOk")
+	if var == "1":
+		notify("You already did your Setup")
+		return
+	if len(me.hand) == 0:
+		notify("You need to load a deck first") 
+		return
+	var="1"
+	me.setGlobalVariable("setupOk", var)
+	notify("**{} has started setup, please wait**".format(me))
+	checkdeck(me.deck)
+	for c in me.hand: 
+		if c.Type == "Faction":
+			if me.hasInvertedTable(): 
+				c.moveToTable(300,-100)			
+			else:
+				c.moveToTable(-280,0)
+		if c.Type == "Agenda":
+			if me.hasInvertedTable(): 
+				c.moveToTable(220,-100)			
+			else:
+				c.moveToTable(-200,0)
+	me.deck.shuffle()
+	for card in me.deck.top(7):
+		card.moveTo(me.hand)
+	notify("**{} is ready**".format(me))
 
 #---------------------------------------------------------------------------
 # Table card actions
@@ -342,6 +376,97 @@ def play(card, x=0, y=0):
 #------------------------------------------------------------------------------
 # Pile Actions
 #------------------------------------------------------------------------------
+def checkdeck(group):
+	mute()
+	notify (" -> Checking deck of {} ...".format(me))
+
+	NeutralCount = 0
+	LannisterCount = 0
+	MartellCount = 0
+	NightCount =0
+	StarkCount=0
+	TargaryenCount=0
+	TyrellCount=0
+	BaratheonCount=0
+	GreyjoyCount=0
+	for card in group:
+		if card.faction=='Neutral.':
+			NeutralCount += 1
+		elif card.faction=='Lannister.':
+			LannisterCount += 1
+		elif card.faction=='Martell.':
+			MartellCount += 1
+		elif card.faction=="Night's Watch.":
+			NightCount += 1
+		elif card.faction=='Stark.':
+			StarkCount += 1
+		elif card.faction=='Targaryen.':
+			TargaryenCount += 1
+		elif card.faction=='Tyrell.':
+			TyrellCount += 1
+		elif card.faction=='Baratheon.':
+			BaratheonCount += 1
+		elif card.faction=='Greyjoy.':
+			GreyjoyCount += 1
+
+	for card in me.hand:
+		if card.name == "Fealty":#效忠
+			if NeutralCount<10:
+					notify("Your Agenda is[{}]".format(card.name))
+			else:
+					notify("Your Agenda is[{}],You include {} neutral cards in your deck, which is not permitted.".format(card.name, NeutralCount, me))
+			return
+		elif card.name == "Banner of the Lion":#金狮的旗帜
+			if LannisterCount<12:
+					notify("Your Agenda is[{}],You include {} Lannister cards in your deck, which is not permitted.".format(card.name, LannisterCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+		elif card.name == "Banner of the Sun":#太阳的旗帜
+			if MartellCount<12:
+					notify("Your Agenda is[{}],You include {} Martell cards in your deck, which is not permitted.".format(card.name, MartellCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+		elif card.name == "Banner of the Watch":#守夜人的旗帜
+			if NightCount<12:
+					notify("Your Agenda is[{}],You include {} Night's Watch cards in your deck, which is not permitted.".format(card.name, NightCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+		elif card.name == "Banner of the Wolf":#奔狼的旗帜
+			if StarkCount<12:
+					notify("Your Agenda is[{}],You include {} Stark cards in your deck, which is not permitted.".format(card.name, StarkCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+		elif card.name == "Banner of the Dragon":#真龙的旗帜
+			if TargaryenCount<12:
+					notify("Your Agenda is[{}],You include {} Targaryen cards in your deck, which is not permitted.".format(card.name, TargaryenCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+		elif card.name == "Banner of the Rose":#玫瑰的旗帜
+			if TyrellCount<12:
+					notify("Your Agenda is[{}],You include {} Tyrell cards in your deck, which is not permitted.".format(card.name, TyrellCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+		elif card.name == "Banner of the Stag":#雄鹿的旗帜
+			if BaratheonCount<12:
+					notify("Your Agenda is[{}],You include {} Baratheon cards in your deck, which is not permitted.".format(card.name, BaratheonCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+		elif card.name == "Banner of the Kraken":#海怪的旗帜
+			if GreyjoyCount<12:
+					notify("Your Agenda is[{}],You include {} Grejoy cards in your deck, which is not permitted.".format(card.name, GreyjoyCount, me))
+			else:
+					notify("Your Agenda is[{}]".format(card.name))
+			return
+
+	notify("You have no Agenda or Your Agenda is not in your hand")
+
 
 def shuffle(group):
 	group.shuffle()
