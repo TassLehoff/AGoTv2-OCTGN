@@ -45,7 +45,7 @@
 		<property name="Type"           type="String"/>
 		<property name="Traits"         type="String"/>
 		<property name="Text"           type="String"/>
-		<property name="CText"           type="String"/>
+		<property name="CText"          type="String"/>
 		<property name="Keywords"       type="String"/>
 		<property name="Unique"         type="String"/>
 		<property name="Loyal"			type="String"/>
@@ -95,7 +95,8 @@
 			<groupaction menu="Go-to: FFG's aGoT FAQ"                                                   execute="faqWebsite"/>
 		</groupactions>
 		<groupaction     menu="Recalculate Power Totals"           shortcut="CTRL+R" default="True"     execute="recalcPower"/>
-		<groupaction menu="Game setup" shortcut="" default="True" execute="setup"/>
+		<groupaction 	 menu="Game setup" 						   shortcut="" 		 default="True" 	execute="setup"/>
+		<cardaction 	 menu="Pay Gold to Marshal/Play/Ambush" 					 default="True"		execute="play"/>
 		<cardaction      menu="Kneel/Stand"                        shortcut="F9"     default="True"     execute="kneel"/>
 		<cardaction      menu="Flip Card"                          shortcut="F8"                        execute="flipcard"/>		
 		<cardactions     menu="Challenge Highlight">
@@ -150,7 +151,7 @@
 			<groupaction menu="Discard Many From Top"                                                   execute="discardManyFromTop"/>
 		</group>
 		
-		<group name="Plot Deck" visibility="none"         width="63" height="88" icon="groups/plot.png">
+		<group name="Plot Deck" visibility="none"         width="88" height="63" icon="groups/plot.png">
 			<groupaction menu="Draw Random"                                                             execute="drawRandom"/>
 		</group>
 		
