@@ -176,11 +176,11 @@ def setup(group, x = 0, y = 0):
 #---------------------------------------------------------------------------
 # Table card actions
 #---------------------------------------------------------------------------
-+def displayCardText(card, x = 0, y = 0):
-+	mute()
-+	
-+	notify('{} - Card Text:'.format(card.name))
-+	notify('{}'.format(card.Text))
+def displayCardText(card, x = 0, y = 0):
+	mute()
+	
+	notify('{} - Card Text:'.format(card.name))
+	notify('{}'.format(card.Text))
 
 def displayErrata(card, x = 0, y = 0):
 	mute()
