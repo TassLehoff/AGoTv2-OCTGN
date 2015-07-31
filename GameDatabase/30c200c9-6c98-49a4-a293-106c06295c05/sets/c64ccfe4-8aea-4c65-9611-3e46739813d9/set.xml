@@ -517,6 +517,7 @@
 			<property name="Keywords"                   value="Limited."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
+			<property name="Cost"                       value="0"/>
 			<property name="GoldIncome"                 value="+1"/>
 			<property name="CardNumber"                 value="40"/>
 			<property name="Illustrator"		        value="Ted Nasmith"/>
@@ -544,7 +545,7 @@
 		<card id="8e9b06da-991e-4608-a16b-caf96209641a" name="Superior Claim">
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Event"/>
-			<property name="Text"                       value="Reaction: After you win a [POW] challenge by 5 or more STR, gain 2 power for your faction."/>
+			<property name="Text"                       value="Reaction: After you win a [POW] challenge by 5 or more STR, gain 2 power for your faction. (Max 1 per challenge.)"/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="0"/>
@@ -574,6 +575,7 @@
 		<card id="0c97b091-96c0-46df-8442-e904025304fb" name="Maester Cressen">
 			<property name="Faction"                    value="Baratheon."/>
 			<property name="Type"                       value="Character"/>
+			<property name="Traits"                     value="Maester."/>
 			<property name="Text"                       value="Marshaling Action: Kneel Maester Cressen to choose a Condition attachment and discard it from play."/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
@@ -624,7 +626,7 @@
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="3"/>
-			<property name="Strength"                   value="1"/>
+			<property name="Strength"                   value="2"/>
 			<property name="Military"                   value="No"/>
 			<property name="Intrigue"                   value="Yes"/>
 			<property name="Power"                      value="Yes"/>
@@ -666,7 +668,7 @@
 			<property name="Faction"                    value="Baratheon."/>
 			<property name="Type"                       value="Character"/>
 			<property name="Traits"                     value="Lord. Small Council."/>
-			<property name="Text"                       value="Each player cannot stand more than 2 characters during the standing phase."/>
+			<property name="Text"                       value="Each player cannot stand more than 2 characters during the standing phase. (Non-character cards are not prevented from standing by this ability.)"/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="Yes"/>
 			<property name="Cost"                       value="6"/>
@@ -755,7 +757,7 @@
 		<card id="7e00c4df-c406-4560-9cb1-a18b1a180017" name="Lightbringer">
 			<property name="Faction"                    value="Baratheon."/>
 			<property name="Type"                       value="Attachment"/>
-			<property name="Traits"                     value="R'hllor."/>
+			<property name="Traits"                     value="R'hllor. Weapon."/>
 			<property name="Text"                       value="[Baratheon] character only.&#13;&#10;If attached character is Stannis Baratheon, he gains renown.&#13;&#10;Reaction: After attached character gains 1 or more power, stand it. (Limit once per phase.)"/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="Yes"/>
@@ -1235,11 +1237,11 @@
 			<property name="Keywords"                   value="Limited."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
-			<property name="Cost"                       value="4"/>
-			<property name="Strength"                   value="3"/>
-			<property name="Military"                   value="Yes"/>
-			<property name="Intrigue"                   value="No"/>
-			<property name="Power"                      value="Yes"/>
+			<property name="Cost"                       value="2"/>
+			<property name="Strength"                   value="2"/>
+			<property name="Military"                   value="No"/>
+			<property name="Intrigue"                   value="Yes"/>
+			<property name="Power"                      value="No"/>
 			<property name="CardNumber"                 value="93"/>
 			<property name="Illustrator"		        value="Marc Simonetti"/>
 		</card>
@@ -1316,6 +1318,7 @@
 			<property name="Keywords"                   value="Limited."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
+			<property name="Cost"                       value="0"/>
 			<property name="CardNumber"                 value="99"/>
 			<property name="Illustrator"		        value="Andrew Hall"/>
 		</card>
@@ -1334,7 +1337,7 @@
 			<property name="Type"                       value="Event"/>
 			<property name="Text"                       value="Play only if you control a [Lannister] Lord or Lady character.&#13;&#10;Challenges Action: Kneel your faction card to choose a character with printed cost X or lower controlled by an opponent, and return it to its owner's hand."/>
 			<property name="Unique"                     value="No"/>
-			<property name="Loyal"                      value="Yes"/>
+			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="X"/>
 			<property name="CardNumber"                 value="101"/>
 			<property name="Illustrator"		        value="Aaron Riley"/>
@@ -1430,7 +1433,7 @@
 		<card id="af50c8d3-6063-4bbc-a812-e74fa821360e" name="Obara Sand">
 			<property name="Faction"                    value="Martell."/>
 			<property name="Type"                       value="Character"/>
-			<property name="Traits"                     value="Bastard. Sandsnake."/>
+			<property name="Traits"                     value="Bastard. Sand Snake."/>
 			<property name="Text"                       value="Obara Sand may be declared as a defender during [POW] challenges in which you are the defending player, even while kneeling."/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
@@ -1568,10 +1571,12 @@
 		<card id="6b6df968-1810-4e4d-b739-9256caac008b" name="Blood Orange Grove">
 			<property name="Faction"                    value="Martell."/>
 			<property name="Type"                       value="Location"/>
+			<property name="Traits"                     value="Dorne."/>
 			<property name="Text"                       value="Marshaling Action: Kneel Blood Orange Grove to reduce the cost of the next [Martell] card you marshal this phase by 1."/>
 			<property name="Keywords"                   value="Limited."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
+			<property name="Cost"                       value="0"/>
 			<property name="CardNumber"                 value="118"/>
 			<property name="Illustrator"		        value="Sergey Glushakov"/>
 		</card>
@@ -1800,8 +1805,8 @@
 			<property name="Keywords"                   value="No attachments except Weapon."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
-			<property name="Cost"                       value="4"/>
-			<property name="Strength"                   value="3"/>
+			<property name="Cost"                       value="3"/>
+			<property name="Strength"                   value="4"/>
 			<property name="Military"                   value="No"/>
 			<property name="Intrigue"                   value="No"/>
 			<property name="Power"                      value="Yes"/>
@@ -2072,7 +2077,7 @@
 			<property name="Faction"                    value="Stark."/>
 			<property name="Type"                       value="Location"/>
 			<property name="Traits"                     value="The North. Winterfell."/>
-			<property name="Text"                       value="Challenges Action: Kneel Gates of Winterfell to reveal the top card of your deck. If it is a [Stark] card, draw it."/>
+			<property name="Text"                       value="Challenges Action: Kneel Gates of Winterfell to reveal the top card of your deck. If it is a [Stark] card, draw it. (Otherwise, return it facedown to the top of your deck.)"/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="2"/>
@@ -2098,6 +2103,7 @@
 			<property name="Keywords"                   value="Limited."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
+			<property name="Cost"                       value="0"/>
 			<property name="CardNumber"                 value="156"/>
 			<property name="Illustrator"		        value="Bill Thompson"/>
 		</card>
@@ -2183,7 +2189,7 @@
 			<property name="Faction"                    value="Targaryen."/>
 			<property name="Type"                       value="Character"/>
 			<property name="Traits"                     value="Lord. Merchant."/>
-			<property name="Text"                       value="Action: Pay 2 gold to choose and stand a character."/>
+			<property name="Text"                       value="Action: Pay 2 gold to choose and stand a character. (Limit once per phase.)"/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="5"/>
@@ -2344,7 +2350,7 @@
 			<property name="Faction"                    value="Targaryen."/>
 			<property name="Type"                       value="Location"/>
 			<property name="Traits"                     value="Essos."/>
-			<property name="Text"                       value="Reaction: After you win a [POW] challenge, sacrifice Dothraki Sea to put a Dothraki character into play from your hand. "/>
+			<property name="Text"                       value="Reaction: After you win a [POW] challenge, sacrifice Dothraki Sea to put a Dothraki character into play from your hand. (cannot be saved.)"/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="1"/>
@@ -2359,6 +2365,7 @@
 			<property name="Keywords"                   value="Limited."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
+			<property name="Cost"                       value="0"/>
 			<property name="CardNumber"                 value="175"/>
 			<property name="Illustrator"		        value="Mariusz Gandzel"/>
 		</card>
