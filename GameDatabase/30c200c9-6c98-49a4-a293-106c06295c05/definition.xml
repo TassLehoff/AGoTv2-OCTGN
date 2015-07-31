@@ -126,7 +126,8 @@
 			<cardaction  menu="Add Token Blue"                     shortcut="SHIFT+F7"                  execute="addBlueToken"/>
 			<cardaction  menu="Sub Token Blue"                     shortcut="SHIFT+F8"                  execute="subBlueToken"/>
 		</cardactions>
-		<cardaction  menu="Count Income" execute="countincome"/>
+		<cardaction  	 menu="Display card text" 	execute="displayCardText"/>
+		<cardaction  	 menu="Count Income" 		execute="countincome"/>
 	</table>
 	
 	<player summary=" Power: {#Power} / Gold: {#Gold}">

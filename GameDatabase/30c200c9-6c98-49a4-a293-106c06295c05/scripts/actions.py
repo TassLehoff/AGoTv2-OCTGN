@@ -176,6 +176,12 @@ def setup(group, x = 0, y = 0):
 #---------------------------------------------------------------------------
 # Table card actions
 #---------------------------------------------------------------------------
++def displayCardText(card, x = 0, y = 0):
++	mute()
++	
++	notify('{} - Card Text:'.format(card.name))
++	notify('{}'.format(card.Text))
+
 def displayErrata(card, x = 0, y = 0):
 	mute()
 	
@@ -411,7 +417,7 @@ def checkdeck(group):
 
 	for card in me.hand:
 		if card.name == "Fealty":
-			if NeutralCount<10:
+			if NeutralCount<15:
 					notify("Your Agenda is[{}]".format(card.name))
 			else:
 					notify("Your Agenda is[{}],You include {} neutral cards in your deck, which is not permitted.".format(card.name, NeutralCount, me))
