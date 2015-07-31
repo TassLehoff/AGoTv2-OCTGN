@@ -3,7 +3,7 @@
 <set name="01-Core Set"
 	 id="c64ccfe4-8aea-4c65-9611-3e46739813d9"
 	 gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-	 gameVersion="1.0.0.2"
+	 gameVersion="1.0.0.3"
 	 version="1.2">
 
 	<cards>
@@ -367,6 +367,7 @@
 			<property name="Military"                   value="No"/>
 			<property name="Intrigue"                   value="Yes"/>
 			<property name="Power"                      value="Yes"/>
+			<property name="GoldIncome"                 value="+1"/>
 			<property name="CardNumber"                 value="28"/>
 			<property name="Illustrator"		        value="Christopher Bradley"/>
 		</card>
