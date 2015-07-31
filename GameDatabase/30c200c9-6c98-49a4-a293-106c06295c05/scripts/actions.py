@@ -410,55 +410,55 @@ def checkdeck(group):
 			GreyjoyCount += 1
 
 	for card in me.hand:
-		if card.name == "Fealty":
+		if card.name == "Fealty":#效忠
 			if NeutralCount<10:
 					notify("Your Agenda is[{}]".format(card.name))
 			else:
 					notify("Your Agenda is[{}],You include {} neutral cards in your deck, which is not permitted.".format(card.name, NeutralCount, me))
 			return
-		elif card.name == "Banner of the Lion":
+		elif card.name == "Banner of the Lion":#金狮的旗帜
 			if LannisterCount<12:
 					notify("Your Agenda is[{}],You include {} Lannister cards in your deck, which is not permitted.".format(card.name, LannisterCount, me))
 			else:
 					notify("Your Agenda is[{}]".format(card.name))
 			return
-		elif card.name == "Banner of the Sun":
+		elif card.name == "Banner of the Sun":#太阳的旗帜
 			if MartellCount<12:
 					notify("Your Agenda is[{}],You include {} Martell cards in your deck, which is not permitted.".format(card.name, MartellCount, me))
 			else:
 					notify("Your Agenda is[{}]".format(card.name))
 			return
-		elif card.name == "Banner of the Watch":
+		elif card.name == "Banner of the Watch":#守夜人的旗帜
 			if NightCount<12:
 					notify("Your Agenda is[{}],You include {} Night's Watch cards in your deck, which is not permitted.".format(card.name, NightCount, me))
 			else:
 					notify("Your Agenda is[{}]".format(card.name))
 			return
-		elif card.name == "Banner of the Wolf":
+		elif card.name == "Banner of the Wolf":#奔狼的旗帜
 			if StarkCount<12:
 					notify("Your Agenda is[{}],You include {} Stark cards in your deck, which is not permitted.".format(card.name, StarkCount, me))
 			else:
 					notify("Your Agenda is[{}]".format(card.name))
 			return
-		elif card.name == "Banner of the Dragon":
+		elif card.name == "Banner of the Dragon":#真龙的旗帜
 			if TargaryenCount<12:
 					notify("Your Agenda is[{}],You include {} Targaryen cards in your deck, which is not permitted.".format(card.name, TargaryenCount, me))
 			else:
 					notify("Your Agenda is[{}]".format(card.name))
 			return
-		elif card.name == "Banner of the Rose":
+		elif card.name == "Banner of the Rose":#玫瑰的旗帜
 			if TyrellCount<12:
 					notify("Your Agenda is[{}],You include {} Tyrell cards in your deck, which is not permitted.".format(card.name, TyrellCount, me))
 			else:
 					notify("Your Agenda is[{}]".format(card.name))
 			return
-		elif card.name == "Banner of the Stag":
+		elif card.name == "Banner of the Stag":#雄鹿的旗帜
 			if BaratheonCount<12:
 					notify("Your Agenda is[{}],You include {} Baratheon cards in your deck, which is not permitted.".format(card.name, BaratheonCount, me))
 			else:
 					notify("Your Agenda is[{}]".format(card.name))
 			return
-		elif card.name == "Banner of the Kraken":
+		elif card.name == "Banner of the Kraken":#海怪的旗帜
 			if GreyjoyCount<12:
 					notify("Your Agenda is[{}],You include {} Grejoy cards in your deck, which is not permitted.".format(card.name, GreyjoyCount, me))
 			else:
