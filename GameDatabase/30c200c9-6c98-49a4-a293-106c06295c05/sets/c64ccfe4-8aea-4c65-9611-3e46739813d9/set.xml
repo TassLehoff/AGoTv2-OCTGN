@@ -2506,7 +2506,7 @@
 			<property name="Faction"                    value="Tyrell."/>
 			<property name="Type"                       value="Character"/>
 			<property name="Traits"                     value="Lady."/>
-			<property name="Text"                       value="Reaction: After you win an [INT] challenge in which The Queen of Thorns is participating, put a [Tyrell] character with printed cost 6 or lower into play from your hand."/>
+			<property name="Text"                       value="Reaction: After you win a challenge in which The Queen of Thorns is participating, put a [Tyrell] character with printed cost 6 or lower into play from your hand."/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="Yes"/>
 			<property name="Cost"                       value="7"/>
