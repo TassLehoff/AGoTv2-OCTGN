@@ -19,67 +19,67 @@
 		<!-- Location specific blocks -->
 		<block type="text" id="LocationCardKeywords">
 			<location x="70" y="415"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="34" width="330"/>
 		</block>
 		<block type="text" id="LocationCardText">
 			<location x="70" y="440"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="120" width="330" shrinktofit="True"/>
 		</block>
 		
 		<!-- Character specific blocks -->		
 		<block type="text" id="CharacterCardKeywords">
 			<location x="20" y="420"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="34" width="380"/>
 		</block>
 		<block type="text" id="CharacterCardText">
 			<location x="20" y="440"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="110" width="380" shrinktofit="True"/>
 		</block>
 			
 		<!-- Agenda specific blocks -->
 		<block type="text" id="agendaCardText">
 			<location x="20" y="420"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="110" width="380" shrinktofit="True"/>
 		</block>
 		
 		<!-- Plot specific blocks -->
 		<block type="text" id="plotCardKeywords">
 			<location x="20" y="290"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="34" width="510"/>
 		</block>
 		<block type="text" id="plotCardText">
 			<location x="20" y="305"/>
-			<text color="#000000" size="18" font="fonts/text.otf"/>
+			<text color="#000000" size="18" font="fonts/text.ttf"/>
 			<wordwrap height="55" width="510" shrinktofit="True"/>
 		</block>
 		
 		<!-- Event secific blocks -->
 		<block type="text" id="eventCardKeywords">
 			<location x="47" y="397"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="34" width="331"/>
 		</block>
 		<block type="text" id="eventCardText">
 			<location x="47" y="422"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="135" width="330" shrinktofit="True"/>
 		</block>
 		
 		<!-- Attachment secific blocks -->
 		<block type="text" id="AttachmentCardKeywords">
 			<location x="46" y="391"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="34" width="330"/>
 		</block>
 		<block type="text" id="AttachmentCardText">
 			<location x="46" y="414"/>
-			<text color="#000000" size="20" font="fonts/text.otf"/>
+			<text color="#000000" size="20" font="fonts/text.ttf"/>
 			<wordwrap height="110" width="330" shrinktofit="True"/>
 		</block>
 	</blocks>	
