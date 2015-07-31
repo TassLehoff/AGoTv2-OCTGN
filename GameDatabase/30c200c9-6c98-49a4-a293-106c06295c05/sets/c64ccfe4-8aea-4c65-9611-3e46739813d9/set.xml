@@ -3,8 +3,8 @@
 <set name="01-Core Set"
 	 id="c64ccfe4-8aea-4c65-9611-3e46739813d9"
 	 gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-	 gameVersion="1.0.0.1"
-	 version="1.1">
+	 gameVersion="1.0.0.2"
+	 version="1.2">
 
 	<cards>
 		<card id="de88edda-f5a4-4985-8ac1-2b8205c13416" name="A Clash of Kings" size="HorizontalCards">
@@ -2685,7 +2685,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Agenda"/>
 			<property name="Traits"                     value="Banner."/>
-			<property name="Text"						value="You may include non-loyal [Greyjoy] cards in your deck.&#13;&#10;You must include at least 12 [Baratheon] cards in your deck."/>
+			<property name="Text"						value="You may include non-loyal [Greyjoy] cards in your deck.&#13;&#10;You must include at least 12 [Greyjoy] cards in your deck."/>
 			<property name="CardNumber"                 value="199B"/>
 			<property name="Illustrator"		        value="David Griffith"/>
 		</card>
@@ -2699,7 +2699,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Agenda"/>
 			<property name="Traits"                     value="Banner."/>
-			<property name="Text"						value="You may include non-loyal [Lannister] cards in your deck.&#13;&#10;You must include at least 12 [Baratheon] cards in your deck."/>
+			<property name="Text"						value="You may include non-loyal [Lannister] cards in your deck.&#13;&#10;You must include at least 12 [Lannister] cards in your deck."/>
 			<property name="CardNumber"                 value="200B"/>
 			<property name="Illustrator"		        value="David Griffith"/>
 		</card>
@@ -2713,7 +2713,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Agenda"/>
 			<property name="Traits"                     value="Banner."/>
-			<property name="Text"						value="You may include non-loyal [Martell] cards in your deck.&#13;&#10;You must include at least 12 [Baratheon] cards in your deck."/>
+			<property name="Text"						value="You may include non-loyal [Martell] cards in your deck.&#13;&#10;You must include at least 12 [Martell] cards in your deck."/>
 			<property name="CardNumber"                 value="201B"/>
 			<property name="Illustrator"		        value="David Griffith"/>
 		</card>
@@ -2727,7 +2727,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Agenda"/>
 			<property name="Traits"                     value="Banner."/>
-			<property name="Text"						value="You may include non-loyal [Night's Watch] cards in your deck.&#13;&#10;You must include at least 12 [Baratheon] cards in your deck."/>
+			<property name="Text"						value="You may include non-loyal [Night's Watch] cards in your deck.&#13;&#10;You must include at least 12 [Night's Watch] cards in your deck."/>
 			<property name="CardNumber"                 value="202B"/>
 			<property name="Illustrator"		        value="David Griffith"/>
 		</card>
@@ -2741,7 +2741,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Agenda"/>
 			<property name="Traits"                     value="Banner."/>
-			<property name="Text"						value="You may include non-loyal [Stark] cards in your deck.&#13;&#10;You must include at least 12 [Baratheon] cards in your deck."/>
+			<property name="Text"						value="You may include non-loyal [Stark] cards in your deck.&#13;&#10;You must include at least 12 [Stark] cards in your deck."/>
 			<property name="CardNumber"                 value="203B"/>
 			<property name="Illustrator"		        value="David Griffith"/>
 		</card>
@@ -2755,7 +2755,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Agenda"/>
 			<property name="Traits"                     value="Banner."/>
-			<property name="Text"						value="You may include non-loyal [Targaryen] cards in your deck.&#13;&#10;You must include at least 12 [Baratheon] cards in your deck."/>
+			<property name="Text"						value="You may include non-loyal [Targaryen] cards in your deck.&#13;&#10;You must include at least 12 [Targaryen] cards in your deck."/>
 			<property name="CardNumber"                 value="204B"/>
 			<property name="Illustrator"		        value="David Griffith"/>
 		</card>
@@ -2769,7 +2769,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Agenda"/>
 			<property name="Traits"                     value="Banner."/>
-			<property name="Text"						value="You may include non-loyal [Tyrell] cards in your deck.&#13;&#10;You must include at least 12 [Baratheon] cards in your deck."/>
+			<property name="Text"						value="You may include non-loyal [Tyrell] cards in your deck.&#13;&#10;You must include at least 12 [Tyrell] cards in your deck."/>
 			<property name="CardNumber"                 value="205B"/>
 			<property name="Illustrator"		        value="David Griffith"/>
 		</card>
