@@ -3,8 +3,8 @@
 <set name="01-Core Set"
 	 id="c64ccfe4-8aea-4c65-9611-3e46739813d9"
 	 gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-	 gameVersion="1.0.0.3"
-	 version="1.2">
+	 gameVersion="1.0.0.4"
+	 version="1.4">
 
 	<cards>
 		<card id="de88edda-f5a4-4985-8ac1-2b8205c13416" name="A Clash of Kings" size="HorizontalCards">
@@ -527,7 +527,7 @@
 		<card id="38dd5d15-7214-4c68-9cc4-0d2abd1b2140" name="Put to the Sword">
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Event"/>
-			<property name="Text"                       value="Reaction: After you win a [MIL] challenge by 5 or more STR, choose and kill a character controlled by the losing opponent. (Max 1 per challenge.)"/>
+			<property name="Text"                       value="Reaction: After you win a [MIL] challenge by 5 or more STR as the attacking player, choose and kill a character controlled by the losing opponent. (Max 1 per challenge.)"/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="2"/>
