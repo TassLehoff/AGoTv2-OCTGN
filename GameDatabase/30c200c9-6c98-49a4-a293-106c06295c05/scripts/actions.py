@@ -417,7 +417,7 @@ def checkdeck(group):
 
 	for card in me.hand:
 		if card.name == "Fealty":
-			if NeutralCount<15:
+			if NeutralCount<16:
 					notify("Your Agenda is[{}]".format(card.name))
 			else:
 					notify("Your Agenda is[{}],You include {} neutral cards in your deck, which is not permitted.".format(card.name, NeutralCount, me))

@@ -164,6 +164,7 @@
 			<property name="PlotClaim"                  value="1"/>
 			<property name="PlotReserve"                value="5"/>
 			<property name="CardNumber"                 value="12"/>
+			<property name="DeckLimit"                  value="1"/>
 			<property name="Illustrator"		        value="Thomas Denmark"/>
 		</card>
 		<card id="424194c0-ad9c-473b-b254-40b1274152ba" name="Heads on Spikes" size="HorizontalCards">
@@ -1990,7 +1991,7 @@
 			<property name="Faction"                    value="Stark."/>
 			<property name="Type"                       value="Character"/>
 			<property name="Traits"                     value="Direwolf."/>
-			<property name="Text"                       value="While you control Bran Stark, he gains insight.&#13;&#10;Reaction: After Summer enters play, return a [Stark] character from your discard or dead pile to your hand."/>
+			<property name="Text"                       value="While you control Bran Stark, he gains insight.&#13;&#10;Reaction: After Summer enters play, return a [Stark] character with printed STR 2 or lower from your discard or dead pile to your hand."/>
 			<property name="Keywords"                   value="No attachments."/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="Yes"/>
