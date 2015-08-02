@@ -2352,7 +2352,7 @@
 			<property name="Faction"                    value="Targaryen."/>
 			<property name="Type"                       value="Location"/>
 			<property name="Traits"                     value="Essos."/>
-			<property name="Text"                       value="Reaction: After you win a [POW] challenge, sacrifice Dothraki Sea to put a Dothraki character into play from your hand. (cannot be saved.)"/>
+			<property name="Text"                       value="Reaction: After you win a [POW] challenge, sacrifice Dothraki Sea to put a Dothraki character into play from your hand. At the end of the phase, if that card is still in play, return it to your hand (cannot be saved)."/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="1"/>
