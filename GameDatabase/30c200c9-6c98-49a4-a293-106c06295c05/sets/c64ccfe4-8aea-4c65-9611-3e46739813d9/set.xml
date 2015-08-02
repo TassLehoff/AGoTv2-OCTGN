@@ -340,7 +340,7 @@
 			<property name="Faction"                    value="Neutral."/>
 			<property name="Type"                       value="Plot"/>
 			<property name="Traits"                     value="Scheme. War."/>
-			<property name="Text"                       value="When Revealed: Each player chooses up to 3 characters he or she controls. Kill each character not chosen."/>
+			<property name="Text"                       value="When Revealed: Each player chooses up to 3 characters he or she controls. Kill each character not chosen (cannot be saved)."/>
 			<property name="Loyal"                      value="No"/>
 			<property name="PlotGoldIncome"             value="4"/>
 			<property name="PlotInitiative"             value="7"/>
@@ -1021,7 +1021,7 @@
 			<property name="Faction"                    value="Greyjoy."/>
 			<property name="Type"                       value="Attachment"/>
 			<property name="Traits"                     value="Weapon."/>
-			<property name="Text"                       value="Reaction: After you win a challenge in which attached character participated as an attacker, sacrifice Throwing Axe to choose and kill a defending character."/>
+			<property name="Text"                       value="Ironborn character only.&#13;&#10;Reaction: After you win a challenge in which attached character participated as an attacker, sacrifice Throwing Axe to choose and kill a defending character."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="1"/>
