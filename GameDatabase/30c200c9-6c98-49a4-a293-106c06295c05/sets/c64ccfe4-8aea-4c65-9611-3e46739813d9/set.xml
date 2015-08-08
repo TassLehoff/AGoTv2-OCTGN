@@ -3,8 +3,8 @@
 <set name="01-Core Set"
 	 id="c64ccfe4-8aea-4c65-9611-3e46739813d9"
 	 gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-	 gameVersion="1.0.0.4"
-	 version="1.4">
+	 gameVersion="1.0.0.5"
+	 version="1.5">
 
 	<cards>
 		<card id="de88edda-f5a4-4985-8ac1-2b8205c13416" name="A Clash of Kings" size="HorizontalCards">
@@ -386,7 +386,7 @@
 			<property name="Intrigue"                   value="Yes"/>
 			<property name="Power"                      value="No"/>
 			<property name="CardNumber"                 value="29"/>
-			<property name="Illustrator"		        value="Aleksander Karcz"/>
+			<property name="Illustrator"		        value="Mike Capprotti"/>
 		</card>
 		<card id="be9304f2-bb5d-4d19-8fbe-4efb6ee24f29" name="Rattleshirt's Raiders">
 			<property name="Faction"                    value="Neutral."/>
@@ -1135,7 +1135,7 @@
 			<property name="Intrigue"                   value="No"/>
 			<property name="Power"                      value="Yes"/>
 			<property name="CardNumber"                 value="86"/>
-			<property name="Illustrator"		        value="Cassandra Bolan"/>
+			<property name="Illustrator"		        value="Magali Villeneuve"/>
 		</card>
 		<card id="a8854084-67e5-4955-89db-3d9cb1337789" name="Ser Jaime Lannister">
 			<property name="Faction"                    value="Lannister."/>
@@ -1150,7 +1150,7 @@
 			<property name="Intrigue"                   value="Yes"/>
 			<property name="Power"                      value="No"/>
 			<property name="CardNumber"                 value="87"/>
-			<property name="Illustrator"		        value="Tommy Arnold"/>
+			<property name="Illustrator"		        value="Michael Komarck"/>
 		</card>
 		<card id="5e826f43-d1d0-4c3c-8939-789ce55bcf1d" name="The Tickler">
 			<property name="Faction"                    value="Lannister."/>
@@ -1247,11 +1247,11 @@
 			<property name="CardNumber"                 value="93"/>
 			<property name="Illustrator"		        value="Marc Simonetti"/>
 		</card>
-		<card id="d2b926e3-2c0a-4575-b144-bf27ced1e5b3" name="Steward of the Rock">
+		<card id="d2b926e3-2c0a-4575-b144-bf27ced1e5b3" name="Lannisport Merchant">
 			<property name="Faction"                    value="Lannister."/>
 			<property name="Type"                       value="Character"/>
 			<property name="Traits"                     value="Ally. Steward."/>
-			<property name="Text"                       value="Marshaling Action: Kneel Steward of the Rock to reduce the cost of the next [Lannister] character you marshal this phase by 1."/>
+			<property name="Text"                       value="Marshaling Action: Kneel Lannisport Merchant to reduce the cost of the next [Lannister] character you marshal this phase by 1."/>
 			<property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="No"/>
 			<property name="Cost"                       value="1"/>
@@ -1260,7 +1260,7 @@
 			<property name="Intrigue"                   value="No"/>
 			<property name="Power"                      value="Yes"/>
 			<property name="CardNumber"                 value="94"/>
-			<property name="Illustrator"		        value="Tim Arney-O'Neil"/>
+			<property name="Illustrator"		        value="Leonardo Borazio"/>
 		</card>
 		<card id="1e240486-c214-4fae-aa9b-690a08a8c9aa" name="The Queen's Assassin">
 			<property name="Faction"                    value="Lannister."/>
