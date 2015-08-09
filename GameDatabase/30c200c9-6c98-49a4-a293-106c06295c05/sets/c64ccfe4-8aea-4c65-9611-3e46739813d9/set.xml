@@ -497,6 +497,7 @@
 			<property name="Cost"                       value="2"/>
 			<property name="Reserve"		            value="+1"/>
 			<property name="CardNumber"                 value="38"/>
+			<property name="Dominance"                 	value="8"/>
 			<property name="Illustrator"		        value="Jacob Murray"/>
 		</card>
 		<card id="90452d99-6a6f-4d0d-b3a1-bb92e7110d1d" name="The Kingsroad">
