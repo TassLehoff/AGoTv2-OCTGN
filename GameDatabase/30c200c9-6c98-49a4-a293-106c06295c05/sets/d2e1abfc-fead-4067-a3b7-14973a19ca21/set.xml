@@ -3,8 +3,8 @@
 <set name="00-Markers"
 	 id="d2e1abfc-fead-4067-a3b7-14973a19ca21" 
 	 gameId="30c200c9-6c98-49a4-a293-106c06295c05" 
-	 gameVersion="1.0.0.0" 
-	 version="1.0">
+	 gameVersion="1.0.0.5" 
+	 version="1.1">
 	 
 	<markers>
 		<marker id="4e8046ba-759b-428c-917f-7e9268a5af90" name="gold"/>
@@ -14,4 +14,10 @@
 		<marker id="6238a357-41b7-4bca-b394-925fc1b2caf8" name="TokenRed"/>
 		<marker id="99452bc7-d95b-4c54-8577-41d98dd3e30b" name="TokenBlue"/>
 	</markers>
+	
+	<cards>
+		<card id="73a6655b-60b6-4080-b428-f4e0099e0f77" name="1st Player Token">
+		<property name="Type" value="Internal" />
+		</card>
+	</cards>
 </set>
