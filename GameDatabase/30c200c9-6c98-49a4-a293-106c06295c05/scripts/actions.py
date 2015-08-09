@@ -656,7 +656,6 @@ def challenge(group, x=0, y=0):
 						person.counters['Str'].value += card.markers[STR_Up]
 					if card.markers[Burn] > 0:
 						person.counters['Str'].value -= card.markers[Burn]
-				else:return
 		notify("{}'s total strength for such challenge is {}.".format(person,person.counters['Str'].value))
 	
 def challengeAnnounce(group, x=0, y=0):
