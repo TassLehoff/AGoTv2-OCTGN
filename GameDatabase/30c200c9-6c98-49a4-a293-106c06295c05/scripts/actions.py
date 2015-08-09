@@ -12,8 +12,8 @@ TokenBlue = ("TokenBlue", "99452bc7-d95b-4c54-8577-41d98dd3e30b") #The GUID from
 MilitaryColor = "#ae0603" #A shade of red from the Military Icon
 IntrigueColor = "#006b34" #A shade of green from the Intrigue Icon
 PowerColor = "#1a4d8f" #A shade of blue from the Power Icon
-GameURL = "http://tinyurl.com/op4me9g"
-FAQ_URL = "http://www.fantasyflightgames.com/ffg_content/agotlcg/support/FAQ-TR-updates/AGoT-FAQ.pdf"
+GameURL = "https://drive.google.com/folderview?id=0BzUduMHRwqG0fk55b3hiX2d6aEN3Tk9VTGpOQWQxMlNfOGc2cUxnbUltWExRMjlsamlTWHc&usp=sharing#list"
+#FAQ_URL = "http://www.fantasyflightgames.com/ffg_content/agotlcg/support/FAQ-TR-updates/AGoT-FAQ.pdf"
 
 	
 #---------------------------------------------------------------------------

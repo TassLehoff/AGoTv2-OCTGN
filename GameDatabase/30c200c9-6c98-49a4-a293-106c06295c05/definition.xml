@@ -3,14 +3,14 @@
 <game name="A Game of Thrones - The Card Game Second Edition"
 	  id="30c200c9-6c98-49a4-a293-106c06295c05"
 	  octgnVersion="3.1.0.0"
-	  version="1.0.0.5"
+	  version="1.0.0.6"
 	  scriptVersion="3.1.0.1"
 	  markersize="16"
 	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	  tags="OCTGN aGoT LCG Game of Thrones"
 	  description="A Game of Thrones: The Card Game Second Edition, featuring cunning plots, iconic characters, and deadly encounters for two players. "
-	  setsurl="http://tinyurl.com/p93kpb4"
-	  gameurl="http://tinyurl.com/phqwgjq"
+	  setsurl="https://drive.google.com/folderview?id=0BzUduMHRwqG0fk55b3hiX2d6aEN3Tk9VTGpOQWQxMlNfOGc2cUxnbUltWExRMjlsamlTWHc&usp=sharing#list"
+	  gameurl="http://octgn.gamersjudgement.com/wordpress/agot2/"
 	  authors="TassLehoff, Snowfrost, Khudzlin, Hedjman, Gualdo, DC Denis"
 	  iconurl="http://s29.postimg.org/qsmlsels5/Boite_de_base.png">
 
@@ -109,8 +109,8 @@
 			<groupaction menu="Roll a X-sided"                     shortcut="ALT+8"                      execute="xSided"/>
 		</groupactions>		
 		<groupactions    menu="Administration">		
-			<groupaction menu="Go-to: aGoT OCTGN googleDrive"      shortcut="CTRL+G"                     execute="googleDriveWebsite"/>
-			<groupaction menu="Go-to: FFG's aGoT FAQ"                                                    execute="faqWebsite"/>
+			<groupaction menu="Download: Images Packs"             shortcut="CTRL+G"                     execute="googleDriveWebsite"/>
+			<groupaction menu="Download: FFG's AGoT FAQ"                                                 execute="faqWebsite"/>
 		</groupactions>
 		<cardaction      menu="Kneel/Stand"                        shortcut="F9"     default="True"      execute="kneel"/>
 		<cardaction      menu="Flip Card"                          shortcut="F8"                         execute="flipcard"/>		
