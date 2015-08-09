@@ -169,7 +169,7 @@ def flipcard(card, x = 0, y = 0):
     else:
         card.isFaceUp = True
         notify("{} turns {} face up.".format(me, card))
-  
+
 def addPower(card, x = 0, y = 0):
     mute()
     notify("{} adds a Power to {}.".format(me, card))
@@ -191,7 +191,7 @@ def addRedToken(card, x = 0, y = 0):
 def addBlueToken(card, x = 0, y = 0):
 	mute()
 	card.markers[TokenBlue] += 1
-      
+   
 def subPower(card, x = 0, y = 0):
     mute()
     notify("{} subtracts a Power to {}.".format(me, card))
@@ -656,6 +656,7 @@ def challenge(group, x=0, y=0):
 						person.counters['Str'].value += card.markers[STR_Up]
 					if card.markers[Burn] > 0:
 						person.counters['Str'].value -= card.markers[Burn]
+				else:return
 		notify("{}'s total strength for such challenge is {}.".format(person,person.counters['Str'].value))
 	
 def challengeAnnounce(group, x=0, y=0):
