@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<templates>
-    
+<templates>    
     <blocks>
         <!-- Dummy blocks used if a template section only looks for conditionals -->
         <block type="text" id="dummyText">
@@ -84,7 +83,6 @@
         </block>
     </blocks>   
     
-
         
 <!-- AGENDA CARD TEMPLATE -->
     <template src="proxy/proxyImages/Neutral.png"     default="False">
@@ -345,8 +343,7 @@
             </link>
         </textblocks>
     </template>
-        
-        
+              
 <!-- LOCATION CARD TEMPLATE -->
     <!-- Neutral -->
     <template src="proxy/proxyImages/Neutral.png"     default="False">
@@ -780,7 +777,6 @@
             </link>
         </textblocks>
     </template>
-
     
 <!-- ATTACHMENT CARD TEMPLATE -->
     <!-- Neutral -->
@@ -998,8 +994,7 @@
             </link>
         </textblocks>
     </template>
-    
-    
+        
 <!-- UNKNOWN CARD TEMPLATE -->
     <template src="proxy/proxyImages/unknownCard.png" default="True">
         <matches>

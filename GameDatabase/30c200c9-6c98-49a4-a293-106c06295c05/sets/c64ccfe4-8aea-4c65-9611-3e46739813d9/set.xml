@@ -1961,7 +1961,7 @@
             <property name="Faction"                    value="Stark."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Lord."/>
-            <property name="Text"                       value="Reaction: After a [Stark] character you control is killed or sacrificed, stand each character you control. (Limit once per round.)"/>
+            <property name="Text"                       value="Reaction: After a [Stark] character you control is sacrificed or killed, stand each character you control. (Limit once per round.)"/>
             <property name="Keywords"                   value="Renown."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="Yes"/>
