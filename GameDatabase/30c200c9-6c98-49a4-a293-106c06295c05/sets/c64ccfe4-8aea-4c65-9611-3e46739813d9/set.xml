@@ -202,7 +202,7 @@
             <property name="PlotGoldIncome"             value="4"/>
             <property name="PlotInitiative"             value="8"/>
             <property name="PlotClaim"                  value="1"/>
-            <property name="PlotReserve"                value="6"/>
+            <property name="PlotReserve"                value="5"/>
             <property name="CardNumber"                 value="15"/>
             <property name="Illustrator"                value="Eva Maria Toker"/>
         </card>
