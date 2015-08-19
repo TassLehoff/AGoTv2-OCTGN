@@ -17,6 +17,10 @@
     <scripts>
         <script src="scripts/actions.py"/>
     </scripts>
+    
+    <events>
+        <event name="OnLoadDeck" action="on_load_deck" />
+    </events>
 
     <proxygen definitionsrc="proxy/proxydef.xml">
     </proxygen> 
@@ -38,9 +42,7 @@
                   image="cards/casual.jpg"
                   playerCount="2" />
     </gameModes>
-    <events>
-        <event name="OnLoadDeck" action="on_load_deck" />
-    </events>
+    
     <card back="cards/back.png" front="cards/front.png" width="63" height="88" cornerRadius="2">
         <property name="Faction"        type="String"/>
         <property name="Type"           type="String"/>
