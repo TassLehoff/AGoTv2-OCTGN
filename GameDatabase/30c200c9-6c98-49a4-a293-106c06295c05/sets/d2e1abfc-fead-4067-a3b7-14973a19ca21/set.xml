@@ -3,8 +3,8 @@
 <set name="00-Markers"
 	 id="d2e1abfc-fead-4067-a3b7-14973a19ca21" 
 	 gameId="30c200c9-6c98-49a4-a293-106c06295c05" 
-	 gameVersion="1.0.0.5" 
-	 version="1.1">
+	 gameVersion="1.0.0.8" 
+	 version="1.2">
 	 
 	<markers>
 		<marker id="4e8046ba-759b-428c-917f-7e9268a5af90" name="gold"/>

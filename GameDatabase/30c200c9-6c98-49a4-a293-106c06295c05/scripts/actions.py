@@ -438,7 +438,7 @@ def endturn(group, x = 0, y = 0):
 				count += 1
 			else:return
 	else:
-		notify("你无需弃除手牌.")
+		notify("Hand size is ok.")
 	for c in table: 
 		if c.Type == "Plot" and c.controller == me:
 			if len(me.piles['Plot Deck']) > 0:
