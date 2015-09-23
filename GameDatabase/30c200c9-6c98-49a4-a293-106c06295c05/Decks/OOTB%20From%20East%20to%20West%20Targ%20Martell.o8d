@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="30c200c9-6c98-49a4-a293-106c06295c05" sleeveid="0">
+  <section name="Faction" shared="False">
+    <card qty="1" id="fc822b99-e4df-49f4-beb2-a0e082f224bf">House Targaryen</card>
+  </section>
+  <section name="Agenda" shared="False" />
+  <section name="Characters" shared="False">
+    <card qty="1" id="a2f21413-0272-47dc-a197-e364aa942d4c">Daenerys Targaryen</card>
+    <card qty="1" id="46679e36-a9ce-4e35-ab32-41a6bb88e266">Drogon</card>
+    <card qty="1" id="09903f79-6155-4a63-9b52-e10fb2e69898">Khal Drogo</card>
+    <card qty="1" id="f5f343ea-a561-415b-adfd-9afdd65820c2">Magister Illyrio</card>
+    <card qty="1" id="ac263d0d-d7db-49e7-bdc4-2e131d95aad4">Rhaegal</card>
+    <card qty="1" id="1de2665b-53be-4e48-8c5c-42f93fdf40a3">Ser Jorah Mormont</card>
+    <card qty="1" id="4819b269-173d-4335-8248-99f0cb4b80a2">Viserion</card>
+    <card qty="1" id="6580b898-de89-4a6d-89b4-72cfc3b505e6">Viserys Targaryen</card>
+    <card qty="1" id="7177a6da-3afb-4218-be7e-4ca9c03c2157">Braided Warrior</card>
+    <card qty="1" id="a575226f-fba6-4d79-bdf7-e5a0c2e0d192">Handmaiden</card>
+    <card qty="1" id="0e2c6c02-c6c7-4273-825f-1d03b24998a2">Targaryen Loyalist</card>
+    <card qty="1" id="c8012b39-41e9-4276-a83d-149206ea958a">Unsullied</card>
+    <card qty="1" id="7412a0da-c314-4852-ab1f-04bb163dac39">Areo Hotah</card>
+    <card qty="1" id="fa34ed25-de84-45c9-89c1-1428ec505458">Arianne Martell</card>
+    <card qty="1" id="295184b5-9b32-45d7-a870-c2a5580e1f75">Doran Martell</card>
+    <card qty="1" id="b32b7ea7-7997-4b02-8b2f-25ad4d1072fa">Edric Dayne</card>
+    <card qty="1" id="4f58fa4d-7172-4466-86eb-32b2bb91b516">Maester Caleotte</card>
+    <card qty="1" id="af50c8d3-6063-4bbc-a812-e74fa821360e">Obara Sand</card>
+    <card qty="1" id="73a43b0f-8337-4e71-96b7-9553d5d57ddf">The Red Viper</card>
+    <card qty="1" id="c549499d-6a95-460a-a075-c4592d2f768f">Desert Scavenger</card>
+    <card qty="1" id="f70034a0-01a1-4e77-8dde-44c1cd7d3f40">Dornish Paramour</card>
+    <card qty="1" id="e0abbec3-188e-4cc1-8a86-5142a47367cd">Greenblood Trader</card>
+    <card qty="1" id="7f066373-ab06-4601-943f-3fcd0e7eabf3">House Dayne Knight</card>
+    <card qty="1" id="8e5687ab-2605-49d1-9af9-785dc32dc07b">Palace Spearman</card>
+    <card qty="1" id="21dda206-536e-4944-8158-b3d174e2b872">Wildling Horde</card>
+  </section>
+  <section name="Locations" shared="False">
+    <card qty="1" id="06803230-d3a4-46f7-935a-1a7314839b9e">Plaza of Punishment</card>
+    <card qty="1" id="1916c9ad-78da-42c7-9d22-8f059438dadc">Dothraki Sea</card>
+    <card qty="1" id="bc9a511e-9f90-4b4f-892e-e8ad46103da9">Illyrio's Estate</card>
+    <card qty="1" id="982acc7e-86c0-4bdd-84da-3b05e53dffa1">Ghaston Grey</card>
+    <card qty="1" id="f2772a6e-2ed4-4fb9-8699-5497aee496e3">Sunspear</card>
+    <card qty="1" id="6b6df968-1810-4e4d-b739-9256caac008b">Blood Orange Grove</card>
+  </section>
+  <section name="Events" shared="False">
+    <card qty="1" id="aae782b7-cd97-4818-b56a-d1dafe6f80de">Dracarys!</card>
+    <card qty="1" id="06a715e0-f26c-4894-8610-63353d73e0fd">Fire and Blood</card>
+    <card qty="1" id="393fb603-c449-4043-a73f-21c4b47be039">Waking the Dragon</card>
+    <card qty="1" id="427a5213-1be5-4b36-94be-04a5b3486575">Doran's Game</card>
+    <card qty="1" id="ad97966b-2d52-4b03-a8f4-f51c8a63a8c9">Unbowed, Unbent, Unbroken</card>
+    <card qty="1" id="9aafaad7-3f74-4aff-ba0c-bf19e5de0bdf">Confinement</card>
+    <card qty="1" id="38dd5d15-7214-4c68-9cc4-0d2abd1b2140">Put to the Sword</card>
+    <card qty="1" id="997f1584-7092-4895-ac40-fc9fd98891bc">Put to the Torch</card>
+  </section>
+  <section name="Attachments" shared="False">
+    <card qty="1" id="99a12a9c-6e83-43bd-8947-0cc47ffcd02a">Drogo's Arakh</card>
+    <card qty="1" id="9e6bf142-159b-4a3b-9d4c-d8bf233a6f0c">Dawn</card>
+    <card qty="1" id="a8bebc54-d01c-424d-8839-460ec09b733f">Milk of the Poppy</card>
+    <card qty="1" id="08ddc660-54d3-4e5e-8dee-516cd66ff1c9">Noble Lineage</card>
+  </section>
+  <section name="Plots" shared="False">
+    <card qty="1" id="0ed58a09-7482-4632-b88f-309ae5621c2e">A Feast for Crows</card>
+    <card qty="1" id="0fb3ad4b-5cf3-49e9-a33f-484ecafeabf8">A Noble Cause</card>
+    <card qty="1" id="12f6e8de-5627-4e71-90f6-1f79f17be44e">Power Behind the Throne</card>
+    <card qty="1" id="a02bce64-e292-487e-a666-cd07b4a11e59">A Storm of Swords</card>
+    <card qty="1" id="de88edda-f5a4-4985-8ac1-2b8205c13416">A Clash of Kings</card>
+    <card qty="1" id="a380b0e0-610c-47f9-ac9f-ae12163b45fd">Summons</card>
+    <card qty="1" id="1b362220-c8c2-4600-b204-06342e58b09c">Counting Coppers</card>
+  </section>
+  <section name="Titles" shared="False" />
+  <notes><![CDATA[]]></notes>
+</deck>

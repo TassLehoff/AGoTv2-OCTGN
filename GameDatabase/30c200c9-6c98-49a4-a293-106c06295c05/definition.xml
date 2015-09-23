@@ -3,8 +3,8 @@
 <game name="A Game of Thrones - The Card Game Second Edition"
       id="30c200c9-6c98-49a4-a293-106c06295c05"
       octgnVersion="3.1.0.0"
-      version="1.0.0.8"
-      scriptVersion="3.1.0.1"
+      version="1.0.0.9"
+      scriptVersion="3.1.0.2"
       markersize="16"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       tags="OCTGN aGoT LCG Game of Thrones"
@@ -17,9 +17,14 @@
     <scripts>
         <script src="scripts/actions.py"/>
     </scripts>
-    
+    <globalvariables>
+	    <globalvariable name="firstplay" value="True" />
+        <globalvariable name="AID"       value="" />
+        <globalvariable name="BID"       value="" />
+		<globalvariable name="numplayer" value="0" />
+	</globalvariables>
     <events>
-        <event name="OnLoadDeck" action="on_load_deck" />
+        <event name="OnDeckLoaded" action="onloaddeck" />
     </events>
 
     <proxygen definitionsrc="proxy/proxydef.xml">
@@ -46,9 +51,9 @@
     <card back="cards/back.png" front="cards/front.png" width="63" height="88" cornerRadius="2">
         <property name="Faction"        type="String"/>
         <property name="Type"           type="String"/>
-        <property name="Traits"         type="String"/>
+        <property name="Traits"         type="String"    textKind="Tokens"/>
         <property name="Text"           type="String"/>
-        <property name="Keywords"       type="String"/>
+        <property name="Keywords"       type="String"    textKind="Tokens"/>
         <property name="Unique"         type="String"/>
         <property name="Loyal"          type="String"/>
         <property name="Cost"           type="String"/>
@@ -68,7 +73,7 @@
         <property name="DeckLimit"      type="String"/>
         <property name="Illustrator"    type="String"/>
         <property name="CardNumber"     type="String"/>
-        <property name="Dominance"      type="String"/>
+        <property name="Dominance"      type="String"     hidden="True"/>
         <size name="HorizontalCards" width="88" height="63" backWidth="88" backHeight="63" back="cards/backH.png" front="cards/frontH.png" cornerRadius="2"/> 
         <size name="TokenSize" width="42" height="69" back="cards/front.png" front="cards/front.png"/>
     </card>
@@ -99,7 +104,7 @@
         </groupactions>
         
         <groupactions    menu="Announcements">
-            <groupaction     menu="Announce: I'm Done."                        shortcut="ALT+D"  default="False"      execute="turnDone"/>
+            <groupaction     menu="Announce: I'm Done."                        shortcut="CTRL+D"  default="False"      execute="turnDone"/>
             <groupaction     menu="Announce: Action/Question"                  shortcut="CTRL+Q" default="False"      execute="holdOn"/>
         </groupactions>     
         <groupactions    menu="[All Cards] Actions">
@@ -167,9 +172,6 @@
         <counter name="Str"         icon="counters/str.png"/>
         <globalvariable name="setupOk"   value="0" />
         <globalvariable name="turn"      value="0" />
-        <globalvariable name="firstplay" value="" />
-        <globalvariable name="AID"       value="" />
-        <globalvariable name="BID"       value="" />
         
         <hand name="Hand" visibility="me" ordered="False"     width="63" height="88" icon="groups/hand.png">            
             <groupaction menu="Random Discard"                     shortcut="F12"                                     execute="randomDiscard"/>
@@ -208,6 +210,5 @@
         <section name="Events"      group="Deck"/>
         <section name="Attachments" group="Deck"/>
         <section name="Plots"       group="Plot Deck"/>
-        <section name="Titles"      group="Hand"/>
     </deck>
 </game>

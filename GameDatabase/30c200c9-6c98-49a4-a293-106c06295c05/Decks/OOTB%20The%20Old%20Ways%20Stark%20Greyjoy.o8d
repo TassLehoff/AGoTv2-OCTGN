@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="30c200c9-6c98-49a4-a293-106c06295c05" sleeveid="0">
+  <section name="Faction" shared="False">
+    <card qty="1" id="8e8d97bb-fc50-4830-86b9-a09c64308641">House Stark</card>
+  </section>
+  <section name="Characters" shared="False">
+    <card qty="1" id="c4fbe19b-fe3b-4f5c-b1c6-065c13c4a9db">Aeron Damphair</card>
+    <card qty="1" id="42cbd594-edb9-48cc-8f34-cb63be4bbc47">Alannys Greyjoy</card>
+    <card qty="1" id="41367a9d-b751-4632-9973-97d2e4df7087">Asha Greyjoy</card>
+    <card qty="1" id="9bc99c98-4cbd-467b-b31c-1bec686370ea">Balon Greyjoy</card>
+    <card qty="1" id="912e5447-89b3-4896-903c-6f5ed78113e1">Euron Crow's Eye</card>
+    <card qty="1" id="1913dcf2-dc68-4427-a3ae-5deb5e054d8c">Maester Wendamyr</card>
+    <card qty="1" id="9a29f7bb-baa9-4475-8e35-55b845618822">Theon Greyjoy</card>
+    <card qty="1" id="4675c354-8fc6-4fbe-bbab-fb9318cce036">Black Wind's Crew</card>
+    <card qty="1" id="cbeb3a37-d4c1-4697-b8d2-e366b4569002">Drowned Men</card>
+    <card qty="1" id="1ea5aae7-d6c0-4589-afe1-c190743ebdbf">Iron Islands Fishmonger</card>
+    <card qty="1" id="23ca65d8-2c23-4d39-8c21-72323af0fc93">Lordsport Shipwright</card>
+    <card qty="1" id="aea193ad-1ff4-4229-ae98-7911c7c6d8f9">Salty Navigator</card>
+    <card qty="1" id="abf9c701-f480-4576-a5c0-44b4e9b04e6c">Arya Stark</card>
+    <card qty="1" id="9e56783a-c133-4f81-9914-4e81b92ba5d1">Bran Stark</card>
+    <card qty="1" id="64f1d132-e293-48fd-ad0a-9d28b8cad5b5">Catelyn Stark</card>
+    <card qty="1" id="aee0eeeb-97a7-4b48-82e7-03141663e346">Eddard Stark</card>
+    <card qty="1" id="c8777aab-2cd5-45c0-a59f-7d291aea9435">Grey Wind</card>
+    <card qty="1" id="d892faa0-09c4-41ec-8705-abe2c1c87c83">Robb Stark</card>
+    <card qty="1" id="64cc68a4-6484-4178-a4a6-ddb24978fe09">Sansa Stark</card>
+    <card qty="1" id="713ee651-63b9-4eee-aebe-62163b394cd6">Summer</card>
+    <card qty="1" id="c41d4a72-6919-4e32-97ef-a4b0f1acb281">Direwolf Pup</card>
+    <card qty="1" id="2f7543c1-5127-4e01-ac3c-2fb1d7b8202e">Tumblestone Knight</card>
+    <card qty="1" id="59e0df28-01d8-4637-ab4b-073d4113774b">Vanguard of the North</card>
+    <card qty="1" id="ea996816-e75f-4c13-ac0f-97b96818b220">Winterfell Steward</card>
+    <card qty="1" id="499ed82d-cc0e-43a5-89ba-a748b388f528">Littlefinger</card>
+    <card qty="1" id="78845c6e-c91a-47a2-9742-d72b19d0ed26">Varys</card>
+    <card qty="1" id="be9304f2-bb5d-4d19-8fbe-4efb6ee24f29">Rattleshirt's Raiders</card>
+  </section>
+  <section name="Locations" shared="False">
+    <card qty="1" id="014da37c-9903-418d-a043-ee2191b9d169">Great Kraken</card>
+    <card qty="1" id="6357f740-5434-4d09-957a-87af33f9b57b">Iron Fleet Scout</card>
+    <card qty="1" id="3bcc0681-2362-4c2a-8e17-e20e23dbda3c">Sea Tower</card>
+    <card qty="1" id="14fb9ce4-6d48-4c9f-a8d0-5ded218714dc">Gates of Winterfell</card>
+    <card qty="1" id="b32f6c14-5fe1-4e6b-90c3-efe63aac7ee7">The Wolfswood</card>
+    <card qty="1" id="5f5c0380-034b-4fa0-9da5-9c53b098baed">Heart Tree Grove</card>
+    <card qty="1" id="90452d99-6a6f-4d0d-b3a1-bb92e7110d1d">The Kingsroad</card>
+    <card qty="1" id="51a3e04f-3f44-4417-8d7c-1f116acd5c80">The Roseroad</card>
+  </section>
+  <section name="Events" shared="False">
+    <card qty="1" id="0e42b4fb-8a0e-40d1-a398-fd9c0f7912a4">Risen from the Sea</card>
+    <card qty="1" id="80300190-96a8-4fa7-be7f-1a2bea691978">The Kraken's Grasp</card>
+    <card qty="1" id="62570a84-3203-468d-9529-37dbbc6d191c">We Do Not Sow</card>
+    <card qty="1" id="764fd244-f0f0-4b61-a435-9cf73ef074ce">For the North!</card>
+    <card qty="1" id="ef7d8bdf-1c56-4895-be9a-7a3ed059dcd3">Like Warm Rain</card>
+    <card qty="1" id="18f549b8-eda2-4a40-8196-d952f5a4874f">Winter Is Coming</card>
+  </section>
+  <section name="Attachments" shared="False">
+    <card qty="1" id="c3eeb001-e6a1-48ae-b310-cbd0d2c84653">Throwing Axe</card>
+    <card qty="1" id="e6059d34-2c23-41a1-a1c2-f299dee662e7">Ice</card>
+    <card qty="1" id="a8bebc54-d01c-424d-8839-460ec09b733f">Milk of the Poppy</card>
+    <card qty="1" id="f97ccf1a-5b0d-490f-9968-78330e92171c">Seal of the Hand</card>
+  </section>
+  <section name="Plots" shared="False">
+    <card qty="1" id="05c62b13-053b-4b81-a0a8-bf1d3f19210f">The Winds of Winter</card>
+    <card qty="1" id="88b8405e-ba7b-435f-a4ed-1349e770d19b">Supporting the Faith</card>
+    <card qty="1" id="68448806-ca58-496d-b010-2794fd372744">Naval Superiority</card>
+    <card qty="1" id="fedb6fe6-2f55-4c42-9798-3e091b2b2573">Rebuilding</card>
+    <card qty="1" id="4ee52602-89fa-4048-accc-dffdb78bee69">Calm Over Westeros</card>
+    <card qty="1" id="a380b0e0-610c-47f9-ac9f-ae12163b45fd">Summons</card>
+    <card qty="1" id="446ac0b9-746f-4aa3-b8bf-f132d2b29499">Confiscation</card>
+  </section>
+  <section name="Agenda" shared="False" />
+  <section name="Titles" shared="False" />
+  <notes><![CDATA[]]></notes>
+</deck>
