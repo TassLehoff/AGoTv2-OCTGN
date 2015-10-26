@@ -101,7 +101,7 @@ def announceMil(group, x = 0, y = 0):
 			c.orientation = 1
 		notify("**{} declares MIL attackers.**".format(me))
 	else:
-		whisper("You must declares at least 1 character to attack.")
+		whisper("You must declare at least 1 character to attack.")
 
 def announceInt(group, x = 0, y = 0):
 	mute()
@@ -123,7 +123,7 @@ def announceInt(group, x = 0, y = 0):
 			c.orientation = 1
 		notify("**{} declares INT attackers.**".format(me))
 	else:
-		whisper("You must declares at least 1 character to attack.")
+		whisper("You must declare at least 1 character to attack.")
 
 def announcePow(group, x = 0, y = 0):
 	mute()
@@ -145,7 +145,7 @@ def announcePow(group, x = 0, y = 0):
 			c.orientation = 1
 		notify("**{} declares POW attackers.**".format(me))
 	else:
-		whisper("You must declares at least 1 character to attack.")
+		whisper("You must declare at least 1 character to attack.")
 
 def holdOn(group, x = 0, y = 0):
 	mute()
@@ -167,6 +167,12 @@ def scoop(group, x = 0, y = 0):
 	var = me.getGlobalVariable("setupOk")
 	var="0"
 	me.setGlobalVariable("setupOk", var)
+	me.counters['Gold'].value = 0  #reset all counters
+	me.counters['Power'].value = 0
+	me.counters['Reserve'].value = 0
+	me.counters['Initiative'].value = 0
+	me.counters['Str'].value = 0
+	me.setGlobalVariable("turn", "0")
 	
 	for c in me.hand: 
 		if not c.Type == "Faction" and not c.Type == "Agenda":
@@ -434,7 +440,6 @@ def setup(group):
 	var="1"
 	me.setGlobalVariable("setupOk", var)
 	notify("**{} has started setup, please wait**".format(me))
-	checkdeck()
 	for c in me.hand: 
 		if c.Type == "Faction":
 			if me.isInverted: 
@@ -1236,7 +1241,7 @@ def checkdeck():
 	
 	if AgendaName == 'Fealty' and NeutralCount > 15:
 		ok = False
-		notify("{}'s agenda is Fealty, so {} can has 15 neutral cards in deck but {} have {}.".format(me,me,me, NeutralCount))
+		notify("{}'s agenda is Fealty, so {} can has 15 neutral cards in deck, but {} have {}.".format(me,me,me, NeutralCount))
 	elif BannerFaction != '' and BannerCount < 12:
 		ok = False
 		notify("{}'s agenda is {}, so {} must has at least 12 {} cards in deck, but {} have only {}".format(me, AgendaName, me,BannerFaction, me,BannerCount))
@@ -1254,6 +1259,16 @@ def shuffleToPlot(group):
 		card.moveTo(me.piles['Plot Deck'])
 	notify("{} moved all used plots to their plot deck.".format(me))
 
+def createTitles(group):
+	mute()
+	group.create("feefb8d0-f4ed-4d27-b272-3b9e9ee11a5d")
+	group.create("3c734e0d-d625-4553-9cf5-74051311eef5")
+	group.create("f91c60a9-d506-45f3-b5de-3a51e23279d3")
+	group.create("cb3a2844-1aa5-494c-9536-87b4b9bd4562")
+	group.create("0ba59f59-b08c-4e8e-ab23-b5cf9e77d176")
+	group.create("3b088db8-adeb-4728-9eb9-6817455da6dc")
+	notify("{} created melee titles.".format(me))
+
 #------------------------------------------------------------------------------
 # New Events
 #------------------------------------------------------------------------------
@@ -1267,4 +1282,5 @@ def onloaddeck(args):
 		setGlobalVariable("BID","{}".format(me))
 	player = args.player
 	if player==me:
+		checkdeck()
 		setup(table)

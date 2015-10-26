@@ -200,6 +200,10 @@
             <groupaction menu="Reshuffle into Deck"                                                                   execute="reshuffle"/>
             <groupaction menu="Move One Random to Hand"                                                               execute="moveOneRandom"/>
         </group>
+        <group name="Titles" visibility="none"                width="63" height="88"                                  collapsed="True">
+            <groupaction menu="Shuffle"                                                                               execute="shuffle"/>
+            <groupaction menu="Create Titles"                                                                         execute="createTitles"/>
+        </group>
     </player>
     
     <deck>
