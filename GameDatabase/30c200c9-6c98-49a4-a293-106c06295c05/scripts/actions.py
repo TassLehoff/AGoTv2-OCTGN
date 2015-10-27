@@ -427,7 +427,7 @@ def moveOneRandom(group):
 #---------------------------------------------------------------------------
 # New Table group actions
 #---------------------------------------------------------------------------
-def setup(group):
+def setup(group, x = 0, y = 0):
 	mute()
 	if not confirm("Confirm to setup?"): return
 	var = me.getGlobalVariable("setupOk")
@@ -858,7 +858,7 @@ def remove(card, x = 0, y = 0):
 	else:
 		if not confirm("Confirm to remove this card from game."): return
 		card.delete()
-		notify('{} remove {} from the game'.format(me, card))
+		notify('{} removes {} from the game'.format(me, card))
 
 def cardLookup(card, x = 0, y = 0):
 	mute()
@@ -1261,14 +1261,33 @@ def shuffleToPlot(group):
 
 def createTitles(group):
 	mute()
-	group.create("feefb8d0-f4ed-4d27-b272-3b9e9ee11a5d")
-	group.create("3c734e0d-d625-4553-9cf5-74051311eef5")
-	group.create("f91c60a9-d506-45f3-b5de-3a51e23279d3")
-	group.create("cb3a2844-1aa5-494c-9536-87b4b9bd4562")
-	group.create("0ba59f59-b08c-4e8e-ab23-b5cf9e77d176")
-	group.create("3b088db8-adeb-4728-9eb9-6817455da6dc")
-	notify("{} created melee titles.".format(me))
+	if len(shared.piles['Titles']) == 6:
+		whisper("Melee titles are created.")
+	else:
+		for card in group:
+			card.delete()
+		group.create("feefb8d0-f4ed-4d27-b272-3b9e9ee11a5d")
+		group.create("3c734e0d-d625-4553-9cf5-74051311eef5")
+		group.create("f91c60a9-d506-45f3-b5de-3a51e23279d3")
+		group.create("cb3a2844-1aa5-494c-9536-87b4b9bd4562")
+		group.create("0ba59f59-b08c-4e8e-ab23-b5cf9e77d176")
+		group.create("3b088db8-adeb-4728-9eb9-6817455da6dc")
+		notify("{} created melee titles.".format(me))
 
+def removeTitles(group):
+	mute()
+	card = group.random()
+	if card == None: return
+	card.delete()
+	notify('{} removes a Title'.format(me))
+	
+def chooseTitle(card):
+	mute()
+	card.moveToTable(0,0,True)
+	card.controller == me
+	card.peek()
+	notify('{} choose a Title'.format(me))
+	
 #------------------------------------------------------------------------------
 # New Events
 #------------------------------------------------------------------------------
