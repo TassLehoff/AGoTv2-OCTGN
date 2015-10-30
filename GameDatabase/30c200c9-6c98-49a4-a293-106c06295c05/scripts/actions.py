@@ -13,6 +13,7 @@ MilitaryColor = "#ae0603" #A shade of red from the Military Icon
 IntrigueColor = "#006b34" #A shade of green from the Intrigue Icon
 PowerColor = "#1a4d8f" #A shade of blue from the Power Icon
 WaitColor = "#D8D8D8" # Grey
+PlayColor = "#FFFF00" # Yellow
 GameURL = "http://octgn.gamersjudgement.com/wordpress/agot2/"
 FAQ_URL = "https://images-cdn.fantasyflightgames.com/filer_public/03/43/034309e6-c3a2-4575-8062-32ede5798ef8/gt01_rules-reference-web.pdf"
 
@@ -942,6 +943,14 @@ def flipplotcard(card):
 #------------------------------------------------------------------------------
 # New Hand Actions
 #------------------------------------------------------------------------------
+def attachat(ax,ay,table):
+	mute()
+	for c in table:
+		x,y = c.position
+		if x == ax and y == ay:
+			return attachat(x+12,y+12,table)
+	return ax,ay
+
 def play(card):
 	mute()
 	c = 0
@@ -951,8 +960,6 @@ def play(card):
 	if card.Cost == "X": cost=askInteger("How much do you want to pay to play {} ? ".format(card.name),0)
 	else : cost=int(card.Cost)
 	uniquecards = []
-	for target in table:
-		target.target(False)
 	for u in table:
 		if u.controller == me and u.unique == "Yes":
 			uniquecards.append(u.name)
@@ -963,103 +970,41 @@ def play(card):
 				break
 	if c != 1:
 		if card.type == "Attachment":
+			if not confirm("Have you already targeted(use Shift+mouse left button) the object you want to attach?"):return
 			list = []
-			if re.search(r'\[(.*)\] character only',card.text,re.I):   #[Faction] character only
-				match = re.search(r'\[(.*)\] character only',card.text,re.I)
-				if len(players) == 2:
-					p = askChoice("Whose card you want to attach to?",["{}".format(me),"{}".format(players[1])])
-					if p == 1:
-						for c in table:
-							if c.faction == "{}.".format(match.group(1)) and c.type == "Character" and c.controller == me:
-								list.append(c)
-					elif p == 2:
-						for c in table:
-							if c.faction == "{}.".format(match.group(1)) and c.type == "Character" and c.controller != me:
-								list.append(c)
-					else:
-						return
+			for targetcard in table:
+				if targetcard.targetedBy == me:
+					list.append(targetcard)
+					targetcard.target(False)
+			if len(list) > 0:
+				dlg = cardDlg(list)
+				dlg.title = "These cards can be attached:"
+				dlg.text = "Choose a card to attach."
+				cards = dlg.show()
+				if cards != None:
+					for choose in cards:
+						reduc=askInteger("Reduce Cost by ?",0)
+						if reduc == None or cost == None: return
+						if reduc>cost: reduc=cost
+						cost-=reduc
+						if me.counters['Gold'].value < cost :
+							whisper("You don't have enough Gold to pay for {}.".format(card))
+							return		
+						me.counters['Gold'].value -= cost
+						for incomecard in table:
+							if incomecard.controller == me and incomecard.markers[Gold] > 0:
+								incomecard.markers[Gold] -= cost
+						cx,cy = choose.position
+						x,y = attachat(cx+15,cy+15,table)
+						card.moveToTable(x,y)
+						card.sendToBack()
+						card.highlight = PlayColor
+						notify("{} plays {} and attachs to {} for {} Gold (Cost reduced by {}).".format(me,card,choose,cost,reduc))
 				else:
-					for c in table:
-						if c.faction == "{}.".format(match.group(1)) and c.type == "Character":
-							list.append(c)
-			elif re.search(r'(.*) or (.*) character only',card.text,re.I):   #Traits character only
-				match = re.search(r'(.*) or (.*) character only',card.text,re.I)
-				if len(players) == 2:
-					p = askChoice("Whose card you want to attach to?",["{}".format(me),"{}".format(players[1])])
-					if p == 1:
-						for c in table:
-							if (re.search(match.group(1),c.traits,re.I) or re.search(match.group(2),c.traits,re.I)) and c.type == "Character" and c.controller == me:
-								list.append(c)
-					elif p == 2:
-						for c in table:
-							if (re.search(match.group(1),c.traits,re.I) or re.search(match.group(2),c.traits,re.I)) and c.type == "Character" and c.controller != me:
-								list.append(c)
-					else:
-						return
-				else:
-					for c in table:
-						if (re.search(match.group(1),c.traits,re.I) or re.search(match.group(2),c.traits,re.I)) and c.type == "Character":
-							list.append(c)
-			elif re.search(r'(.*) character only',card.text,re.I):    #TraitsA or traitsB character only
-				match = re.search(r'(.*) character only',card.text,re.I)
-				if len(players) == 2:
-					p = askChoice("Whose card you want to attach to?",["{}".format(me),"{}".format(players[1])])
-					if p == 1:
-						for c in table:
-							if re.search(match.group(1),c.traits,re.I) and c.type == "Character" and c.controller == me:
-								list.append(c)
-					elif p == 2:
-						for c in table:
-							if re.search(match.group(1),c.traits,re.I) and c.type == "Character" and c.controller != me:
-								list.append(c)
-					else:
-						return
-				else:
-					for c in table:
-						if re.search(match.group(1),c.traits,re.I) and c.type == "Character":
-							list.append(c)
+					whisper("Attachment cards must be attached to another card or game element.")
+					return
 			else:
-				if len(players) == 2:
-					p = askChoice("Whose card you want to attach to?",["{}".format(me),"{}".format(players[1])])
-					if p == 1:
-						for c in table:
-							if c.type == "Character" and c.controller == me:
-								list.append(c)
-					elif p == 2:
-						for c in table:
-							if c.type == "Character" and c.controller != me:
-								list.append(c)
-					else:
-						return
-				else:
-					for c in table:
-						if c.type == "Character":
-							list.append(c)
-			dlg = cardDlg(list)
-			dlg.title = "These characters can be attached in play:"
-			dlg.text = "Choose a character to attach."
-			cards = dlg.show()
-			if cards != None:
-				for choose in cards:
-					reduc=askInteger("Reduce Cost by ?",0)
-					if reduc == None or cost == None: return
-					if reduc>cost: reduc=cost
-					cost-=reduc
-					if me.counters['Gold'].value < cost :
-						whisper("You don't have enough Gold to pay for {}.".format(card))
-						return		
-					me.counters['Gold'].value -= cost
-					for incomecard in table:
-						if incomecard.controller == me and incomecard.markers[Gold] > 0:
-							incomecard.markers[Gold] -= cost
-					x,y = choose.position
-					card.moveToTable(x+15,y+15)
-					card.sendToBack()
-					card.target(True)
-					notify("{} plays {} and attachs to {} for {} Gold (Cost reduced by {}).".format(me,card,choose,cost,reduc))
-			else:
-				whisper("Attachment cards must be attached to another card or game element.")
-				return
+				whisper("You must targeted(use Shift+mouse left button) a card which you want to attach to.")
 		else:
 			reduc=askInteger("Reduce Cost by ?",0)
 			if reduc == None or cost == None: return
@@ -1099,7 +1044,7 @@ def play(card):
 			else:
 				if me.isInverted: card.moveToTable(150,-230)
 				else: card.moveToTable(-130,130)
-			card.target(True)
+			card.highlight = PlayColor
 			notify("{} plays {} for {} Gold (Cost reduced by {}).".format(me,card,cost,reduc))
 			me.counters['Gold'].value -= cost
 			for incomecard in table:
