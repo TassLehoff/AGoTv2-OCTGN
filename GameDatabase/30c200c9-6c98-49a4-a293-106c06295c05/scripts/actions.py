@@ -13,7 +13,7 @@ MilitaryColor = "#ae0603" #A shade of red from the Military Icon
 IntrigueColor = "#006b34" #A shade of green from the Intrigue Icon
 PowerColor = "#1a4d8f" #A shade of blue from the Power Icon
 WaitColor = "#D8D8D8" # Grey
-PlayColor = "#FFFF00" # Yellow
+PlayColor = "#FFA6F7" # Yellow
 GameURL = "http://octgn.gamersjudgement.com/wordpress/agot2/"
 FAQ_URL = "https://images-cdn.fantasyflightgames.com/filer_public/03/43/034309e6-c3a2-4575-8062-32ede5798ef8/gt01_rules-reference-web.pdf"
 
@@ -186,14 +186,88 @@ def holdOn(group, x = 0, y = 0):
 	mute()
 	notify("**Please wait.  {} has an action/question.**".format(me))
 
-def announceUO(group, x = 0, y = 0):
-	mute()
-	notify("**{} responds: Unopposed.**".format(me))
-
 def announceOpp(group, x = 0, y = 0):
 	mute()
 	notify("**{} responds: Opposed/Defend.**".format(me))
+	choiceList = ['Military', 'Intrigue', 'Power', 'No defenders']
+	colorList = ['#ae0603' ,'#006b34','#1a4d8f','#D8D8D8']
+	choice = askChoice("Which challenge do you want to defend?", choiceList,colorList)
+	if choice == 1:
+		defMil(table)
+	elif choice == 2:
+		defInt(table)
+	elif choice == 3:
+		defPow(table)
+	elif choice == 4:
+		notify("{} declares no defenders.".format(me))
+	else:return
 	
+def defMil(group, x = 0, y = 0):
+	mute()
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares characters to defend."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = MilitaryColor
+			c.orientation = 1
+		notify("**{} declares MIL defenders.**".format(me))
+	else:
+		notify("{} declares no defenders.".format(me))
+
+def defInt(group, x = 0, y = 0):
+	mute()
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares characters to defend."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = IntrigueColor
+			c.orientation = 1
+		notify("**{} declares INT defenders.**".format(me))
+	else:
+		notify("{} declares no defenders.".format(me))
+
+def defPow(group, x = 0, y = 0):
+	mute()
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares characters to defend."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = PowerColor
+			c.orientation = 1
+		notify("**{} declares POW defenders.**".format(me))
+	else:
+		notify("{} declares no defenders.".format(me))
+		
 def scoop(group, x = 0, y = 0):
 	mute()
 	
@@ -522,7 +596,7 @@ def placesetupcards():
 	dlg=cardDlg(list)
 	dlg.title = "Choose your setup cards."
 	dlg.text = "You may place up to 8 gold cost worth cards as setup cards."
-	dlg.min = 1
+	dlg.min = 0
 	dlg.max = len(list)
 	cards = dlg.show()
 	uniquecards = [] #Duplicates

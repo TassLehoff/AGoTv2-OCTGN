@@ -93,7 +93,6 @@
             </groupactions>
             <groupactions    menu="Challenge Phase">
                 <groupaction     menu="Declare a challenge"                    shortcut="ALT+A"  default="False"      execute="challengeAnnounce"/>
-                <groupaction     menu="Respond: Unopposed"                     shortcut="ALT+U"  default="False"      execute="announceUO"/>
                 <groupaction     menu="Respond: Opposed/Defend"                shortcut="ALT+O"  default="False"      execute="announceOpp"/>
                 <groupaction     menu="Calculate Challenge Strength"           shortcut="ALT+C"  default="False"      execute="challenge"/>
             </groupactions>
