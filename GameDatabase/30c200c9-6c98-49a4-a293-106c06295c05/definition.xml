@@ -173,7 +173,7 @@
         <globalvariable name="setupOk"   value="0" />
         <globalvariable name="turn"      value="0" />
         
-        <hand name="Hand" visibility="me" ordered="False"     width="63" height="88" icon="groups/hand.png">            
+        <hand name="Hand" visibility="me" ordered="True"     width="63" height="88" icon="groups/hand.png">            
             <groupaction menu="Random Discard"                     shortcut="F12"                                     execute="randomDiscard"/>
             <groupaction menu="Random Discard Many"                                                                   execute="discardMany"/>
             <groupaction menu="Take a Mulligan"                    shortcut="F6"                                      execute="mulligan"/>
@@ -185,6 +185,7 @@
             <groupaction menu="Draw"                               shortcut="CTRL+D" default="True"                   execute="draw"/>
             <groupaction menu="Draw Many"                          shortcut="CTRL+SHIFT+D"                            execute="drawMany"/>
             <groupaction menu="Discard Many From Top"                                                                 execute="discardManyFromTop"/>
+			<cardaction menu="Move to Bottom"                                                                 execute="movetobottom"/>
         </group>
         
         <group name="Plot Deck" visibility="me"               width="63" height="88" icon="groups/plot.png">

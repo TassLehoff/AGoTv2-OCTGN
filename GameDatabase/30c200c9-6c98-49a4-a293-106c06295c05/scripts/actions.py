@@ -80,13 +80,16 @@ def restoreAll(group, x = 0, y = 0):
 		if card.isFaceUp:
 			card.orientation &= ~Rot90
 			card.highlight = None
+			card.target(False)
 	notify("{} stands all their cards.".format(me))
 
 def announceMil(group, x = 0, y = 0):
 	mute()
+	stealth = ""
 	notify("**{} declares a MIL challenge.**".format(me))
 	list = []
 	for card in table:
+		card.target(False)
 		if card.type == "Character" and card.controller == me and card.isFaceUp:
 			list.append(card)
 	dlg = cardDlg(list)
@@ -100,15 +103,26 @@ def announceMil(group, x = 0, y = 0):
 			c.target(True)
 			c.highlight = MilitaryColor
 			c.orientation = 1
+			if re.search(r'stealth',c.keywords,re.I):   #stealth
+				stealth = "0"
 		notify("**{} declares MIL attackers.**".format(me))
+		if stealth == "0":
+			choice = confirm("Character with the stealth keyword has been declared as an attacker, do you want to chooses its stealth target?")
+			if choice == True:
+				notify("{} is ready to use the stealth keyword.".format(me))
+			else:
+				notify("{} renounces the use of the stealth keyword.".format(me))
+			stealth = "1"
 	else:
 		whisper("You must declare at least 1 character to attack.")
 
 def announceInt(group, x = 0, y = 0):
 	mute()
+	stealth = ""
 	notify("**{} declares an INT challenge.**".format(me))
 	list = []
 	for card in table:
+		card.target(False)
 		if card.type == "Character" and card.controller == me and card.isFaceUp:
 			list.append(card)
 	dlg = cardDlg(list)
@@ -122,15 +136,26 @@ def announceInt(group, x = 0, y = 0):
 			c.target(True)
 			c.highlight = IntrigueColor
 			c.orientation = 1
+			if re.search(r'stealth',c.keywords,re.I):   #stealth
+				stealth = "0"
 		notify("**{} declares INT attackers.**".format(me))
+		if stealth == "0":
+			choice = confirm("Character with the stealth keyword has been declared as an attacker, do you want to chooses its stealth target?")
+			if choice == True:
+				notify("{} is ready to use the stealth keyword.".format(me))
+			else:
+				notify("{} renounces the use of the stealth keyword.".format(me))
+			stealth = "1"
 	else:
 		whisper("You must declare at least 1 character to attack.")
 
 def announcePow(group, x = 0, y = 0):
 	mute()
-	notify("**{} declares a PWR challenge.**".format(me))
+	stealth = ""
+	notify("**{} declares a POW challenge.**".format(me))
 	list = []
 	for card in table:
+		card.target(False)
 		if card.type == "Character" and card.controller == me and card.isFaceUp:
 			list.append(card)
 	dlg = cardDlg(list)
@@ -144,7 +169,16 @@ def announcePow(group, x = 0, y = 0):
 			c.target(True)
 			c.highlight = PowerColor
 			c.orientation = 1
+			if re.search(r'stealth',c.keywords,re.I):   #stealth
+				stealth = "0"
 		notify("**{} declares POW attackers.**".format(me))
+		if stealth == "0":
+			choice = confirm("Character with the stealth keyword has been declared as an attacker, do you want to chooses its stealth target?")
+			if choice == True:
+				notify("{} is ready to use the stealth keyword.".format(me))
+			else:
+				notify("{} renounces the use of the stealth keyword.".format(me))
+			stealth = "1"
 	else:
 		whisper("You must declare at least 1 character to attack.")
 
@@ -432,7 +466,7 @@ def setup(group, x = 0, y = 0):
 	mute()
 	if not confirm("Confirm to setup?"): return
 	var = me.getGlobalVariable("setupOk")
-	if var == "1":
+	if var != "0":
 		whisper("You already did your Setup")
 		return
 	if len(me.hand) == 0:
@@ -459,7 +493,7 @@ def setup(group, x = 0, y = 0):
 		table.create("656f69c4-c506-4014-932b-9dff4422f09e",300,-200)
 	else:
 		table.create("656f69c4-c506-4014-932b-9dff4422f09e",-280,100)
-	notify("**{} is ready**".format(me))
+	notify("**{} is ready to setup**".format(me))
 	if me._id == 1:
 		if me.isInverted: 
 			table.create("73a6655b-60b6-4080-b428-f4e0099e0f77",380,-100)
@@ -479,7 +513,62 @@ def setup(group, x = 0, y = 0):
 				else:                        
 					remoteCall(players[1], "moveFP", card)
 			notify("**Seven Gods decide {} is the firstplayer.**".format(getGlobalVariable("BID")))
+	placesetupcards()
 
+def placesetupcards():
+	mute()
+	list = []
+	for p in me.hand:list.append(p)
+	dlg=cardDlg(list)
+	dlg.title = "Choose your setup cards."
+	dlg.text = "You may place up to 8 gold cost worth cards as setup cards."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	uniquecards = [] #Duplicates
+	cost = 0
+	limit = 0
+	place = "OK"
+	if cards != None:
+		for placecard in cards:
+			if placecard.unique != "Yes":
+				cost += int(placecard.cost)
+			elif placecard.unique == "Yes" and placecard.name not in uniquecards:
+				uniquecards.append(placecard.name)
+				cost += int(placecard.cost)
+			if re.search(r'limit',placecard.keywords,re.I):   #keyword limit
+				limit += 1
+			if placecard.type == "Event":
+				confirm("You may only place character, location, and attachment cards.")
+				place = "NOTOK"
+			if placecard.type == "Attachment":
+				if not confirm("Each attachment must be attached to a valid target under its owner’s control."):
+					place = "NOTOK"
+		if cost > 8:
+			confirm("You may only place up to 8 gold cost.")
+			place = "NOTOK"
+		if limit > 1:
+			confirm("You may only place up 1 limit card.")
+			place = "NOTOK"
+		if place == "NOTOK":
+			placesetupcards()
+		if place == "OK":
+			for card in cards:
+				if me.isInverted:
+					card.moveToTable(20,-100,True)
+				else:
+					card.moveToTable(-20,0,True)
+				card.peek()
+			for drawcard in me.deck.top(7-len(me.hand)):
+				drawcard.moveTo(me.hand)
+			notify("{} is ready to begin.".format(me))
+	else:
+		if me.getGlobalVariable("setupOk") == "2":
+			placesetupcards()
+		else:
+			mulligan(me.hand)
+			me.setGlobalVariable("setupOk","2")
+			placesetupcards()
 
 def endturn(group, x = 0, y = 0): 
 	count = 0
@@ -492,6 +581,7 @@ def endturn(group, x = 0, y = 0):
 		if card.isFaceUp:
 			card.orientation &= ~Rot90
 			card.highlight = None
+			card.target(False)
 	me.counters['Gold'].value = 0  #reset gold counters
 	goldcard = (card for card in table
 			if card.controller == me)
@@ -1232,6 +1322,13 @@ def chooseTitle(card):
 	card.controller == me
 	card.peek()
 	notify('{} choose a Title'.format(me))
+
+def movetobottom(card):
+	mute()
+	if len(card.group) < 2: return
+	card.moveToBottom(card.group)
+	notify("{} moves a card to bottom of {}'s {}'.".format(me,card.owner,card.group.name))
+
 	
 #------------------------------------------------------------------------------
 # New Events

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="30c200c9-6c98-49a4-a293-106c06295c05" sleeveid="0">
+  <section name="Faction" shared="False">
+    <card qty="1" id="a8c94f92-2b17-4a78-bf0f-4411838b9826">House Baratheon</card>
+  </section>
+  <section name="Agenda" shared="False">
+    <card qty="1" id="83754e87-8448-49af-a20f-bc4dc72d1dba">Fealty</card>
+  </section>
+  <section name="Plots" shared="False">
+    <card qty="1" id="0ed58a09-7482-4632-b88f-309ae5621c2e">A Feast for Crows</card>
+    <card qty="1" id="0fb3ad4b-5cf3-49e9-a33f-484ecafeabf8">A Noble Cause</card>
+    <card qty="1" id="446ac0b9-746f-4aa3-b8bf-f132d2b29499">Confiscation</card>
+    <card qty="2" id="ac8effb7-76cb-42e4-ab33-d88a407c0dda">Filthy Accusations</card>
+    <card qty="1" id="a380b0e0-610c-47f9-ac9f-ae12163b45fd">Summons</card>
+    <card qty="1" id="d10a1ced-df94-419b-af8e-4eadc2eb4688">Wildfire Assault</card>
+  </section>
+  <section name="Characters" shared="False">
+    <card qty="2" id="499ed82d-cc0e-43a5-89ba-a748b388f528">Littlefinger</card>
+    <card qty="2" id="0c97b091-96c0-46df-8442-e904025304fb">Maester Cressen</card>
+    <card qty="3" id="6ab37ed8-df99-410d-a9ff-7afe98f7ee22">Melisandre</card>
+    <card qty="3" id="78ca6089-6d16-4e41-8df7-40042e3dc077">Robert Baratheon</card>
+    <card qty="2" id="88de8a8f-4d15-415c-96c8-38edc8f8fe99">Selyse Baratheon</card>
+    <card qty="2" id="813fb666-b32f-4ae9-b2ac-3fe09adccf9a">Ser Davos Seaworth</card>
+    <card qty="1" id="6967fd81-f9f9-4077-8d5a-c9ca189a5e41">Shireen Baratheon</card>
+    <card qty="3" id="dfc85d0c-12a5-45b3-803a-98982c36d083">Stannis Baratheon</card>
+    <card qty="3" id="fb6e5fba-19c5-4827-8477-851e0559219b">Bastard in Hiding</card>
+    <card qty="3" id="21c87233-3c2e-4a66-9ea0-ffaf5ac0594c">Fiery Followers</card>
+    <card qty="1" id="38fd117a-dd32-4b79-90f9-ef3b01cac956">King&#039;s Hunting Party</card>
+    <card qty="3" id="2a669f95-cad1-43eb-b7a5-4aac56b411de">Dragonstone Faithful</card>
+    <card qty="2" id="b84482ca-cca3-46ee-90dd-22417b0f9879">Vanguard Lancer</card>
+  </section>
+  <section name="Locations" shared="False">
+    <card qty="2" id="32b0d392-802e-4b0b-9df5-dd0eeee256b9">The Iron Throne</card>
+    <card qty="3" id="90452d99-6a6f-4d0d-b3a1-bb92e7110d1d">The Kingsroad</card>
+    <card qty="3" id="51a3e04f-3f44-4417-8d7c-1f116acd5c80">The Roseroad</card>
+    <card qty="3" id="1daa814f-c6b8-4dcc-b4f7-169968be4bc5">Dragonstone Port</card>
+    <card qty="2" id="8b8d9c4c-a100-4d95-b68b-5156766035d9">Chamber of the Painted Table</card>
+    <card qty="3" id="3a89059b-0e56-4b47-aad7-8d2b0a245149">The Red Keep</card>
+  </section>
+  <section name="Attachments" shared="False">
+    <card qty="1" id="f97ccf1a-5b0d-490f-9968-78330e92171c">Seal of the Hand</card>
+    <card qty="1" id="f5173e6f-1ec3-4ee0-8274-755160c57c0e">Bodyguard</card>
+    <card qty="3" id="a8bebc54-d01c-424d-8839-460ec09b733f">Milk of the Poppy</card>
+    <card qty="1" id="7e00c4df-c406-4560-9cb1-a18b1a180017">Lightbringer</card>
+  </section>
+  <section name="Events" shared="False">
+    <card qty="3" id="b1092dd9-01aa-4622-9026-d905a44dd874">Consolidation of Power</card>
+    <card qty="2" id="9d1702a8-32c9-41c2-bbd4-2ce00885e20a">Ours is the Fury</card>
+    <card qty="3" id="50402306-cc27-4e3e-9924-aa13f430cb60">Seen In Flames</card>
+  </section>
+<notes><![CDATA[]]></notes>
+</deck>
