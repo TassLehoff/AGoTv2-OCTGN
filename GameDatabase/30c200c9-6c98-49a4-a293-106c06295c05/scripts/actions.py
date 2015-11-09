@@ -13,15 +13,18 @@ MilitaryColor = "#ae0603" #A shade of red from the Military Icon
 IntrigueColor = "#006b34" #A shade of green from the Intrigue Icon
 PowerColor = "#1a4d8f" #A shade of blue from the Power Icon
 WaitColor = "#D8D8D8" # Grey
+PlayColor = "#FFA6F7" # Yellow
 GameURL = "http://octgn.gamersjudgement.com/wordpress/agot2/"
 FAQ_URL = "https://images-cdn.fantasyflightgames.com/filer_public/03/43/034309e6-c3a2-4575-8062-32ede5798ef8/gt01_rules-reference-web.pdf"
 
+import re
 
 #---------------------------------------------------------------------------
 # Table group actions
 #---------------------------------------------------------------------------
 def googleDriveWebsite(group, x = 0, y = 0):
 	mute()
+
 	openUrl("{}".format(GameURL))
 	
 def faqWebsite(group, x = 0, y = 0):
@@ -77,32 +80,194 @@ def restoreAll(group, x = 0, y = 0):
 		if card.isFaceUp:
 			card.orientation &= ~Rot90
 			card.highlight = None
+			card.target(False)
 	notify("{} stands all their cards.".format(me))
 
 def announceMil(group, x = 0, y = 0):
 	mute()
+	stealth = ""
 	notify("**{} declares a MIL challenge.**".format(me))
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares at least 1 character to attack."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = MilitaryColor
+			c.orientation = 1
+			if re.search(r'stealth',c.keywords,re.I):   #stealth
+				stealth = "0"
+		notify("**{} declares MIL attackers.**".format(me))
+		if stealth == "0":
+			choice = confirm("Character with the stealth keyword has been declared as an attacker, do you want to chooses its stealth target?")
+			if choice == True:
+				notify("{} is ready to use the stealth keyword.".format(me))
+			else:
+				notify("{} renounces the use of the stealth keyword.".format(me))
+			stealth = "1"
+	else:
+		whisper("You must declare at least 1 character to attack.")
 
 def announceInt(group, x = 0, y = 0):
 	mute()
+	stealth = ""
 	notify("**{} declares an INT challenge.**".format(me))
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares at least 1 character to attack."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = IntrigueColor
+			c.orientation = 1
+			if re.search(r'stealth',c.keywords,re.I):   #stealth
+				stealth = "0"
+		notify("**{} declares INT attackers.**".format(me))
+		if stealth == "0":
+			choice = confirm("Character with the stealth keyword has been declared as an attacker, do you want to chooses its stealth target?")
+			if choice == True:
+				notify("{} is ready to use the stealth keyword.".format(me))
+			else:
+				notify("{} renounces the use of the stealth keyword.".format(me))
+			stealth = "1"
+	else:
+		whisper("You must declare at least 1 character to attack.")
 
 def announcePow(group, x = 0, y = 0):
 	mute()
-	notify("**{} declares a PWR challenge.**".format(me))
+	stealth = ""
+	notify("**{} declares a POW challenge.**".format(me))
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares at least 1 character to attack."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = PowerColor
+			c.orientation = 1
+			if re.search(r'stealth',c.keywords,re.I):   #stealth
+				stealth = "0"
+		notify("**{} declares POW attackers.**".format(me))
+		if stealth == "0":
+			choice = confirm("Character with the stealth keyword has been declared as an attacker, do you want to chooses its stealth target?")
+			if choice == True:
+				notify("{} is ready to use the stealth keyword.".format(me))
+			else:
+				notify("{} renounces the use of the stealth keyword.".format(me))
+			stealth = "1"
+	else:
+		whisper("You must declare at least 1 character to attack.")
 
 def holdOn(group, x = 0, y = 0):
 	mute()
 	notify("**Please wait.  {} has an action/question.**".format(me))
 
-def announceUO(group, x = 0, y = 0):
-	mute()
-	notify("**{} responds: Unopposed.**".format(me))
-
 def announceOpp(group, x = 0, y = 0):
 	mute()
 	notify("**{} responds: Opposed/Defend.**".format(me))
+	choiceList = ['Military', 'Intrigue', 'Power', 'No defenders']
+	colorList = ['#ae0603' ,'#006b34','#1a4d8f','#D8D8D8']
+	choice = askChoice("Which challenge do you want to defend?", choiceList,colorList)
+	if choice == 1:
+		defMil(table)
+	elif choice == 2:
+		defInt(table)
+	elif choice == 3:
+		defPow(table)
+	elif choice == 4:
+		notify("{} declares no defenders.".format(me))
+	else:return
 	
+def defMil(group, x = 0, y = 0):
+	mute()
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares characters to defend."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = MilitaryColor
+			c.orientation = 1
+		notify("**{} declares MIL defenders.**".format(me))
+	else:
+		notify("{} declares no defenders.".format(me))
+
+def defInt(group, x = 0, y = 0):
+	mute()
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares characters to defend."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = IntrigueColor
+			c.orientation = 1
+		notify("**{} declares INT defenders.**".format(me))
+	else:
+		notify("{} declares no defenders.".format(me))
+
+def defPow(group, x = 0, y = 0):
+	mute()
+	list = []
+	for card in table:
+		card.target(False)
+		if card.type == "Character" and card.controller == me and card.isFaceUp:
+			list.append(card)
+	dlg = cardDlg(list)
+	dlg.title = "These cards are in your table:"
+	dlg.text = "Declares characters to defend."
+	dlg.min = 1
+	dlg.max = len(list)
+	cards = dlg.show()
+	if cards != None:
+		for c in cards:
+			c.target(True)
+			c.highlight = PowerColor
+			c.orientation = 1
+		notify("**{} declares POW defenders.**".format(me))
+	else:
+		notify("{} declares no defenders.".format(me))
+		
 def scoop(group, x = 0, y = 0):
 	mute()
 	
@@ -111,6 +276,12 @@ def scoop(group, x = 0, y = 0):
 	var = me.getGlobalVariable("setupOk")
 	var="0"
 	me.setGlobalVariable("setupOk", var)
+	me.counters['Gold'].value = 0  #reset all counters
+	me.counters['Power'].value = 0
+	me.counters['Reserve'].value = 0
+	me.counters['Initiative'].value = 0
+	me.counters['Str'].value = 0
+	me.setGlobalVariable("turn", "0")
 	
 	for c in me.hand: 
 		if not c.Type == "Faction" and not c.Type == "Agenda":
@@ -358,7 +529,7 @@ def moveOneRandom(group):
 	card = group.random()
 	if card == None: return
 	card.moveTo(me.hand)
-	notify("{} randomly moves {} from their discard to thier hand.".format(me, card.name))
+	notify("{} randomly moves {} from their discard to thier hand.".format(me, card))
 
 #---------------------------------------------------------------------------
 # New actions
@@ -369,41 +540,109 @@ def setup(group, x = 0, y = 0):
 	mute()
 	if not confirm("Confirm to setup?"): return
 	var = me.getGlobalVariable("setupOk")
-	if var == "1":
-		notify("You already did your Setup")
+	if var != "0":
+		whisper("You already did your Setup")
 		return
 	if len(me.hand) == 0:
-		notify("You need to load a deck first") 
+		whisper("You need to load a deck first") 
 		return
 	var="1"
 	me.setGlobalVariable("setupOk", var)
 	notify("**{} has started setup, please wait**".format(me))
-	checkdeck()
 	for c in me.hand: 
 		if c.Type == "Faction":
-			if me.hasInvertedTable(): 
+			if me.isInverted: 
 				c.moveToTable(300,-100)			
 			else:
 				c.moveToTable(-280,0)
 		if c.Type == "Agenda":
-			if me.hasInvertedTable(): 
+			if me.isInverted: 
 				c.moveToTable(220,-100)			
 			else:
 				c.moveToTable(-200,0)
 	me.deck.shuffle()
 	for card in me.deck.top(7):
 		card.moveTo(me.hand)
-	if me.hasInvertedTable(): 
+	if me.isInverted: 
 		table.create("656f69c4-c506-4014-932b-9dff4422f09e",300,-200)
 	else:
 		table.create("656f69c4-c506-4014-932b-9dff4422f09e",-280,100)
-	notify("**{} is ready**".format(me))
+	notify("**{} is ready to setup**".format(me))
 	if me._id == 1:
-		if me.hasInvertedTable(): 
+		if me.isInverted: 
 			table.create("73a6655b-60b6-4080-b428-f4e0099e0f77",380,-100)
 		else:
 			table.create("73a6655b-60b6-4080-b428-f4e0099e0f77",-360,0)
+	if getGlobalVariable("numplayer") == "2":
+		n = rnd(1, 2)
+		if n == 1:
+			notify("**Seven Gods decide {} is the firstplayer.**".format(getGlobalVariable("AID")))
+		else:
+			setGlobalVariable("firstplay","False")
+			f = (card for card in table  
+					if card.name == "1st Player Token")
+			for card in f:
+				if card.controller == me:    
+					moveFP(card)
+				else:                        
+					remoteCall(players[1], "moveFP", card)
+			notify("**Seven Gods decide {} is the firstplayer.**".format(getGlobalVariable("BID")))
+	placesetupcards()
 
+def placesetupcards():
+	mute()
+	list = []
+	for p in me.hand:list.append(p)
+	dlg=cardDlg(list)
+	dlg.title = "Choose your setup cards."
+	dlg.text = "You may place up to 8 gold cost worth cards as setup cards."
+	dlg.min = 0
+	dlg.max = len(list)
+	cards = dlg.show()
+	uniquecards = [] #Duplicates
+	cost = 0
+	limit = 0
+	place = "OK"
+	if cards != None:
+		for placecard in cards:
+			if placecard.unique != "Yes":
+				cost += int(placecard.cost)
+			elif placecard.unique == "Yes" and placecard.name not in uniquecards:
+				uniquecards.append(placecard.name)
+				cost += int(placecard.cost)
+			if re.search(r'limit',placecard.keywords,re.I):   #keyword limit
+				limit += 1
+			if placecard.type == "Event":
+				confirm("You may only place character, location, and attachment cards.")
+				place = "NOTOK"
+			if placecard.type == "Attachment":
+				if not confirm("Each attachment must be attached to a valid target under its owner’s control."):
+					place = "NOTOK"
+		if cost > 8:
+			confirm("You may only place up to 8 gold cost.")
+			place = "NOTOK"
+		if limit > 1:
+			confirm("You may only place up 1 limit card.")
+			place = "NOTOK"
+		if place == "NOTOK":
+			placesetupcards()
+		if place == "OK":
+			for card in cards:
+				if me.isInverted:
+					card.moveToTable(20,-100,True)
+				else:
+					card.moveToTable(-20,0,True)
+				card.peek()
+			for drawcard in me.deck.top(7-len(me.hand)):
+				drawcard.moveTo(me.hand)
+			notify("{} is ready to begin.".format(me))
+	else:
+		if me.getGlobalVariable("setupOk") == "2":
+			placesetupcards()
+		else:
+			mulligan(me.hand)
+			me.setGlobalVariable("setupOk","2")
+			placesetupcards()
 
 def endturn(group, x = 0, y = 0): 
 	count = 0
@@ -416,6 +655,7 @@ def endturn(group, x = 0, y = 0):
 		if card.isFaceUp:
 			card.orientation &= ~Rot90
 			card.highlight = None
+			card.target(False)
 	me.counters['Gold'].value = 0  #reset gold counters
 	goldcard = (card for card in table
 			if card.controller == me)
@@ -424,28 +664,22 @@ def endturn(group, x = 0, y = 0):
 	getreserve(group)
 	if len(me.hand) > me.counters['Reserve'].value:  #check reserve
 		if discAmount == None: 
-			notify("The number of cards in {}'s hand is more than your reserve.You should discard {} cards.".format(me, len(me.hand)-me.counters['Reserve'].value))
+			whisper("The number of cards in {}'s hand is more than your reserve.You should discard {} cards.".format(me, len(me.hand)-me.counters['Reserve'].value))
 			discAmount = askInteger("How many cards to discard?", len(me.hand)-me.counters['Reserve'].value) 
 		if discAmount == None: return
-		for index in range(0,discAmount):
-			cardList = []
-			for c in me.hand:
-				cardList.append(c)
-			c=askCard(cardList)
-			if c != None:
-				c.moveTo(me.piles['Discard pile'])
-				notify("{} discard {}.".format(me, c.name))
-				count += 1
-			else:return
+		dlg = cardDlg([c for c in me.hand])
+		dlg.title = "These cards are in your hand:"
+		dlg.text = "Choose {} cards to discard.".format(discAmount)
+		dlg.min = discAmount
+		dlg.max = discAmount
+		cards = dlg.show()
+		if cards != None:
+			for card in cards:
+				card.moveTo(me.piles['Discard pile'])
+				notify("{} discard {}.".format(me, card))
+		else:return
 	else:
 		notify("Hand size is ok.")
-	for c in table: 
-		if c.Type == "Plot" and c.controller == me:
-			if len(me.piles['Plot Deck']) > 0:
-				c.moveTo(me.piles['Used Plot Pile'])
-			else:
-				shuffleToPlot(me.piles['Used Plot Pile'])
-				c.moveTo(me.piles['Used Plot Pile'])
 	me.counters['Reserve'].value = 0
 	me.counters['Initiative'].value = 0
 	me.counters['Str'].value = 0
@@ -464,11 +698,15 @@ def countincome(group, x=0, y=0):
 					elif incomecard.Unique == "Yes" and incomecard.name not in uniquecards:
 						uniquecards.append(incomecard.name)
 						me.counters['Gold'].value += int(incomecard.goldincome)
-		for plotcard in table:
-			if plotcard.type == "Plot" and plotcard.controller == me:
-				me.counters['Gold'].value += int(plotcard.plotgoldincome)
-				plotcard.markers[Gold] += me.counters['Gold'].value
+		plotlist = [card for card in table
+						if card.controller == me and card.type == "Plot"]
+		plotlist.reverse()
+		for plotcard in plotlist:
+			me.counters['Gold'].value += int(plotcard.plotgoldincome)
+			plotcard.markers[Gold] += me.counters['Gold'].value
+			break
 		notify("{} counts income {} gold.".format(me,me.counters['Gold'].value))
+		plotlist.reverse()
 		me.setGlobalVariable("turn", "1")
 		return
 	else:
@@ -480,6 +718,9 @@ def getreserve(group, x=0, y=0):
 		person.counters['Reserve'].value = 0
 		personCards = (card for card in table
 						if card.controller == person)
+		plotlist = [card for card in table
+						if card.controller == person and card.type == "Plot"]
+		plotlist.reverse()
 		uniquecards = []
 		for card in personCards:
 			if card.isFaceUp:
@@ -489,8 +730,10 @@ def getreserve(group, x=0, y=0):
 					elif card.name not in uniquecards:
 						uniquecards.append(card.name)
 						person.counters['Reserve'].value += int(card.Reserve)	
-				elif card.type == "Plot":
-					person.counters['Reserve'].value += int(card.plotReserve)
+		for card in plotlist:
+			person.counters['Reserve'].value += int(card.plotReserve)
+			break
+		plotlist.reverse()
 		notify("{}'s Reserve value is {}.".format(person,person.counters['Reserve'].value))
 	return
 
@@ -500,6 +743,9 @@ def getInit(group, x = 0, y = 0):
 		person.counters['Initiative'].value = 0
 		personCards = (card for card in table
 						if card.controller == person)
+		plotlist = [card for card in table
+						if card.controller == person and card.type == "Plot"]
+		plotlist.reverse()
 		uniquecards = []
 		for card in personCards:
 			if card.isFaceUp:
@@ -509,14 +755,16 @@ def getInit(group, x = 0, y = 0):
 					elif card.name not in uniquecards:
 						uniquecards.append(card.name)
 						person.counters['Initiative'].value += int(card.Initiative)	
-				elif card.type == "Plot":
-					person.counters['Initiative'].value += int(card.plotInitiative)
+		for card in plotlist:
+			person.counters['Initiative'].value += int(card.plotInitiative)
+			break
+		plotlist.reverse()
 		notify("{}'s Initiative value is {}.".format(person,person.counters['Initiative'].value))
 	return
 
 def fp(group, x = 0, y = 0):
 	mute()
-	if len(players) == 2:
+	if getGlobalVariable("numplayer") == "2":
 		getInit(table)
 		if players[0].counters['Initiative'].value == players[1].counters['Initiative'].value:
 			notify("{}'s initiative value is same as {}.".format(players[0],players[1]))
@@ -596,7 +844,7 @@ def dominance(group, x=0, y=0):
 					person.counters['Str'].value += card.markers[Gold]
 		notify("{}'s total for dominance is {}.".format(person,person.counters['Str'].value))
 	if not confirm("Confirm to proceed?"): return
-	if len(players) == 2:
+	if getGlobalVariable("numplayer") == "2":
 		if players[0].counters['Str'].value == players[1].counters['Str'].value:
 			notify("No one wins dominance.")
 		elif players[0].counters['Str'].value > players[1].counters['Str'].value:
@@ -662,7 +910,8 @@ def challenge(group, x=0, y=0):
 def challengeAnnounce(group, x=0, y=0):
 	mute()
 	choiceList = ['Military', 'Intrigue', 'Power', 'No challenge and Pass']
-	choice = askChoice("Which challenge do you want to initiate?", choiceList)
+	colorList = ['#ae0603' ,'#006b34','#1a4d8f','#D8D8D8']
+	choice = askChoice("Which challenge do you want to initiate?", choiceList,colorList)
 	if choice == 1:
 		announceMil(table)
 	elif choice == 2:
@@ -676,27 +925,39 @@ def challengeAnnounce(group, x=0, y=0):
 def revealplot(group, x = 0, y = 0):
 	mute()
 	me.piles['Plot Deck'].addViewer(me)
-	list = []
-	for card in me.piles['Plot Deck']: list.append(card)
-	card=askCard(list)
-	if card != None:
-		if me.hasInvertedTable(): 
-			card.moveToTable(120,-80)
-		else:
-			card.moveToTable(-120,0)
-		card.isFaceUp = False
-		count = 0
-		for p in table:
-			if p.type == "Plot":
-				count += 1
-		if count == len(players):
-			flipplotcard(card)
-			d = (card for card in table 
-					if card.type == "Plot" and card.controller != me)
-			for c in d:
-				remoteCall(players[1], "flipplotcard", c)
-			if not confirm("Continue to calculate initiative?"): return
-			fp(table)
+	dlg=cardDlg([c for c in me.piles['Plot Deck']])
+	dlg.title = "These cards are in your unused-plot pile:"
+	dlg.text = "Select a plot card to reveal."
+	cards = dlg.show()
+	if cards != None:
+		for card in cards:
+			if me.isInverted: 
+				card.moveToTable(120,-80,True)
+			else:
+				card.moveToTable(-120,0,True)
+			me.setGlobalVariable("turn","1")
+			list = [card for card in table
+						if card.Type == "Plot" and card.controller == me]
+			count = len(list)
+			for p in list:
+				if count > 1:
+					p.moveTo(me.piles['Used Plot Pile'])
+					count -= 1
+				if count == 1:
+					break
+			if len(me.piles['Plot Deck']) == 0:
+				shuffleToPlot(me.piles['Used Plot Pile'])
+			if len(players) > 1:
+				if me.getGlobalVariable("turn") == players[1].getGlobalVariable("turn") == "1":
+					flipplotcard(card)
+					d = (card for card in table 
+							if card.type == "Plot" and card.controller != me)
+					for c in d:
+						remoteCall(players[1], "flipplotcard", c)
+					if not confirm("Continue to calculate initiative?"): return
+					fp(table)
+			if len(players) == 1:
+				flipplotcard(card)
 	else:
 		return
 
@@ -742,7 +1003,7 @@ def askfirstplayer(group, x = 0, y = 0):
 def displayCardText(card, x = 0, y = 0):
 	mute()
 	
-	notify('{} - Card Text:'.format(card.name))
+	notify('{} - Card Text:'.format(card))
 	notify('{}'.format(card.Text))
 
 
@@ -758,11 +1019,11 @@ def displayErrata(card, x = 0, y = 0):
 def remove(card, x = 0, y = 0):
 	mute()
 	if card.type == "Internal":
-		notify("You can't remove {} from the game".format(card.name))
+		whisper("You can't remove {} from the game".format(card.name))
 	else:
 		if not confirm("Confirm to remove this card from game."): return
 		card.delete()
-		notify('{} remove {} from the game'.format(me, card.name))
+		notify('{} removes {} from the game'.format(me, card))
 
 def cardLookup(card, x = 0, y = 0):
 	mute()
@@ -780,14 +1041,14 @@ def disc(card, x = 0, y = 0):
 	mute()
 	if card.type == "Plot":
 		card.moveTo(me.piles['Used Plot Pile'])
-		notify("{} move {} to used plot pile.".format(me, card.name))
+		notify("{} move {} to used plot pile.".format(me, card))
 	elif card.type == "Faction" or card.type ==  "Agenda":
-		notify("You can't discard {} card.".format(card.type))
+		whisper("You can't discard {} card.".format(card.type))
 	elif card.type == "Internal":
-		notify("You can't discard {}.".format(card.name))
+		whisper("You can't discard {}.".format(card.name))
 	else:
 		card.moveTo(me.piles['Discard pile'])
-		notify("{} discard {}.".format(me, card.name))
+		notify("{} discard {}.".format(me, card))
 
 def defaultAction(card, x = 0, y = 0):
 	mute()
@@ -807,12 +1068,12 @@ def defaultAction(card, x = 0, y = 0):
 def moveFP(card):
 	mute()
 	if getGlobalVariable("firstplay") == "True":
-		if me.hasInvertedTable(): 
+		if me.isInverted: 
 			card.moveToTable(380,-100)
 		else:
 			card.moveToTable(-360,0)
 	elif getGlobalVariable("firstplay") == "False":
-		if me.hasInvertedTable(): 
+		if me.isInverted: 
 			card.moveToTable(-360,0)
 		else:
 			card.moveToTable(380,-100)
@@ -822,7 +1083,7 @@ def moveFP(card):
 def DoneButton(card):
 	mute()
 	notify("**{} is done.**".format(me))
-	card.highlight = None
+	card.filter = None
 	if len(players) > 1:
 		d = (card for card in table 
 				if card.name == "Done Token" and card.controller != me)
@@ -831,7 +1092,7 @@ def DoneButton(card):
 	
 def addWaitHighlight(card):
 	mute()
-	card.highlight = WaitColor
+	card.filter = WaitColor
 	card.target(False)
 
 def flipplotcard(card):
@@ -840,33 +1101,126 @@ def flipplotcard(card):
 		return
 	else:
 		card.isFaceUp = True
-		notify("{} reveals {}.".format(me, card.name))
+		notify("{} reveals {}.".format(me, card))
+	me.setGlobalVariable("turn","0")
 	
 #------------------------------------------------------------------------------
 # New Hand Actions
 #------------------------------------------------------------------------------
-def play(card, x=0, y=0):
+def attachat(ax,ay,table):
 	mute()
+	for c in table:
+		x,y = c.position
+		if x == ax and y == ay:
+			return attachat(x+12,y+12,table)
+	return ax,ay
+
+def play(card):
+	mute()
+	c = 0
 	if card.cost == "" : 
 		whisper("You can't play this card")
 		return
 	if card.Cost == "X": cost=askInteger("How much do you want to pay to play {} ? ".format(card.name),0)
 	else : cost=int(card.Cost)
-	reduc=askInteger("Reduce Cost by ?",0)
-	if reduc == None or cost == None: return
-	if reduc>cost: reduc=cost
-	cost-=reduc
-	if me.counters['Gold'].value < cost :
-		whisper("You don't have enough Gold to pay for {}.".format(card.name))
-		return		
-	if me.hasInvertedTable(): card.moveToTable(0,-288)
-	else : 	card.moveToTable(0,160)
-	card.target(True)
-	notify("{} plays {} for {} Gold (Cost reduced by {}).".format(me,card,cost,reduc))
-	me.counters['Gold'].value -= cost
-	for incomecard in table:
-		if incomecard.controller == me and incomecard.markers[Gold] > 0:
-			incomecard.markers[Gold] -= cost
+	uniquecards = []
+	for u in table:
+		if u.controller == me and u.unique == "Yes":
+			uniquecards.append(u.name)
+			if card.name in uniquecards: 
+				cost=0
+				c = 1   #Duplicates
+				x,y = u.position
+				break
+	if c != 1:
+		if card.type == "Attachment":
+			if not confirm("Have you already targeted(use Shift+mouse left button) the object you want to attach?"):return
+			list = []
+			for targetcard in table:
+				if targetcard.targetedBy == me:
+					list.append(targetcard)
+					targetcard.target(False)
+			if len(list) > 0:
+				dlg = cardDlg(list)
+				dlg.title = "These cards can be attached:"
+				dlg.text = "Choose a card to attach."
+				cards = dlg.show()
+				if cards != None:
+					for choose in cards:
+						reduc=askInteger("Reduce Cost by ?",0)
+						if reduc == None or cost == None: return
+						if reduc>cost: reduc=cost
+						cost-=reduc
+						if me.counters['Gold'].value < cost :
+							whisper("You don't have enough Gold to pay for {}.".format(card))
+							return		
+						me.counters['Gold'].value -= cost
+						for incomecard in table:
+							if incomecard.controller == me and incomecard.markers[Gold] > 0:
+								incomecard.markers[Gold] -= cost
+						cx,cy = choose.position
+						x,y = attachat(cx+15,cy+15,table)
+						card.moveToTable(x,y)
+						card.sendToBack()
+						card.highlight = PlayColor
+						notify("{} plays {} and attachs to {} for {} Gold (Cost reduced by {}).".format(me,card,choose,cost,reduc))
+				else:
+					whisper("Attachment cards must be attached to another card or game element.")
+					return
+			else:
+				whisper("You must targeted(use Shift+mouse left button) a card which you want to attach to.")
+		else:
+			reduc=askInteger("Reduce Cost by ?",0)
+			if reduc == None or cost == None: return
+			if reduc>cost: reduc=cost
+			cost-=reduc
+			if me.counters['Gold'].value < cost :
+				whisper("You don't have enough Gold to pay for {}.".format(card))
+				return		
+			if card.type == "Character":
+				clist = [p for p in table
+							if p.controller == me and p.type == "Character" and p.isFaceUp]
+				if len(clist) > 0:
+					clist.reverse()
+					for character in clist:
+						x, y = character.position
+						break
+					clist.reverse()
+					if me.isInverted: card.moveToTable(x-80,y)
+					else : 	card.moveToTable(x+80,y)
+				else:
+					if me.isInverted:card.moveToTable(20,-100)			
+					else:card.moveToTable(-20,0)
+			elif card.Type == "Location":
+				clist = [p for p in table
+							if p.controller == me and p.type == "Location" and p.isFaceUp]
+				if len(clist) > 0:
+					clist.reverse()
+					for location in clist:
+						x, y = location.position
+						break
+					clist.reverse()
+					if me.isInverted: card.moveToTable(x-80,y)
+					else : 	card.moveToTable(x+80,y)
+				else:
+					if me.isInverted:card.moveToTable(20,-220)			
+					else:card.moveToTable(-20,120)
+			else:
+				if me.isInverted: card.moveToTable(150,-230)
+				else: card.moveToTable(-130,130)
+			card.highlight = PlayColor
+			notify("{} plays {} for {} Gold (Cost reduced by {}).".format(me,card,cost,reduc))
+			me.counters['Gold'].value -= cost
+			for incomecard in table:
+				if incomecard.controller == me and incomecard.markers[Gold] > 0:
+					incomecard.markers[Gold] -= cost
+	else:
+		if me.isInverted: 
+			card.moveToTable(x-8,y-8)
+		else:
+			card.moveToTable(x+8,y+8)
+		notify("{} plays {}'s duplicate.".format(me,card))
+		card.sendToBack()
 			
 #------------------------------------------------------------------------------
 # New Pile Actions
@@ -892,14 +1246,14 @@ def checkdeck():
 			AgendaName = card.name
 		else:
 			ok = False
-			notify("You have a card in your hand that is not a faction or an agenda, please put it in the appropriate deck.")
+			whisper("You have a card in your hand that is not a faction or an agenda, please put it in the appropriate deck.")
 			
 	if FactionCount != 1:
 		ok = False
-		notify("You should have exactly 1 faction card in your hand.")
+		whisper("You should have exactly 1 faction card in your hand.")
 	if AgendaCount > 1:
 		ok = False
-		notify("You can only use 1 agenda.")
+		whisper("You can only use 1 agenda.")
 		
 	if AgendaName == "Banner of the Stag":
 		BannerFaction = "Baratheon"
@@ -924,20 +1278,20 @@ def checkdeck():
 	
 	if len(me.piles['Plot Deck']) != 7:
 		ok = False
-		notify("Your plot deck must contain exactly 7 cards.")
+		whisper("Your plot deck must contain exactly 7 cards.")
 		
 	for card in me.piles['Plot Deck']:
 		if card.type != 'Plot':
 			ok = False
-			notify("Your plot deck must contain only plots.")
+			whisper("Your plot deck must contain only plots.")
 			
 		if card.faction != 'Neutral.' and FactionName not in card.faction:
 			if card.loyal == 'Yes':
 				ok = False
-				notify("Your plot deck contains a loyal card from another faction.")
+				notify("{}'s plot deck contains a loyal card from another faction.".format(me))
 			if BannerFaction == '' or BannerFaction not in card.faction:
 				ok = False
-				notify("Your plot deck contains a card from an illegal faction.")
+				notify("{}'s plot deck contains a card from an illegal faction.".format(me))
 				
 		counts[card.name] += 1
 		
@@ -949,37 +1303,37 @@ def checkdeck():
 				
 			if counts[card.name] > limit:
 				ok = False
-				notify("You have {} copies of {} in your plot deck, but you can have only {}.".format(counts[card.name], card.name, limit))
+				notify("{} has {} copies of {} in plot deck, but {} can has only {}.".format(me, counts[card.name], card,me, limit))
 				
 			if MultiplePlotName == '':
 				MultiplePlotName = card.name
 			else:
 				ok = False
-				notify("You can have several copies of only 1 plot.")
+				notify("{} can has several copies of only 1 plot.".format(me))
 	
 	#Deck
 	NeutralCount = 0
 	BannerCount = 0
-	me.deck.setVisibility('me')
+	me.deck.addViewer(me)
 	
 	if len(me.deck) < 60:
 		ok = False
-		notify("Your deck must contain at least 60 cards.")
+		notify("{}'s deck must contain at least 60 cards.".format(me))
 	
 	for card in me.deck:
 		if card.type != "Character" and card.type != "Location" and card.type != "Attachment" and card.type != "Event":
 			ok = False
-			notify("Your deck must contain only characters, locations, attachments and events.")
+			notify("{}'s deck must contain only characters, locations, attachments and events.".format(me))
 	
 		if card.faction == 'Neutral.':
 			NeutralCount += 1
 		elif FactionName not in card.faction:
 			if card.loyal == 'Yes':
 				ok = False
-				notify("Your deck contains a loyal card from another faction.")
+				notify("{}'s deck contains a loyal card from another faction.".format(me))
 			elif BannerFaction == '' or BannerFaction not in card.faction:
 				ok = False
-				notify("Your deck contains a card from an illegal faction.")
+				notify("{}'s deck contains a card from an illegal faction.".format(me))
 			else:
 				BannerCount += 1
 				
@@ -992,16 +1346,16 @@ def checkdeck():
 		
 		if counts[card.name] > limit:
 			ok = False
-			notify("You have {} copies of {} in your deck, but you can have only {}.".format(counts[card.name], card.name, limit))
+			notify("{} has {} copies of {} in deck, but {} can has only {}.".format(me,counts[card.name], card,me, limit))
 	
 	if AgendaName == 'Fealty' and NeutralCount > 15:
 		ok = False
-		notify("Your agenda is Fealty, so you can have 15 neutral cards in your deck but you have {}.".format(NeutralCount))
+		notify("{}'s agenda is Fealty, so {} can has 15 neutral cards in deck, but {} have {}.".format(me,me,me, NeutralCount))
 	elif BannerFaction != '' and BannerCount < 12:
 		ok = False
-		notify("Your agenda is {}, so you must have at least 12 {} cards in your deck, but you have only {}".format(AgendaName, BannerFaction, BannerCount))
+		notify("{}'s agenda is {}, so {} must has at least 12 {} cards in deck, but {} have only {}".format(me, AgendaName, me,BannerFaction, me,BannerCount))
 	
-	me.deck.setVisibility('None')
+	me.deck.removeViewer(me)
 	
 	if ok:
 		notify("Deck of {} is OK".format(me))
@@ -1014,15 +1368,54 @@ def shuffleToPlot(group):
 		card.moveTo(me.piles['Plot Deck'])
 	notify("{} moved all used plots to their plot deck.".format(me))
 
+def createTitles(group):
+	mute()
+	if len(shared.piles['Titles']) == 6:
+		whisper("Melee titles are created.")
+	else:
+		for card in group:
+			card.delete()
+		group.create("feefb8d0-f4ed-4d27-b272-3b9e9ee11a5d")
+		group.create("3c734e0d-d625-4553-9cf5-74051311eef5")
+		group.create("f91c60a9-d506-45f3-b5de-3a51e23279d3")
+		group.create("cb3a2844-1aa5-494c-9536-87b4b9bd4562")
+		group.create("0ba59f59-b08c-4e8e-ab23-b5cf9e77d176")
+		group.create("3b088db8-adeb-4728-9eb9-6817455da6dc")
+		notify("{} created melee titles.".format(me))
+
+def removeTitles(group):
+	mute()
+	card = group.random()
+	if card == None: return
+	card.delete()
+	notify('{} removes a Title'.format(me))
+	
+def chooseTitle(card):
+	mute()
+	card.moveToTable(0,0,True)
+	card.controller == me
+	card.peek()
+	notify('{} choose a Title'.format(me))
+
+def movetobottom(card):
+	mute()
+	if len(card.group) < 2: return
+	card.moveToBottom(card.group)
+	notify("{} moves a card to bottom of {}'s {}'.".format(me,card.owner,card.group.name))
+
+	
 #------------------------------------------------------------------------------
 # New Events
 #------------------------------------------------------------------------------
-def on_load_deck(player, groups):
+def onloaddeck(args):
 	mute()
-	setGlobalVariable("firstplay","True")
-	if player == me:
-		if me._id == 1:
-			setGlobalVariable("AID","{}".format(me))
-		else:
-			setGlobalVariable("BID","{}".format(me))
+	c = int(getGlobalVariable("numplayer"))+1
+	setGlobalVariable("numplayer","{}".format(c))
+	if me._id == 1:
+		setGlobalVariable("AID","{}".format(me))
+	else:
+		setGlobalVariable("BID","{}".format(me))
+	player = args.player
+	if player==me:
+		checkdeck()
 		setup(table)
