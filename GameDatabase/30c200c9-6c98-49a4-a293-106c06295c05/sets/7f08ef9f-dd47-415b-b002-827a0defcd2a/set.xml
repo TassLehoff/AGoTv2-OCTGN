@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<set name="02-Westeros"
+     id="7f08ef9f-dd47-415b-b002-827a0defcd2a"
+     gameId="30c200c9-6c98-49a4-a293-106c06295c05"
+     gameVersion="1.1.0.0"
+     version="1.0">
+
+    <cards>
+        <card id="84c07bae-1e90-433f-a31d-00479f13342c" name="Will">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ranger."/>
+            <property name="Text"                       value="Forced Reaction: After you lose an unopposed challenge, sacrifice a Ranger character you control."/>
+			<property name="Keywords"                   value="Stealth. Insight."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>           
+            <property name="CardNumber"                 value="1"/>
+            <property name="Illustrator"                value="Joshua Cairós"/>
+        </card>
+        <card id="0fcc5481-0631-4e82-a3c4-cca7535241bd" name="The Watch Has Need">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Action: Name a trait: Builder, Ranger, or Steward. Search the top X cards of your deck for any number of characters with that trait, reveal them, and add them to your hand. Shuffle the other cards back into your deck. X is your reserve value."/>
+            <property name="Unique"                     value="No"/>
+			<property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="2"/>
+            <property name="Illustrator"                value="Mauricio Calle"/>
+        </card>
+        <card id="a1532c17-62ab-49b2-b5f3-cbb5f2d5d590" name="Maester Luwin">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Maester."/>
+            <property name="Text"                       value="While you control:&#13;&#10;• Robb Stark, he gains insight.&#13;&#10;• Jon Snow, he gains stealth.&#13;&#10;• Bran Stark, he gains: &quot;immune to opponents&apos; plot effects.&quot;&#13;&#10;• Rickon Stark, he gains pillage."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="3"/>
+            <property name="Illustrator"                value="Joshua Cairós"/>
+        </card>
+        <card id="d4827a8a-6403-4d47-bb47-813073b78b49" name="Lady">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Direwolf."/>
+            <property name="Text"                       value="Attached character gets +2 STR.&#13;&#10;Action: Pay 1 gold to attach Lady to a different character. Then, if attached character is Sansa Stark, stand her. (Limit once per phase.)"/>
+            <property name="Keywords"                   value="[Stark] character only. Terminal."/>
+			<property name="Unique"                     value="Yes"/>
+			<property name="Loyal"                      value="No"/>
+            <property name="CardNumber"                 value="4"/>
+            <property name="Illustrator"                value="Smirtouille"/>
+        </card>
+        <card id="2ee7a645-7d26-42f2-9440-ceb82ea818e2" name="Arbor Knight">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="House Redwyne. Knight."/>
+            <property name="Text"                       value="Challenges Action: Pay 1 gold to choose a participating House Redwyne character. Until the end of the challenge, that character gets +1 STR. (Limit 3 times per phase.)"/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="5"/>
+            <property name="Illustrator"                value="Carlos Palma Cruchaga"/>
+        </card>
+        <card id="8f2b58df-649e-4793-bd4c-bbf701cd57c5" name="Pleasure Barge">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Barge."/>
+			<property name="Keywords"                   value="Immune to card effects."/>
+            <property name="Text"                       value="Reaction: After you marshal Pleasure Barge, if you have not yet drawn any cards this phase, draw 3 cards."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="CardNumber"                 value="6"/>
+            <property name="Illustrator"                value="Sergey Glushakov"/>
+        </card>
+        <card id="b9e548d6-49df-4a34-b84d-22f92ec101c4" name="Renly Baratheon">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Lord. Small Council."/>
+            <property name="Text"                       value="Reduce the cost of the first non-[Baratheon] character you marshal each round by 1."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="7"/>
+            <property name="Illustrator"                value="Jan-Wah Li"/>
+        </card>
+        <card id="8c6f2e35-5a68-4057-8905-fe74afc5cda1" name="King Robert’s Warhammer">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Weapon."/>
+            <property name="Text"                       value="Attached character gets +1 STR.&#13;&#10;Reaction: After you win a challenge in which attached character is participating as an attacker, choose and kneel up to X total STR worth of characters, where X is attached character’s STR. Then, sacrifice King Robert's Warhammer."/>
+            <property name="Unique"                     value="Yes"/>
+			<property name="Loyal"                      value="No"/>
+			<property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="8"/>
+            <property name="Illustrator"                value="Victor Manuel Leza Moreno"/>
+        </card>
+        <card id="200bd056-3e5d-4ed6-a337-ea2667618605" name="The Hound">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="House Clegane."/>
+            <property name="Text"                       value="Forced Reaction: After you win a challenge in which The Hound is participating, you may discard 1 card at random from your hand. If you do not, return The Hound to your hand."/>
+            <property name="Keywords"                   value="Ambush (4)."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="6"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="9"/>
+            <property name="Illustrator"                value="Joshua Cairós"/>
+        </card>
+        <card id="53d1c773-0f71-429c-a94e-6473d2e5a100" name="Cersei’s Wheelhouse">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Vehicle."/>
+            <property name="Text"                       value="Reaction: After you become the first player, either: gain 1 gold, or draw 1 card."/>
+            <property name="Unique"                     value="Yes"/>
+			<property name="Loyal"                      value="Yes"/>
+			<property name="Cost"                       value="1"/>
+			<property name="Initiative"     			value="-1"/>
+            <property name="CardNumber"                 value="10"/>
+            <property name="Illustrator"                value="Federico Musetti"/>
+        </card>
+        <card id="daadbc76-f34e-4b92-bac6-837d4b55ed0a" name="The Seastone Chair">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Iron Islands."/>
+            <property name="Text"                       value="Interrupt: When claim is applied for an unopposed [MIL] challenge in which you are the attacking player, kneel your faction card to choose a character without attachments, controlled by the losing opponent. Instead of the normal claim effects, kill that character."/>
+            <property name="Unique"                     value="Yes"/>
+			<property name="Loyal"                      value="Yes"/>
+			<property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="11"/>
+            <property name="Illustrator"                value="Logan Feliciano"/>
+        </card>
+		<card id="d991ea90-2741-4516-b0ad-33a5c3d6dc28" name="Rise of the Kraken" size="HorizontalCards">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="War."/>
+            <property name="Text"                       value="Interrupt: When you gain power for winning an unopposed challenge, gain 2 power instead."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="2"/>
+            <property name="PlotInitiative"             value="8"/>
+            <property name="PlotClaim"                  value="2"/>
+            <property name="PlotReserve"                value="5"/>
+			<property name="DeckLimit"                  value="1"/>
+            <property name="CardNumber"                 value="12"/>
+            <property name="Illustrator"                value="Tomasz Jedruszek"/>
+		</card>
+        <card id="f176a119-9fa1-465f-91d4-53ebe6cb65ac" name="Merchant Prince">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Companion."/>
+            <property name="Text"                       value="While Merchant Prince has an attachment, he gets +1 STR and gains a [MIL] icon."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="13"/>
+            <property name="Illustrator"                value="Dleoblack"/>
+        </card>
+        <card id="5f0c6f78-4af1-45c4-be89-5d7bc5014b5a" name="Vaes Dothrak">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Essos."/>
+            <property name="Text"                       value="Reaction: After you reveal a plot card, discard an attachment from your hand to choose an attachment with equal or lower printed cost, and discard it from play"/>
+            <property name="Unique"                     value="Yes"/>
+			<property name="Loyal"                      value="Yes"/>
+			<property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="14"/>
+            <property name="Illustrator"                value="Matthew Cowdery"/>
+        </card>
+        <card id="fcba07e6-a15f-46d8-821c-8a14a4983284" name="Bastard Daughter">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Bastard. Sand Snake."/>
+            <property name="Text"                       value="Interrupt: When Bastard Daughter or The Red Viper is killed, discard 1 card at random from each opponent’s hand."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="15"/>
+            <property name="Illustrator"                value="Tawny Fritzinger"/>
+        </card>
+        <card id="06b34127-fbb3-4d9c-94e2-bf00001a2b09" name="The Long Plan" size="HorizontalCards">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Scheme."/>
+            <property name="Text"                       value="You do not return unspent gold to the treasury during the taxation phase.&#13;&#10;Reaction: After you lose a challenge, gain 1 gold."/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="PlotGoldIncome"             value="4"/>
+            <property name="PlotInitiative"             value="3"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="8"/>
+            <property name="CardNumber"                 value="16"/>
+            <property name="Illustrator"                value="Tim Durning"/>
+        </card>
+		<card id="8f9f0932-a151-4fcb-b1ed-f82a806c82c6" name="Support of the People">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After you win a [POW] challenge by 5 or more STR, search your deck for a location with printed cost 3 or lower, and put it into play. Shuffle your deck. (Max 1 per challenge.)"/>
+            <property name="Unique"                     value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="17"/>
+            <property name="Illustrator"                value="Glen Osterberger"/>
+        </card>
+        <card id="3ade8418-4ab8-45e4-9b6a-615ed12682ba" name="Street of the Sisters">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="King’s Landing."/>
+            <property name="Text"                       value="Reaction: After you win a [POW] challenge by 5 or more STR, kneel your faction card to gain 1 power for your faction."/>
+			<property name="Unique"                     value="No"/>
+            <property name="CardNumber"                 value="18"/>
+            <property name="Illustrator"                value="Matthew Cowdery"/>
+        </card>
+        <card id="ffedc660-c11b-4324-8938-31a3911c2a58" name="Muster the Realm" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Edict."/>
+            <property name="Text"                       value="During a challenge in which you control an attacking Army character, raise the claim value on Muster the Realm by 1."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="4"/>
+            <property name="PlotInitiative"             value="5"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="6"/>
+            <property name="CardNumber"                 value="19"/>
+            <property name="Illustrator"                value="Jon Bosco"/>
+        </card>
+        <card id="f68a9d16-dea2-4eae-a03f-8fbc48e2c85c" name="Here to Serve" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Conclave. Kingdom."/>
+            <property name="Text"                       value="When Revealed: Search your deck for a Maester character with printed cost 3 or lower, and put it into play. Shuffle your deck."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="3"/>
+            <property name="PlotInitiative"             value="3"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="6"/>
+            <property name="CardNumber"                 value="20"/>
+            <property name="Illustrator"                value="Nikolas Hagialas"/>
+        </card>
+    </cards>
+</set>
