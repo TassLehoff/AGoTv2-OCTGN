@@ -17,12 +17,7 @@
     <scripts>
         <script src="scripts/actions.py"/>
     </scripts>
-    <globalvariables>
-	    <globalvariable name="firstplay" value="True" />
-        <globalvariable name="AID"       value="" />
-        <globalvariable name="BID"       value="" />
-		<globalvariable name="numplayer" value="0" />
-	</globalvariables>
+
     <events>
         <event name="OnDeckLoaded" action="onloaddeck" />
     </events>
@@ -47,6 +42,13 @@
                   image="cards/casual.jpg"
                   playerCount="2" />
     </gameModes>
+	
+	<globalvariables>
+	    <globalvariable name="firstplay" value="True" />
+        <globalvariable name="AID"       value="" />
+        <globalvariable name="BID"       value="" />
+		<globalvariable name="numplayer" value="0" />
+	</globalvariables>
     
     <card back="cards/back.png" front="cards/front.png" width="63" height="88" cornerRadius="2">
         <property name="Faction"        type="String"/>
@@ -202,7 +204,7 @@
         </group>
     </player>
 	<shared>
-        <group name="Titles" visibility="none"                width="63" height="88"                                  collapsed="True">
+        <group name="Titles" visibility="none"                width="63" height="88" icon="groups/blank.png"                            collapsed="True">
             <groupaction menu="Shuffle"                                                                               execute="shuffle"/>
             <groupaction menu="Create Titles"                                                                         execute="createTitles"/>
 			<groupaction menu="Remove 1 Title"                                                                  execute="removeTitles"/>

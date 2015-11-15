@@ -56,6 +56,7 @@
             <property name="Keywords"                   value="[Stark] character only. Terminal."/>
 			<property name="Unique"                     value="Yes"/>
 			<property name="Loyal"                      value="No"/>
+			<property name="Cost"                       value="1"/>
             <property name="CardNumber"                 value="4"/>
             <property name="Illustrator"                value="Smirtouille"/>
         </card>
@@ -82,6 +83,7 @@
             <property name="Text"                       value="Reaction: After you marshal Pleasure Barge, if you have not yet drawn any cards this phase, draw 3 cards."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="Yes"/>
+			<property name="Cost"                       value="0"/>
             <property name="CardNumber"                 value="6"/>
             <property name="Illustrator"                value="Sergey Glushakov"/>
         </card>
@@ -233,6 +235,7 @@
             <property name="Traits"                     value="King’s Landing."/>
             <property name="Text"                       value="Reaction: After you win a [POW] challenge by 5 or more STR, kneel your faction card to gain 1 power for your faction."/>
 			<property name="Unique"                     value="No"/>
+			<property name="Cost"                       value="1"/>
             <property name="CardNumber"                 value="18"/>
             <property name="Illustrator"                value="Matthew Cowdery"/>
         </card>
