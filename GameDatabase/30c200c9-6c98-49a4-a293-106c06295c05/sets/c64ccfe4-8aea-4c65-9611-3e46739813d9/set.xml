@@ -2778,31 +2778,39 @@
         </card>
         <card id="feefb8d0-f4ed-4d27-b272-3b9e9ee11a5d" name="Master of Whispers">
             <property name="Type"                       value="Title"/>
+            <property name="Text"                       value="You may resolve your [Intrigue] claim against any number of opponents of your choice."/>
             <property name="CardNumber"                 value="206"/>
             <property name="Illustrator"                value="Mike Capprotti"/>
         </card>
         <card id="3c734e0d-d625-4553-9cf5-74051311eef5" name="Master of Ships">
             <property name="Type"                       value="Title"/>
+            <property name="Text"                       value="Raise the claim value on your revealed plot card by 1 during [Military] challenges in which you are attacking a rival."/>
             <property name="CardNumber"                 value="207"/>
             <property name="Illustrator"                value="Ben Zweifel"/>
         </card>
         <card id="f91c60a9-d506-45f3-b5de-3a51e23279d3" name="Hand of the King">
             <property name="Type"                       value="Title"/>
+            <property name="Text"                       value="You may initiate 1 additional [Power] challenge during the challenges phase, against a different opponent."/>
             <property name="CardNumber"                 value="208"/>
             <property name="Illustrator"                value="Sara Biddle"/>
         </card>
         <card id="cb3a2844-1aa5-494c-9536-87b4b9bd4562" name="Master of Coin">
             <property name="Type"                       value="Title"/>
+            <property name="GoldIncome"                 value="+2"/>
             <property name="CardNumber"                 value="209"/>
             <property name="Illustrator"                value="Chris Pritchard"/>
         </card>
         <card id="0ba59f59-b08c-4e8e-ab23-b5cf9e77d176" name="Master of Laws">
             <property name="Type"                       value="Title"/>
+            <property name="Text"                       value="Increase the number of cards you draw in the draw phase by 1."/>
+            <property name="Reserve"                    value="+1"/>
             <property name="CardNumber"                 value="210"/>
             <property name="Illustrator"                value="Yoann Boissonnet"/>
         </card>
         <card id="3b088db8-adeb-4728-9eb9-6817455da6dc" name="Crown Regent">
             <property name="Type"                       value="Title"/>
+            <property name="Text"                       value="You may redirect 1 challenge this round."/>
+            <property name="Dominance"                  value="2"/>
             <property name="CardNumber"                 value="211"/>
             <property name="Illustrator"                value="Tomasz Jedruszek"/>
         </card>
