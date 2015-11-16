@@ -482,7 +482,7 @@ def drawMany(group):
 	
 	mute()
 	if len(group) == 0: return
-	if drawAmount == None: drawAmount = askInteger("Draw how many cards?", 7)
+	if drawAmount == None: drawAmount = askInteger("Draw how many cards?", 2)
 	if drawAmount == None: return
 	
 	if len(group) < drawAmount:
@@ -529,7 +529,7 @@ def moveOneRandom(group):
 	card = group.random()
 	if card == None: return
 	card.moveTo(me.hand)
-	notify("{} randomly moves {} from their discard to thier hand.".format(me, card))
+	notify("{} randomly moves {} from their discard to their hand.".format(me, card))
 
 #---------------------------------------------------------------------------
 # New actions
@@ -595,7 +595,7 @@ def placesetupcards():
 	for p in me.hand:list.append(p)
 	dlg=cardDlg(list)
 	dlg.title = "Choose your setup cards."
-	dlg.text = "You may place up to 8 gold cost worth cards as setup cards."
+	dlg.text = "You may place up to 8 gold cost worth cards as setup cards. To mulligan, close the window without choosing any cards."
 	dlg.min = 0
 	dlg.max = len(list)
 	cards = dlg.show()
@@ -622,7 +622,7 @@ def placesetupcards():
 			confirm("You may only place up to 8 gold cost.")
 			place = "NOTOK"
 		if limit > 1:
-			confirm("You may only place up 1 limit card.")
+			confirm("You may only place up 1 limited card.")
 			place = "NOTOK"
 		if place == "NOTOK":
 			placesetupcards()
@@ -749,7 +749,7 @@ def getInit(group, x = 0, y = 0):
 		uniquecards = []
 		for card in personCards:
 			if card.isFaceUp:
-				if card.Initiative and int(card.Initiative) > 0:
+				if card.Initiative and int(card.Initiative) != 0:
 					if card.Unique != "Yes":
 						person.counters['Initiative'].value += int(card.Initiative)
 					elif card.name not in uniquecards:
@@ -759,48 +759,48 @@ def getInit(group, x = 0, y = 0):
 			person.counters['Initiative'].value += int(card.plotInitiative)
 			break
 		plotlist.reverse()
+		if init > 0:
+			person.counters['Initiative'].value = init
+		else:
+			person.counters['Initiative'].value = 0
 		notify("{}'s Initiative value is {}.".format(person,person.counters['Initiative'].value))
 	return
 
 def fp(group, x = 0, y = 0):
 	mute()
-	if getGlobalVariable("numplayer") == "2":
-		getInit(table)
-		if players[0].counters['Initiative'].value == players[1].counters['Initiative'].value:
-			notify("{}'s initiative value is same as {}.".format(players[0],players[1]))
-			recalcPower(table)
-			if players[0].counters['Power'].value == players[1].counters['Power'].value:
-				if not confirm("Are you sure to decide who wins the initiative randomly?"): return
-				n = rnd(1, 2)
-				if n == 1:
-					notify("**{} flips heads,and wins the initiative.**".format(players[0]))
-					notify("**{} decides who is the first player.**".format(players[0]))
-					setGlobalVariable("firstplay","{}".format(me._id))
-				else:
-					notify("**{} flips heads,and wins the initiative.**".format(players[1]))
-					notify("**{} decides who is the first player.**".format(players[1]))
-					setGlobalVariable("firstplay","{}".format(players[1]._id))
-			if players[0].counters['Power'].value > players[1].counters['Power'].value:
-				notify("**{} wins the initiative.**".format(players[1]))
-				notify("**{} decides who is the first player.**".format(players[1]))
-				setGlobalVariable("firstplay","{}".format(players[1]._id))
-			if players[0].counters['Power'].value < players[1].counters['Power'].value:
-				notify("**{} wins the initiative.**".format(players[0]))
-				notify("**{} decides who is the first player.**".format(players[0]))
-				setGlobalVariable("firstplay","{}".format(me._id))
-		elif players[0].counters['Initiative'].value > players[1].counters['Initiative'].value:
-			notify("{} wins the initiative.".format(players[0]))
-			notify("**{} decides who is the first player.**".format(players[0]))
-			setGlobalVariable("firstplay","{}".format(me._id))
-		else:
-			notify("{} wins the initiative.".format(players[1]))
-			notify("**{} decides who is the first player.**".format(players[1]))
-			setGlobalVariable("firstplay","{}".format(players[1]._id))
+	getInit(table)
+	recalcPower(table)
+	maxInit = -1
+	minPower = -1
+	winners = []
+	numPlayers = len(players)
+	for i in range(numPlayers):
+		if players[i].counters['Initiative'].value > maxInit:
+			maxInit = players[i].counters['Initiative'].value
+			minPower = players[i].counters['Power'].value
+			winners = []
+			winners.append(i)
+		elif players[i].counters['Initiative'].value == maxInit:
+			if minPower < 0 or players[i].counters['Power'].value < minPower:
+				minPower = players[i].counters['Power'].value
+				winners = []
+				winners.append(i)
+			elif players[i].counters['Power'].value == minPower:
+				winners.append(i)
+	if len(winners) == 1:
+		winner = players[winners[0]]
+		notify("{} wins the initiative.".format(winner))
+	else:
+		n = rnd(0, len(winners) - 1)
+		winner = players[winners[n]]
+		notify("{} randomly wins the initiative.".format(winner))
+	notify("**{} decides who is the first player.**".format(winner))
+	setGlobalVariable("firstplay","{}".format(winner._id))
+	# if there are more than 2 players, move the FP token manually
+	if numPlayers == 2:
 		if not confirm("Continue to decide who is the first player?"): return
 		decidefirstplayer(table)
-	else:
-		notify("Only supported for Joust format.")
-		return
+	return
 
 def recalcPower(group, x = 0, y = 0):
 	mute()
@@ -816,24 +816,39 @@ def recalcPower(group, x = 0, y = 0):
 
 def dominance(group, x=0, y=0):
 	mute()
-	for person in players:
+	maxSTR = 0
+	winner = -1
+	numPlayers = len(players)
+	for i in range(numPlayers):
+		person = players[i]
 		person.counters['Str'].value = 0
 		personCards = (card for card in table
 						if card.controller == person)
 		uniquecards = []
+		# exclude knelt unique characters
+		for card in personCards:
+			if card.isFaceUp and card.orientation == Rot90:
+				if card.Strength and card.Unique == "Yes":
+					if card.name not in uniquecards:
+						uniquecards.append(card.name)
+		personCards = (card for card in table
+						if card.controller == person)
 		for card in personCards:
 			if card.isFaceUp:
 				if card.orientation != Rot90:
-					if card.Strength and int(card.Strength) > 0:
+					str = 0
+					if card.Strength:
 						if card.Unique != "Yes":
-							person.counters['Str'].value += int(card.Strength)
+							str += int(card.Strength)
 						elif card.name not in uniquecards:
 							uniquecards.append(card.name)
-							person.counters['Str'].value += int(card.Strength)
+							str += int(card.Strength)
 					if card.markers[STR_Up] > 0:
-						person.counters['Str'].value += card.markers[STR_Up]
+						str += card.markers[STR_Up]
 					if card.markers[Burn] > 0:
-						person.counters['Str'].value -= card.markers[Burn]
+						str -= card.markers[Burn]
+					if str > 0:
+						person.counters['Str'].value += str
 				if card.dominance and int(card.dominance) > 0:
 					if card.Unique != "Yes":
 						person.counters['Str'].value += int(card.dominance)
@@ -842,23 +857,20 @@ def dominance(group, x=0, y=0):
 						person.counters['Str'].value += int(card.dominance)
 				if card.markers[Gold] > 0:
 					person.counters['Str'].value += card.markers[Gold]
+		if person.counters['Str'].value > maxSTR:
+			maxSTR = person.counters['Str'].value
+			winner = i
+		elif person.counters['Str'].value == maxSTR:
+			winner = -1
 		notify("{}'s total for dominance is {}.".format(person,person.counters['Str'].value))
 	if not confirm("Confirm to proceed?"): return
-	if getGlobalVariable("numplayer") == "2":
-		if players[0].counters['Str'].value == players[1].counters['Str'].value:
-			notify("No one wins dominance.")
-		elif players[0].counters['Str'].value > players[1].counters['Str'].value:
-			notify("{} wins the dominance.".format(players[0]))
-			for housecard in table:
-				if housecard.type == "Faction" and housecard.controller == players[0]:
-					addPower(housecard)
-		else:
-			notify("{} wins the dominance.".format(players[1]))
-			for housecard in table:
-				if housecard.type == "Faction" and housecard.controller == players[1]:
-					addPower(housecard)
+	if winner == -1:
+		notify("No one wins dominance.")
 	else:
-		notify("Only supported for Joust format.")
+		notify("{} wins the dominance.".format(players[winner]))
+		for housecard in table:
+			if housecard.type == "Faction" and housecard.controller == players[winner]:
+				addPower(housecard)
 	return
 
 def challenge(group, x=0, y=0):
@@ -1409,7 +1421,7 @@ def movetobottom(card):
 #------------------------------------------------------------------------------
 def onloaddeck(args):
 	mute()
-	c = int(getGlobalVariable("numplayer"))+1
+	c = len(players)
 	setGlobalVariable("numplayer","{}".format(c))
 	if me._id == 1:
 		setGlobalVariable("AID","{}".format(me))
