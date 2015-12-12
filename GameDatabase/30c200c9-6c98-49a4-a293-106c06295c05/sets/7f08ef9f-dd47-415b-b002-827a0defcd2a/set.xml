@@ -84,6 +84,7 @@
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="Yes"/>
 			<property name="Cost"                       value="0"/>
+			<property name="GoldIncome"                 value="-1"/>
             <property name="CardNumber"                 value="6"/>
             <property name="Illustrator"                value="Sergey Glushakov"/>
         </card>
