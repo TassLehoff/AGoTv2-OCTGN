@@ -158,7 +158,7 @@
             <property name="Type"                       value="Plot"/>
             <property name="Traits"                     value="War."/>
             <property name="Text"                       value="Interrupt: When you gain power for winning an unopposed challenge, gain 2 power instead."/>
-            <property name="Loyal"                      value="No"/>
+            <property name="Loyal"                      value="Yes"/>
             <property name="PlotGoldIncome"             value="2"/>
             <property name="PlotInitiative"             value="8"/>
             <property name="PlotClaim"                  value="2"/>

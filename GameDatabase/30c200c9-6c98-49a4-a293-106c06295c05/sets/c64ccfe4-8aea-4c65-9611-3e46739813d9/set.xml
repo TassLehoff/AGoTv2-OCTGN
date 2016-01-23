@@ -558,6 +558,7 @@
         <card id="b29c7bb5-7b84-4e94-a30b-8332fad51c2a" name="Tears of Lys">
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Event"/>
+			<property name="Traits"                     value="Poison."/>
             <property name="Text"                       value="Reaction: After you win an [INT] challenge as the attacking player, place a poison token on a character without an [INT] icon controlled by the losing opponent. At the end of the phase, if that character still has the poison token, remove it and kill that character. (Max 1 per challenge.)"/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
