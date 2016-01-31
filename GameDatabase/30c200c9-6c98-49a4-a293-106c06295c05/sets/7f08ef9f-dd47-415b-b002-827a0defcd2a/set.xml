@@ -363,7 +363,7 @@
         <card id="d0917d25-bbdd-4937-a5a5-8ab9df51a405" name="In the Name of Your King!">
             <property name="Faction"                    value="Baratheon."/>
             <property name="Type"                       value="Event"/>
-                        <property name="Text"                       value="Play only during a [Military] challenge in which you are the defending player.
+                        <property name="Text"                       value="Play only during a [MIL] challenge in which you are the defending player.
                         Action: Kneel your faction card to end this challenge with no winner or loser. Until the end of the phase, you cannot initiate [Military] challenges."/>
             <property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="Yes"/>
@@ -390,7 +390,7 @@
             <property name="Faction"                    value="Lannister."/>
             <property name="Type"                       value="Plot"/>
             <property name="Traits"                     value="Scheme."/>
-            <property name="Text"                       value="Reaction: After you win an [Intrigue] challenge, pay 2 gold to have the losing opponent choose and discard 2 cards from his or her hand."/>
+            <property name="Text"                       value="Reaction: After you win an [INT] challenge, pay 2 gold to have the losing opponent choose and discard 2 cards from his or her hand."/>
             <property name="Loyal"                      value="Yes"/>
             <property name="PlotGoldIncome"             value="5"/>
             <property name="PlotInitiative"             value="4"/>
@@ -501,7 +501,7 @@
 	            <property name="Faction"                    value="Neutral."/>
 	            <property name="Type"                       value="Location"/>
 	            <property name="Traits"                     value="King’s Landing."/>
-	            <property name="Text"                       value="Reaction: After you win an [Intrigue] challenge, kneel your faction card to search the top 10 cards of your deck for an in-faction event, reveal it, and add it to your hand. Shuffle your deck."/>
+	            <property name="Text"                       value="Reaction: After you win an [INT] challenge, kneel your faction card to search the top 10 cards of your deck for an in-faction event, reveal it, and add it to your hand. Shuffle your deck."/>
 	            <property name="Unique"                     value="Yes"/>
 	            <property name="Loyal"                      value="No"/>
 	            <property name="Cost"                       value="1"/>
@@ -518,7 +518,7 @@
             <property name="PlotInitiative"             value="2"/>
             <property name="PlotClaim"                  value="1"/>
             <property name="PlotReserve"                value="5"/>
-	     <property name="DeckLimit"                  value="1"/>
+			<property name="DeckLimit"                  value="1"/>
             <property name="CardNumber"                 value="39"/>
             <property name="Illustrator"                value="Drazenka Kimpel"/>
         </card>
@@ -532,7 +532,7 @@
             <property name="PlotInitiative"             value="3"/>
             <property name="PlotClaim"                  value="1"/>
             <property name="PlotReserve"                value="4"/>
-	     <property name="DeckLimit"                  value="1"/>
+			<property name="DeckLimit"                  value="1"/>
             <property name="CardNumber"                 value="40"/>
             <property name="Illustrator"                value="JB Casacop"/>
         </card>
