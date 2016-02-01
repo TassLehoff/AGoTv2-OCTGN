@@ -3,8 +3,8 @@
 <set name="02-Westeros"
      id="7f08ef9f-dd47-415b-b002-827a0defcd2a"
      gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-     gameVersion="1.2.0.0"
-     version="1.1">
+     gameVersion="1.1.1.1"
+     version="1.2">
 
     <cards>
         <card id="84c07bae-1e90-433f-a31d-00479f13342c" name="Will">
