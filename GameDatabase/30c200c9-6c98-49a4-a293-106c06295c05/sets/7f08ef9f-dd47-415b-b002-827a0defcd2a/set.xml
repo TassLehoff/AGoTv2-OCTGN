@@ -285,7 +285,7 @@
             <property name="Faction"                    value="Stark."/>
             <property name="Type"                       value="Location"/>
             <property name="Traits"                     value="Stronghold. Winterfell."/>
-            <property name="Text"                       value="During a [Military] or [Power] challenge in which you control 2 or more unique participating [Stark] characters, each of those characters gets +2 STR."/>
+            <property name="Text"                       value="During a [MIL] or [POW] challenge in which you control 2 or more unique participating [Stark] characters, each of those characters gets +2 STR."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="3"/>
@@ -348,7 +348,7 @@
             <property name="Faction"                    value="Baratheon."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Ally."/>
-            <property name="Text"                       value="Forced Reaction: After you lose an [Intrigue] challenge, kneel Royal Entourage."/>
+            <property name="Text"                       value="Forced Reaction: After you lose an [INT] challenge, kneel Royal Entourage."/>
 			<property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="2"/>
@@ -362,7 +362,7 @@
         <card id="d0917d25-bbdd-4937-a5a5-8ab9df51a405" name="In the Name of Your King!">
             <property name="Faction"                    value="Baratheon."/>
             <property name="Type"                       value="Event"/>
-            <property name="Text"                       value="Play only during a [MIL] challenge in which you are the defending player. Action: Kneel your faction card to end this challenge with no winner or loser. Until the end of the phase, you cannot initiate [Military] challenges."/>
+            <property name="Text"                       value="Play only during a [MIL] challenge in which you are the defending player. Action: Kneel your faction card to end this challenge with no winner or loser. Until the end of the phase, you cannot initiate [MIL] challenges."/>
             <property name="Unique"                     value="No"/>
 			<property name="Loyal"                      value="Yes"/>
             <property name="Cost"                       value="1"/>
@@ -373,7 +373,7 @@
             <property name="Faction"                    value="Lannister."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Companion."/>
-            <property name="Text"                       value="Reaction: After the challenges phase begins, choose a player. That player may give you 1 gold from his or her gold pool. Until the end of the phase, if that player has not given you gold this phase, he or she cannot initiate [Military] challenges against you."/>
+            <property name="Text"                       value="Reaction: After the challenges phase begins, choose a player. That player may give you 1 gold from his or her gold pool. Until the end of the phase, if that player has not given you gold this phase, he or she cannot initiate [MIL] challenges against you."/>
 			<property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="3"/>
@@ -481,7 +481,7 @@
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Companion."/>
-            <property name="Text"                       value="Challenges Action: Choose a character. Until the end of the phase, that character gains a [Military] icon and stealth. (Limit once per phase.)"/>
+            <property name="Text"                       value="Challenges Action: Choose a character. Until the end of the phase, that character gains a [MIL] icon and stealth. (Limit once per phase.)"/>
 			<property name="Keywords"                   value="Stealth."/>
 			<property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="No"/>
