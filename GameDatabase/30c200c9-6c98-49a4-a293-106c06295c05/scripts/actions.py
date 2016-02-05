@@ -759,10 +759,7 @@ def getInit(group, x = 0, y = 0):
 			person.counters['Initiative'].value += int(card.plotInitiative)
 			break
 		plotlist.reverse()
-		if init > 0:
-			person.counters['Initiative'].value = init
-		else:
-			person.counters['Initiative'].value = 0
+		if person.counters['Initiative'].value < 0:person.counters['Initiative'].value = 0
 		notify("{}'s Initiative value is {}.".format(person,person.counters['Initiative'].value))
 	return
 
