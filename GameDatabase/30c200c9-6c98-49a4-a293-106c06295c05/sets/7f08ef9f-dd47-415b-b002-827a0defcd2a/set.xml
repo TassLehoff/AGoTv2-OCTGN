@@ -784,7 +784,7 @@
         <card id="511f5ad9-0bff-4b7c-9563-0861ecf0fa99" name="A Tourney for the King" size="HorizontalCards">
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Plot"/>
-            <property name="Traits"                     value="Edict. Scheme."/>
+            <property name="Traits"                     value="Summer."/>
             <property name="Text"                       value="Each Knight character you control gains renown and “immune to opponents’ events.”"/>
             <property name="Loyal"                      value="No"/>
             <property name="PlotGoldIncome"             value="3"/>
