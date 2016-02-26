@@ -20,6 +20,7 @@
 
     <events>
         <event name="OnDeckLoaded" action="onloaddeck" />
+        <event name="OnCardsMoved" action="onmoved" />
     </events>
 
     <proxygen definitionsrc="proxy/proxydef.xml">
