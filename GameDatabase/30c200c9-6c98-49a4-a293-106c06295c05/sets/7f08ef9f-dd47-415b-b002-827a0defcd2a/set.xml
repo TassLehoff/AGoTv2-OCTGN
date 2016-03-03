@@ -631,7 +631,7 @@
             <property name="CardNumber"                 value="47"/>
             <property name="Illustrator"                value="Nicholas Gregory"/>
 	    </card>
-        <card id="c9e6fcab-2b73-4a09-a5df-07426703a834" name="The King’s Peace">
+        <card id="c9e6fcab-2b73-4a09-a5df-07426703a834" name="The King’s Peace" size="HorizontalCards">
             <property name="Faction"                    value="Baratheon."/>
             <property name="Type"                       value="Plot"/>
 			<property name="Traits"                     value="Edict. Scheme."/>
@@ -752,7 +752,7 @@
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Knight."/>
             <property name="Text"                       value="While you control another Knight character, Hedge Knight gets +1 STR and gains a [POW] icon."/>
-			<property name="Unique"                     value="Yes"/>
+			<property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="2"/>
             <property name="Strength"                   value="2"/>
