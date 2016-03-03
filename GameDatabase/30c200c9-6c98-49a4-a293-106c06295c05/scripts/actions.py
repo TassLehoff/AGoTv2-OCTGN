@@ -677,9 +677,10 @@ def placesetupcards():
 			for card in cards:
 				if me.isInverted:
 					card.moveToTable(countcards,-100,True)
+					countcards=countcards-80
 				else:
 					card.moveToTable(countcards,0,True)
-				countcards=countcards-80
+					countcards=countcards+80
 				card.peek()
 			for drawcard in me.deck.top(7-len(me.hand)):
 				drawcard.moveTo(me.hand)
