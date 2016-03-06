@@ -1185,6 +1185,7 @@ def disc(card, x = 0, y = 0):
 					disccard.moveTo(me.piles['Discard pile'])
 					notify("{} discard {}'s duplicate.".format(me,card))
 		card.moveTo(me.piles['Discard pile'])
+		card.filter = None
 		notify("{} discard {}.".format(me, card))
 	else:
 		card.moveTo(me.piles['Discard pile'])
@@ -1610,7 +1611,7 @@ def onmoved(args):
 	index = 0
 	for card in args.cards:
 		attach = eval(getGlobalVariable("attachmodify"))
-		if args.cards[index].type in ("Character","Attachment","Location") and args.toGroups[index].name == "Table" and args.fromGroups[index].name == "Table" and card.owner == me and card.filter != DuplicateColor:
+		if args.cards[index].type in ("Character","Attachment","Location") and args.toGroups[index].name == "Table" and args.fromGroups[index].name == "Table" and card.controller == me and card.filter != DuplicateColor:
 			list = []
 			list2 = []
 			list3 = []
@@ -1653,7 +1654,7 @@ def onmoved(args):
 								carda.moveToTable(x1-i,y1-i)
 								carda.sendToBack()
 								i+=12
-		if card.type == "Attachment" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and card.owner == me:
+		if card.type == "Attachment" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and card.controller == me:
 			for card in table:
 				if attach.has_key(args.cards[index]._id):
 					if attach[args.cards[index]._id] == card._id:
@@ -1668,7 +1669,7 @@ def onmoved(args):
 						if re.search('\[POW]\sicon', args.cards[index].Text):card.markers[PowerIcon] -= 1
 						if re.search('\[MIL]\sicon', args.cards[index].Text) and args.cards[index].model != "4dd074aa-af6c-4897-b7b2-bff3493bcf9e":card.markers[MilitaryIcon] -= 1
 			args.cards[index].resetProperties()
-		if args.cards[index].type == "Character" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and card.owner == me:
+		if args.cards[index].type == "Character" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and card.controller == me:
 			for d in attach:
 				if attach[d] == args.cards[index]._id:
 					for cardd in table:
