@@ -337,9 +337,9 @@ def kneel(card, x = 0, y = 0):
 	mute()
 	card.orientation ^= Rot90
 	if card.orientation & Rot90 == Rot90:
-		notify('{} kneels {}.'.format(me, card.name))
+		notify('{} kneels {}.'.format(me, card))
 	else:
-		notify('{} stands {}.'.format(me, card.name))
+		notify('{} stands {}.'.format(me, card))
 
 def flipcard(card, x = 0, y = 0):
 	mute()
@@ -1011,9 +1011,9 @@ def revealplot(group, x = 0, y = 0):
 	if cards != None:
 		for card in cards:
 			if me.isInverted: 
-				card.moveToTable(120,-80,True)
+				card.moveToTable(110,-80,True)
 			else:
-				card.moveToTable(-120,0,True)
+				card.moveToTable(-110,0,True)
 			me.setGlobalVariable("turn","1")
 			if len(me.piles['Plot Deck']) == 0:
 				for card in table:
@@ -1030,6 +1030,8 @@ def revealplot(group, x = 0, y = 0):
 					fp(table)
 			if len(players) == 1:
 				flipplotcard(card)
+			else:
+				card.peek()
 	else:
 		return
 
@@ -1157,8 +1159,8 @@ def disc(card, x = 0, y = 0):
 			if attach[d] == card._id:
 				for cardd in table:
 					if cardd._id == d:
-						if cardd.Text.find('Terminal.') == -1 and cardd.Keywords.find('Terminal.') == -1:cardd.moveTo(me.hand)
-						else:cardd.moveTo(me.piles['Discard pile'])
+						if cardd.Text.find('Terminal.') == -1 and cardd.Keywords.find('Terminal.') == -1:remoteCall(cardd.controller, "movecard", [cardd,cardd.controller.hand])
+						else:remoteCall(cardd.controller, "movecard", [cardd,cardd.controller.piles['Discard pile']])
 						del attach[d]
 						setGlobalVariable("attachmodify",str(attach))
 		card.moveTo(me.piles['Discard pile'])
@@ -1196,8 +1198,11 @@ def defaultAction(card, x = 0, y = 0):
 			DoneButton(card)
 		if card.name == "1st Player Token":
 			moveFP(card)
-	elif card.Type == "Plot":
-		countincome(table)
+	elif card.Type == "Plot" and card.filter != usedplotcolor:
+		if card.isFaceUp == True:
+			countincome(table)
+		else:
+			return
 	elif len(me.piles['Plot Deck']) == 7 and card.Type == "Attachment" and card.isFaceUp == True:
 		play(card)
 	elif not card.isFaceUp: #Face down card - flip
@@ -1626,17 +1631,17 @@ def onmoved(args):
 					for carda in table:
 						if carda._id == cardindex:
 							x1,y1 = card.position
-							if me.isInverted:carda.moveToTable(x1-i,y1-i)
-							else:carda.moveToTable(x1+i,y1+i)
-							carda.sendToBack()
+							if me.isInverted:remoteCall(carda.controller, "movecardtable", [carda,x1-i,y1-i])
+							else:remoteCall(carda.controller, "movecardtable", [carda,x1+i,y1+i])
+							remoteCall(carda.controller, "sendback", [carda])
 							x2,y2 = carda.position
 							i+=12
 							k = 12
 							for cardattd in list3:
 								if cardattd.name == carda.name:
-									if me.isInverted:cardattd.moveToTable(x2-k,y2+k)
-									else:cardattd.moveToTable(x2+k,y2-k)
-									cardattd.sendToBack()
+									if me.isInverted:remoteCall(cardattd.controller, "movecardtable", [cardattd,x2-k,y2+k])
+									else:remoteCall(cardattd.controller, "movecardtable", [cardattd,x2+k,y2-k])
+									remoteCall(cardattd.controller, "sendback", [cardattd])
 									k+=12
 			i = 12
 			if args.cards[index].unique == "Yes":
@@ -1668,8 +1673,20 @@ def onmoved(args):
 				if attach[d] == args.cards[index]._id:
 					for cardd in table:
 						if cardd._id == d:
-							if cardd.Text.find('Terminal.') == -1 and cardd.Keywords.find('Terminal.') == -1:cardd.moveTo(me.hand)
-							else:cardd.moveTo(me.piles['Discard pile'])
+							if cardd.Text.find('Terminal.') == -1 and cardd.Keywords.find('Terminal.') == -1:remoteCall(cardd.controller, "movecard", [cardd,cardd.controller.hand])
+							else:remoteCall(cardd.controller, "movecard", [cardd,cardd.controller.piles['Discard pile']])
 							del attach[d]
 							setGlobalVariable("attachmodify",str(attach))
 		index += 1
+
+def movecard(card,position):
+	mute()
+	card.moveTo(position)
+
+def movecardtable(card,x,y):
+	mute()
+	card.moveToTable(x,y)
+
+def sendback(card):
+	mute()
+	card.sendToBack()
