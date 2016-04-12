@@ -3,8 +3,8 @@
 <set name="03-Wolves of the North"
      id="83472677-8ef3-47f9-a400-cbb7fb443524"
      gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-     gameVersion="1.1.4.0"
-     version="1.0">
+     gameVersion="1.1.5.1"
+     version="1.1">
 
     <cards>
         <card id="deaed38e-1045-4cf3-8f6a-c163c98aca86" name="King Robb’s Host">
@@ -195,7 +195,7 @@
             <property name="Faction"                    value="Stark."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Lady."/>
-            <property name="Text"                       value="Sansa Stark gets -1 STR for each [Stark] character in your dead pile."/>
+            <property name="Text"                       value="Sansa Stark gets -1 STR for each [Stark] character in your dead pile.&#13;&#10;While Sansa Stark’s STR is 0, she gains insight."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="Yes"/>
             <property name="Cost"                       value="2"/>
@@ -275,7 +275,7 @@
             <property name="CardNumber"                 value="18"/>
             <property name="Illustrator"                value="Cristi Balanescu"/>
 	    </card>
-		<card id="cb5ae535-6b4b-4100-8593-1e231b3da602" name="Nymeria">
+		<card id="a09d07ca-046d-4b3c-8dcb-fc2e6fe07393" name="Nymeria">
             <property name="Faction"                    value="Stark."/>
             <property name="Type"                       value="Attachment"/>
             <property name="Traits"                     value="Direwolf."/>
@@ -558,7 +558,7 @@
             <property name="CardNumber"                 value="41"/>
             <property name="Illustrator"                value="Arden Beckwith"/>
 	    </card>
-		<card id="f83b9297-a4eb-4a22-b27f-cc477e697176" name="Street of the Sisters">
+		<card id="5183c3de-7174-4f1d-b9cd-67c47a4b7251" name="Tourney Grounds">
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Location"/>
             <property name="Traits"                     value="Contested. Westeros."/>
