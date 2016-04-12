@@ -225,7 +225,7 @@
 		<card id="511ebfea-c5c9-499f-a829-9556d664a223" name="House Tully Septon">
             <property name="Faction"                    value="Stark."/>
             <property name="Type"                       value="Character"/>
-            <property name="Traits"                     value="Ranger."/>
+            <property name="Traits"                     value="Ally. House Tully. The Seven"/>
             <property name="Text"                       value="Marshaling Action: Discard 1 power from a character you control to reduce the cost of the next House Tully or The Seven character you marshal this phase by 2. (Limit once per phase.)"/>
 			<property name="Keywords"                   value="Ally. House Tully. The Seven."/>
             <property name="Unique"                     value="No"/>
