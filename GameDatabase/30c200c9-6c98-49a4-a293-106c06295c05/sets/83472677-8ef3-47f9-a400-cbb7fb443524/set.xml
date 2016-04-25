@@ -3,8 +3,8 @@
 <set name="03-Wolves of the North"
      id="83472677-8ef3-47f9-a400-cbb7fb443524"
      gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-     gameVersion="1.1.5.1"
-     version="1.1">
+     gameVersion="1.1.6.0"
+     version="1.2">
 
     <cards>
         <card id="deaed38e-1045-4cf3-8f6a-c163c98aca86" name="King Robb’s Host">
