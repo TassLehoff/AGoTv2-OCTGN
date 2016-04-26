@@ -1210,7 +1210,7 @@
             <property name="CardNumber"                 value="91"/>
             <property name="Illustrator"                value="Tomasz Jedruszek"/>
 	    </card>
-	    <card id="5ad0b950-40c8-4a29-8128-10c81eb862e0" name="Priest of the Drowned God">
+	    <card id="5ad0b950-40c8-4a29-8128-10c81eb862e0" name="Iron Mines">
             <property name="Faction"                    value="Greyjoy."/>
             <property name="Type"                       value="Location"/>
             <property name="Traits"                     value="Iron Islands."/>
@@ -1246,7 +1246,7 @@
             <property name="CardNumber"                 value="94"/>
             <property name="Illustrator"                value="Xia Taptara"/>
         </card>
-	    <card id="7a4d2704-9b60-4fca-bcef-9288151693db" name="Blood of the Dragon">
+	    <card id="7a4d2704-9b60-4fca-bcef-9288151693db" name="Knights of the Sun">
             <property name="Faction"                    value="Martell."/>
             <property name="Type"                       value="Character"/>
 			<property name="Traits"                     value="Army. Knight."/>
