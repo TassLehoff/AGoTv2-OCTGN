@@ -769,14 +769,6 @@
             <property name="CardNumber"                 value="58"/>
             <property name="Illustrator"                value="Jan-Wah Li"/>
 	    </card>
-        <card id="f1841168-04de-4aa3-a2f0-8d3b1b8047b2" name="The Lord of the Crossing">
-            <property name="Faction"                    value="Neutral."/>
-            <property name="Type"                       value="Agenda"/>
-            <property name="Traits"                     value="House Frey."/>
-            <property name="Text"                       value="During the first challenge you initiate each phase, each of your participating characters gets –1 STR.&#13;&#10;During the third challenge you initiate each phase, each of your participating characters gets +2 STR. If you win this challenge, gain 1 power for your faction."/>
-            <property name="CardNumber"                 value="59"/>
-            <property name="Illustrator"                value="Michael Komarck"/>
-        </card>
         <card id="511f5ad9-0bff-4b7c-9563-0861ecf0fa99" name="A Tourney for the King" size="HorizontalCards">
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Plot"/>
@@ -787,8 +779,16 @@
             <property name="PlotInitiative"             value="8"/>
             <property name="PlotClaim"                  value="1"/>
             <property name="PlotReserve"                value="6"/>
-            <property name="CardNumber"                 value="60"/>
+            <property name="CardNumber"                 value="59"/>
             <property name="Illustrator"                value="Tomasz Jedruszek"/>
+        </card>
+        <card id="f1841168-04de-4aa3-a2f0-8d3b1b8047b2" name="The Lord of the Crossing">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Agenda"/>
+            <property name="Traits"                     value="House Frey."/>
+            <property name="Text"                       value="During the first challenge you initiate each phase, each of your participating characters gets –1 STR.&#13;&#10;During the third challenge you initiate each phase, each of your participating characters gets +2 STR. If you win this challenge, gain 1 power for your faction."/>
+            <property name="CardNumber"                 value="60"/>
+            <property name="Illustrator"                value="Michael Komarck"/>
         </card>
 		<card id="c8c63b0d-d3ea-4529-8022-1447655e740f" name="Hodor">
             <property name="Faction"                    value="Stark."/>
