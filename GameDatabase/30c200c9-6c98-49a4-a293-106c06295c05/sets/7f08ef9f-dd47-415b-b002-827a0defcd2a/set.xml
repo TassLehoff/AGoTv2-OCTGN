@@ -636,6 +636,7 @@
 			<property name="Traits"                     value="Edict. Scheme."/>
             <property name="Text"                       value="Reaction: After a [MIL] or [POW] challenge is initiated against you, the attacking player may either: kneel his or her faction card, or move 1 power from that faction card to yours. If that player does not, the challenge immediately ends with no winner or loser."/>
 			<property name="PlotGoldIncome"             value="4"/>
+            <property name="Loyal"                      value="Yes"/>
             <property name="PlotInitiative"             value="0"/>
             <property name="PlotClaim"                  value="1"/>
             <property name="PlotReserve"                value="5"/>
