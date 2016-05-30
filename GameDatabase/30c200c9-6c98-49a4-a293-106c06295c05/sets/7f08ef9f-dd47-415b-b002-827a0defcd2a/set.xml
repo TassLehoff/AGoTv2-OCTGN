@@ -1516,7 +1516,6 @@
             <property name="Faction"                    value="Martell."/>
             <property name="Type"                       value="Character"/>
 			<property name="Traits"                     value="Bastard. Sand Snake."/>
-			<property name="Keywords"                   value="No attachments except Weapon."/>
             <property name="Text"                       value="Reaction: After you win an [INT] challenge in which Tyene Sand is participating as an attacker, place a poison token on a character without an [INT] icon. At the end of the phase, if that character still has that poison token, remove it and kill that character."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="Yes"/>
