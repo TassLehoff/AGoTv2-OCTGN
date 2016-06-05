@@ -11,16 +11,24 @@
       description="A Game of Thrones: The Card Game Second Edition, featuring cunning plots, iconic characters, and deadly encounters for two players. "
       setsurl="http://tinyurl.com/qehmd3z"
       gameurl="http://octgn.gamersjudgement.com/wordpress/agot2/"
-      authors="TassLehoff, Snowfrost, Khudzlin, Hedjman, Gualdo, DC Denis"
+      authors="TassLehoff, Snowfrost, Khudzlin, Hedjman, Gualdo, DC Denis, Unfamiliar, Jackey"
       iconurl="http://s29.postimg.org/qsmlsels5/Boite_de_base.png">
 
     <scripts>
         <script src="scripts/actions.py"/>
+        <script src="scripts/cardaction.py"/>
+        <script src="scripts/a.py"/>
     </scripts>
 
     <events>
+        <event name="OnTableLoaded" action="on_table_load" />
         <event name="OnDeckLoaded" action="onloaddeck" />
         <event name="OnCardsMoved" action="onmoved" />
+        <event name="OnCardDoubleClicked" action="ondbclick" />
+        <event name="OnCardClicked" action="onclick" />
+        <event name="OnMarkerChanged" action="checkwinner" />
+        <event name="OnCounterChanged" action="checkcounter" />
+        <event name="OnScriptedCardsMoved" action="onsmoved" />
     </events>
 
     <proxygen definitionsrc="proxy/proxydef.xml">
@@ -30,6 +38,12 @@
         <document name="Shortcuts"
                   icon="Documents/blank.png"
                   src="Documents/Shortcuts.html"/>
+        <document name="Guide book"
+                  icon="Documents/blank.png"
+                  src="Documents/book.pdf"/>
+        <document name="Website"
+                  icon="Documents/blank.png"
+                  src="Documents/website.html"/>
     </documents>
     
     <gameModes>
@@ -45,11 +59,13 @@
     </gameModes>
 	
 	<globalvariables>
-	    <globalvariable name="firstplay" value="True" />
+        <globalvariable name="firstplay" value="True" />
         <globalvariable name="AID"       value="" />
         <globalvariable name="BID"       value="" />
-		<globalvariable name="numplayer" value="0" />
-	</globalvariables>
+        <globalvariable name="aside"       value="0" />
+        <globalvariable name="bside"       value="0" />
+        <globalvariable name="numplayer" value="0" />
+    </globalvariables>
     
     <card back="cards/back.png" front="cards/front.png" width="63" height="88" cornerRadius="2">
         <property name="Faction"        type="String"/>
@@ -78,7 +94,9 @@
         <property name="CardNumber"     type="String"/>
         <property name="Dominance"      type="String"     hidden="True"/>
         <size name="HorizontalCards" width="88" height="63" backWidth="88" backHeight="63" back="cards/backH.png" front="cards/frontH.png" cornerRadius="2"/> 
-        <size name="TokenSize" width="42" height="69" back="cards/front.png" front="cards/front.png"/>
+        <size name="TokenSize" width="35" height="35" back="cards/front.png" front="cards/front.png"/>
+        <size name="button" width="170" height="60" back="cards/front.png" front="cards/front.png"/>
+        <size name="nextbutton" width="250" height="60" back="cards/front.png" front="cards/front.png"/>
     </card>
 
     <table name="Table" visibility="undefined" ordered="False" width="960" height="540" background="background/background.jpg" backgroundStyle="uniformToFill" board="background/background.jpg">       
@@ -86,7 +104,7 @@
             <groupaction     menu="SetUp"                                      shortcut=""       default="False"      execute="setup"/>
             <groupaction     menu="Calculate Reserve Value"                    shortcut="ALT+R"  default="False"      execute="getreserve"/>
             <groupaction     menu="Calculate Power Totals"                     shortcut="CTRL+R" default="False"      execute="recalcPower"/>
-            <groupactions    menu="Plot Phase">
+            <!-- <groupactions    menu="Plot Phase">
                 <groupaction     menu="Reveal plot"                            shortcut="ALT+P"  default="False"      execute="revealplot"/>
                 <groupaction     menu="Calculate Initiative Value"             shortcut=""       default="False"      execute="getInit"/>
                 <groupaction     menu="Who win the initiative"                 shortcut="ALT+I"  default="False"      execute="fp"/>
@@ -102,9 +120,9 @@
             <groupactions    menu="Dominance Phase">
                 <groupaction     menu="Who win the dominance"                  shortcut="ALT+D"  default="False"      execute="dominance"/>
             </groupactions>
-            <groupaction     menu="End Turn"                                   shortcut="ALT+E"  default="False"      execute="endturn"/>
+            <groupaction     menu="End Turn"                                   shortcut="ALT+E"  default="False"      execute="endturn"/> -->
         </groupactions>
-        
+        <groupaction menu="Concede" default="False" shortcut="" execute="defeat" />
         <groupactions    menu="Announcements">
             <groupaction     menu="Announce: I'm Done."                        shortcut="CTRL+D"  default="False"      execute="turnDone"/>
             <groupaction     menu="Announce: Action/Question"                  shortcut="CTRL+Q" default="False"      execute="holdOn"/>
@@ -166,7 +184,7 @@
         </cardactions>
     </table>
     
-    <player summary=" Power: {#Power} / Gold: {#Gold} / Reserve: {#Reserve} / Initiative: {#Initiative}/ Str: {#Str} ">
+    <player summary=" Power: {#Power} / Gold: {#Gold} / Reserve: {#Reserve} / Initiative: {#Initiative}/ Str: {#Str} / HandSize: {#Hand}  ">
         <counter name="Power"       icon="counters/power.png"/>
         <counter name="Gold"        icon="counters/gold.png"/>
         <counter name="Reserve"     icon="counters/reserve.png"/>

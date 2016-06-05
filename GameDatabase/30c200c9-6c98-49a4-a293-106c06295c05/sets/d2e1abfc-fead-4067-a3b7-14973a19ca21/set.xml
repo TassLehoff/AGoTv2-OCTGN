@@ -10,17 +10,87 @@
 		<marker id="4e8046ba-759b-428c-917f-7e9268a5af90" name="gold"/>
 		<marker id="d115ea96-ed05-4bf7-ba22-a34c8675c676" name="power"/>
 		<marker id="7898d5a0-1d59-42b2-bbfb-5051cc420cd8" name="STR_Up"/>
+		<marker id="1be0aa4d-8f52-42d7-bc3f-798c9759ba5e" name="STR_Sub"/>
 		<marker id="c272aa0c-f283-4ff5-b545-a5a3f150e6da" name="Burn"/>
 		<marker id="6238a357-41b7-4bca-b394-925fc1b2caf8" name="TokenRed"/>
 		<marker id="99452bc7-d95b-4c54-8577-41d98dd3e30b" name="TokenBlue"/>
+		<marker id="7e9610d4-c06d-437d-a5e6-100000000001" name="MilitaryIcon"/>
+		<marker id="0cabfb36-01b4-46c4-bb2a-42889fb63e8b" name="IntrigueIcon"/>
+		<marker id="a6b9db40-b0ad-4b22-b049-5837c4ece904" name="PowerIcon"/>
+		<marker id="353db31d-b5d7-4f17-9683-08b03151ff83" name="standIcon"/>
+		<marker id="aba7e269-4096-4b60-b1c5-0ab97dd9caa0" name="poisonIcon"/>
+		<marker id="9aecf04c-b623-4e0f-b9db-6ac3246fb00c" name="betrayalIcon"/>
+		<marker id="786f6eb1-22bf-4623-9423-7854f5f078d6" name="subMilitaryIcon"/>
+		<marker id="7dadfabe-8024-4d93-91a7-81c11a51ff24" name="subIntrigueIcon"/>
+		<marker id="d042dab3-176a-471e-a917-1041c64c6579" name="subPowerIcon"/>
 	</markers>
 	
 	<cards>
 		<card id="73a6655b-60b6-4080-b428-f4e0099e0f77" name="1st Player Token">
-		<property name="Type" value="Internal" />
+			<property name="Type" value="Internal" />
 		</card>
 		<card id="656f69c4-c506-4014-932b-9dff4422f09e" name="Done Token">
-		<property name="Type" value="Internal" />
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="90942683-91d6-414c-832d-5f6f0e495995" name="manualbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="cb48782b-3bdd-4024-af85-fb0eb65a8f51" name="endbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="bb79eb8b-2593-4b1f-a62d-c0e86b6aaf14" name="AttackMil">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="ce281a89-276d-4a1c-b542-91680776b1d4" name="AttackInt">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="db7fc2af-6201-4112-9512-e78f10f5cd14" name="AttackPow">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="6d6562bf-3f80-4964-b342-9c3f48e3be06" name="AttackNon">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="a576df8f-7ff2-4b79-bb7d-8fa54d47ccf8" name="DefendMil">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="6ebd872e-b372-4973-b793-cd4d84d31476" name="DefendInt">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="9944aa40-0680-4f77-a668-80b5585af2df" name="DefendPow">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="0952de65-f260-49d1-a8aa-184a6ff7251b" name="DefendNon">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="584a37d7-5a30-4018-ae21-0ad325203fa0" name="nextbutton" size="button">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="62bad042-fbb0-4121-85d2-92149576308b" name="setupnextbutton" size="nextbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="f5fb1824-1d0e-4a4a-a431-46e0a06f1a42" name="marshalendbutton" size="button">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="634c8980-9e07-40ba-a259-df1fe8fd184a" name="plotnextbutton" size="nextbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="76d32ba3-bb1b-4c88-8e99-4381e45595e9" name="drawnextbutton" size="nextbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="2d4834e4-bd76-4e8d-9e5a-638cd25e6107" name="challengenextbutton" size="nextbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="bd153c97-1108-4e65-bd46-88852ec7d5bc" name="dominancenextbutton" size="nextbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="4d8aa7b0-f5ef-4584-be8c-601c45579dc6" name="standingnextbutton" size="nextbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="c38f6f47-54dc-4853-8000-ff2da81370ee" name="taxationnextbutton" size="nextbutton">
+			<property name="Type" value="Internal" />
+		</card>
+		<card id="cf4c922b-0316-43b1-9d2b-4926b78621af" name="passnextbutton" size="button">
+			<property name="Type" value="Internal" />
 		</card>
 	</cards>
 </set>
