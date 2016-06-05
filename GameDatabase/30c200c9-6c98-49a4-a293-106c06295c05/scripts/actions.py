@@ -4263,7 +4263,7 @@ def onmoved(args):
 				for cardadd in table:
 					if cardadd.controller == me and cardadd.Faction == "Night's Watch."and cardadd.type == "Character" and cardadd.filter != WaitColor:cardmarkers(cardadd,"str",-1)
 		#Warship and Drowned Men
-		if getGlobalVariable("noprint") == "0":
+		if getGlobalVariable("noprint") == "0" and getGlobalVariable("actionplay") == "":
 			if args.cards[index].model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
 				for cardadd in table:
 					if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
@@ -6839,11 +6839,9 @@ def next(group, x=0, y=0):
 		selectcardnext(selectlist,"select1cardot",table,[])
 		return
 	if sessionpass == "select1cardot":
-		selectedcard[0].controller = me
+		#selectedcard[0].controller = me
 		selectedcard[0].highlight = standcolor
 		#remoteCall(me, "returncard", [selectedcard[0]])
-		if fplay(1) == me:remoteCall(players[1], "select1card", [])
-		else:remoteCall(fplay(1), "select1cardover", [1])
 		clearfilter("")
 		for cardn in table:
 			if cardn.name == "nextbutton" and cardn.controller == me:
@@ -6854,6 +6852,7 @@ def next(group, x=0, y=0):
 			if cardn.name == "marshalendbutton" and cardn.controller == me:
 				cardn.delete()
 		setGlobalVariable("selectmode", "0")
+		select1cardover(1)
 		return
 	if sessionpass == "Direwolfselect":
 		if len(selectedcard) > 1:
@@ -11896,155 +11895,135 @@ def onsmoved(args):
 	index = 0
 	global aryaduplicate
 	for card in args.cards:
-		if args.cards[index].model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			for cardadd in table:
-				if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
-					cardmarkers(args.cards[index],"str",1)
-					cardmarkers(args.cards[index],"powicon",1)
-					break
-		if "Knight." in args.cards[index].traits and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			i = 0
-			for cardadd in table:
-				if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
-					i += 1
-			if i == 1:
-				for cardaddd in table:
-					if cardaddd.controller == me and cardaddd.model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d" and cardaddd._id != args.cards[index]._id and cardaddd not in noprint_turn:
-						cardmarkers(cardaddd,"str",1)
-						cardmarkers(cardaddd,"powicon",1)
-		if "Knight." in args.cards[index].traits and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			i = 0
-			for cardadd in table:
-				if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
-					i += 1
-			if i == 1:
-				for cardaddd in table:
-					if cardaddd.controller == me and cardaddd.model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d" and cardaddd not in noprint_turn:
-						cardmarkers(cardaddd,"str",-1)
-						cardmarkers(cardaddd,"powicon",-1)
-		if args.cards[index].model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			for cardadd in table:
-				if cardadd.controller == me and "Drowned God." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
-					cardmarkers(cardadd,"str",1)
-				elif cardadd._id == args.cards[index]._id:
-					for cardaddd in table:
-						if cardaddd.model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and cardaddd.controller == me:
-							cardmarkers(cardadd,"str",1)
-		if args.cards[index].model != "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			if "Drowned God." in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and cardadd.controller == me:
-						cardmarkers(args.cards[index],"str",1)
-		if args.cards[index].model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
-				for cardaddd in table:
-					if "Drowned God." in cardaddd.traits and cardaddd.controller == me:
-						cardmarkers(cardaddd,"str",-1)
-		if args.cards[index].model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			for cardaddd in table:
-				if cardaddd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardaddd.controller == me and cardaddd.filter != WaitColor:
-					for cardadd in table:
-						if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
-							cardmarkers(cardadd,"str",1)
-							cardmarkers(cardadd,"inticon",1)
-						if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
-							cardmarkers(cardadd,"str",1)
-							cardmarkers(cardadd,"powicon",1)
-
-		if args.cards[index].model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			for cardaddd in table:
-				if cardaddd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardaddd.controller == me and cardaddd.filter != WaitColor:
-					for cardadd in table:
-						if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
-							cardmarkers(cardadd,"inticon",1)
-						if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
-							cardmarkers(cardadd,"str",1)
-							cardmarkers(cardadd,"powicon",1)
-
-		if args.cards[index].model in ("597acd7c-3424-4e8c-82e6-d6682d662c8c","a5512893-cf5c-4e54-a8a7-87114492a50b") and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
-						cardmarkers(cardadd,"str",-1)
-						cardmarkers(cardadd,"inticon",-1)
-					if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
-						cardmarkers(cardadd,"str",-1)
-						cardmarkers(cardadd,"powicon",-1)
-
-		if args.cards[index].model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
-			for cardadd in table:
-				if cardadd.controller == me and "Warship" in cardadd.traits:cardmarkers(args.cards[index],"str",1)
-		if args.cards[index].model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
-			for cardadd in table:
-				if cardadd.controller == me and "The Reach" in cardadd.traits:cardmarkers(args.cards[index],"str",1)
-		if args.cards[index].Faction == "Night's Watch." and args.cards[index].type == "Character" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			for cardadd in table:
-				if cardadd.controller == me and cardadd.model == "5d20e021-5d12-4338-8bdd-42d008bff919" and cardadd.filter != WaitColor and cardadd not in noprint_turn:cardmarkers(args.cards[index],"str",1)
-		if args.cards[index].model == "390a8cf7-8bc4-45c1-bea5-e6a694e9f2d5" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:args.cards[index].markers[STR_Up] += me.counters['Gold'].value
-		if args.cards[index].model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
-			for cardadd in table:
-				if cardadd.controller == me and cardadd.model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and "Direwolf" in cardadd.traits:cardmarkers(args.cards[index],"str",1)
-				if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.cards[index]._id != cardadd._id:
-					for cardadd2 in table:
-						if cardadd2.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd2._id != cardadd._id and cardadd2._id != args.cards[index]._id and cardadd2 not in noprint_turn:cardmarkers(cardadd2,"str",-1)
-				if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281":
-					for cardadd2 in table:
-						if cardadd2.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd2._id != cardadd._id and cardadd2 not in noprint_turn:cardmarkers(cardadd2,"str",1)
-		if args.cards[index].model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			for cardadd in table:
-				if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.cards[index]._id != cardadd._id:cardmarkers(cardadd,"str",-1)
-		if args.cards[index].model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			if "Direwolf" in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd not in noprint_turn:cardadd.markers[STR_Up] += 1
-		if args.cards[index].model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] in noprint_turn:
-			if "Direwolf" in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd not in noprint_turn:cardadd.markers[STR_Up] += 1
-		if args.cards[index].model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			if "Direwolf" in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",-1)
-		if args.cards[index].type == "Location" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			if "Warship" in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",1)
-			if "The Reach" in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",1)
-			if args.cards[index].model == "5d20e021-5d12-4338-8bdd-42d008bff919" :
+		if args.cards[index].model == "5d20e021-5d12-4338-8bdd-42d008bff919" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
 				for cardadd in table:
 					if cardadd.controller == me and cardadd.Faction == "Night's Watch." and cardadd.type == "Character" and cardadd.filter != WaitColor:cardmarkers(cardadd,"str",1)
-		if args.cards[index].type == "Location" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			if "Warship" in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",-1)
-			if "The Reach" in args.cards[index].traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",-1)
-			if args.cards[index].model == "5d20e021-5d12-4338-8bdd-42d008bff919" and args.cards[index] in noprint_turn:
+		if args.cards[index].model == "5d20e021-5d12-4338-8bdd-42d008bff919" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
 				for cardadd in table:
 					if cardadd.controller == me and cardadd.Faction == "Night's Watch."and cardadd.type == "Character" and cardadd.filter != WaitColor:cardmarkers(cardadd,"str",-1)
+		#Warship and Drowned Men
+		if getGlobalVariable("noprint") == "0" and getGlobalVariable("actionplay") == "":
+			if args.cards[index].model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				for cardadd in table:
+					if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
+						cardmarkers(args.cards[index],"str",1)
+						cardmarkers(args.cards[index],"powicon",1)
+						break
+			if "Knight." in args.cards[index].traits and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				i = 0
+				for cardadd in table:
+					if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
+						i += 1
+				if i == 1:
+					for cardaddd in table:
+						if cardaddd.controller == me and cardaddd.model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d" and cardaddd._id != args.cards[index]._id and cardaddd not in noprint_turn:
+							cardmarkers(cardaddd,"str",1)
+							cardmarkers(cardaddd,"powicon",1)
+			if "Knight." in args.cards[index].traits and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				i = 0
+				for cardadd in table:
+					if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
+						i += 1
+				if i == 1:
+					for cardaddd in table:
+						if cardaddd.controller == me and cardaddd.model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d" and cardaddd not in noprint_turn:
+							cardmarkers(cardaddd,"str",-1)
+							cardmarkers(cardaddd,"powicon",-1)
+			if args.cards[index].model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				for cardadd in table:
+					if cardadd.controller == me and "Drowned God." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != args.cards[index]._id:
+						cardmarkers(cardadd,"str",1)
+					elif cardadd._id == args.cards[index]._id:
+						for cardaddd in table:
+							if cardaddd.model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and cardaddd.controller == me:
+								cardmarkers(cardadd,"str",1)
+			if args.cards[index].model != "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				if "Drowned God." in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and cardadd.controller == me:
+							cardmarkers(args.cards[index],"str",1)
+			if args.cards[index].model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
+					for cardaddd in table:
+						if "Drowned God." in cardaddd.traits and cardaddd.controller == me:
+							cardmarkers(cardaddd,"str",-1)
+			if args.cards[index].model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				for cardaddd in table:
+					if cardaddd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardaddd.controller == me and cardaddd.filter != WaitColor:
+						for cardadd in table:
+							if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
+								cardmarkers(cardadd,"str",1)
+								cardmarkers(cardadd,"inticon",1)
+							if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
+								cardmarkers(cardadd,"str",1)
+								cardmarkers(cardadd,"powicon",1)
 
+			if args.cards[index].model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				for cardaddd in table:
+					if cardaddd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardaddd.controller == me and cardaddd.filter != WaitColor:
+						for cardadd in table:
+							if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
+								cardmarkers(cardadd,"inticon",1)
+							if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
+								cardmarkers(cardadd,"str",1)
+								cardmarkers(cardadd,"powicon",1)
 
-		if args.cards[index].model == "abf9c701-f480-4576-a5c0-44b4e9b04e6c" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
-			if not confirm("place the top card of your deck on her facedown as arya's duplicate?"):return
-			if len(me.deck) > 1:
-				for cardatt in me.Deck.top(1):
-					x,y = args.cards[index].position
-					if me.isInverted: 
-						cardatt.moveToTable(x-12,y-12,True)
-					else:
-						cardatt.moveToTable(x+12,y+12,True)
-					cardatt.peek()
-					cardatt.filter = "#005c3521"
-					cardatt.sendToBack()
-					aryaduplicate.append(cardatt)
-				cardmarkers(args.cards[index],"milicon",1)
-				return
-		if card in aryaduplicate and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and card.controller == me:
-			aryaduplicate.remove(card)
-			if len(aryaduplicate) == 0:
-				for card in table:
-					if card.model == "abf9c701-f480-4576-a5c0-44b4e9b04e6c" and card.controller == me and card not in noprint_turn:cardmarkers(card,"milicon",-1)
+			if args.cards[index].model in ("597acd7c-3424-4e8c-82e6-d6682d662c8c","a5512893-cf5c-4e54-a8a7-87114492a50b") and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
+							cardmarkers(cardadd,"str",-1)
+							cardmarkers(cardadd,"inticon",-1)
+						if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor and cardadd not in noprint_turn:
+							cardmarkers(cardadd,"str",-1)
+							cardmarkers(cardadd,"powicon",-1)
+
+			if args.cards[index].model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
+				for cardadd in table:
+					if cardadd.controller == me and "Warship" in cardadd.traits:cardmarkers(args.cards[index],"str",1)
+			if args.cards[index].model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
+				for cardadd in table:
+					if cardadd.controller == me and "The Reach" in cardadd.traits:cardmarkers(args.cards[index],"str",1)
+			if args.cards[index].Faction == "Night's Watch." and args.cards[index].type == "Character" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				for cardadd in table:
+					if cardadd.controller == me and cardadd.model == "5d20e021-5d12-4338-8bdd-42d008bff919" and cardadd.filter != WaitColor and cardadd not in noprint_turn:cardmarkers(args.cards[index],"str",1)
+			if args.cards[index].model == "390a8cf7-8bc4-45c1-bea5-e6a694e9f2d5" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:args.cards[index].markers[STR_Up] += me.counters['Gold'].value
+			if args.cards[index].model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
+				for cardadd in table:
+					if cardadd.controller == me and cardadd.model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and "Direwolf" in cardadd.traits:cardmarkers(args.cards[index],"str",1)
+					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.cards[index]._id != cardadd._id:
+						for cardadd2 in table:
+							if cardadd2.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd2._id != cardadd._id and cardadd2._id != args.cards[index]._id and cardadd2 not in noprint_turn:cardmarkers(cardadd2,"str",-1)
+					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281":
+						for cardadd2 in table:
+							if cardadd2.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd2._id != cardadd._id and cardadd2 not in noprint_turn:cardmarkers(cardadd2,"str",1)
+			if args.cards[index].model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				for cardadd in table:
+					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.cards[index]._id != cardadd._id:cardmarkers(cardadd,"str",-1)
+			if args.cards[index].model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				if "Direwolf" in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd not in noprint_turn:cardadd.markers[STR_Up] += 1
+			if args.cards[index].model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] in noprint_turn:
+				if "Direwolf" in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd not in noprint_turn:cardadd.markers[STR_Up] += 1
+			if args.cards[index].model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				if "Direwolf" in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",-1)
+			if args.cards[index].type == "Location" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				if "Warship" in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",1)
+				if "The Reach" in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",1)
+			if args.cards[index].type == "Location" and args.toGroups[index].name != "Table" and args.fromGroups[index].name == "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor:
+				if "Warship" in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",-1)
+				if "The Reach" in args.cards[index].traits:
+					for cardadd in table:
+						if cardadd.controller == me and cardadd.model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54" and cardadd not in noprint_turn:cardmarkers(cardadd,"str",-1)
 	index += 1
 def movecardp(card,x,y,back):
 	mute()
