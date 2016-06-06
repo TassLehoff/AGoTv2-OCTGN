@@ -3944,6 +3944,7 @@ def shuffleToPlot(group):
 
 def createTitles(group):
 	mute()
+	setGlobalVariable("automode","0")
 	if len(shared.piles['Titles']) == 6:
 		whisper("Melee titles are created.")
 	else:
@@ -3985,6 +3986,7 @@ def on_table_load():
 	mute()
 	#webRead('http://qxu2309320040.my3w.com/action.php?winner={}&loser=xing'.format(me.name), 5000)
 	me.setGlobalVariable("finished","0")
+	setGlobalVariable("automode","1")
 	if getSetting("welcome", "1") == "1":
 		if not confirm("Welcome to AGOT OCTGN Automation Version\n\nYou can enter the menu [Game Documents],and selet [Manual book] to see how to use automation.\n\nYou can also visit the offical site to create issues.\n\nChoss [No] Never show this window"):
 			setSetting("welcome","0")
@@ -4018,7 +4020,6 @@ def selectgamemode():
 
 def onloaddeck(args):
 	mute()
-	setGlobalVariable("automode","1")
 	# if args.player == me:
 	# 	if getGlobalVariable("selectgamemode") =="1":afterload(me)
 	# 	else:
@@ -4255,7 +4256,7 @@ def onmoved(args):
 							del attach[d]
 							setGlobalVariable("attachmodify",str(attach))
 							debug(getGlobalVariable("attachmodify"))
-
+		if getGlobalVariable("automode") != "1":return
 		if args.cards[index].model == "5d20e021-5d12-4338-8bdd-42d008bff919" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
 				for cardadd in table:
 					if cardadd.controller == me and cardadd.Faction == "Night's Watch." and cardadd.type == "Character" and cardadd.filter != WaitColor:cardmarkers(cardadd,"str",1)
@@ -8277,6 +8278,7 @@ def stealthcard(group, x=0, y=0):
 
 def onclick(args):
 	mute()
+	if getGlobalVariable("automode") != "1":return
 	if getGlobalVariable("selectmode") != "0" and args.card.type not in ("Internal") and me.getGlobalVariable("actionstyle") != "1":
 		list2 = []
 		if me.getGlobalVariable("setupOk") in ("4","5") or me.getGlobalVariable("plotOk") == "ok" or me.getGlobalVariable("drawOk") == "ok":tuplecard = eval(me.getGlobalVariable("tableTargets"))
@@ -8442,7 +8444,7 @@ def ondbclick(args):
 	if getGlobalVariable("selectmode") == "0":
 		if args.card.Type != "Internal":
 			for card in table:
-				if args.card._id == card._id:
+				if args.card._id == card._id and card.controller == me:
 					if card.Type == "Plot" and card.isFaceUp == True:
 						countincome(table)
 					elif not card.isFaceUp: #Face down card - flip
@@ -11894,6 +11896,7 @@ def checkcounter(args):
 def onsmoved(args):
 	index = 0
 	global aryaduplicate
+	if getGlobalVariable("automode") != "1":return
 	for card in args.cards:
 		if args.cards[index].model == "5d20e021-5d12-4338-8bdd-42d008bff919" and args.toGroups[index].name == "Table" and args.fromGroups[index].name != "Table" and args.cards[index].controller == me and args.cards[index].filter != WaitColor and args.cards[index] not in noprint_turn:
 				for cardadd in table:
