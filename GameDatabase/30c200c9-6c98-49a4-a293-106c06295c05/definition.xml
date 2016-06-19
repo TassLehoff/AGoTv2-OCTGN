@@ -3,7 +3,7 @@
 <game name="A Game of Thrones - The Card Game Second Edition"
       id="30c200c9-6c98-49a4-a293-106c06295c05"
       octgnVersion="3.1.0.0"
-      version="2.0.0.0"
+      version="2.0.0.4"
       scriptVersion="3.1.0.2"
       markersize="16"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -29,6 +29,7 @@
         <event name="OnMarkerChanged" action="checkwinner" />
         <event name="OnCounterChanged" action="checkcounter" />
         <event name="OnScriptedCardsMoved" action="onsmoved" />
+        <event name="OnCardTargeted" action="ontarget" />
     </events>
 
     <proxygen definitionsrc="proxy/proxydef.xml">
@@ -65,7 +66,7 @@
         <globalvariable name="aside"       value="0" />
         <globalvariable name="bside"       value="0" />
         <globalvariable name="numplayer" value="0" />
-        <globalvariable name="automode" value="1" />
+        <globalvariable name="automode" value="0" />
         <globalvariable name="selectmode" value="0" />
     </globalvariables>
     
@@ -106,25 +107,26 @@
             <groupaction     menu="SetUp"                                      shortcut=""       default="False"      execute="setup"/>
             <groupaction     menu="Calculate Reserve Value"                    shortcut="ALT+R"  default="False"      execute="getreserve"/>
             <groupaction     menu="Calculate Power Totals"                     shortcut="CTRL+R" default="False"      execute="recalcPower"/>
-            <!-- <groupactions    menu="Plot Phase">
-                <groupaction     menu="Reveal plot"                            shortcut="ALT+P"  default="False"      execute="revealplot"/>
+            <groupactions    menu="Plot Phase">
+                <groupaction     menu="Reveal plot"                            shortcut="ALT+P"  default="False"      execute="revealplotM"/>
                 <groupaction     menu="Calculate Initiative Value"             shortcut=""       default="False"      execute="getInit"/>
-                <groupaction     menu="Who win the initiative"                 shortcut="ALT+I"  default="False"      execute="fp"/>
+                <groupaction     menu="Who win the initiative"                 shortcut="ALT+I"  default="False"      execute="fpM"/>
             </groupactions>
             <groupactions    menu="Marshal Phase">
                 <groupaction     menu="Count income(Double click plot card)"   shortcut="ALT+G"  default="False"      execute="countincome"/>
             </groupactions>
             <groupactions    menu="Challenge Phase">
-                <groupaction     menu="Declare a challenge"                    shortcut="ALT+A"  default="False"      execute="challengeAnnounce"/>
-                <groupaction     menu="Respond: Opposed/Defend"                shortcut="ALT+O"  default="False"      execute="announceOpp"/>
+                <groupaction     menu="Declare a challenge"                    shortcut="ALT+A"  default="False"      execute="challengeAnnounceM"/>
+                <groupaction     menu="Respond: Opposed/Defend"                shortcut="ALT+O"  default="False"      execute="announceOppM"/>
                 <groupaction     menu="Calculate Challenge Strength"           shortcut="ALT+C"  default="False"      execute="challenge"/>
             </groupactions>
             <groupactions    menu="Dominance Phase">
-                <groupaction     menu="Who win the dominance"                  shortcut="ALT+D"  default="False"      execute="dominance"/>
+                <groupaction     menu="Who win the dominance"                  shortcut="ALT+D"  default="False"      execute="dominanceM"/>
             </groupactions>
-            <groupaction     menu="End Turn"                                   shortcut="ALT+E"  default="False"      execute="endturn"/> -->
+            <groupaction     menu="End Turn"                                   shortcut="ALT+E"  default="False"      execute="endturn"/>
         </groupactions>
         <groupaction menu="Concede" default="False" shortcut="" execute="defeat" />
+        <!-- <groupaction menu="test" default="False" shortcut="" execute="test" /> -->
         <groupactions    menu="Announcements">
             <groupaction     menu="Announce: I'm Done."                        shortcut="CTRL+D"  default="False"      execute="turnDone"/>
             <groupaction     menu="Announce: Action/Question"                  shortcut="CTRL+Q" default="False"      execute="holdOn"/>
@@ -144,6 +146,8 @@
             <groupaction     menu="Download: Images Packs"                     shortcut=""       default="False"      execute="googleDriveWebsite"/>
             <groupaction     menu="Download: FFG's AGoT FAQ"                   shortcut=""       default="False"      execute="faqWebsite"/>
         </groupactions>
+        <groupaction menu="Option" default="False" shortcut="" execute="option" />
+        <cardaction      menu="Use Ability"                                    shortcut="CTRL+A"     default="False"      execute="usecardability"/>
         <cardaction      menu="Kneel/Stand"                                    shortcut="F9"     default="False"      execute="kneel"/>
         <cardaction      menu="Flip Card"                                      shortcut="F8"                          execute="flipcard"/>
         <cardaction      menu="Discard"                                        shortcut="DELETE" default="False"      execute="disc"/>

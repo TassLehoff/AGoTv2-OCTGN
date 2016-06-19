@@ -110,30 +110,30 @@ keywordsreaction = dict(
              EuronCrowsEye =         ("Euron Crow's Eye","912e5447-89b3-4896-903c-6f5ed78113e1","all","both","controlllocation",1,"table",""))
 
 plotdict =  dict( # plot
-            AGameofThrones =         ("A Game of Thrones","c6d4c560-873d-425e-a05c-7dd2eb57c324","winint"),
-            ANobleCause =            ("A Noble Cause","0fb3ad4b-5cf3-49e9-a33f-484ecafeabf8","firstll"),
-            AStormofSwords =         ("A Storm of Swords","a02bce64-e292-487e-a666-cd07b4a11e59","addmilcount"),
-            BuildingOrders =         ("Building Orders","34e54ffc-9806-49da-a8a0-d38a17f6753d","10searchatloc"),
-            CallingtheBanners =      ("Calling the Banners","3a3577a4-5ee1-4e9f-a674-49e9f9e81568","1c1g"),
-            CalmOverWesteros =       ("Calm Over Westeros","4ee52602-89fa-4048-accc-dffdb78bee69","subclaim"),
-            Confiscation =           ("Confiscation","446ac0b9-746f-4aa3-b8bf-f132d2b29499","discattachment"),
-            CountingCoppers =        ("Counting Coppers","1b362220-c8c2-4600-b204-06342e58b09c","draw3"),
-            FilthyAccusations =      ("Filthy Accusations","ac8effb7-76cb-42e4-ab33-d88a407c0dda","kneel"),
-            HeadsonSpikes =          ("Heads on Spikes","424194c0-ad9c-473b-b254-40b1274152ba","discplayer"),
-            JoustingContest =        ("Jousting Contest","0b94080f-2207-4663-8990-f9370ab77709","challenge1player"),
-            MarchingOrders =         ("Marching Orders","d526faac-594d-4f40-9da5-42300d44c12e","cantuselia","cantuselia"),
-            NavalSuperiority =       ("Naval Superiority","68448806-ca58-496d-b010-2794fd372744","gold0"),
-            Rebuilding =             ("Rebuilding","fedb6fe6-2f55-4c42-9798-3e091b2b2573","adddisc3"),
-            SneakAttack =            ("Sneak Attack","d4576f9d-16a6-430e-9f73-217216fd43b9","1challenge"),
-            Summons =                ("Summons","a380b0e0-610c-47f9-ac9f-ae12163b45fd","10searchcha"),
-            Reinforcements =         ("Reinforcements","5de352a4-c6fd-478c-bac0-39b78de1e68c","search5c"),
-            MarchedtotheWall =       ("Reinforcements","a9f2fccd-11f3-4562-aa5a-76d606712311","disc1player"),
-            WildfireAssault =        ("Wildfire Assault","d10a1ced-df94-419b-af8e-4eadc2eb4688","kill3player"),
-            PowerBehindtheThrone =   ("Power Behind the Throne","12f6e8de-5627-4e71-90f6-1f79f17be44e","addstandicon"),
-            TradingwiththePentoshi = ("Trading with the Pentoshi","bc3547ae-82fc-4da1-a375-209ba0c07748","gain3gold"),
-            HeretoServe =            ("Here to Serve","f68a9d16-dea2-4eae-a03f-8fbc48e2c85c","search3maester"),
-            PoliticalDisaster =      ("Political Disaster","bc45b0f8-21ae-4ae2-b86d-f78008f25566","select2location"),
-            FortifiedPosition =      ("Fortified Position","79877d2a-5b23-4c16-86df-9453c065835b","allnoprint"))
+            # AGameofThrones =         ("A Game of Thrones","c6d4c560-873d-425e-a05c-7dd2eb57c324","winint",""),
+            # ANobleCause =            ("A Noble Cause","0fb3ad4b-5cf3-49e9-a33f-484ecafeabf8","firstll",""),
+            # AStormofSwords =         ("A Storm of Swords","a02bce64-e292-487e-a666-cd07b4a11e59","addmilcount",""),
+            BuildingOrders =         ("Building Orders","34e54ffc-9806-49da-a8a0-d38a17f6753d","10searchatloc",""),
+            CallingtheBanners =      ("Calling the Banners","3a3577a4-5ee1-4e9f-a674-49e9f9e81568","1c1g",""),
+            CalmOverWesteros =       ("Calm Over Westeros","4ee52602-89fa-4048-accc-dffdb78bee69","subclaim",""),
+            Confiscation =           ("Confiscation","446ac0b9-746f-4aa3-b8bf-f132d2b29499","discattachment","1"),
+            CountingCoppers =        ("Counting Coppers","1b362220-c8c2-4600-b204-06342e58b09c","draw3",""),
+            FilthyAccusations =      ("Filthy Accusations","ac8effb7-76cb-42e4-ab33-d88a407c0dda","kneel","1"),
+            HeadsonSpikes =          ("Heads on Spikes","424194c0-ad9c-473b-b254-40b1274152ba","discplayer",""),
+            # JoustingContest =        ("Jousting Contest","0b94080f-2207-4663-8990-f9370ab77709","challenge1player",""),
+            # MarchingOrders =         ("Marching Orders","d526faac-594d-4f40-9da5-42300d44c12e","cantuselia",""),
+            # NavalSuperiority =       ("Naval Superiority","68448806-ca58-496d-b010-2794fd372744","gold0",""),
+            Rebuilding =             ("Rebuilding","fedb6fe6-2f55-4c42-9798-3e091b2b2573","adddisc3",""),
+            # SneakAttack =            ("Sneak Attack","d4576f9d-16a6-430e-9f73-217216fd43b9","1challenge",""),
+            Summons =                ("Summons","a380b0e0-610c-47f9-ac9f-ae12163b45fd","10searchcha",""),
+            Reinforcements =         ("Reinforcements","5de352a4-c6fd-478c-bac0-39b78de1e68c","search5c",""),
+            # MarchedtotheWall =       ("MarchedtotheWall","a9f2fccd-11f3-4562-aa5a-76d606712311","disc1player",""),
+            # WildfireAssault =        ("Wildfire Assault","d10a1ced-df94-419b-af8e-4eadc2eb4688","kill3player",""),
+            PowerBehindtheThrone =   ("Power Behind the Throne","12f6e8de-5627-4e71-90f6-1f79f17be44e","addstandicon",""),
+            TradingwiththePentoshi = ("Trading with the Pentoshi","bc3547ae-82fc-4da1-a375-209ba0c07748","gain3gold",""),
+            HeretoServe =            ("Here to Serve","f68a9d16-dea2-4eae-a03f-8fbc48e2c85c","search3maester",""))
+            # PoliticalDisaster =      ("Political Disaster","bc45b0f8-21ae-4ae2-b86d-f78008f25566","select2location",""),
+            # FortifiedPosition =      ("Fortified Position","79877d2a-5b23-4c16-86df-9453c065835b","allnoprint",""))
 
 
 generalaction =  dict( # generalaction
@@ -155,7 +155,9 @@ generalaction =  dict( # generalaction
             WolfDreams =          ("Wolf Dreams","cb5ae535-6b4b-4100-8593-1e231b3da602","searchwolf","Hand",1,""),
             Nightmares =          ("Nightmares","9d81eee2-2281-4bad-933c-9915b9eb9aca","noprint","Hand",1,""),
             Lady =                ("Lady","d4827a8a-6403-4d47-bb47-813073b78b49","changecontroll","table",1,""),
-            AGiftofArborRed =     ("A Gift of Arbor Red","a788cd32-5b5b-40d1-a485-629adb2c4b3a","4cardchoose2","Hand",1,""))
+            AGiftofArborRed =     ("A Gift of Arbor Red","a788cd32-5b5b-40d1-a485-629adb2c4b3a","4cardchoose2","Hand",1,""),
+            EvenHandedJustice=    ("Even-Handed Justice","69fe7a62-2def-4e6c-9c61-4728ff354ab0","eachkneel","Hand",1,""),
+            TourneyGrounds=       ("Tourney Grounds","5183c3de-7174-4f1d-b9cd-67c47a4b7251","reducenextevent","table",1,""))
 
 dominancestart =  dict( # dominancestart
             FieryFollowers =      ("Fiery Followers","21c87233-3c2e-4a66-9ea0-ffaf5ac0594c","stand","table",1,""))
@@ -193,7 +195,8 @@ marshalaction = dict( # dominanceend
             IllyriosEstate =           ("Illyrios Estate","bc9a511e-9f90-4b4f-892e-e8ad46103da9","reduce1Targaryencard","table",1,""),
             GardenCaretake =           ("Garden Caretake","8192ab17-f699-45b9-931b-e0933dbc01eb","reduce1Tyrellcharacter","table",1,""),
             RoseGarden =               ("Rose Garden","8f0e7f8b-d08c-4c89-972a-ad765a27a061","reduce1Tyrellcard","table",1,""),
-            Bronn =                    ("Bronn","d8f39831-ef30-4f90-a8cb-8bbc4c659c7d","controllb","table",1,"gold1"))
+            Bronn =                    ("Bronn","d8f39831-ef30-4f90-a8cb-8bbc4c659c7d","controllb","table",1,"gold1"),
+            TotheRoseBanner =          ("To the Rose Banner","4dc05cfc-e71f-49be-9c2c-c383d1332a5f","scgetgold","Hand",1,""))
 
 def debug(str):
 	mute()
