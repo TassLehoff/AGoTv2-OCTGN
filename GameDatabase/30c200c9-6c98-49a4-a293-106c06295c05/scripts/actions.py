@@ -759,7 +759,7 @@ def addGold(card, x = 0, y = 0):
 	mute()
 	notify("{} adds a Gold to {}.".format(me, card))
 	card.markers[Gold] += 1
-	me.counters['Gold'].value += 1
+	if card.type == "Plot":me.counters['Gold'].value += 1
 
 def addPower(card, x = 0, y = 0):
 	mute()
@@ -3357,10 +3357,9 @@ def disc(card, x = 0, y = 0):
 					if re.search('loses an \[INT]\sicon', card.Text):cardmarkers(cardc,"inticon",1)
 					if re.search('loses a \[POW]\sicon', card.Text):cardmarkers(cardc,"powicon",1)
 					if re.search('loses a \[MIL]\sicon', card.Text):cardmarkers(cardc,"milicon",1)
-					if card.Text.find('Terminal.') == -1 and card.Keywords.find('Terminal.') == -1:remoteCall(card.owner, "returncard", card)
-					else:remoteCall(card.owner, "disccard", card)
-					return
-		remoteCall(card.owner, "disccard", card)
+		if card.Text.find('Terminal.') == -1 and card.Keywords.find('Terminal.') == -1:remoteCall(card.owner, "returncard", card)
+		else:remoteCall(card.owner, "disccard", card)
+		#remoteCall(card.owner, "disccard", card)
 		if card.highlight == sacrificecolor:
 			card.highlight = None
 			notify("{} sacrifice {}.".format(me, card))
@@ -3489,6 +3488,7 @@ def addWaitHighlight(card):
 def flipplotcard(card):
 	mute()
 	if card.isFaceUp:
+		me.setGlobalVariable("turn","0")
 		return
 	else:
 		card.isFaceUp = True
@@ -3590,7 +3590,7 @@ def play(card):
 			cost=int(re.search('Ambush\s\(\d\).', card.keywords).group()[8])
 			ambush = 1
 		else:cost=int(card.Cost)
-		if me.getGlobalVariable("firstlimit") != "0" and "Limited" in card.keywords:
+		if me.getGlobalVariable("firstlimit") != "0" and "Limited" in card.keywords and getGlobalVariable("automode") == "1":
 			whisper("You can only play one limited card")
 			return
 		if me.getGlobalVariable("firstevent") == "0":
@@ -3902,7 +3902,7 @@ def play(card):
 						else:
 							card.highlight = PlayColor
 							notify("{} plays {} and attachs to {} for {} Gold (Cost reduced by {}).".format(me,card,choose,cost,reduc))
-					if me.getGlobalVariable("firstlimit") == "0":
+					if me.getGlobalVariable("firstlimit") == "0" and getGlobalVariable("automode") == "1":
 						if "Limited" in card.keywords:me.setGlobalVariable("firstlimit","1")
 					if reduce_Stark_card_turn != 0:me.setGlobalVariable("reduce_Stark_card_turn", "0")
 					if reduce_Lannister_card_turn != 0:me.setGlobalVariable("reduce_Lannister_card_turn", "0")
@@ -3986,7 +3986,7 @@ def play(card):
 			# for incomecard in table:
 			# 	if incomecard.controller == me and incomecard.markers[Gold] > 0:
 			# 		incomecard.markers[Gold] -= cost
-			if me.getGlobalVariable("firstlimit") == "0":
+			if me.getGlobalVariable("firstlimit") == "0" and getGlobalVariable("automode") == "1":
 				if "Limited" in card.keywords:me.setGlobalVariable("firstlimit","1")
 			if reduce_character_turn != 0:me.setGlobalVariable("reduce_character_turn", "0")
 			if reduce_Stark_character_turn != 0:me.setGlobalVariable("reduce_Stark_character_turn", "0")
@@ -4397,7 +4397,6 @@ def checkplot(thiscard):
 				else:return True
 			if card.isFaceUp == False and card != thiscard:return True
 
-
 		
 def onmoved(args):
 	mute()
@@ -4418,11 +4417,11 @@ def onmoved(args):
 				card.moveTo(me.piles['Plot Deck'])
 				return
 			if plot == 0:
-				if me.isInverted:card.moveToTable(-430,-75,False)
-				else:card.moveToTable(-430,10,False)
+				if me.isInverted:card.moveToTable(-430,-75,True)
+				else:card.moveToTable(-430,10,True)
 			else:
-				if me.isInverted:card.moveToTable(x-5, y-20,False)
-				else:card.moveToTable(x-5, y+20,False)
+				if me.isInverted:card.moveToTable(x-5, y-20,True)
+				else:card.moveToTable(x-5, y+20,True)
 			me.setGlobalVariable("turn","1")
 			for cardp in table:
 				if cardp.type == "Plot" and cardp.isFaceUp == False and cardp != card:
@@ -11149,6 +11148,8 @@ def matchwin(s = 0):
 	#cn only
 	agendaa = ''
 	agendab = ''
+	factionb = ''
+	factiona = ''
 	if me.isInverted:
 		sidea = players[1].name
 		if s == 1:powera = 0

@@ -199,7 +199,7 @@
         <globalvariable name="setupOk"   value="0" />
         <globalvariable name="turn"      value="0" />
         
-        <hand name="Hand" visibility="me" ordered="True"     width="63" height="88" icon="groups/hand.png">            
+        <hand name="Hand" visibility="me" ordered="False"     width="63" height="88" icon="groups/hand.png">            
             <groupaction menu="Random Discard"                     shortcut="F12"                                     execute="randomDiscard"/>
             <groupaction menu="Random Discard Many"                                                                   execute="discardMany"/>
             <groupaction menu="Take a Mulligan"                    shortcut="F6"                                      execute="mulligan"/>
