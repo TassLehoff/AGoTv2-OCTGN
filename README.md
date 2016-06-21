@@ -3,5 +3,7 @@
 20160621 update2.0.0.5
 
 1.disc attachment will return to hand correctlly
+
 2.fix limited card's bug
+
 3.fix add gold,only plot card can add counter
