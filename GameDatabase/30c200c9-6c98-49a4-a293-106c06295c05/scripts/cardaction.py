@@ -198,6 +198,24 @@ marshalaction = dict( # dominanceend
             Bronn =                    ("Bronn","d8f39831-ef30-4f90-a8cb-8bbc4c659c7d","controllb","table",1,"gold1"),
             TotheRoseBanner =          ("To the Rose Banner","4dc05cfc-e71f-49be-9c2c-c383d1332a5f","scgetgold","Hand",1,""))
 
+eventeffect = dict(
+            PuttotheTorch =            ("Put to the Torch", "997f1584-7092-4895-ac40-fc9fd98891bc","disotherloaction","1"),
+            SuperiorClaim =            ("Superior Claim", "8e9b06da-991e-4608-a16b-caf96209641a","2 power",""),
+            SeenInFlames =             ("Seen In Flames","50402306-cc27-4e3e-9924-aa13f430cb60","dischand",""),
+            TearsofLys =               ("Tears of Lys","b29c7bb5-7b84-4e94-a30b-8332fad51c2a","addmarker","1"),
+            WeDoNotSow =               ("We Do Not Sow","62570a84-3203-468d-9529-37dbbc6d191c","disotherloactionattachment","1"),
+            HearMeRoar =               ("Hear Me Roar","2ad9b318-4ff7-4ace-91ee-81e223fd176c","addlan","1"),
+            TheThingsIDoForLove =      ("The Things I Do For Love","6d93075c-8517-44ef-8580-f4fdfe1967da","kneelhousereturnhand","1"),
+            DoransGame =               ("Doran's Game","427a5213-1be5-4b36-94be-04a5b3486575","addusedplotpow",""),
+            Confinement =              ("Confinement","9aafaad7-3f74-4aff-ba0c-bf19e5de0bdf","loseicon","1"),
+            TaketheBlack =             ("Take the Black","1a0183ed-61fd-4302-b19b-1640f0c11500","controll6","1"),
+            FortheNorth =              ("For the North","764fd244-f0f0-4b61-a435-9cf73ef074ce","addstrdraw","1"),
+            Dracarys =                 ("Dracarys","aae782b7-cd97-4818-b56a-d1dafe6f80de","burn","1"),
+            FireandBlood =             ("Fire and Blood","06a715e0-f26c-4894-8610-63353d73e0fd","returndead",""),
+            WakingtheDragon =          ("Waking the Dragon","393fb603-c449-4043-a73f-21c4b47be039","standtc","1"),
+            OlennasCunning =           ("Olenna's Cunning","3fd0054d-0a3c-4ab9-9ea5-96b0a1ac4628","addhand",""),
+            TheBearandtheMaidenFair =  ("The Bear and the Maiden Fair","202b37de-c6bf-4c21-93fd-f3cf6bbad04d","5t3b",""))
+
 def debug(str):
 	mute()
 	global debugMode

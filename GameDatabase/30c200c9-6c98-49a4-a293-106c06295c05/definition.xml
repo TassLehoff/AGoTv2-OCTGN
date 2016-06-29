@@ -3,7 +3,7 @@
 <game name="A Game of Thrones - The Card Game Second Edition"
       id="30c200c9-6c98-49a4-a293-106c06295c05"
       octgnVersion="3.1.0.0"
-      version="2.0.0.5"
+      version="2.0.0.6"
       scriptVersion="3.1.0.2"
       markersize="16"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -30,6 +30,7 @@
         <event name="OnCounterChanged" action="checkcounter" />
         <event name="OnScriptedCardsMoved" action="onsmoved" />
         <event name="OnCardTargeted" action="ontarget" />
+        <event name="OnPlayerQuit" action="onquit" />
     </events>
 
     <proxygen definitionsrc="proxy/proxydef.xml">
@@ -68,6 +69,7 @@
         <globalvariable name="numplayer" value="0" />
         <globalvariable name="automode" value="0" />
         <globalvariable name="selectmode" value="0" />
+        <globalvariable name="upload" value="0" />
     </globalvariables>
     
     <card back="cards/back.png" front="cards/front.png" width="63" height="88" cornerRadius="2">
@@ -111,6 +113,7 @@
                 <groupaction     menu="Reveal plot"                            shortcut="ALT+P"  default="False"      execute="revealplotM"/>
                 <groupaction     menu="Calculate Initiative Value"             shortcut=""       default="False"      execute="getInit"/>
                 <groupaction     menu="Who win the initiative"                 shortcut="ALT+I"  default="False"      execute="fpM"/>
+                <groupaction     menu="Reorder Plot"                 shortcut="F6"  default="False"      execute="reorderplot"/>
             </groupactions>
             <groupactions    menu="Marshal Phase">
                 <groupaction     menu="Count income(Double click plot card)"   shortcut="ALT+G"  default="False"      execute="countincome"/>

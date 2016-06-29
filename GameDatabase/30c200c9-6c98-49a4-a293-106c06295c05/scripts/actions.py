@@ -241,20 +241,21 @@ def announceMil(group, x = 0, y = 0):
 			if getGlobalVariable("automode") != "1":
 				c.target(True)
 			c.highlight = MilitaryColor
-			if c.model != "a8854084-67e5-4955-89db-3d9cb1337789":
-				if c.model == "09903f79-6155-4a63-9b52-e10fb2e69898":
-					for cards in table:
-						if cards.model == "99a12a9c-6e83-43bd-8947-0cc47ffcd02a" and cards.controller == me:
-							attach = eval(getGlobalVariable("attachmodify"))
-							if attach.has_key(cards._id):
-								if attach(cards._id) == c._id and countmil == 1:
-									c.orientation = 0
-								else:c.orientation = 1
-				elif c.model != "09903f79-6155-4a63-9b52-e10fb2e69898":c.orientation = 1
-				if re.search(r'stealth',c.keywords,re.I):   #stealth
-					stealth = "0"
-					stealthcount += 1
-					if c.model == afterchallengereacion['Ghost'][1]:setGlobalVariable("cantchallenge", "1")
+			c.orientation = 1
+			# if c.model != "a8854084-67e5-4955-89db-3d9cb1337789":
+			# 	if c.model == "09903f79-6155-4a63-9b52-e10fb2e69898":
+			# 		for cards in table:
+			# 			if cards.model == "99a12a9c-6e83-43bd-8947-0cc47ffcd02a" and cards.controller == me:
+			# 				attach = eval(getGlobalVariable("attachmodify"))
+			# 				if attach.has_key(cards._id):
+			# 					if attach(cards._id) == c._id and countmil == 1:
+			# 						c.orientation = 0
+			# 					else:c.orientation = 1
+			# 	elif c.model != "09903f79-6155-4a63-9b52-e10fb2e69898":c.orientation = 1
+			if re.search(r'stealth',c.keywords,re.I):   #stealth
+				stealth = "0"
+				stealthcount += 1
+					# if c.model == afterchallengereacion['Ghost'][1]:setGlobalVariable("cantchallenge", "1")
 		notify("**{} declares MIL attackers.**".format(me))
 		if getGlobalVariable("automode") == "1":
 			attacker = me
@@ -718,9 +719,14 @@ def kneel(card, x = 0, y = 0):
 	# else:notify("{} s already knelt.".format(card))
 	# if card.model not in ("f97ccf1a-5b0d-490f-9968-78330e92171c" ,"4c8a114e-106c-4460-846b-28f73914fc11"):		
 	card.orientation ^= Rot90
+	cx, cy = card.position
 	if card.orientation & Rot90 == Rot90:
+		if me.isInverted:card.moveToTable(cx+14, cy)
+		else:card.moveToTable(cx-14, cy)
 		notify('{} kneels {}.'.format(me, card))
 	else:
+		if me.isInverted:card.moveToTable(cx-14, cy)
+		else:card.moveToTable(cx+14, cy)
 		notify('{} stands {}.'.format(me, card))
 
 def flipcard(card, x = 0, y = 0):
@@ -1259,46 +1265,45 @@ def reordertable(group, x = 0, y = 0):
 							else:carda.moveToTable(x1-i,y1-i)
 							carda.sendToBack()
 							i+=12
-	for cards in table:
-		if cards.controller == me and cards.filter != WaitColor:
-			if cards.model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d":
-				for cardadd in table:
-					if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != cards._id:
-						cardmarkers(cards,"str",1)
-						cardmarkers(cards,"powicon",1)
-						break
-			if cards.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c":
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor:
-						cardmarkers(cards,"str",1)
-						cardmarkers(cards,"powicon",1)
-			if cards.model == "a5512893-cf5c-4e54-a8a7-87114492a50b":
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor:
-						cardmarkers(cards,"str",1)
-						cardmarkers(cards,"inticon",1)
+	# for cards in table:
+	# 	if cards.controller == me and cards.filter != WaitColor:
+	# 		if cards.model == "fdf1989a-ee7d-4972-9d12-b299bfe3ba6d":
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and "Knight." in cardadd.traits and cardadd.filter != WaitColor and cardadd._id != cards._id:
+	# 					cardmarkers(cards,"str",1)
+	# 					cardmarkers(cards,"powicon",1)
+	# 					break
+	# 		if cards.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c":
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and cardadd.model == "a5512893-cf5c-4e54-a8a7-87114492a50b" and cardadd.filter != WaitColor:
+	# 					cardmarkers(cards,"str",1)
+	# 					cardmarkers(cards,"powicon",1)
+	# 		if cards.model == "a5512893-cf5c-4e54-a8a7-87114492a50b":
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and cardadd.model == "597acd7c-3424-4e8c-82e6-d6682d662c8c" and cardadd.filter != WaitColor:
+	# 					cardmarkers(cards,"str",1)
+	# 					cardmarkers(cards,"inticon",1)
 
-			if cards.model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb":
-				for cardadd in table:
-					if cardadd.controller == me and "Drowned God." in cardadd.traits:cardmarkers(cards,"str",1)
-			if "The Reach" in cards.traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54":cardadd.markers[STR_Up] += 1
-			if "Warship" in cards.traits:
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002":cardadd.markers[STR_Up] += 1
-			if cards.model == "5d20e021-5d12-4338-8bdd-42d008bff919":
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.Faction == "Night's Watch." and cardadd.type == "Character" and cardadd.filter != WaitColor:cardadd.markers[STR_Up] += 1
-			if "Direwolf" in cards.traits and cards.model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281":
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281":cardadd.markers[STR_Up] += 1
-			if cards.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281":
-				for cardadd in table:
-					if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cards._id != cardadd._id:cardadd.markers[STR_Up] += 1
+	# 		if cards.model == "91b7190f-d0ba-4c3b-b9e2-5e7d2c872acb":
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and "Drowned God." in cardadd.traits:cardmarkers(cards,"str",1)
+	# 		if "The Reach" in cards.traits:
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and cardadd.model == "3e1a5952-f5d1-4bca-9226-2b94531cfa54":cardadd.markers[STR_Up] += 1
+	# 		if "Warship" in cards.traits:
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and cardadd.model == "cbeb3a37-d4c1-4697-b8d2-e366b4569002":cardadd.markers[STR_Up] += 1
+	# 		if cards.model == "5d20e021-5d12-4338-8bdd-42d008bff919":
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and cardadd.Faction == "Night's Watch." and cardadd.type == "Character" and cardadd.filter != WaitColor:cardadd.markers[STR_Up] += 1
+	# 		if "Direwolf" in cards.traits and cards.model != "c41d4a72-6919-4e32-97ef-a4b0f1acb281":
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281":cardadd.markers[STR_Up] += 1
+	# 		if cards.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281":
+	# 			for cardadd in table:
+	# 				if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cards._id != cardadd._id:cardadd.markers[STR_Up] += 1
 	notify("{} finished setup phase".format(me))
 	me.setGlobalVariable("setupOk","5")
-
 	# targetTuple = (["setupOk"], me._id)
 	# me.setGlobalVariable("tableTargets", str(targetTuple))
 	# setGlobalVariable("selectmode", "1")
@@ -3590,23 +3595,23 @@ def play(card):
 			cost=int(re.search('Ambush\s\(\d\).', card.keywords).group()[8])
 			ambush = 1
 		else:cost=int(card.Cost)
-		if me.getGlobalVariable("firstlimit") != "0" and "Limited" in card.keywords and getGlobalVariable("automode") == "1":
-			whisper("You can only play one limited card")
-			return
-		if me.getGlobalVariable("firstevent") == "0":
-			if checkpr(me) and card.type == "Event":
-				cost -= 1
-				if cost < 0:cost = 0
-				notify("You control Paxter Redwyne the first event you play Reduce the gold cost by 1.")
-		if card.loyal == "Yes":
-			cost -= int(me.getGlobalVariable("reduceloyal_turn"))
-			if cost < 0:cost = 0
-			if me.getGlobalVariable("reduceloyal_turn") != "0":notify("Reduce the cost of the next loyal card you marshal or play this phase by 1 from Fealty")
-			# me.setGlobalVariable("reduceloyal_turn", "0")
-			reduceloyal_turn = 1
-		if me.getGlobalVariable("reduce_event_card_turn") != "0" and card.type == "Event":
-			cost -= int(me.getGlobalVariable("reduce_event_card_turn"))
-			reduce_event_turn = 1
+		# if me.getGlobalVariable("firstlimit") != "0" and "Limited" in card.keywords and getGlobalVariable("automode") == "1":
+		# 	whisper("You can only play one limited card")
+		# 	return
+		# if me.getGlobalVariable("firstevent") == "0":
+		# 	if checkpr(me) and card.type == "Event":
+		# 		cost -= 1
+		# 		if cost < 0:cost = 0
+		# 		notify("You control Paxter Redwyne the first event you play Reduce the gold cost by 1.")
+		# if card.loyal == "Yes":
+		# 	cost -= int(me.getGlobalVariable("reduceloyal_turn"))
+		# 	if cost < 0:cost = 0
+		# 	if me.getGlobalVariable("reduceloyal_turn") != "0":notify("Reduce the cost of the next loyal card you marshal or play this phase by 1 from Fealty")
+		# 	# me.setGlobalVariable("reduceloyal_turn", "0")
+		# 	reduceloyal_turn = 1
+		# if me.getGlobalVariable("reduce_event_card_turn") != "0" and card.type == "Event":
+		# 	cost -= int(me.getGlobalVariable("reduce_event_card_turn"))
+		# 	reduce_event_turn = 1
 
 		if getGlobalVariable("marshalphase") != "0" and me.getGlobalVariable("firstll") == "1" and me.getGlobalVariable("firstcharacter") == "0":
 			if card.type == "Character" and card.Traits.find('Lord') != -1 or card.Traits.find('Lady') != -1:
@@ -3972,9 +3977,8 @@ def play(card):
 			elif card.type == "Event":
 				if me.isInverted: card.moveToTable(-130,-230)
 				else: card.moveToTable(-130,130)
-				if me.getGlobalVariable("firstevent") == "0":me.setGlobalVariable("firstevent", "1")
+				# if me.getGlobalVariable("firstevent") == "0":me.setGlobalVariable("firstevent", "1")
 				#whisper("Select a target.")
-				#checksaveevent(card)
 			else:
 				if me.isInverted: card.moveToTable(-130,-230)
 				else: card.moveToTable(-130,130)
@@ -4011,6 +4015,7 @@ def play(card):
 			if reduce_event_turn == 1:me.setGlobalVariable("reduce_event_card_turn", "0")
 			if getGlobalVariable("marshalphase") != "0" and card.type != "Event":
 				reactionmarshal(card)
+			if card.type == "Event":checkevent(card)
 			return True
 		
 	else:
@@ -4165,7 +4170,7 @@ def checkdeck():
 		setup(table)
 	else:
 		notify("Deck of {} is NOT OK".format(me))
-		#setup(table)
+		# setup(table)
 	
 def shuffleToPlot(group):
 	mute()
@@ -4434,6 +4439,7 @@ def onmoved(args):
 					return
 			card.isFaceUp = False
 			card.peek()
+			if len(me.piles['Plot Deck']) == 0:tutorial("reorderplot")
 			# resetplot()
 			
 			
@@ -6335,6 +6341,7 @@ def reactionforability(card,repass):
 	global intertreaction
 	global cardtoaction
 	global savetarget
+	global plotcard
 	sessionpass = ""
 	c = 0
 	f = 0
@@ -6622,22 +6629,25 @@ def reactionforability(card,repass):
 			cards = dlg.show()
 			c = 0
 			if cards != None:
-				cards[0].moveTo(me.hand)
+				cardintable(cards[0],"Character")
+				cards[0].highlight = showColor
+				plotcard = cards[0]
 				me.deck.shuffle()
 				notify("{}'s {} reaction put {} into {}'s hand".format(me,card,cards[0],me))
+				remoteCall(me, "setTimer", [me,"plotshow",table])
 		else:whisper("{} search failed".format(card))
-		for d in aftercalculate:
-			if card.model == aftercalculate[d][1] and card.controller == me:
-				if not reactioncardlimit.has_key(card._id):
-					reactioncardlimit[card._id] = 1
-				else:reactioncardlimit[card._id] += 1
-				if reactioncardlimit[card._id] == aftercalculate[d][5]:
-					del reactionattach[card._id]
-					c = 1
-		if c == 0:
-			reactionattach[card._id] -= 1
-			if reactionattach[card._id] == 0:del reactionattach[card._id]
-		remoteCall(otherplayer, "reaction", ["aftercalculate",1])
+		# for d in aftercalculate:
+		# 	if card.model == aftercalculate[d][1] and card.controller == me:
+		# 		if not reactioncardlimit.has_key(card._id):
+		# 			reactioncardlimit[card._id] = 1
+		# 		else:reactioncardlimit[card._id] += 1
+		# 		if reactioncardlimit[card._id] == aftercalculate[d][5]:
+		# 			del reactionattach[card._id]
+		# 			c = 1
+		# if c == 0:
+		# 	reactionattach[card._id] -= 1
+		# 	if reactionattach[card._id] == 0:del reactionattach[card._id]
+		# remoteCall(otherplayer, "reaction", ["aftercalculate",1])
 	if repass == "keywords":
 		list = []
 		for card in otherplayer.piles['Discard Pile']:
@@ -9630,7 +9640,7 @@ def choosetype(card):
 	if choice == 0:
 		choosetype(card)
 		return
-	else:remoteCall(otherplayer, "reactionforability", [card,str(choice)])
+	else:remoteCall(players[1], "reactionforability", [card,str(choice)])
 
 def checkice(cardid):
 	mute()
@@ -11140,51 +11150,64 @@ def checkwinner(args):
 		if i>=15:matchwin()
 	# if args.marker == "Gold":
 	# 	if args.card.model == "170f6c43-1cf5-460a-bd32-996d26dc0cd9":args.card.markers[STR_Up] += args.card.markers[Gold]-args.value
-def matchwin(s = 0):
+
+def onquit(args):
+	mute()
+	if getGlobalVariable("upload") == "0":return
+	notify("{} leave the game".format(args.player))
+	if len(players) > 1:
+		if args.player == me:remoteCall(players[1], "matchwin", [1,1])
+		else:matchwin(1,1)
+
+def matchwin(s = 0,disconnect = 0,player = ""):
 	mute()
 	if getGlobalVariable("gameover") == "1":
 		notify("game is already over")
 		return
-	#cn only
-	agendaa = ''
-	agendab = ''
-	factionb = ''
-	factiona = ''
-	if me.isInverted:
-		sidea = players[1].name
-		if s == 1:powera = 0
-		else:powera = players[1].counters['Power'].value
-		sideb = me.name
-		if s == 1:powerb = 15
-		else:powerb = me.counters['Power'].value
-		for card in table:
-			if card.type == "Faction":
-				if card.controller == me:factionb = card.name
-				else:factiona = card.name
-			if card.type == "Agenda":
-				if card.controller == me:agendab = card.name
-				else:agendaa = card.name
-	else:
-		sideb = players[1].name
-		if s == 1:powerb = 0
-		else:powerb = players[1].counters['Power'].value
-		sidea = me.name
-		if s == 1:powera = 15
-		else:powera = me.counters['Power'].value
-		for card in table:
-			if card.type == "Faction":
-				if card.controller == me:factiona = card.name
-				else:factionb = card.name
-			if card.type == "Agenda":
-				if card.controller == me:agendaa = card.name
-				else:agendab = card.name
-	now = datetime.datetime.now()
-	otherStyleTime = now.strftime("%Y-%m-%d %H:%M:%S")
-	if getGlobalVariable("automode") == "1":gamemode = "auto"
-	else:gamemode = "un-auto"
-	notify("{} is the winner".format(me))
-	webRead('http://www.agothall.com/action.php?winner={}&loser={}&sidea={}&factiona={}&agendaa={}&powera={}&sideb={}&factionb={}&agendab={}&powerb={}&nowtime={}&gamemode={}'.format(me.name,players[1].name,sidea,factiona,agendaa,powera,sideb,factionb,agendab,powerb,otherStyleTime,gamemode), 5000)
-	# notify("match result upload ok")
+	if getGlobalVariable("upload") == "1":
+		if disconnect == 1:
+			if not confirm("upload result?"):return
+		#cn only
+		agendaa = ''
+		agendab = ''
+		factionb = ''
+		factiona = ''
+		if me.isInverted:
+			sidea = players[1].name
+			if s == 1:powera = 0
+			else:powera = players[1].counters['Power'].value
+			sideb = me.name
+			if s == 1:powerb = 15
+			else:powerb = me.counters['Power'].value
+			for card in table:
+				if card.type == "Faction":
+					if card.controller == me:factionb = card.name
+					else:factiona = card.name
+				if card.type == "Agenda":
+					if card.controller == me:agendab = card.name
+					else:agendaa = card.name
+		else:
+			sideb = players[1].name
+			if s == 1:powerb = 0
+			else:powerb = players[1].counters['Power'].value
+			sidea = me.name
+			if s == 1:powera = 15
+			else:powera = me.counters['Power'].value
+			for card in table:
+				if card.type == "Faction":
+					if card.controller == me:factiona = card.name
+					else:factionb = card.name
+				if card.type == "Agenda":
+					if card.controller == me:agendaa = card.name
+					else:agendab = card.name
+		now = datetime.datetime.now()
+		otherStyleTime = now.strftime("%Y-%m-%d %H:%M:%S")
+		if getGlobalVariable("automode") == "1":gamemode = "auto"
+		else:gamemode = "un-auto"
+		if disconnect == 1:gamemode="escape"
+		notify("{} is the winner".format(me))
+		webRead('http://www.agothall.com/action.php?winner={}&loser={}&sidea={}&factiona={}&agendaa={}&powera={}&sideb={}&factionb={}&agendab={}&powerb={}&nowtime={}&gamemode={}'.format(me.name,players[1].name,sidea,factiona,agendaa,powera,sideb,factionb,agendab,powerb,otherStyleTime,gamemode), 5000)
+		# notify("match result upload ok")
 	setGlobalVariable("gameover","1")
 	choiceList = ['You Win']
 	colorList = ['#006b34']
@@ -11202,11 +11225,17 @@ def defeat(group, x=0, y=0):
 def option(group, x=0, y=0):
 	mute()
 	ok = "Enable"
-	colors = ["#006600"]
+	ok2 = "Auto"
+	colors = []
 	if not getSetting("Tutorial", True):
 		ok = "Disable"
-		colors = ["#990000"]
-	choice = ["Tutorial  {}".format(ok)]
+		colors.append("#990000")
+	else:colors.append("#006600")
+	if not getSetting("GameMode", True):
+		ok2 = "Manual"
+		colors.append("#990000")
+	else:colors.append("#006600")
+	choice = ["Tutorial  {}".format(ok),"GameMode  {}".format(ok2)]
 	text = ("Click to change the option set,close the window without change")
 	choice = askChoice(text,choice,colors)
 	if choice == 1:
@@ -11217,6 +11246,14 @@ def option(group, x=0, y=0):
 		else:
 			setSetting("Tutorial",True)
 			whisper("Tutorial On")
+	if choice == 2:
+		if getSetting("GameMode", True):
+			setSetting("GameMode",False)
+			whisper("GameMode Manual")
+			confirm("You disabled the AutoMode,you can change it through the option in the right click menu on the table")
+		else:
+			setSetting("GameMode",True)
+			whisper("GameMode Auto")
 
 
 def checkactionattach(checkpass):
@@ -12765,7 +12802,14 @@ def tutorial(inpass):
 	if not getSetting("Tutorial", True):
 		if getSetting("useability", "0") == "0" and inpass == "useability":pass
 		elif getSetting("abilitytarget", "0") == "0" and inpass == "abilitytarget":pass
+		elif getSetting("reorderplot", "0") == "0" and inpass == "reorderplot":pass
+		elif getSetting("useautoevent", "0") == "0" and inpass == "useautoevent":pass
 		else:return
+	if getSetting("Tutorial", True):
+		if getSetting("useability", "0") == "1" and inpass == "useability":return
+		elif getSetting("abilitytarget", "0") == "1" and inpass == "abilitytarget":return
+		elif getSetting("reorderplot", "0") == "1" and inpass == "reorderplot":return
+		elif getSetting("useautoevent", "0") == "1" and inpass == "useautoevent":return
 	if inpass not in tutorialTagsRead:
 		# tutorialTagsRead.append(inpass)
 		choice = ["\nContinue\n","Disable tutorial"]
@@ -12778,7 +12822,12 @@ def tutorial(inpass):
 			setSetting("abilitytarget","1")
 			Text = ("To initiate this ability, you must choose a target. Hold shift and select a target to proceed.")
 		if inpass == "plotphase":Text = ("Now proceeding to the plot phase. You can drag your plot to the board, or press alt p to select your plot. \nWhen both players finish selecting, all plots will flip side automatically.")
-
+		if inpass == "reorderplot":
+			Text = ("Your plot deck is empty,you can use [F6] move [userd plot] cards to your plot deck")
+			setSetting("reorderplot","1")
+		if inpass == "useautoevent":
+			Text = ("Your play a [event] card,it will use it's ability automatically,default game mode is 'auto', you can change it in option menu.")
+			setSetting("useautoevent","1")
 		choice = askChoice(Text,choice,colors)
 		if choice == 2:
 			setSetting("Tutorial",False)
@@ -12795,8 +12844,8 @@ def usecardability(card, x = 0, y = 0):
 		if cards.controller == me and cards.filter == sourcecardcolor:
 			e = 1
 	if e == 0:
+		f = 0
 		for d in plotdict:
-			f = 0
 			if card.model == plotdict[d][1] and card.controller == me:
 				if plotdict[d][3] == "":
 					f = 1
@@ -12809,6 +12858,10 @@ def usecardability(card, x = 0, y = 0):
 		if f == 0:whisper("This card is not supported for used ability")
 
 	#if card.type == "Plot":plotability(card)
+
+def reorderplot(group, x = 0, y = 0):
+	mute()
+	resetplot()
 	
 
 def ontarget(args):
@@ -12826,6 +12879,7 @@ def ontarget(args):
 			if confirm("Do you want use [{}]'s ability?\n{}".format(cards.name,cards.text)):
 				cardtoaction = args.card
 				if actioncard.type == "Plot":plotability(actioncard)
+				if actioncard.type == "Event":eventability(actioncard)
 			actioncard.filter = None
 			args.card.target(False)
 			actioncard.arrow(actioncard,False)
@@ -12839,3 +12893,140 @@ def ontarget(args):
 	# 			card.arrow(card,False)
 	# 			if args.targeted == True:
 	# 				card.arrow(args.card)
+def checkevent(card):
+	mute()
+	for d in eventeffect:
+		if card.model == eventeffect[d][1] and card.controller == me:
+			tutorial("useautoevent")
+			if eventeffect[d][3] == "":
+				if confirm("Do you want use [{}]'s ability?\n{}".format(card.name,card.text)):eventability(card)
+			if eventeffect[d][3] == "1":
+				tutorial("abilitytarget")
+				card.filter = sourcecardcfilter
+
+def eventability(card):
+	mute()
+	global cardtoaction
+	for d in eventeffect:
+		if card.model == eventeffect[d][1] and card.controller == me:
+			if eventeffect[d][2] == "disotherloaction":
+				if cardtoaction.type == "Location":
+					remoteCall(cardtoaction.controller,"disc",[cardtoaction])
+					notify("{}'s {} reaction disc {}".format(me,card,cardtoaction))#PuttotheTorch
+			if re.search('\d\spow', eventeffect[d][2]):
+				powadd = re.search('\d\spower', eventeffect[d][2]).group()
+				addhousepow(int(powadd[0]))
+				notify("{}'s {} reaction get {} pow".format(me,card,powadd))#SuperiorClaim
+			if eventeffect[d][2] == "dischand":
+				remoteCall(players[1], "handview", ['all'])
+				list = []
+				for cardhand in players[1].hand:
+					list.append(cardhand)
+				dlg = cardDlg(list)
+				dlg.title = "These cards are in your table:"
+				dlg.text = "Declares at least 1 card to disc."
+				dlg.min = 1
+				dlg.max = 1
+				cards = dlg.show()
+				if cards != None:
+					remoteCall(players[1], "disc", [cards[0]])
+					notify("{}'s {} action discard {} from {} hand".format(me,card,cards[0],players[1]))#SeenInFlames
+				remoteCall(players[1], "handview", ['me'])
+			if eventeffect[d][2] == "addmarker":
+				cardtoaction.markers[TokenBlue] += 1		
+				notify("{}'s {} reaction place a poison token on {}".format(me,card,cardtoaction))#TearsofLys
+			if eventeffect[d][2] == "disotherloactionattachment":
+				if cardtoaction.type in ("Location","Attachment"):
+					remoteCall(cardtoaction.controller,"disc",[cardtoaction])
+					notify("{}'s {} reaction disc {}".format(me,card,cardtoaction))#WeDoNotSow
+			if eventeffect[d][2] == "addlan":
+				cardintable(cardtoaction,"Character")
+				notify("{}'s {} action put {} into play".format(me,card,cardtoaction))#HearMeRoar
+			if eventeffect[d][2] == "kneelhousereturnhand":
+				for cardf in table:
+					if cardf.Type == "Faction" and cardf.orientation == 0 and cardf.controller == me:
+						kneel(cardf)
+				remoteCall(cardtoaction.controller,"returncard",[cardtoaction])
+				notify("{}'s {} action return {} into {}'s hand.".format(me,card,cardtoaction,cardtoaction.controller))#TheThingsIDoForLove
+			if eventeffect[d][2] == "addusedplotpow":
+				powadd = len(usedplot)
+				addhousepow(int(powadd))
+				notify("{}'s {} reaction get {} pow".format(me,card,powadd))#DoransGame
+			if eventeffect[d][2] == "loseicon":
+				cardmarkers(cardtoaction,"milicon",-1)
+				cardmarkers(cardtoaction,"inticon",-1)
+				cardmarkers(cardtoaction,"powicon",-1)
+				subiconmil_turn.append(cardtoaction)
+				subiconint_turn.append(cardtoaction)
+				subiconpow_turn.append(cardtoaction)
+				notify("{}'s {} action {} loses a [MIL], an [INT] and a [POW] icon.".format(me,card,cardtoaction))#Confinement
+			if eventeffect[d][2] == "controll6":
+				cardtoaction.controller = me
+				remoteCall(me, "cardintable", [cardtoaction,"Character"])
+				notify("{} take control of {}.".format(me,cardtoaction))#TaketheBlack
+			if eventeffect[d][2] == "addstrdraw":
+				cardmarkers(cardtoaction,"str",2)
+				notify("{}'s {} action {} gets +2 STR.".format(me,card,cardtoaction))#FortheNorth
+			if eventeffect[d][2] == "burn":
+				cardtoaction.markers[Burn] += 1
+				notify("{}'s {} action {} gets -4 STR".format(me,card,cardtoaction))#Dracarys
+			if eventeffect[d][2] == "returndead":
+				list = []
+				cardtoaction = []
+				for carddead in me.piles['Dead Pile']:
+					if carddead.Faction == "Targaryen." and carddead.Unique =="Yes" and carddead.Type == "Character":
+						list.append(carddead)
+				dlg = cardDlg(list)
+				dlg.title = "These cards are in your Dead Pile:"
+				dlg.text = "Declares at least 1 card to action."
+				dlg.min = 1
+				dlg.max = 1
+				cards = dlg.show()
+				if cards != None:cardtoaction = cards[0]
+				if cardtoaction != []:
+					if "Hatchling." in cardtoaction.Traits:
+						remoteCall(me, "cardintable", [cardtoaction,"Character"])
+						notify("{}'s {} action put {} into play".format(me,card,cardtoaction))#FireandBlood
+					else:
+						cardtoaction.moveTo(me.deck)
+						me.deck.shuffle()
+						notify("{}'s {} action shuffle {} back into {}'s' deck".format(me,card,cardtoaction,me))#FireandBlood
+			if eventeffect[d][2] == "standtc":
+				cardtoaction.orientation = 0
+				notify("{}'s {} action to stand {}.".format(me,card,cardtoaction))#WakingtheDragon
+			if eventeffect[d][2] == "addhand":
+				remoteCall(players[1], "choosetype", [card])#OlennasCunning
+			if eventeffect[d][2] == "5t3b":
+				colorList = ['#1a4d8f','#ae0603']
+				choiceList = ['{}'.format(me),'{}'.format(players[1])]
+				choice = askChoice("select {}'s target.".format(card.name), choiceList,colorList)
+				if choice == 0:
+					eventability(card)
+					return
+				if choice == 1:
+					if len(me.deck) >= 5:top5list = me.deck.top(5)
+					else:top5list = me.deck.top(len(me.deck))
+				if choice == 2:
+					if len(players[1].deck) >= 5:top5list = players[1].deck.top(5)
+					else:top5list = players[1].deck.top(len(players[1].deck))
+				dlg = cardDlg(top5list, [])
+				dlg.title = "These cards are you can moved"
+				dlg.text = "place up to 3 of those cards on the bottom of that deck, and the others on top, in any order. click close button if none or cancel."
+				dlg.label = "Top of the deck"
+				dlg.bottomLabel = "bottom of the deck"
+				dlg.min = 2
+				dlg.max = 5
+				cardmove = dlg.show()
+				if cardmove != None:
+					dlg.list.reverse()
+					if choice == 1:
+						remoteCall(me, "movedeckbottom", [dlg.bottomList])
+						remoteCall(me, "movedeckbottom", [dlg.list])
+						notify("{}'s {} action reorder {}'deck.".format(me,card,me))#TheBearandtheMaidenFair
+					if choice == 2:
+						remoteCall(otherplayer, "movedeckbottom", [dlg.bottomList])
+						remoteCall(otherplayer, "movedecktop", [dlg.list])
+						notify("{}'s {} action reorder {}'deck.".format(me,card,players[1]))#TheBearandtheMaidenFair
+				else:notify("{}'s {} action cancel.".format(me,card))#TheBearandtheMaidenFair
+	cardtoaction = []
+	disc(card)
