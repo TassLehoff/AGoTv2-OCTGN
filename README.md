@@ -9,21 +9,37 @@
 suport card list
 
 PuttotheTorch 
+
 SuperiorClaim 
+
 SeenInFlames 
+
 TearsofLys 
+
 WeDoNotSow 
+
 HearMeRoar 
+
 TheThingsIDoForLove 
+
 DoransGame 
+
 Confinement 
+
 TaketheBlack 
+
 FortheNorth 
+
 Dracarys 
+
 FireandBlood 
+
 WakingtheDragon 
+
 OlennasCunning 
+
 TheBearandtheMaidenFair 
+
 
 
 
