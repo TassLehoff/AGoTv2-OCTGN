@@ -204,6 +204,10 @@ def restoreAll(group, x = 0, y = 0):
 				if card.controller == me)
 	for card in myCards:
 		if card.isFaceUp:
+			cx, cy = card.position
+			if card.orientation == 1:
+				if me.isInverted:card.moveToTable(cx-14, cy)
+				else:card.moveToTable(cx+14, cy)
 			card.orientation &= ~Rot90
 			card.highlight = None
 			card.target(False)
@@ -2995,7 +2999,8 @@ def resetplot():
 def addplotgold(group, x = 0, y = 0):
 	mute()
 	for card in table:
-		if card.type == "Plot" and card.controller == me and card.filter == None:addGold(card)
+		if card.type == "Plot" and card.controller == me and card.filter == None:
+			if card  not in usedplot:addGold(card)
 
 
 def plotdisccharacter(typep,card):
@@ -3520,17 +3525,22 @@ def cardintable(card,cardtype,controller = me,changediscpile = 0):
 	clist = [p for p in table
 				if p.controller == controller and p.type == cardtype and p.isFaceUp and card != p]
 	if len(clist) > 0:
-		clist.reverse()
+		x1 = 0
 		for character in clist:
-			x, y = character.position
-			break
+			if x1 != 0:
+				x, y = character.position
+				if x > x2:
+					x2, y2 = character.position
+			else:
+				x2, y2 = character.position
+				x1 = 1
 		clist.reverse()
 		if controller == me:
-			if me.isInverted:card.moveToTable(x-80,y)
-			else:card.moveToTable(x+80,y)
+			if me.isInverted:card.moveToTable(x2+80,y2)
+			else:card.moveToTable(x2+80,y2)
 		else:
-			if me.isInverted:card.moveToTable(x+80,y)
-			else:card.moveToTable(x-80,y)
+			if me.isInverted:card.moveToTable(x2+80,y2)
+			else:card.moveToTable(x2+80,y2)
 	else:
 		if cardtype == "Character":
 			if controller == me:
@@ -3945,13 +3955,19 @@ def play(card):
 				clist = [p for p in table
 							if p.controller == me and p.type == "Character" and p.isFaceUp]
 				if len(clist) > 0:
-					clist.reverse()
+					x1 = 0
 					for character in clist:
-						x, y = character.position
-						break
+						if x1 != 0:
+							x, y = character.position
+							if x > x2:
+								x2, y2 = character.position
+						else:
+							x2, y2 = character.position
+							x1 = 1
+							
 					clist.reverse()
-					if me.isInverted: card.moveToTable(x+80,y)
-					else:card.moveToTable(x+80,y)
+					if me.isInverted:card.moveToTable(x2+80,y2)
+					else:card.moveToTable(x2+80,y2)
 				else:
 					if me.isInverted:card.moveToTable(-60,-100)			
 					else:card.moveToTable(-60,10)
@@ -3964,13 +3980,19 @@ def play(card):
 				clist = [p for p in table
 							if p.controller == me and p.type == "Location" and p.isFaceUp]
 				if len(clist) > 0:
+					x1 = 0
+					for character in clist:
+						if x1 != 0:
+							x, y = character.position
+							if x > x2:
+								x2, y2 = character.position
+						else:
+							x2, y2 = character.position
+							x1 = 1
+							
 					clist.reverse()
-					for location in clist:
-						x, y = location.position
-						break
-					clist.reverse()
-					if me.isInverted: card.moveToTable(x+80,y)
-					else:card.moveToTable(x+80,y)
+					if me.isInverted:card.moveToTable(x2+80,y2)
+					else:card.moveToTable(x2+80,y2)
 				else:
 					if me.isInverted:card.moveToTable(-60,-220)			
 					else:card.moveToTable(-60,120)
@@ -12762,6 +12784,10 @@ def endturn(group, x = 0, y = 0):
 			if card.controller == me)
 	for card in myCards:
 		if card.isFaceUp:
+			cx, cy = card.position
+			if card.orientation == 1:
+				if me.isInverted:card.moveToTable(cx-14, cy)
+				else:card.moveToTable(cx+14, cy)
 			card.orientation &= ~Rot90
 			card.highlight = None
 			card.target(False)

@@ -3,7 +3,7 @@
 <game name="A Game of Thrones - The Card Game Second Edition"
       id="30c200c9-6c98-49a4-a293-106c06295c05"
       octgnVersion="3.1.0.0"
-      version="2.0.0.6"
+      version="2.0.0.7"
       scriptVersion="3.1.0.2"
       markersize="16"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<set name="04-War of Five Kings"
+     id="050bca18-a9b2-4c77-967a-6b57406b05f5"
+     gameId="30c200c9-6c98-49a4-a293-106c06295c05"
+     gameVersion="2.0.0.7"
+     version="1.0">
+
+    <cards>
+        <card id="16cfd1eb-9c6f-4ab2-a7fd-895809c9eb80" name="The Dragon’s Tail">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Traits"                     value="Omen."/>
+            <property name="Text"                       value="Action: Choose an opponent. You and that player each draw 2 cards."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="0"/>
+            <property name="CardNumber"                 value="1"/>
+            <property name="Illustrator"                value="Jokubas Uogintas"/>
+        </card>
+        <card id="d2939e76-8132-4e06-9f19-8c73703496de" name="Robb Stark">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="King. Lord."/>
+            <property name="Text"                       value="During [Military] challenges, Robb Stark gets +1 STR for each loyal character you control.&#13;&#10;Action: While Robb Stark is participating in a [Military] challenge, choose a participating non-King character. Stand that character and remove it from the challenge. (Limit once per challenge.)"/>
+            <property name="Keywords"                   value="Renown."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="7"/>
+            <property name="Strength"                   value="5"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="2"/>
+            <property name="Illustrator"                value="Nicholas Gregory"/>
+        </card>
+        <card id="4db77d1c-e5f0-4f6d-a5d2-838da5a30c43" name="Riverrun">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="House Tully. The Riverlands."/>
+            <property name="Text"                       value="Reaction: After power is gained by or moved to a House Tully character, kneel Riverrun to have that character gain 1 power."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>         
+            <property name="CardNumber"                 value="3"/>
+            <property name="Illustrator"                value="Juan Carlos Barquet"/>
+        </card>
+        <card id="0e4633fb-d7c6-4e4e-a1a9-1a4a385990c5" name="Ser Colen of Greenpools">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Knight."/>
+            <property name="Text"                       value="During [Power] challenges, Ser Colen of Greenpools gets +3 STR."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="4"/>
+            <property name="Illustrator"                value="David Auden Nash"/>
+        </card>
+        <card id="0c23dc3e-5588-4e7c-b50a-4347dc48fd2c" name="Bitterbridge Encampment">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="The Reach."/>
+            <property name="Text"                       value="Reaction: After a Summer plot card is revealed, kneel Bitterbridge Encampment. Then, each player may put a character into play from his or her hand."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="3"/>     
+            <property name="CardNumber"                 value="5"/>
+            <property name="Illustrator"                value="Matthew Cowdery"/>
+        </card>
+        <card id="5a59186f-e4f8-4002-8cd6-a132b6704caf" name="Arry">
+            <property name="Faction"                    value="The Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Recruit."/>
+            <property name="Text"                       value="If you control Arya Stark, sacrifice Arry.&#13;&#10;Action: Return Arry to your hand to draw 1 card."/>
+            <property name="Keywords"                   value="Ambush (4)."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>           
+            <property name="CardNumber"                 value="6"/>
+            <property name="Illustrator"                value="Rafał Hrynkiewicz"/>
+        </card>
+        <card id="9db838d6-50c2-4f70-8c14-d93fee867361" name="White Tree">
+            <property name="Faction"                    value="The Night's Watch."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Contested. The North."/>
+            <property name="Text"                       value="Reaction: After an opponent collects income, kneel White Tree to move 1 gold from that player’s gold pool to your own."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="3"/>     
+            <property name="CardNumber"                 value="7"/>
+            <property name="Illustrator"                value="Sergey Glushakov"/>
+        </card>
+        <card id="6a4a085b-2477-497c-91c6-b0c3c6a609da" name="White Raven">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Raven."/>
+            <property name="Text"                       value="Forced Reaction: After you lose a [Power] challenge, sacrifice White Raven.&#13;&#10;Reaction: After you win dominance, if there is a Summer or Winter plot card revealed, gain 1 power for your faction."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="8"/>
+            <property name="Illustrator"                value="Sandara Tang"/>
+        </card>
+        <card id="3ce0a619-578c-49ea-b807-3a15f99d8a49" name="Ruby of R’hllor">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Item. R’hllor."/>
+            <property name="Text"                       value="R’hllor character only.&#13;&#10;Reaction: After you win an [Intrigue] challenge in which attached character is attacking, name a card. The losing opponent reveals his or her hand and discards each card with that name."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>     
+            <property name="CardNumber"                 value="9"/>
+            <property name="Illustrator"                value="Ryan Valle"/>
+        </card>
+        <card id="e695a1ab-e1ab-4f23-b641-d0079e972d05" name="Janos Slynt">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Mercenary."/>
+            <property name="Text"                       value="Action: Pay 1 gold to give Janos Slynt +2 STR until the end of the phase."/>
+            <property name="Keywords"                   value="Intimidate."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>           
+            <property name="CardNumber"                 value="10"/>
+            <property name="Illustrator"                value="Anthony Feliciano"/>
+        </card>
+        <card id="60bedb92-4395-4e07-8dc0-11c36ab4a929" name="Levies at the Rock">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After a player initiates a challenge against you, move up to X gold from that player’s gold pool to your own. X is the number of attacking characters."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="0"/>     
+            <property name="CardNumber"                 value="11"/>
+            <property name="Illustrator"                value="Jason Jenicke"/>
+        </card>
+        <card id="70caf9b5-9c54-4439-8fa6-b21cecbaeea0" name="Captain’s Daughter">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ally."/>
+            <property name="Text"                       value="Reaction: After a non-loyal character enters play, kneel your faction card and sacrifice Captain’s Daughter to place that character on top of its owner’s deck."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="12"/>
+            <property name="Illustrator"                value="Cassandre Bolan"/>
+        </card>
+        <card id="5c4da3c0-d846-4c4c-b69d-b2d2b0dc020a" name="Pyke">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Iron Islands."/>
+            <property name="Text"                       value="Action: Kneel Pyke to choose a character. Until the end of the phase, that character gains stealth."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="2"/>     
+            <property name="CardNumber"                 value="13"/>
+            <property name="Illustrator"                value="Marius Bota"/>
+        </card>
+        <card id="df560e82-4bf8-42bd-999b-efaf3f9a6e4d" name="Viserys Targaryen">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="King. Lord."/>
+            <property name="Text"                       value="While Viserys Targaryen is attacking, each King character must be declared as a defender, if able.&#13;&#10;Interrupt: When the dominance phase ends, if no opponent controls a King character, Viserys Targaryen gains 1 power."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="14"/>
+            <property name="Illustrator"                value="Kim Sokol"/>
+        </card>
+         <card id="ccdf90ec-ded8-4e7b-b35c-24380e463597" name="Shierak Qiya">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Traits"                     value="Omen."/>
+            <property name="Text"                       value="Reaction: After you win a [Power] challenge by 5 or more STR, kneel your faction card to choose and stand a participating character."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="0"/>     
+            <property name="CardNumber"                 value="15"/>
+            <property name="Illustrator"                value="Jokubas Uogintas"/>
+        </card>
+        <card id="4b8518bd-e2cf-4a73-87cf-6f2c0bfc2ee7" name="Harmen Uller">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="House Uller. Lord."/>
+            <property name="Text"                       value="Each Sand Snake character in your hand gains ambush (X). X is 1 less than that card’s printed cost."/>
+            <property name="Keywords"                   value="Renown."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="16"/>
+            <property name="Illustrator"                value="Romain Leguay"/>
+        </card>
+        <card id="ff1c0877-49f9-4c3f-834e-3c166237f1e0" name="Tower of the Sun">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Dorne."/>
+            <property name="Text"                       value="Reaction: After an event is played, gain 1 gold. (Limit once per phase.)"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="2"/>     
+            <property name="CardNumber"                 value="17"/>
+            <property name="Illustrator"                value="Juan Carlos Barquet"/>
+        </card>
+        <card id="588bfbb6-4c90-4d6b-808d-2ed191ddfa82" name="Pyromancers">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ally."/>
+            <property name="Text"                       value="Dominance Action: Kneel Pyromancers and discard 1 power from your faction card to choose a non-limited location, and discard it from play."/>
+            <property name="Keywords"                   value="Renown."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>           
+            <property name="CardNumber"                 value="18"/>
+            <property name="Illustrator"                value="Joshua Cairós"/>
+        </card>
+        <card id="ff1b3211-fc4d-4f9a-902f-b72aede4d621" name="Rains of Autumn" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Omen."/>
+            <property name="Text"                       value="Characters and locations do not provide positive gold modifiers."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="4"/>
+            <property name="PlotInitiative"             value="3"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="6"/>
+            <property name="CardNumber"                 value="19"/>
+            <property name="Illustrator"                value="Jim Brady"/>
+        </card>
+        <card id="d68d7083-089d-4d28-8249-e70613639680" name="Varys’s Riddle" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Riddle. Scheme."/>
+            <property name="Text"                       value="When Revealed: Initiate the when revealed ability on a revealed non-Riddle plot card as if you had just revealed it."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="5"/>
+            <property name="PlotInitiative"             value="6"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="7"/>
+            <property name="CardNumber"                 value="20"/>
+            <property name="Illustrator"                value="Serena Malyon"/>
+        </card>
+    </cards>
+</set>
