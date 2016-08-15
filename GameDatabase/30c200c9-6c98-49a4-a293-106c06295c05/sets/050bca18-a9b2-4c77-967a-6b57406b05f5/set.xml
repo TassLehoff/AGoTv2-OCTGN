@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 
 <set name="04-War of Five Kings"
      id="050bca18-a9b2-4c77-967a-6b57406b05f5"
      gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-     gameVersion="2.0.0.7"
-     version="1.0">
+     gameVersion="2.0.0.8"
+     version="1.1">
 
     <cards>
         <card id="16cfd1eb-9c6f-4ab2-a7fd-895809c9eb80" name="The Dragon’s Tail">
@@ -72,7 +72,7 @@
             <property name="Illustrator"                value="Matthew Cowdery"/>
         </card>
         <card id="5a59186f-e4f8-4002-8cd6-a132b6704caf" name="Arry">
-            <property name="Faction"                    value="The Night's Watch."/>
+            <property name="Faction"                    value="Night's Watch."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Recruit."/>
             <property name="Text"                       value="If you control Arya Stark, sacrifice Arry.&#13;&#10;Action: Return Arry to your hand to draw 1 card."/>
@@ -88,7 +88,7 @@
             <property name="Illustrator"                value="Rafał Hrynkiewicz"/>
         </card>
         <card id="9db838d6-50c2-4f70-8c14-d93fee867361" name="White Tree">
-            <property name="Faction"                    value="The Night's Watch."/>
+            <property name="Faction"                    value="Night's Watch."/>
             <property name="Type"                       value="Location"/>
             <property name="Traits"                     value="Contested. The North."/>
             <property name="Text"                       value="Reaction: After an opponent collects income, kneel White Tree to move 1 gold from that player’s gold pool to your own."/>
