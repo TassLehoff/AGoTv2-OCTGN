@@ -626,7 +626,6 @@ def defInt(group, x = 0, y = 0):
 def defPow(group, x = 0, y = 0):
 	mute()
 	global defender
-	global defender
 	global selectedcard
 	global sessionpass
 	if sessionpass != "powdefselectok":
@@ -6976,7 +6975,6 @@ def next(group, x=0, y=0):
 	global selectedcard
 	global sessionpass
 	global stealthcount
-	global savetarget
 	global abilityattach
 	global nextcardtmp
 	global cardtoaction
@@ -10150,8 +10148,6 @@ def actiongeneral(count):
 
 def action(actioninsert,actioncount):
 	mute()
-	debug(actioninsert)
-	debug(sessionpass)
 	global sessionpass
 	global intertreaction
 	if actioninsert == "challenge":
