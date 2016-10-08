@@ -3,7 +3,7 @@
 <set name="04-War of Five Kings"
      id="050bca18-a9b2-4c77-967a-6b57406b05f5"
      gameId="30c200c9-6c98-49a4-a293-106c06295c05"
-     gameVersion="2.0.0.9"
+     gameVersion="2.0.0.11"
      version="1.0">
 
     <cards>
@@ -521,7 +521,7 @@
             <property name="CardNumber"                 value="40"/>
             <property name="Illustrator"                value="Tomasz Jedruszek"/>
         </card>
-        <card id ="af4a9466-d609-45c7-ac84-3909ff45d456" name="Ser Edmure Tully">
+        <card id="af4a9466-d609-45c7-ac84-3909ff45d456" name="Ser Edmure Tully">
             <property name="Faction"                    value="Stark."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="House Tully. Knight."/>
@@ -547,7 +547,7 @@
             <property name="CardNumber"                 value="42"/>
             <property name="Illustrator"                value="Sergey Glushakov"/>
         </card>
-        <card id ="67c141bf-c409-4f52-bc15-dc7a1619f6ba" name="Renly Baratheon">
+        <card id="67c141bf-c409-4f52-bc15-dc7a1619f6ba" name="Renly Baratheon">
             <property name="Faction"                    value="Tyrell."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="King. Lord."/>
@@ -732,7 +732,7 @@
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Companion."/>
             <property name="Text"                       value="Marshaling Action: Kneel a Companion character to reduce the cost of the next unique character you marshal this phase by 1."/>
-            <property name="Unique"                     value="No"/>
+            <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="2"/>
             <property name="Strength"                   value="2"/>

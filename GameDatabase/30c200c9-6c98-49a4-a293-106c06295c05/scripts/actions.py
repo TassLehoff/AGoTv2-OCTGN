@@ -1163,13 +1163,13 @@ def proccessetupcard(count):
 	for card in table:
 		if not card.isFaceUp and card.controller == me:
 			flipcard(card)
-			if card.type == "Attachment" and card.filter == None:
-				listattach.append(card)
-	if len(listattach) > 0:
-		me.setGlobalVariable("setupOk","4")
-		attatchcard(listattach)
-	else:
-		reordertable(table)
+	# 		if card.type == "Attachment" and card.filter == None:
+	# 			listattach.append(card)
+	# if len(listattach) > 0:
+	# 	me.setGlobalVariable("setupOk","4")
+	# 	attatchcard(listattach)
+	# else:
+	reordertable(table)
 	if count == 1:remoteCall(players[1], "proccessetupcard", [2])
 
 def attatchcard(listattach):
@@ -1210,6 +1210,7 @@ def reordertable(group, x = 0, y = 0):
 	mute()
 	countcards = -60
 	countcard = -60
+	countcardss = -60
 	attach = eval(getGlobalVariable("attachmodify"))
 	for card in table:
 		if card.type == "Character" and card.controller == me and card.filter == None:
@@ -1305,6 +1306,24 @@ def reordertable(group, x = 0, y = 0):
 	# 		if cards.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281":
 	# 			for cardadd in table:
 	# 				if cardadd.controller == me and cardadd.model == "c41d4a72-6919-4e32-97ef-a4b0f1acb281" and cards._id != cardadd._id:cardadd.markers[STR_Up] += 1
+	clist = [p for p in table
+				if p.controller == me and p.type == "Character" and p.isFaceUp]
+	if len(clist) > 0:
+		x1 = 0
+		for character in clist:
+			if x1 != 0:
+				x, y = character.position
+				if x > x2:
+					x2, y2 = character.position
+			else:
+				x2, y2 = character.position
+				x1 = 1
+				
+		clist.reverse()
+		for card in table:
+			if card.type == "Attachment" and card.controller == me and card.filter == None:
+				card.moveToTable(x2+80,y2)
+				x2 += 80
 	notify("{} finished setup phase".format(me))
 	me.setGlobalVariable("setupOk","5")
 	# targetTuple = (["setupOk"], me._id)
@@ -1390,7 +1409,7 @@ def drawnext(group, x = 0, y = 0):
 				c = 1
 		if c == 0:remoteCall(players[1], "marshalphasestart", [3])
 
-def countincome(group, x=0, y=0):
+def countincome(group, x=0, y=0,xinput = 0):
 	mute()
 	if me.getGlobalVariable("turn") == "0":
 		uniquecards = []
@@ -1408,6 +1427,7 @@ def countincome(group, x=0, y=0):
 		for plotcard in plotlist:
 			if getGlobalVariable("Kingdomgold0") == "1" and "Kingdom" in plotcard.Traits:me.counters['Gold'].value += 0
 			elif getGlobalVariable("Edictgold0") == "1" and "Edict" in plotcard.Traits:me.counters['Gold'].value += 0
+			elif plotcard.plotgoldincome == 'X':me.counters['Gold'].value += xinput
 			else:
 				me.counters['Gold'].value += int(plotcard.plotgoldincome)
 			plotcard.markers[Gold] = me.counters['Gold'].value
@@ -3176,7 +3196,7 @@ def drawphaseend():
 
 def marshalphase(group, x = 0, y = 0):
 	mute()
-	if me.getGlobalVariable("turn") == "0":countincome(table)
+	if me.getGlobalVariable("turn") == "0":countincome(table,0)
 	choiceList = ['Marshal', 'Action', 'No action and Pass']
 	colorList = ['#ae0603' ,'#006b34','#D8D8D8']
 	choice = askChoice("Which pass do you want to action?", choiceList,colorList)
@@ -3260,7 +3280,7 @@ def activefaction():
 
 def marshalactions():
 	mute()
-	countincome(table)
+	countincome(table,0)
 	activefaction()
 	me.setGlobalVariable("active","1")
 	remoteCall(fplay(1), "actionmarshal", [1])
@@ -3434,7 +3454,10 @@ def defaultAction(card, x = 0, y = 0):
 	if getGlobalVariable("automode") == "0" and card.Type != "Internal": 
 		if card.Type == "Plot":
 			if card.isFaceUp == True:
-				countincome(table)
+				if card.PlotGoldIncome == 'X':
+					count = askInteger("Input the value of X,X is 2 higher than the printed gold value on that opponent’s revealed plot card.", 2)
+					if count != None:countincome(table,xinput = count)
+				else:countincome(table,0)
 			else:
 				flipplotcard(card)
 		elif len(me.piles['Plot Deck']) == 7 and card.Type == "Attachment" and card.isFaceUp == True:
@@ -3554,7 +3577,7 @@ def cardintable(card,cardtype,controller = me,changediscpile = 0):
 			else:card.moveToTable(-60,120)
 	if changediscpile == 1:players[1].piles['Discard pile'].controller = players[1]
 
-def play(card):
+def play(card,attcard = 0):
 	mute()
 	global nextcardtmp
 	global selectedcard
@@ -3712,7 +3735,7 @@ def play(card):
 			if cost < 0:cost = 0
 
 	uniquecards = []
-	if len(me.piles['Plot Deck']) != 7:
+	if len(me.piles['Plot Deck']) != 7 and attcard != 1:
 		for u in table:
 			if u.controller == me and u.unique == "Yes":
 				uniquecards.append(u.name)
@@ -3809,7 +3832,7 @@ def play(card):
 						debug(nextcardtmp)
 						selectcardnext(targetTuple,"playattach",table,[],"",1,1)
 						return
-				if getGlobalVariable("automode") != "1" and len(me.piles['Plot Deck']) != 7:
+				if getGlobalVariable("automode") != "1":
 					list = []
 					for targetcard in table:
 						if targetcard.targetedBy == me:
@@ -3864,7 +3887,7 @@ def play(card):
 					cards = dlg.show()
 				if cards != None:
 					for choose in cards:
-						if len(me.piles['Plot Deck']) != 7:
+						if len(me.piles['Plot Deck']) != 7 and attcard != 1:
 							if getGlobalVariable("automode") != "1":
 								reduc=askInteger("Reduce Cost by ?",0)
 								if reduc == None or cost == None: return False
@@ -3883,10 +3906,43 @@ def play(card):
 						else:x,y = attachat(cx+15,cy+15,table)
 						card.moveToTable(x,y)
 						attach = eval(getGlobalVariable("attachmodify"))
+						if attcard == 1:
+							for cardc in table:
+								if attach.has_key(card._id):
+									if attach[card._id] == cardc._id:
+										#rollback
+										# if card.model == "9e6bf142-159b-4a3b-9d4c-d8bf233a6f0c":
+										# 	cardc.markers[STR_Up] -= len(me.piles['Used Plot Pile'])
+										if card.model == "4dd074aa-af6c-4897-b7b2-bff3493bcf9e" and cardc.model == "df79718d-b01d-4338-8907-7b6abff58303":cardmarkers(cardc,"milicon",-1)#096
+										if card.model == "8dea9db3-58a4-4f47-9671-9109f2be46c0" and cardc.model == "fd60e197-476c-4d8d-811f-e0a403a12b48":cardmarkers(cardc,"inticon",1)
+										if cardc.model == "f176a119-9fa1-465f-91d4-53ebe6cb65ac":cardmarkers(cardc,"milicon",-1)#MerchantPrince
+										if cardc.model == "f176a119-9fa1-465f-91d4-53ebe6cb65ac":cardmarkers(cardc,"str",-1)#MerchantPrince
+										if card.model == "a8bebc54-d01c-424d-8839-460ec09b733f":restoreprintcard(cardc)
+										if re.search('\+\d\sSTR', card.Text) and card.model != "9e6bf142-159b-4a3b-9d4c-d8bf233a6f0c" and card.model != "4c8a114e-106c-4460-846b-28f73914fc11":
+											stradd = re.search('\+\d\sSTR', card.Text).group()
+											#choose.markers[STR_Up] += int(stradd[1])
+											cardmarkers(cardc,"str",-int(stradd[1]))
+										if re.search('\-\d\sSTR', card.Text) and card.model != "9e6bf142-159b-4a3b-9d4c-d8bf233a6f0c" and card.model != "4c8a114e-106c-4460-846b-28f73914fc11":
+											stradd = re.search('\-\d\sSTR', card.Text).group()
+											#choose.markers[STR_Sub] += int(stradd[1])
+											cardmarkers(cardc,"str",int(stradd[1]))
+
+										if re.search('gains an \[INT]\sicon', card.Text):cardmarkers(cardc,"inticon",-1)
+										if re.search('gains a \[POW]\sicon', card.Text):cardmarkers(cardc,"powicon",-1)
+										if re.search('gains a \[MIL]\sicon', card.Text) and cardc.model != "4dd074aa-af6c-4897-b7b2-bff3493bcf9e":cardmarkers(cardc,"milicon",-1)
+										if re.search('loses an \[INT]\sicon', card.Text):cardmarkers(cardc,"inticon",1)
+										if re.search('loses a \[POW]\sicon', card.Text):cardmarkers(cardc,"powicon",1)
+										if re.search('loses a \[MIL]\sicon', card.Text):cardmarkers(cardc,"milicon",1)
 						if not attach.has_key(card._id):
 							attach[card._id] = choose._id
-						else:attach[card._id].append(choose._id)
+						else:
+							if attcard == 1:
+								del attach[card._id]
+								attach[card._id] = choose._id
+							else:attach[card._id].append(choose._id)
 						setGlobalVariable("attachmodify",str(attach))
+						card.arrow(card,False)
+						choose.target(False)
 						debug(card.text)
 						if card.model == "4dd074aa-af6c-4897-b7b2-bff3493bcf9e" and choose.model == "df79718d-b01d-4338-8907-7b6abff58303":cardmarkers(choose,"milicon",1)#096
 						if card.model == "8dea9db3-58a4-4f47-9671-9109f2be46c0" and choose.model == "fd60e197-476c-4d8d-811f-e0a403a12b48":cardmarkers(choose,"inticon",1)
@@ -3914,8 +3970,9 @@ def play(card):
 						if len(me.piles['Plot Deck']) == 7:
 							notify("{} plays {} and attachs to {}.".format(me,card,choose))
 						else:
-							card.highlight = PlayColor
-							notify("{} plays {} and attachs to {} for {} Gold (Cost reduced by {}).".format(me,card,choose,cost,reduc))
+							if attcard != 1:
+								card.highlight = PlayColor
+								notify("{} plays {} and attachs to {} for {} Gold (Cost reduced by {}).".format(me,card,choose,cost,reduc))
 					if me.getGlobalVariable("firstlimit") == "0" and getGlobalVariable("automode") == "1":
 						if "Limited" in card.keywords:me.setGlobalVariable("firstlimit","1")
 					if reduce_Stark_card_turn != 0:me.setGlobalVariable("reduce_Stark_card_turn", "0")
@@ -4184,6 +4241,20 @@ def checkdeck():
 		ok = False
 		notify("{}'s agenda is {}, so {} must has at least 12 {} cards in deck, but {} have only {}".format(me, AgendaName, me,BannerFaction, me,BannerCount))
 	
+	if AgendaName == 'Kings of Summer':
+		for card in me.piles['Plot Deck']:
+			if 'Winter' in card.traits:
+				ok = False
+				notify("{}'s agenda is Kings of Summer, so {}'s plot deck can not include Winter plot cards.".format(me,me))
+				break
+	if AgendaName == 'Kings of Winter':
+		for card in me.piles['Plot Deck']:
+			if 'Summer' in card.traits:
+				ok = False
+				notify("{}'s agenda is Kings of Winter, so {}'s plot deck can not include Summer plot cards.".format(me,me))
+				break
+
+
 	me.deck.removeViewer(me)
 	
 	if ok:
@@ -8788,7 +8859,11 @@ def ondbclick(args):
 			for card in table:
 				if args.card._id == card._id and card.controller == me:
 					if card.Type == "Plot" and card.isFaceUp == True:
-						countincome(table)
+						if card.PlotGoldIncome == 'X':
+							count = askInteger("Input the value of X,X is 2 higher than the printed gold value on that opponent’s revealed plot card.", 2)
+							if count != None:countincome(table,xinput = count)								
+						else:
+							countincome(table,0)
 					elif not card.isFaceUp: #Face down card - flip
 						flipcard(card)
 					else:
@@ -12915,6 +12990,11 @@ def ontarget(args):
 	# 			card.arrow(card,False)
 	# 			if args.targeted == True:
 	# 				card.arrow(args.card)
+def onarrow(args):
+	mute()
+	if args.player == me and args.fromCard.type == 'Attachment' and args.fromCard.controller == me and args.targeted == True:
+		args.toCard.target(True)
+		play(args.fromCard,1)
 def checkevent(card):
 	mute()
 	for d in eventeffect:
