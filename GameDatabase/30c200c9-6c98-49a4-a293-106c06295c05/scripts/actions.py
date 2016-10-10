@@ -13123,7 +13123,7 @@ def eventability(card):
 					dlg.list.reverse()
 					if choice == 1:
 						remoteCall(me, "movedeckbottom", [dlg.bottomList])
-						remoteCall(me, "movedeckbottom", [dlg.list])
+						remoteCall(me, "movedecktop", [dlg.list])
 						notify("{}'s {} action reorder {}'deck.".format(me,card,me))#TheBearandtheMaidenFair
 					if choice == 2:
 						remoteCall(otherplayer, "movedeckbottom", [dlg.bottomList])
