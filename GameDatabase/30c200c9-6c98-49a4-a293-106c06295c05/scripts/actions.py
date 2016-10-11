@@ -1422,7 +1422,40 @@ def countincome(group, x=0, y=0,xinput = 0):
 						uniquecards.append(incomecard.name)
 						me.counters['Gold'].value += int(incomecard.goldincome)
 		plotlist = [card for card in table
-						if card.controller == me and card.type == "Plot" and card.filter == None]
+						if card.controller == me and card.type == "Plot"]
+		opplotlist = [card for card in table
+						if card.controller != me and card.type == "Plot"]
+		AgendaName = ' '
+		opAgendaName = ' '
+		PlotName = ' '
+		opPlotName = ' '
+		for card in table:
+			if (card.name == 'Kings of Summer' or card.name == 'Kings of Winter') and card.controller == me:
+				AgendaName = card.name
+				break;
+		for card in table:
+			if (card.name == 'Kings of Summer' or card.name == 'Kings of Winter') and card.controller != me:
+				opAgendaName = card.name
+				break;
+		plotlist.reverse()
+		for plotcard in plotlist:
+			if 'Summer' in plotcard.traits:PlotName = 'Summer'
+			elif 'Winter' in plotcard.traits:PlotName = 'Winter'
+			break
+		plotlist.reverse()
+		opplotlist.reverse()
+		for opplotcard in opplotlist:
+			if 'Winter' in opplotcard.traits:opPlotName = 'Winter'
+			elif 'Summer' in opplotcard.traits:opPlotName = 'Summer'
+			break
+		opplotlist.reverse()
+		# for opplotcard in opplotlist:
+		if AgendaName == 'Kings of Summer' and PlotName == 'Summer' and opPlotName != 'Winter':
+			me.counters['Gold'].value += 1
+			notify("**{} gain 1 more gold because of 'Kings of Summer'.**".format(players[1]))
+		if opAgendaName == 'Kings of Winter' and PlotName != 'Summer' and opPlotName == 'Winter':
+			me.counters['Gold'].value -= 1
+			notify("**{} gain 1 less gold because of 'Kings of Winter'.**".format(players[1]))
 		plotlist.reverse()
 		for plotcard in plotlist:
 			if getGlobalVariable("Kingdomgold0") == "1" and "Kingdom" in plotcard.Traits:me.counters['Gold'].value += 0
@@ -1460,6 +1493,12 @@ def getreserve(group, x=0, y=0):
 		for card in plotlist:
 			person.counters['Reserve'].value += int(card.plotReserve)
 			break
+		for card in table:
+			if card.name == 'Kings of Summer':
+				person.counters['Reserve'].value += 1
+		for card in table:
+			if card.name == 'Kings of Winter':
+				person.counters['Reserve'].value -= 1
 		plotlist.reverse()
 		notify("{}'s Reserve value is {}.".format(person,person.counters['Reserve'].value))
 	return
