@@ -778,5 +778,265 @@
             <property name="CardNumber"                 value="60"/>
             <property name="Illustrator"                value="Tomasz Jedruszek"/>
         </card>
+        <card id="2a1b1309-03f5-4bc6-be60-ce75d69af53c" name="Jojen Reed">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="House Reed."/>
+            <property name="Keywords"                   value="Stealth."/>
+            <property name="Text"                       value="Reaction: After Jojen Reed stands, reveal the top card of each player's deck. You may either: discard each of those cards, or have each player draw 1 card."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="61"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="fbe59c68-7b45-4ca0-8ead-c796139c5a68" name="The Wolf King">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Title."/>
+            <property name="Text"                       value="[Stark] character only.&#13;&#10;Attached character gains the King trait and does not kneel when declared as an attacker in a military challenge."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>     
+            <property name="CardNumber"                 value="62"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="44250f56-8ddf-4805-bfab-bb3eec76abdf" name="King Renly's Host">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Army."/>
+            <property name="Keywords"                   value="Intimidate. No attachments."/>
+            <property name="Text"                       value="While there is a Summer plot card revealed, King Renly's Host gets +4 STR.&#13;&#10;While there is a Winter plot card revealed, King Renly's Host cannot be declared as an attacker."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="63"/>
+            <property name="Illustrator"                value="Tomasz Jedruszek"/>
+        </card>
+        <card id="ef76aca1-0ad8-423e-9de0-c271943b8b4a" name="Caswell's Keep">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="The Reach."/>
+            <property name="Text"                       value="Reaction: After you reveal a plot card, choose a player. Look at the top 2 cards of that player's deck. Place 1 of those cards on the bottom of that deck, and the other on top."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>             
+            <property name="CardNumber"                 value="64"/>
+            <property name="Illustrator"                value="Sergey Glushakov"/>
+        </card>
+        <card id="c76e98fe-03c3-4836-b2d3-ef0570282a10" name="Shadow Tower Mason">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Builder."/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Text"                       value="While you control 3 or more [Night's Watch] locations and/or attachments, Shadow Tower Mason gains a [Military] and a [Intrigue] icon."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="65"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="4e554070-0667-4bd1-832a-5018faff11b8" name="The Haunted Forest">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="The North."/>
+            <property name="Text"                       value="While The Haunted Forest is standing, it contributes 1 STR to your side during any challenge in which you are the defending player.&#13;&#10;Forced Reaction: After you lose a challenge, kneel The Haunted Forest."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>     
+            <property name="CardNumber"                 value="66"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="0add28a1-ac16-4b9f-b17d-711130395b4d" name="Stannis Baratheon">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="King. Lord."/>
+            <property name="Text"                       value="During [Power] challenges, each participating non-King character gets -1 STR.&#13;&#10;Reaction: After you win dominance, choose a non-loyal character. That character cannot stand during the standing phase this round."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="7"/>
+            <property name="Strength"                   value="6"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="67"/>
+            <property name="Illustrator"                value="Nicholas Gregory"/>
+        </card>
+        <card id="ff33a0f8-70f7-4950-94b6-c896d7d5f1e6" name="Red God's Blessing">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Blessing. R'hllor."/>
+            <property name="Text"                       value="Attached character gains the R'hllor trait and gets +1 STR for each R'hllor character you control."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>     
+            <property name="CardNumber"                 value="68"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="88cd924d-e0dc-48e1-8009-ddbce502a531" name="Tanda Stokeworth">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Lady."/>
+            <property name="Text"                       value="Reaction: After you marshal Tanda Stokeworth, each player gains 3 gold."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="69"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="76bd1fd2-2e4b-48de-a9e9-44d6da8a335a" name="Without His Beard">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After you win an [Intrigue] challenge, discard up to 3 cards at random from the losing opponent's hand. Then, that player draws 2 cards."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="0"/>  
+            <property name="CardNumber"                 value="70"/>
+            <property name="Illustrator"                value="Nikolas Hagialas"/>
+        </card>
+        <card id="ffdf0b1b-ea89-4c8f-9419-1d268b7af6f5" name="Aeron Damphair">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Drowned God. Ironborn. Lord."/>
+            <property name="Text"                       value="Reaction: After a character is saved, either: stand it, or kneel it."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="71"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="4b12d6d2-1515-4d9d-8069-2afcdadd6ce8" name="King Balon's Solar">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Iron Islands."/>
+            <property name="Text"                       value="Reaction: After you win initiative, gain 1 gold."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="0"/>             
+            <property name="CardNumber"                 value="72"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="310ff01c-3581-43c6-bcb7-2949bf6fb2fe" name="Pyat Pree">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Warlock."/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which Pyat Pree is participating, search the top X cards of your deck for a [Targaryen] attachment or event, reveal it, and add it to your hand. X is the STR by which you won the challenge."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="73"/>
+            <property name="Illustrator"                value="Victor Manuel Leza Moreno"/>
+        </card>
+        <card id="19872cad-e572-4864-9842-97e6f0b9296f" name="Vaes Tolorro">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Essos."/>
+            <property name="Text"                       value="Interrupt: When a character with 1 or more power is killed, kneel Vaes Tolorro to move 1 power from that character to Vaes Tolorro. (Up to 2 power instead if that character's STR is 0.)"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>             
+            <property name="CardNumber"                 value="74"/>
+            <property name="Illustrator"                value="Jokubas Uogintas"/>
+        </card>
+        <card id="60c2339f-a882-423a-9e58-185c776508ab" name="Elia Sand">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Bastard. Sand Snake."/>
+            <property name="Text"                       value="Reaction: After you lose a challenge, choose a character. Until the end of the phase, that character gains stealth. (Limit twice per phase.)"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>           
+            <property name="CardNumber"                 value="75"/>
+            <property name="Illustrator"                value="Nicholas Gregory"/>
+        </card>
+        <card id="75e89567-1815-437a-bbab-0ddbac560fff" name="Burning on the Sand">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After you lose an unopposed challenge, set the claim value on the winning opponent's revealed plot card to 0 until the end of the challenge."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="0"/>  
+            <property name="CardNumber"                 value="76"/>
+            <property name="Illustrator"                value="Jim Brady"/>
+        </card>
+        <card id="09b75e08-9c72-4de9-9a15-7e2d3e70de34" name="Jaqen H'ghar">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ally."/>
+            <property name="Text"                       value="Reaction: After Jaqen H'ghar enters play, place a Valar Morghulis token on up to 3 different unique characters. If Jaqen H'ghar leaves play, discard those tokens from play.&#13;&#10;Reaction: After you win a challenge in which Jaqen H'ghar is attacking alone, choose and kill a character with a Valar Morghulis token."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="7"/>
+            <property name="Strength"                   value="5"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>           
+            <property name="CardNumber"                 value="77"/>
+            <property name="Illustrator"                value="Joel"/>
+        </card>
+        <card id="111a39bb-3251-4cb0-a508-b91275643a9b" name="Isle of Ravens">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Oldtown."/>
+            <property name="Text"                       value="Action: Kneel Isle of Ravens to choose a card in any player's discard pile, and shuffle it into its owner's deck."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>     
+            <property name="CardNumber"                 value="78"/>
+            <property name="Illustrator"                value=""/>
+        </card>
+        <card id="552d61be-b2ef-4dd5-8821-0de008efc9be" name="King Beyond the Wall">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Title."/>
+            <property name="Text"                       value="Wildling character only.&#13;&#10;Attached character gains the King trait.&#13;&#10;While attached character is attacking a player with a higher power total than you, raise the claim value on your revealed plot card by 1."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>     
+            <property name="CardNumber"                 value="79"/>
+            <property name="Illustrator"                value="Joshua Cairós"/>
+        </card>
+        <card id="99ff1e49-02ae-4606-bffe-0c614ed5e5dd" name="Valar Morghulis" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Omen."/>
+            <property name="Text"                       value="When Revealed: Kill each character."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="2"/>
+            <property name="PlotInitiative"             value="0"/>
+            <property name="PlotClaim"                  value="0"/>
+            <property name="PlotReserve"                value="5"/>
+            <property name="CardNumber"                 value="80"/>
+            <property name="DeckLimit"                  value="1"/>
+            <property name="Illustrator"                value="Dimitri Bielak"/>
+        </card>
     </cards>
 </set>
