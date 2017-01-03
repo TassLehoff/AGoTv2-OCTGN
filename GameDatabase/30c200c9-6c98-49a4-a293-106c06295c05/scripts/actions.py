@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-  
+﻿#-*- coding: utf-8 -*-  
 #coding=utf-8 
 #---------------------------------------------------------------------------
 # Constants
@@ -1452,10 +1452,10 @@ def countincome(group, x=0, y=0,xinput = 0):
 		# for opplotcard in opplotlist:
 		if AgendaName == 'Kings of Summer' and PlotName == 'Summer' and opPlotName != 'Winter':
 			me.counters['Gold'].value += 1
-			notify("**{} gain 1 more gold because of 'Kings of Summer'.**".format(players[1]))
+			notify("**{} gain 1 more gold because of 'Kings of Summer'.**".format(me))
 		if opAgendaName == 'Kings of Winter' and PlotName != 'Summer' and opPlotName == 'Winter':
 			me.counters['Gold'].value -= 1
-			notify("**{} gain 1 less gold because of 'Kings of Winter'.**".format(players[1]))
+			notify("**{} gain 1 less gold because of 'Kings of Winter'.**".format(me))
 		plotlist.reverse()
 		for plotcard in plotlist:
 			if getGlobalVariable("Kingdomgold0") == "1" and "Kingdom" in plotcard.Traits:me.counters['Gold'].value += 0
@@ -2550,6 +2550,7 @@ def revealplotM(group, x = 0, y = 0):
 		
 		countxy = 5
 		usedplot = []
+
 		for c in table: 
 			if c.Type == "Plot" and c.controller == me and c not in cards:
 				c.markers[standIcon] = 0
@@ -2559,7 +2560,11 @@ def revealplotM(group, x = 0, y = 0):
 				usedplot.append(c)
 				#if me.isInverted:c.moveToTable(x, y-30)
 				#else:c.moveToTable(x, y+30)
+
 		for card in cards:
+			if checkplot(card):
+				card.moveTo(me.piles['Plot Deck'])
+				return
 			if plot == 0:
 				if me.isInverted:card.moveToTable(-430,-75,True)
 				else:card.moveToTable(-430,10,True)
@@ -2567,23 +2572,17 @@ def revealplotM(group, x = 0, y = 0):
 				if me.isInverted:card.moveToTable(x-5, y-20,True)
 				else:card.moveToTable(x-5, y+20,True)
 			me.setGlobalVariable("turn","1")
-			# if getGlobalVariable("automode") == "0":
-			# 	if len(me.piles['Plot Deck']) == 0:
-			# 		for card in table:
-			# 				if card.Type == "Plot" and card.controller == me and card.filter == usedplotcolor:
-			# 					card.moveTo(me.piles['Plot Deck'])
-			if len(players) > 1:
-				if me.getGlobalVariable("turn") == players[1].getGlobalVariable("turn") == "1":
-					flipplotcard(card)
+			for cardp in table:
+				if cardp.type == "Plot" and cardp.isFaceUp == False and cardp != card:
 					d = (card for card in table 
 							if card.type == "Plot" and card.controller != me)
 					for c in d:
 						remoteCall(players[1], "flipplotcard", c)
+					flipplotcard(card)
 					remoteCall(me, "fp", table)
-			if len(players) == 1:
-				flipplotcard(card)
-			else:
-				card.peek()
+					return
+			card.isFaceUp = False
+			card.peek()
 	else:return
 
 def revealplot(group, x = 0, y = 0):
@@ -3494,7 +3493,14 @@ def defaultAction(card, x = 0, y = 0):
 		if card.Type == "Plot":
 			if card.isFaceUp == True:
 				if card.PlotGoldIncome == 'X':
-					count = askInteger("Input the value of X,X is 2 higher than the printed gold value on that opponent’s revealed plot card.", 2)
+					x = 2;
+					if len(players) > 1:
+						opplotlist = [card for card in table
+							if card.controller != me and card.type == "Plot"]
+						for cardop in opplotlist:
+							if cardop.PlotGoldIncome != 'X':x += int(cardop.PlotGoldIncome);
+							break
+					count = askInteger("Input the value of X,X is 2 higher than the printed gold value on that opponent’s revealed plot card.", x)
 					if count != None:countincome(table,xinput = count)
 				else:countincome(table,0)
 			else:
@@ -4196,14 +4202,23 @@ def checkdeck():
 		BannerFaction = "Targaryen"
 	elif AgendaName == "Banner of the Rose":
 		BannerFaction = "Tyrell"
-		
+	
 	#Plot deck
 	MultiplePlotName = ''
 	counts = collections.defaultdict(int)
+
+	if AgendaName == "The Rain of Castamers":
+		for card in me.piles['Plot Deck']:
+			if "Scheme." in card.traits:
+				card.moveTo(me.piles['Special Pile'])
 	
 	if len(me.piles['Plot Deck']) != 7:
 		ok = False
-		whisper("Your plot deck must contain exactly 7 cards.")
+		if AgendaName == "The Rain of Castamers":
+			whisper("Your plot deck must contain exactly 7 cards except Scheme plots.")
+		else:
+			whisper("Your plot deck must contain exactly 7 cards.")
+	
 		
 	for card in me.piles['Plot Deck']:
 		if card.type != 'Plot':
@@ -4292,12 +4307,23 @@ def checkdeck():
 				ok = False
 				notify("{}'s agenda is Kings of Winter, so {}'s plot deck can not include Summer plot cards.".format(me,me))
 				break
-
+	if AgendaName == "The Rain of Castamers":
+		if len(me.piles['Special Pile']) != 5:
+			ok = False
+			notify("{} must has exactly 5 Scheme plots.".format(me))
+		else:
+			for card in me.piles['Special Pile']:
+				counts[card.name] += 1
+				if counts[card.name] > 1:
+					ok = False
+					notify("{} can has only 1 copy of {}.".format(me, card.name))
+					break
 
 	me.deck.removeViewer(me)
 	
 	if ok:
 		notify("Deck of {} is OK".format(me))
+
 		setup(table)
 	else:
 		notify("Deck of {} is NOT OK".format(me))
@@ -12903,7 +12929,7 @@ def endturn(group, x = 0, y = 0):
 			card.target(False)
 	me.counters['Gold'].value = 0  #reset gold counters
 	goldcard = (card for card in table
-			if card.controller == me)
+			if card.controller == me and card.type == "Plot")
 	for card in goldcard: 
 		card.markers[Gold] = 0
 	getreserve(group)

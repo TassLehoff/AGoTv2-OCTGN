@@ -3,14 +3,14 @@
 <game name="A Game of Thrones - The Card Game Second Edition"
       id="30c200c9-6c98-49a4-a293-106c06295c05"
       octgnVersion="3.1.0.0"
-      version="2.0.0.11"
+      version="2.0.0.16"
       scriptVersion="3.1.0.2"
       markersize="16"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       tags="OCTGN aGoT LCG Game of Thrones"
       description="A Game of Thrones: The Card Game Second Edition, featuring cunning plots, iconic characters, and deadly encounters for two players. "
       setsurl="http://tinyurl.com/qehmd3z"
-      gameurl="http://octgn.gamersjudgement.com/wordpress/agot2/"
+      gameurl="http://octgngames.com/agot2/"
       authors="TassLehoff, Snowfrost, Khudzlin, Hedjman, Gualdo, DC Denis, Unfamiliar, Jackey"
       iconurl="http://s29.postimg.org/qsmlsels5/Boite_de_base.png">
 
@@ -226,7 +226,8 @@
         </group>
         <group name="Dead Pile" visibility="all"              width="63" height="88" icon="groups/dead.png">      
         </group>
-        
+        <group name="Special Pile" visibility="me"         width="63" height="88" icon="groups/hold.png"           collapsed="True">
+        </group>
         <group name="Discard Pile" visibility="all"           width="63" height="88" icon="groups/discard.png"> 
             <groupaction menu="Reshuffle into Deck"                                                                   execute="reshuffle"/>
             <groupaction menu="Move One Random to Hand"                                                               execute="moveOneRandom"/>
