@@ -335,7 +335,7 @@
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="1"/>
             <property name="CardNumber"                 value="24"/>
-            <property name="Illustrator"                value=""/>
+            <property name="Illustrator"                value="Joshua Cairós"/>
         </card>
         <card id="e5ac9f1c-e422-441d-b155-109040e45b25" name="Edric Storm">
             <property name="Faction"                    value="Baratheon."/>
@@ -653,7 +653,7 @@ While attached character is participating in a challenge, each other participati
             <property name="CardNumber"                 value="48"/>
             <property name="Illustrator"                value="Victor Garcia"/>
         </card>
-        <card id="e5ac9f1c-e422-441d-b155-109040e45b49" name="Littlefinger's Meddling" size="HorizontalCards">、
+        <card id="e5ac9f1c-e422-441d-b155-109040e45b49" name="Littlefinger's Meddling" size="HorizontalCards">
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Plot"/>
             <property name="Traits"                     value="Kingdom. Scheme."/>
