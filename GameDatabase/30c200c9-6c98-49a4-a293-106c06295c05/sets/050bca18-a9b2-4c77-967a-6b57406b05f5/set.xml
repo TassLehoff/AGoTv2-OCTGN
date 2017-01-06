@@ -1044,7 +1044,7 @@
             <property name="Faction"                    value="Stark."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Ally. House Bolton. Lord."/>
-            <property name="Text"                       value="Reaction: After you win a challenge in which Roose Bolton is attacking, choose up to X total STR worth of characters controlled by the losing opponent. X is Roose Boltonnulls STR. Sacrifice Roose Bolton to kill each of those characters."/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which Roose Bolton is attacking, choose up to X total STR worth of characters controlled by the losing opponent. X is Roose Bolton's STR. Sacrifice Roose Bolton to kill each of those characters."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="6"/>
@@ -1096,7 +1096,7 @@
             <property name="Faction"                    value="Night's Watch."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Ally. Wildling."/>
-            <property name="Text"                       value="Immune to effects of Omen cards.&#13;&#10;Action: Sacrifice Craster to put each character that was killed during this phase into play from its ownernulls dead pile."/>
+            <property name="Text"                       value="Immune to effects of Omen cards.&#13;&#10;Action: Sacrifice Craster to put each character that was killed during this phase into play from its owner's dead pile."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="5"/>
@@ -1111,7 +1111,7 @@
             <property name="Faction"                    value="Night's Watch."/>
             <property name="Type"                       value="Attachment"/>
             <property name="Traits"                     value="Weapon."/>
-            <property name="Text"                       value="[thenightswatch] character only.&#13;&#10;While attached character is participating in a challenge, it gets +2 STR and is immune to opponentnulls character abilities."/>
+            <property name="Text"                       value="[thenightswatch] character only.&#13;&#10;While attached character is participating in a challenge, it gets +2 STR and is immune to opponent's character abilities."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="1"/>
@@ -1134,11 +1134,11 @@
             <property name="CardNumber"                 value="87"/>
             <property name="Illustrator"                value="David Auden Nash"/>
         </card>
-        <card id="fc9babe6-89fc-4d24-84a9-d0927739f548" name="Ritual of Rnullhllor">
+        <card id="fc9babe6-89fc-4d24-84a9-d0927739f548" name="Ritual of R'hllor">
             <property name="Faction"                    value="Baratheon."/>
             <property name="Type"                       value="Event"/>
-            <property name="Traits"                     value="Rnullhllor."/>
-            <property name="Text"                       value="Reaction: After you win dominance, choose X standing Rnullhllor characters. Each of those characters gains 1 power."/>
+            <property name="Traits"                     value="R'hllor."/>
+            <property name="Text"                       value="Reaction: After you win dominance, choose X standing R'hllor characters. Each of those characters gains 1 power."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="X"/>
@@ -1160,10 +1160,10 @@
             <property name="CardNumber"                 value="89"/>
             <property name="Illustrator"                value="Nicholas Gregory"/>
         </card>
-        <card id="e49a0c0b-517b-410a-b10b-c0e8baed88cc" name="Chatayanulls Brothel">
+        <card id="e49a0c0b-517b-410a-b10b-c0e8baed88cc" name="Chataya's Brothel">
             <property name="Faction"                    value="Lannister."/>
             <property name="Type"                       value="Location"/>
-            <property name="Traits"                     value="Kingnulls Landing."/>
+            <property name="Traits"                     value="Kingn's Landing."/>
             <property name="Text"                       value="Marshaling Action: Kneel a character with an [intrigue] icon to gain 1 gold. (Limit twice per phase.)"/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="Yes"/>
@@ -1238,11 +1238,11 @@
             <property name="CardNumber"                 value="95"/>
             <property name="Illustrator"                value="JB Casacop"/>
         </card>
-        <card id="9de647d8-4da4-493f-aedb-bd06b927099f" name="Princenulls Pass">
+        <card id="9de647d8-4da4-493f-aedb-bd06b927099f" name="The Prince's Pass">
             <property name="Faction"                    value="Martell."/>
             <property name="Type"                       value="Location"/>
             <property name="Traits"                     value="Dorne."/>
-            <property name="Text"                       value="Reaction: After you lose a challenge as the defending player, kneel Princenulls Pass to choose an attacking character. Until the end of the phase, that character loses a challenge icon of your choice. Then, if that character has no challenge icons, you may sacrifice Princenulls Pass to discard it from play."/>
+            <property name="Text"                       value="Reaction: After you lose a challenge as the defending player, kneel The Prince's Pass to choose an attacking character. Until the end of the phase, that character loses a challenge icon of your choice. Then, if that character has no challenge icons, you may sacrifice The Prince's Pass to discard it from play."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="Yes"/>
             <property name="Cost"                       value="2"/>
@@ -1264,11 +1264,11 @@
             <property name="CardNumber"                 value="97"/>
             <property name="Illustrator"                value="Tristan Denecke"/>
         </card>
-        <card id="1319425c-e0b8-49b3-b2da-fac0ee27c7a7" name="Frostfangs">
+        <card id="1319425c-e0b8-49b3-b2da-fac0ee27c7a7" name="The Frostfangs">
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Location"/>
             <property name="Traits"                     value="The North."/>
-            <property name="Text"                       value="Reaction: After Frostfangs enters play, give control of it to an opponent.&#13;&#10;-1 Reserve."/>
+            <property name="Text"                       value="Reaction: After The Frostfangs enters play, give control of it to an opponent.&#13;&#10;-1 Reserve."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="2"/>
@@ -1290,7 +1290,7 @@
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Plot"/>
             <property name="Traits"                     value="Omen."/>
-            <property name="Text"                       value="When Revealed: Put the top character in each playernulls dead pile into play."/>
+            <property name="Text"                       value="When Revealed: Put the top character in each player's dead pile into play."/>
             <property name="Loyal"                      value="No"/>
             <property name="PlotGoldIncome"             value="2"/>
             <property name="PlotInitiative"             value="5"/>
