@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 
 <set name="05-Lions of the Rock"
      id="8247133c-a928-4437-a602-2001cc3d3ba4"
@@ -18,7 +18,7 @@
             <property name="Strength"                   value="6"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="1"/>
             <property name="Illustrator"                value="Aurore Folny"/>
         </card>
@@ -33,7 +33,7 @@
             <property name="Strength"                   value="5"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="2"/>
             <property name="Illustrator"                value="Michael Komarck"/>
         </card>
@@ -48,7 +48,7 @@
             <property name="Strength"                   value="4"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="3"/>
             <property name="Illustrator"                value="Sebastian Giacobino"/>
         </card>
@@ -63,7 +63,7 @@
             <property name="Strength"                   value="4"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="No"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="4"/>
             <property name="Illustrator"                value="Joshua Cairós"/>
         </card>
@@ -78,7 +78,7 @@
             <property name="Strength"                   value="4"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="5"/>
             <property name="Illustrator"                value="Alexandre Dainche"/>
         </card>
@@ -94,7 +94,7 @@
             <property name="Strength"                   value="5"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="6"/>
             <property name="Illustrator"                value="Cristi Balanescu"/>
         </card>
@@ -109,7 +109,7 @@
             <property name="Strength"                   value="3"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="7"/>
             <property name="Illustrator"                value="Cris Griffin"/>
         </card>
@@ -125,7 +125,7 @@
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
             <property name="Power"                      value="No"/>
-			<property name="Keywords"                   value="Pillage."/>
+            <property name="Keywords"                   value="Pillage."/>
             <property name="CardNumber"                 value="8"/>
             <property name="Illustrator"                value="Tomasz Jedruszek"/>
         </card>
@@ -140,7 +140,7 @@
             <property name="Strength"                   value="4"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="No"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="9"/>
             <property name="Illustrator"                value="Tiziano Baracchi"/>
         </card>
@@ -155,7 +155,7 @@
             <property name="Strength"                   value="2"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="10"/>
             <property name="Illustrator"                value="Christine Mitzuk"/>
         </card>
@@ -170,7 +170,7 @@
             <property name="Strength"                   value="3"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="No"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="11"/>
             <property name="Illustrator"                value="Tomasz Jedruszek"/>
         </card>
@@ -186,7 +186,7 @@
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
             <property name="Power"                      value="No"/>
-			<property name="Keywords"                   value="Ambush (4)."/>
+            <property name="Keywords"                   value="Ambush (4)."/>
             <property name="CardNumber"                 value="12"/>
             <property name="Illustrator"                value="Tiziano Baracchi"/>
         </card>
@@ -201,7 +201,7 @@
             <property name="Strength"                   value="2"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="13"/>
             <property name="Illustrator"                value="Colin Boyer"/>
         </card>
@@ -216,7 +216,7 @@
             <property name="Strength"                   value="0"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="14"/>
             <property name="Illustrator"                value="Henning Ludvigsen"/>
         </card>
@@ -231,7 +231,7 @@
             <property name="Strength"                   value="2"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="No"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="15"/>
             <property name="Illustrator"                value="Joshua Cairós"/>
         </card>
@@ -246,7 +246,7 @@
             <property name="Strength"                   value="2"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="16"/>
             <property name="Illustrator"                value="Ryan Valle"/>
         </card>
@@ -258,7 +258,7 @@
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="Yes"/>
             <property name="Cost"                       value="2"/>
-			<property name="Keywords"                   value="Limited."/>
+            <property name="Keywords"                   value="Limited."/>
             <property name="CardNumber"                 value="17"/>
             <property name="Illustrator"                value="Paolo Puggioni"/>
         </card>
@@ -292,7 +292,7 @@
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="Yes"/>
             <property name="Cost"                       value="3"/>
-			<property name="GoldIncome"                 value="+1"/>
+            <property name="GoldIncome"                 value="+1"/>
             <property name="CardNumber"                 value="20"/>
             <property name="Illustrator"                value="Tiziano Baracchi"/>
         </card>
@@ -355,8 +355,8 @@
         <card id="e5ac9f1c-e422-441d-b155-109040e45b26" name="Disputed Claim">
             <property name="Faction"                    value="Baratheon."/>
             <property name="Type"                       value="Attachment"/>
-			<property name="Traits"                     value="Condition."/>
-			<property name="Text"                       value="Bastard, Lord, or Lady character only.&#13;&#10;While you have more power on your faction card than each opponent, attached character gets +2 STR and gains renown."/>
+            <property name="Traits"                     value="Condition."/>
+            <property name="Text"                       value="Bastard, Lord, or Lady character only.&#13;&#10;While you have more power on your faction card than each opponent, attached character gets +2 STR and gains renown."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="1"/>
@@ -367,7 +367,7 @@
             <property name="Faction"                    value="Greyjoy."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Captain. Ironborn. Lord."/>
-			<property name="Keywords"                   value="Intimidate. Renown."/>
+            <property name="Keywords"                   value="Intimidate. Renown."/>
             <property name="Text"                       value="Interrupt: When Victarion Greyjoy would be killed, discard 2 power from him to save him."/>
             <property name="Unique"                     value="Yes"/>
             <property name="Loyal"                      value="No"/>
@@ -375,7 +375,7 @@
             <property name="Strength"                   value="5"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="No"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="27"/>
             <property name="Illustrator"                value="Alexandre Dainche"/>
         </card>
@@ -401,7 +401,7 @@
             <property name="Strength"                   value="4"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="29"/>
             <property name="Illustrator"                value="Tiziano Baracchi"/>
         </card>
@@ -415,7 +415,7 @@
             <property name="CardNumber"                 value="30"/>
             <property name="Illustrator"                value="David Auden Nash"/>
         </card>
-	    <card id="e5ac9f1c-e422-441d-b155-109040e45b31" name="Sweet Donnel Hill">
+        <card id="e5ac9f1c-e422-441d-b155-109040e45b31" name="Sweet Donnel Hill">
             <property name="Faction"                    value="Night's Watch."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Bastard. Steward."/>
@@ -427,7 +427,7 @@
             <property name="Strength"                   value="2"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="31"/>
             <property name="Illustrator"                value="Ryan Valle"/>
         </card>
@@ -453,7 +453,7 @@
             <property name="Strength"                   value="1"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="33"/>
             <property name="Illustrator"                value="David Auden Nash"/>
         </card>
@@ -483,14 +483,14 @@
             <property name="Strength"                   value="4"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="No"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="35"/>
             <property name="Illustrator"                value="Gabrielle Portal"/>
         </card>
         <card id="e5ac9f1c-e422-441d-b155-109040e45b36" name="Daenerys's Favor">
             <property name="Faction"                    value="Targaryen."/>
             <property name="Type"                       value="Attachment"/>
-			<property name="Traits"                     value="Condition."/>
+            <property name="Traits"                     value="Condition."/>
             <property name="Text"                       value="[Targaryen] character only.
 While attached character is participating in a challenge, each other participating character gets -1 STR."/>
             <property name="Unique"                     value="No"/>
@@ -510,14 +510,14 @@ While attached character is participating in a challenge, each other participati
             <property name="Strength"                   value="3"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="37"/>
             <property name="Illustrator"                value="Christine Mitzuk"/>
         </card>
         <card id="e5ac9f1c-e422-441d-b155-109040e45b38" name="The Golden Rose">
             <property name="Faction"                    value="Tyrell."/>
             <property name="Type"                       value="Event"/>
-			<property name="Traits"                     value="Song."/>
+            <property name="Traits"                     value="Song."/>
             <property name="Text"                       value="Challenges Action: Look at the top 3 cards of your deck. Add 1 to your hand, and place the others on the bottom of your deck in any order."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
@@ -536,7 +536,7 @@ While attached character is participating in a challenge, each other participati
             <property name="Strength"                   value="5"/>
             <property name="Military"                   value="No"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="39"/>
             <property name="Illustrator"                value="Joshua Cairós"/>
         </card>
@@ -551,7 +551,7 @@ While attached character is participating in a challenge, each other participati
             <property name="Strength"                   value="3"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="No"/>
-            <property name="Power"                      value="Yes"/>           
+            <property name="Power"                      value="Yes"/>
             <property name="CardNumber"                 value="40"/>
             <property name="Illustrator"                value="Colin Boyer"/>
         </card>
@@ -559,14 +559,14 @@ While attached character is participating in a challenge, each other participati
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="Wildling."/>
-			<property name="Text"                       value="While Wildling Bandit is attacking an opponent with more gold in his or her gold pool than you, it gets +2 STR."/>
+            <property name="Text"                       value="While Wildling Bandit is attacking an opponent with more gold in his or her gold pool than you, it gets +2 STR."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="2"/>
             <property name="Strength"                   value="1"/>
             <property name="Military"                   value="Yes"/>
             <property name="Intrigue"                   value="Yes"/>
-            <property name="Power"                      value="No"/>           
+            <property name="Power"                      value="No"/>
             <property name="CardNumber"                 value="41"/>
             <property name="Illustrator"                value="Victor Garcia"/>
         </card>
@@ -578,7 +578,7 @@ While attached character is participating in a challenge, each other participati
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="0"/>
-			<property name="Keywords"                   value="Limited."/>
+            <property name="Keywords"                   value="Limited."/>
             <property name="CardNumber"                 value="42"/>
             <property name="Illustrator"                value="Aurore Folny"/>
         </card>
@@ -607,7 +607,7 @@ While attached character is participating in a challenge, each other participati
         <card id="e5ac9f1c-e422-441d-b155-109040e45b45" name="The Rain of Castamers">
             <property name="Faction"                    value="Neutral."/>
             <property name="Type"                       value="Agenda"/>
-			<property name="Traits"                     value="Song."/>
+            <property name="Traits"                     value="Song."/>
             <property name="Text"                       value="Your plot deck must be 12 cards, including exactly 5 different Scheme cards.&#13;&#10;During the plot phase, Scheme cards are not considered to be in your plot deck.&#13;&#10;Reaction: After you win an  challenge by 5 or more STR, kneel your faction card to reveal a Scheme plot. If that card leaves play, remove it from the game."/>
             <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
