@@ -1297,7 +1297,6 @@
             <property name="PlotClaim"                  value="1"/>
             <property name="PlotReserve"                value="5"/>
             <property name="CardNumber"                 value="100"/>
-            <property name="DeckLimit"                  value="1"/>
             <property name="Illustrator"                value="Nikolas Hagialas"/>
         </card>
     </cards>
