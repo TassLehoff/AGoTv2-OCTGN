@@ -462,7 +462,7 @@
             <property name="Type"                       value="Character"/>
             <property name="Traits"                     value="House Umber."/>
             <property name="Text"                       value="Forced Reaction: After a character enters play during the challenges phase, kneel that character."/>
-            <property name="Unique"                     value="Yes"/>
+            <property name="Unique"                     value="No"/>
             <property name="Loyal"                      value="No"/>
             <property name="Cost"                       value="4"/>
             <property name="Strength"                   value="4"/>
