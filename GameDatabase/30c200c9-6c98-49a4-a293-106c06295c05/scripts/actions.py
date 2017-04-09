@@ -139,6 +139,7 @@ returntohand_turn = []
 noprint_turn = []
 disc_turn = []
 
+AllianceAgenda = 0
 
 import re
 import time
@@ -1009,17 +1010,35 @@ def setup(group, x = 0, y = 0):
 	var="1"
 	me.setGlobalVariable("setupOk", var)
 	notify("**{} has started setup, please wait**".format(me))
+	Alliance_ya = -100
+	Alliance_yb = 10
 	for c in me.hand: 
 		if c.Type == "Faction":
 			if me.isInverted: 
 				c.moveToTable(-320,-100)			
 			else:
 				c.moveToTable(-320,10)
-		if c.Type == "Agenda":
-			if me.isInverted: 
-				c.moveToTable(-240,-100)			
+		else:
+			if AllianceAgenda == 0:
+				if c.Type == "Agenda":
+					if me.isInverted: 
+						c.moveToTable(-240,-100)			
+					else:
+						c.moveToTable(-240,10)
 			else:
-				c.moveToTable(-240,10)
+				if c.Type == "Agenda" and c.name =='Alliance':
+					if me.isInverted: 
+						c.moveToTable(-240,-100)			
+					else:
+						c.moveToTable(-240,10)
+					c.sendToBack()
+				else:
+					Alliance_ya -= 50
+					Alliance_yb += 50
+					if me.isInverted:
+						c.moveToTable(-240,Alliance_ya)		
+					else:
+						c.moveToTable(-240,Alliance_yb)
 	me.deck.shuffle()
 	for card in me.deck.top(7):
 		card.moveTo(me.hand)
@@ -4158,16 +4177,22 @@ def play(card,attcard = 0):
 #------------------------------------------------------------------------------
 def checkdeck():
 	mute()
+	global AllianceAgenda
 	notify (" -> Checking deck of {} ...".format(me))
 	ok = True
-	
+	AllianceAgenda = 0
 	# Faction and agenda (should be in hand)
 	FactionCount = 0
 	AgendaCount = 0
 	FactionName = ''
 	AgendaName = ''
 	BannerFaction = ''
-	
+	CountBanner = 0
+	AllianceAgendaAName = ''
+	AllianceAgendaBName = ''
+	BannerFactionA = ''
+	BannerFactionB = ''
+
 	for card in me.hand:
 		if card.type == 'Faction':
 			FactionCount += 1
@@ -4175,16 +4200,29 @@ def checkdeck():
 		elif card.type == 'Agenda':
 			AgendaCount += 1
 			AgendaName = card.name
+			if card.name == 'Alliance':
+				AllianceAgenda = 1
+			else:
+				if AllianceAgendaAName == '':
+					AllianceAgendaAName = card.name
+				else:
+					AllianceAgendaBName = card.name
+			if card.Traits == 'Banner.':
+				CountBanner += 1
 		else:
 			ok = False
 			whisper("You have a card in your hand that is not a faction or an agenda, please put it in the appropriate deck.")
-			
+
+
 	if FactionCount != 1:
 		ok = False
 		whisper("You should have exactly 1 faction card in your hand.")
-	if AgendaCount > 1:
+	if AgendaCount > 1 and AllianceAgenda == 0:
 		ok = False
 		whisper("You can only use 1 agenda.")
+	if CountBanner > 2 and AllianceAgenda == 1:
+		ok = False
+		whisper("You can only use 2 banner agendas.")
 		
 	if AgendaName == "Banner of the Stag":
 		BannerFaction = "Baratheon"
@@ -4202,7 +4240,41 @@ def checkdeck():
 		BannerFaction = "Targaryen"
 	elif AgendaName == "Banner of the Rose":
 		BannerFaction = "Tyrell"
-	
+
+	if AllianceAgendaAName == "Banner of the Stag":
+		BannerFactionA = "Baratheon"
+	elif AllianceAgendaAName == "Banner of the Kraken":
+		BannerFactionA = "Greyjoy"
+	elif AllianceAgendaAName == "Banner of the Lion":
+		BannerFactionA = "Lannister"
+	elif AllianceAgendaAName == "Banner of the Sun":
+		BannerFactionA = "Martell"
+	elif AllianceAgendaAName == "Banner of the Watch":
+		BannerFactionA = "Night's Watch"
+	elif AllianceAgendaAName == "Banner of the Wolf":
+		BannerFactionA = "Stark"
+	elif AllianceAgendaAName == "Banner of the Dragon":
+		BannerFactionA = "Targaryen"
+	elif AllianceAgendaAName == "Banner of the Rose":
+		BannerFactionA = "Tyrell"
+
+	if AllianceAgendaBName == "Banner of the Stag":
+		BannerFactionB = "Baratheon"
+	elif AllianceAgendaBName == "Banner of the Kraken":
+		BannerFactionB = "Greyjoy"
+	elif AllianceAgendaBName == "Banner of the Lion":
+		BannerFactionB = "Lannister"
+	elif AllianceAgendaBName == "Banner of the Sun":
+		BannerFactionB = "Martell"
+	elif AllianceAgendaBName == "Banner of the Watch":
+		BannerFactionB = "Night's Watch"
+	elif AllianceAgendaBName == "Banner of the Wolf":
+		BannerFactionB = "Stark"
+	elif AllianceAgendaBName == "Banner of the Dragon":
+		BannerFactionB = "Targaryen"
+	elif AllianceAgendaBName == "Banner of the Rose":
+		BannerFactionB = "Tyrell"
+
 	#Plot deck
 	MultiplePlotName = ''
 	counts = collections.defaultdict(int)
@@ -4228,10 +4300,15 @@ def checkdeck():
 		if card.faction != 'Neutral.' and FactionName not in card.faction:
 			if card.loyal == 'Yes':
 				ok = False
-				notify("{}'s plot deck contains a loyal card from another faction.".format(me))
-			if BannerFaction == '' or BannerFaction not in card.faction:
-				ok = False
-				notify("{}'s plot deck contains a card from an illegal faction.".format(me))
+				notify("{}'s plot deck contains a loyal card from another faction.name is {}".format(me,card))
+			if AllianceAgenda == 0:
+				if BannerFaction == '' or BannerFaction not in card.faction:
+					ok = False
+					notify("{}'s plot deck contains a card from an illegal faction.name is {}".format(me,card))
+			else:
+				if BannerFactionA not in card.faction and BannerFactionB not in card.faction:
+					ok = False
+					notify("{}'s plot deck contains a card from an illegal faction.name is {}".format(me,card))
 				
 		counts[card.name] += 1
 		
@@ -4254,28 +4331,44 @@ def checkdeck():
 	#Deck
 	NeutralCount = 0
 	BannerCount = 0
+	BannerCountA = 0
+	BannerCountB = 0
 	me.deck.addViewer(me)
 	
-	if len(me.deck) < 60:
+	if len(me.deck) < 60 and AllianceAgenda == 0:
 		ok = False
 		notify("{}'s deck must contain at least 60 cards.".format(me))
-	
+	if len(me.deck) < 75 and AllianceAgenda == 1:
+		ok = False
+		notify("{}'s deck must contain at least 75 cards.".format(me))
+
+
 	for card in me.deck:
 		if card.type != "Character" and card.type != "Location" and card.type != "Attachment" and card.type != "Event":
 			ok = False
-			notify("{}'s deck must contain only characters, locations, attachments and events.".format(me))
+			notify("{}'s deck must contain only characters, locations, attachments and events.name is {}".format(me,card))
 	
 		if card.faction == 'Neutral.':
 			NeutralCount += 1
-		elif FactionName not in card.faction:
+		elif FactionName not in card.faction and AllianceAgenda == 0:
 			if card.loyal == 'Yes':
 				ok = False
-				notify("{}'s deck contains a loyal card from another faction.".format(me))
+				notify("{}'s deck contains a loyal card from another faction.name is {}".format(me,card))
 			elif BannerFaction == '' or BannerFaction not in card.faction:
 				ok = False
-				notify("{}'s deck contains a card from an illegal faction.".format(me))
+				notify("{}'s deck contains a card from an illegal faction.name is {}".format(me,card))
 			else:
 				BannerCount += 1
+		elif FactionName not in card.faction and AllianceAgenda == 1:
+			if card.loyal == 'Yes':
+				ok = False
+				notify("{}'s deck contains a loyal card from another faction.name is {}".format(me,card))
+			elif BannerFactionA not in card.faction and BannerFactionB not in card.faction:
+				ok = False
+				notify("{}'s deck contains a card from an illegal faction.name is {}".format(me,card))
+			else:
+				if BannerFactionA in card.faction:BannerCountA += 1
+				if BannerFactionB in card.faction:BannerCountB += 1
 				
 		counts[card.name] += 1
 		
@@ -4287,13 +4380,20 @@ def checkdeck():
 		if counts[card.name] > limit:
 			ok = False
 			notify("{} has {} copies of {} in deck, but {} can has only {}.".format(me,counts[card.name], card,me, limit))
-	
-	if AgendaName == 'Fealty' and NeutralCount > 15:
-		ok = False
-		notify("{}'s agenda is Fealty, so {} can has 15 neutral cards in deck, but {} have {}.".format(me,me,me, NeutralCount))
-	elif BannerFaction != '' and BannerCount < 12:
-		ok = False
-		notify("{}'s agenda is {}, so {} must has at least 12 {} cards in deck, but {} have only {}".format(me, AgendaName, me,BannerFaction, me,BannerCount))
+	if AllianceAgenda == 0:
+		if AgendaName == 'Fealty' and NeutralCount > 15:
+			ok = False
+			notify("{}'s agenda is Fealty, so {} can has 15 neutral cards in deck, but {} have {}.".format(me,me,me, NeutralCount))
+		elif BannerFaction != '' and BannerCount < 12:
+			ok = False
+			notify("{}'s agenda is {}, so {} must has at least 12 {} cards in deck, but {} have only {}".format(me, AgendaName, me,BannerFaction, me,BannerCount))
+	else:
+		if BannerFactionA != '' and BannerCountA < 12:
+			ok = False
+			notify("{}'s agenda is {}, so {} must has at least 12 {} cards in deck, but {} have only {}".format(me, AllianceAgendaAName, me,BannerFactionA, me,BannerCountA))
+		if BannerFactionB != '' and BannerCountB < 12:
+			ok = False
+			notify("{}'s agenda is {}, so {} must has at least 12 {} cards in deck, but {} have only {}".format(me, AllianceAgendaBName, me,BannerFactionB, me,BannerCountB))
 	
 	if AgendaName == 'Kings of Summer':
 		for card in me.piles['Plot Deck']:

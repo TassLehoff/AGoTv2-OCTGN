@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<set name="07-Watchers on the Wall"
+     id="b91e6b81-67e8-44b8-a11a-460065a99e22"
+     gameId="30c200c9-6c98-49a4-a293-106c06295c05"
+     gameVersion="2.0.0.31"
+     version="1.0">
+
+    <cards>
+        <card id="5491846e-c205-49df-ba23-053bced7ba23" name="Jon Snow">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Bastard. Steward. Wildling."/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which Jon Snow is participating, either: stand each attacking Wildling character, or stand each defending [thenightswatch] character. (Limit once per phase.)"/>
+            <property name="Keywords"                   value="Stealth."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="7"/>
+            <property name="Strength"                   value="6"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="1"/>
+            <property name="Illustrator"                value="Magali Villeneuve"/>
+        </card>
+        <card id="f5150311-e1e4-409b-8872-460e937fc416" name="Bowen Marsh">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Lord. Steward."/>
+            <property name="Text"                       value="During [intrigue] challenges, each Steward character you control gains insight."/>
+            <property name="Reserve"                    value="+1"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="2"/>
+            <property name="Illustrator"                value="Ramon Ignacio Bunge"/>
+        </card>
+        <card id="c808d484-7d1a-4ed8-9cba-e6efec621cf6" name="Old Bear Mormont">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Commander. Lord."/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which Old Bear Mormont is participating, choose a non-unique character in the losing opponent's discard pile, and put it into play under your control."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="5"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="3"/>
+            <property name="Illustrator"                value="Ryan Valle"/>
+        </card>
+        <card id="eea69498-31c5-427c-8ad2-0160298eb952" name="Cotter Pyke">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Bastard. Commander. Ironborn."/>
+            <property name="Text"                       value="Reaction: After Cotter Pyke bypasses a character using stealth, if there is a Winter plot card revealed, choose a [thenightswatch] character and have it gain stealth until the end of the phase."/>
+            <property name="Keywords"                   value="Stealth."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="5"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="4"/>
+            <property name="Illustrator"                value="Paco Rico Torres"/>
+        </card>
+        <card id="04633026-5766-4d66-94d4-c52fd3b65327" name="Maester Aemon">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Maester. Steward."/>
+            <property name="Text"                       value="Interrupt: When the challenges phase ends, choose an opponent and a challenge type that has not been initiated against you this phase. That player must satisfy the claim of that challenge type as if you were the winning opponent."/>
+            <property name="Keywords"                   value="No attachments except Item."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="5"/>
+            <property name="Illustrator"                value="Audrey Hotte"/>
+        </card>
+        <card id="d09b827c-d11a-45d8-ada8-448c77ef4103" name="Grizzled Miner">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Builder."/>
+            <property name="Text"                       value="Reduce the cost to marshal Grizzled Miner by 1 for each [thenightswatch] attachment and location you control (to a minimum of 1)."/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="6"/>
+            <property name="Illustrator"                value="Victor Garcia"/>
+        </card>
+        <card id="a9f17804-adc0-4249-b6f1-6f2b22495333" name="Ser Denys Mallister">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Commander. Knight."/>
+            <property name="Text"                       value="While Ser Denys Mallister is defending, he gains renown."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="7"/>
+            <property name="Illustrator"                value="Romain Leguay"/>
+        </card>
+        <card id="130456e2-fedd-47c1-aa46-cb9b79a5c2c1" name="Ser Jaremy Rykker">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Knight. Ranger."/>
+            <property name="Text"                       value="Each other Ranger character you control gains a [power] icon."/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="8"/>
+            <property name="Illustrator"                value="Ramon Ignacio Bunge"/>
+        </card>
+        <card id="1fd975af-c51d-4600-ae71-661bd889e239" name="Castle Black Mason">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Builder."/>
+            <property name="Text"                       value="Action: Kneel 2 Builder characters to search the top 10 cards of your deck for a location or attachment, reveal it, and add it to your hand. Shuffle your deck. (Limit twice per round.)"/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="9"/>
+            <property name="Illustrator"                value="Anthony Palumbo"/>
+        </card>
+        <card id="9c2c1b8c-e75a-40fa-8ab0-1f0470ee989b" name="Grenn">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ranger."/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which Grenn is attacking, move 1 power from the losing opponent's faction card to another attacking [thenightswatch] character. (Up to 2 power instead if that character is standing.)"/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="10"/>
+            <property name="Illustrator"                value="Andreia Ugrai"/>
+        </card>
+        <card id="7f01380c-f1df-4094-aff9-85238044eea7" name="Pyp">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ranger."/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which Pyp is attacking, choose another attacking [thenightswatch] character. That character gains insight until the end of the phase."/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="11"/>
+            <property name="Illustrator"                value="Andreia Ugrai"/>
+        </card>
+        <card id="eec363ec-9f68-4fd2-bd87-6255b7242b0f" name="Samwell Tarly">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Steward."/>
+            <property name="Text"                       value="While Samwell Tarly is participating in a challenge, treat each other participating non-Steward character as if its printed text box were blank (except for Traits)."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="12"/>
+            <property name="Illustrator"                value="Arden Beckwith"/>
+        </card>
+        <card id="4597bb59-d338-4caf-8be0-37c3b546d2df" name="Satin">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Steward."/>
+            <property name="Text"                       value="Reaction: After Satin is knelt, choose and stand another Steward character. (Limit twice per phase.)"/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="13"/>
+            <property name="Illustrator"                value="Maricia Geroge-Bogdan"/>
+        </card>
+        <card id="f92ac646-a660-41ef-9141-7578beda5e26" name="Lost Ranger">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ranger."/>
+            <property name="Text"                       value="Forced Interrupt: When the challenges phase ends, if you control no other Ranger characters, sacrifice Lost Ranger."/>
+            <property name="Keywords"                   value="No attachments except Weapon."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="14"/>
+            <property name="Illustrator"                value="Carlo Bocchio"/>
+        </card>
+        <card id="53b48b55-60f3-4864-8996-aefba05fd885" name="Seasoned Woodsman">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Builder."/>
+            <property name="Text"                       value="Reaction: After you attach an attachment to Seasoned Woodsman, either: gain 1 gold, or draw 1 card. (Limit twice per phase.)"/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="15"/>
+            <property name="Illustrator"                value="Igor Kieryluk"/>
+        </card>
+        <card id="d0b85e70-eff4-4968-9299-b9c4ccabcc7f" name="Builder at the Wall">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Builder."/>
+            <property name="Text"                       value="Marshaling Action: Kneel Builder at the Wall to reduce the cost of the next [thenightswatch] attachment or location you marshal this phase by 1."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="16"/>
+            <property name="Illustrator"                value="Adam Duff"/>
+        </card>
+        <card id="e1836738-748e-4a25-bab6-ca7f2926d1e1" name="The New Gift">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="The North."/>
+            <property name="Text"                       value="Marshaling Action: Kneel a Steward character to gain 1 gold. (Limit twice per phase.)&#13;&#10;Challenges Action: Kneel a Steward character to draw 1 card. (Limit twice per phase.)"/>
+            <property name="Keywords"                   value="Limited."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="17"/>
+            <property name="Illustrator"                value="Martina Pilcerova"/>
+        </card>
+        <card id="0c0383e5-a929-47c1-bd07-92cf3317d896" name="Abandoned Stronghold">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Stronghold. The North."/>
+            <property name="Text"                       value="Action: Kneel Abandoned Stronghold to choose a defending character. Until the end of the challenge, that character gets +X STR. X is the number of Builder characters you control."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="18"/>
+            <property name="Illustrator"                value="Sergey Glushakov"/>
+        </card>
+        <card id="a046cff4-8445-4bae-bab7-4e7730f09daf" name="Queenscrown">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="The North."/>
+            <property name="Text"                       value="Action: Kneel Queenscrown to reveal the top 3 cards of an opponent's deck. Choose up to 1 character revealed this way and place it in that player's discard pile. Place the other cards on the bottom of that player's deck in any order."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="19"/>
+            <property name="Illustrator"                value="Michael Komarck"/>
+        </card>
+        <card id="4dabc784-df4d-422f-8d8f-1d40308e5967" name="Catapult on the Wall">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Weapon."/>
+            <property name="Text"                       value="Action: Kneel Catapult on the Wall and attached character to choose and kill an attacking character with STR 4 or lower. Attached character cannot stand during the standing phase this round."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="CardNumber"                 value="20"/>
+            <property name="Illustrator"                value="Sergey Glushakov"/>
+        </card>
+        <card id="bcc6b69e-8cfc-4f6a-9cd2-e36721120876" name="Ghost">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Direwolf."/>
+            <property name="Text"                       value="[thenightswatch] or [stark] character only.&#13;&#10;Interrupt: When attached character would be killed, return Ghost to your hand to save that character."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="21"/>
+            <property name="Illustrator"                value="Cristi Balanescu"/>
+        </card>
+        <card id="c09b1538-680f-4edd-b5c0-9edc04b2c354" name="Sworn to the Watch">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Condition."/>
+            <property name="Text"                       value="Attached character gains the [thenightswatch] affiliation.&#13;&#10;While attached character has:&#13;&#10;- a [military] icon, it gains the Ranger trait.&#13;&#10;- an [intrigue] icon, it gains the Steward trait.&#13;&#10;- a [power] icon, it gains the Builder trait."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="0"/>
+            <property name="CardNumber"                 value="22"/>
+            <property name="Illustrator"                value="Romain Leguay"/>
+        </card>
+        <card id="34467f9a-a840-4e3c-be25-6eaaafd82f02" name="Now My Watch Begins">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After a character with printed cost 5 or lower is placed in an opponent's discard pile, put that character into play under your control."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="23"/>
+            <property name="Illustrator"                value="Adam Duff"/>
+        </card>
+        <card id="3bf2ce7c-df21-446d-8f3e-5a2d39e8afc3" name="I Shall Win No Glory">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After a challenge is initiated against you, kneel 3 Builder characters, 3 Ranger characters, or 3 Steward characters to end the challenge immediately with no winner or loser."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="0"/>
+            <property name="CardNumber"                 value="24"/>
+            <property name="Illustrator"                value="Cristi Balanescu"/>
+        </card>
+        <card id="b9c24508-604a-421c-8688-d021393609ca" name="Marya Seaworth">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Companion. Lady."/>
+            <property name="Text"                       value="Reaction: After a character is bypassed using stealth, pay 1 gold to kneel it. (Limit twice per phase.)"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="25"/>
+            <property name="Illustrator"                value="Torbjörn Källström"/>
+        </card>
+        <card id="3116659d-2d60-4d2e-9110-48dfb3f1074d" name="Black Betha">
+            <property name="Faction"                    value="Baratheon."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Warship."/>
+            <property name="Text"                       value="While you control Ser Davos Seaworth, he gains renown.&#13;&#10;Action: Kneel Black Betha to choose an attacking character. Until the end of the challenge, that character gets +X STR. X is the number of kneeling characters the defending player controls."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="26"/>
+            <property name="Illustrator"                value="Ignacio Bazán Lazcano"/>
+        </card>
+        <card id="ab7a330e-4456-4049-a214-078a12536bc8" name="Salt Wife">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Companion."/>
+            <property name="Text"                       value="Challenges Action: Sacrifice Salt Wife to choose a character. Until the end of the phase, that character cannot be declared as a defender."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="27"/>
+            <property name="Illustrator"                value="Ramon Ignacio Bunge"/>
+        </card>
+        <card id="aee4d7c7-201b-4239-8598-8d2f9b4f4544" name="Raiding the Bay of Ice">
+            <property name="Faction"                    value="Greyjoy."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After you win a challenge as the attacking player, kneel a Warship location to choose a non-limited location controlled by the losing opponent, and place it on top of its owner's deck."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="0"/>
+            <property name="CardNumber"                 value="28"/>
+            <property name="Illustrator"                value="Ignacio Bazán Lazcano"/>
+        </card>
+        <card id="a59ce3af-7583-4865-8a63-43ab516989d7" name="Ulf Son of Umar">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Clansman."/>
+            <property name="Text"                       value="Reaction: After a Clansman character enters play under your control, Ulf Son of Umar gets +X STR until the end of the phase. X is that character's printed STR. (Limit 3 times per phase.)"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="29"/>
+            <property name="Illustrator"                value="David Kegg"/>
+        </card>
+        <card id="0ba8385b-0f6b-40d8-b04a-870436d85ee0" name="There Are No Men Like Me">
+            <property name="Faction"                    value="Lannister."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Action: Choose a Knight character. Until the end of the phase, that character does not kneel when declared as an attacker or defender in a [military] challenge."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="30"/>
+            <property name="Illustrator"                value="Jason Engle"/>
+        </card>
+        <card id="8cfd0374-1129-41f9-8993-7b713d1fdd43" name="Southron Messenger">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Ally."/>
+            <property name="Text"                       value="Reaction: After Southron Messenger enters play during a challenge, choose a participating character with fewer than 2 challenge icons, and return that character to its owner's hand."/>
+            <property name="Keywords"                   value="Ambush (5)."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="31"/>
+            <property name="Illustrator"                value="Chase Toole"/>
+        </card>
+        <card id="d9bee941-3f7b-42b1-97fb-494f6627d6c7" name="Lingering Venom">
+            <property name="Faction"                    value="Martell."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Condition."/>
+            <property name="Text"                       value="Reaction: After you lose a challenge, place a venom token on Lingering Venom. Then, if attached character's STR is equal to or lower than the number of venom tokens on Lingering Venom, kill it."/>
+            <property name="Keywords"                   value="Terminal."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="0"/>
+            <property name="CardNumber"                 value="32"/>
+            <property name="Illustrator"                value="Ivan Dixon"/>
+        </card>
+        <card id="583c3350-7b21-4f12-8da2-1b4923e7b290" name="Jeyne Poole">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Companion."/>
+            <property name="Text"                       value="Marshaling Action: Sacrifice Jeyne Poole to return a Lady character from your discard pile to your hand."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="Strength"                   value="1"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="33"/>
+            <property name="Illustrator"                value="Kate Burmak"/>
+        </card>
+        <card id="79c21ba0-f516-449a-a267-20088efa397a" name="Summer">
+            <property name="Faction"                    value="Stark."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Direwolf."/>
+            <property name="Text"                       value="Unique [stark] character only.&#13;&#10;Action: Kneel attached character to have it participate in a [military] challenge on your side. (Limit once per challenge.)&#13;&#10;Action: Pay 1 gold to attach Summer to a different character. (Limit once per phase.)"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="34"/>
+            <property name="Illustrator"                value="Sandara Tang"/>
+        </card>
+        <card id="803e4591-ee62-4b26-8139-9be298331867" name="Dothraki Honor Guard">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Army. Dothraki. Guard."/>
+            <property name="Text"                       value="No attachments.&#13;&#10;Dothraki Honor Guard gets -1 STR for each card in your hand."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="10"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="35"/>
+            <property name="Illustrator"                value="Tomasz Jedruszek"/>
+        </card>
+        <card id="3a0f4c2b-4016-4cb2-bfb1-9582f712beb7" name="Plaza of Pride">
+            <property name="Faction"                    value="Targaryen."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="Astapor."/>
+            <property name="Text"                       value="Action: Kneel Plaza of Pride and discard a card from your hand to choose and stand a character with printed cost X or lower. X is 3 higher than the printed cost of the discarded card."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="36"/>
+            <property name="Illustrator"                value="Juan Carlos Barquet"/>
+        </card>
+        <card id="ea3d10d1-8107-4ee9-a06a-65eec2655d1a" name="Ser Jon Fossoway">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Knight."/>
+            <property name="Text"                       value="While Ser Jon Fossoway's STR is 5 or higher, he gains renown."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="4"/>
+            <property name="Strength"                   value="4"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="37"/>
+            <property name="Illustrator"                value="Diego Gisbert"/>
+        </card>
+        <card id="2429cb0a-3550-4f21-b1dd-71ed871e5a74" name="The Honeywine">
+            <property name="Faction"                    value="Tyrell."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="The Reach."/>
+            <property name="Text"                       value="Reaction: After you win a challenge by 5 or more STR as the attacking player, The Honeywine gains 1 power."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="38"/>
+            <property name="Illustrator"                value="Juan Carlos Barquet"/>
+        </card>
+        <card id="d6830eff-1cd9-42df-8f1c-7486212a7cd2" name="Rattleshirt">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Wildling."/>
+            <property name="Text"                       value="While Rattleshirt is attacking alone, each character without attachments cannot be declared as a defender."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="6"/>
+            <property name="Strength"                   value="5"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="No"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="39"/>
+            <property name="Illustrator"                value="Joel Hustak"/>
+        </card>
+        <card id="578ef746-ad1e-432d-815d-934fb123b42f" name="Dalla">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Wildling."/>
+            <property name="Text"                       value="Reaction: After a Wildling character enters play under your control, draw 1 card. (Limit once per phase.)"/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="5"/>
+            <property name="Strength"                   value="3"/>
+            <property name="Military"                   value="No"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="Yes"/>
+            <property name="CardNumber"                 value="40"/>
+            <property name="Illustrator"                value="Torbjörn Källström"/>
+        </card>
+        <card id="8529f6e7-eadd-4945-a2d3-76cd37a08a86" name="Crow Killers">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Character"/>
+            <property name="Traits"                     value="Wildling."/>
+            <property name="Text"                       value="Crow Killers does not kneel when declared as an attacker against an opponent whose reserve value is higher than yours."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="3"/>
+            <property name="Strength"                   value="2"/>
+            <property name="Military"                   value="Yes"/>
+            <property name="Intrigue"                   value="Yes"/>
+            <property name="Power"                      value="No"/>
+            <property name="CardNumber"                 value="41"/>
+            <property name="Illustrator"                value="Grzegorz Rutkowski"/>
+        </card>
+        <card id="5c51ec0f-d6b7-405f-a059-f8556a76f2a5" name="The Frozen Shore">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Location"/>
+            <property name="Traits"                     value="The North."/>
+            <property name="Text"                       value="Reaction: After you win a challenge, kneel The Frozen Shore to choose and stand 1 attacking Wildling character for each Winter plot card revealed."/>
+            <property name="Unique"                     value="Yes"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="42"/>
+            <property name="Illustrator"                value="Juan Carlos Barquet"/>
+        </card>
+        <card id="a5d72e84-baaa-4f24-95f0-7cbf30a151f9" name="Weirwood Bow">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Attachment"/>
+            <property name="Traits"                     value="Weapon."/>
+            <property name="Text"                       value="[thenightswatch] or Wildling character only.&#13;&#10;Action: Kneel Weirwood Bow to choose a defending character. That character gets -2 STR until the end of the challenge."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="43"/>
+            <property name="Illustrator"                value="Ivan Dixon"/>
+        </card>
+        <card id="5031a04a-7dcd-457f-b23d-6c4815947cd6" name="Scaling the Wall">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which you control an attacking Wildling character, choose a non-limited location controlled by the losing opponent. Return that location to its owner's hand."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="1"/>
+            <property name="CardNumber"                 value="44"/>
+            <property name="Illustrator"                value="Ignacio Bazán Lazcano"/>
+        </card>
+        <card id="2fdd189d-5e1b-4147-9fa6-8d839a72bf15" name="The Last of the Giants">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Event"/>
+            <property name="Traits"                     value="Song."/>
+            <property name="Text"                       value="Action: Put a neutral character into play from your hand. Until the end of the phase, that character gains intimidate. At the end of the phase, if that character is still in play, kill it (cannot be saved)."/>
+            <property name="Unique"                     value="No"/>
+            <property name="Loyal"                      value="No"/>
+            <property name="Cost"                       value="2"/>
+            <property name="CardNumber"                 value="45"/>
+            <property name="Illustrator"                value="Serena Malyon"/>
+        </card>
+        <card id="72bc5bfe-f1a6-41b3-af63-d65efc237b60" name="The Fire That Burns" size="HorizontalCards">
+            <property name="Faction"                    value="Night's Watch."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Winter."/>
+            <property name="Text"                       value="Each [thenightswatch] character you control does not kneel when declared as a defender."/>
+            <property name="Loyal"                      value="Yes"/>
+            <property name="PlotGoldIncome"             value="4"/>
+            <property name="PlotInitiative"             value="6"/>
+            <property name="PlotClaim"                  value="0"/>
+            <property name="PlotReserve"                value="7"/>
+            <property name="CardNumber"                 value="46"/>
+            <property name="DeckLimit"                  value="1"/>
+            <property name="Illustrator"                value="Ignacio Bazán Lazcano"/>
+        </card>
+        <card id="75321c8d-10ba-482e-bda2-c583655727cc" name="Retaliation" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="War."/>
+            <property name="Text"                       value="If you win initiative, you must choose an opponent to be the first player."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="4"/>
+            <property name="PlotInitiative"             value="8"/>
+            <property name="PlotClaim"                  value="2"/>
+            <property name="PlotReserve"                value="4"/>
+            <property name="CardNumber"                 value="47"/>
+            <property name="Illustrator"                value="Marco Caradonna"/>
+        </card>
+        <card id="bdf09c89-2cf7-479f-b368-bd08e2c34738" name="Whisper Campaign" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Scheme."/>
+            <property name="Text"                       value="Forced Reaction: After a character without an [intrigue] icon enters play, kneel it."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="4"/>
+            <property name="PlotInitiative"             value="4"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="6"/>
+            <property name="CardNumber"                 value="48"/>
+            <property name="DeckLimit"                  value="1"/>
+            <property name="Illustrator"                value="Victor Garcia"/>
+        </card>
+        <card id="c0ea2e8d-dfe5-4c95-8752-bdc2d3efb0ca" name="Called Into Service" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Kingdom."/>
+            <property name="Text"                       value="When Revealed: Reveal the top card of your deck. If it is a character, put it into play. If it is a non-character card, draw it and gain 2 gold."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="2"/>
+            <property name="PlotInitiative"             value="0"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="6"/>
+            <property name="CardNumber"                 value="49"/>
+            <property name="Illustrator"                value="Adam Duff"/>
+        </card>
+        <card id="7624873f-2e33-4cf9-9582-af99eaff5cdf" name="The White Shadows" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Omen."/>
+            <property name="Text"                       value="Reaction: After a character an opponent controls is killed, put it into play under your control. While that character is in play, treat its printed text box as if it were blank. At the end of the phase, if that card is still in play, place it in its owner's dead pile (cannot be saved)."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="5"/>
+            <property name="PlotInitiative"             value="2"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="6"/>
+            <property name="CardNumber"                 value="50"/>
+            <property name="Illustrator"                value="Joel Hustak"/>
+        </card>
+        <card id="af3cd2c8-64d7-4238-aa4f-a1c5994b7920" name="Name Day Tourney" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Summer."/>
+            <property name="Text"                       value="Reaction: After you win a challenge in which a Knight character you control is attacking or defending alone, choose a Lord or Lady character you control and have it gain 1 power."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="5"/>
+            <property name="PlotInitiative"             value="4"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="5"/>
+            <property name="CardNumber"                 value="51"/>
+            <property name="Illustrator"                value="Jason Jenicke"/>
+        </card>
+        <card id="5c838fd1-ede7-475f-ad46-58e949bd2ec4" name="Frozen Expanse" size="HorizontalCards">
+            <property name="Faction"                    value="Neutral."/>
+            <property name="Type"                       value="Plot"/>
+            <property name="Traits"                     value="Winter."/>
+            <property name="Text"                       value="Each character with STR 2 or lower cannot stand."/>
+            <property name="Loyal"                      value="No"/>
+            <property name="PlotGoldIncome"             value="4"/>
+            <property name="PlotInitiative"             value="1"/>
+            <property name="PlotClaim"                  value="1"/>
+            <property name="PlotReserve"                value="6"/>
+            <property name="CardNumber"                 value="52"/>
+            <property name="Illustrator"                value="Sergey Glushakov"/>
+        </card>
+    </cards>
+</set>
